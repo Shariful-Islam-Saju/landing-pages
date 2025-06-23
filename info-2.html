@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>পোর্টেবল LED ডেস্ক ল্যাম্প - বহুমুখী আলোর সমাধান</title>
+    <meta name="description" content="হোটেল, রেস্তোরাঁ, অ্যাপার্টমেন্ট, ক্যাম্পিং সহ বিভিন্ন পরিবেশের জন্য উপযোগী বহনযোগ্য LED ডেস্ক ল্যাম্প">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4a6fa5;
+            --primary-dark: #3a5a8a;
+            --secondary: #e67e22;
+            --accent: #2ecc71;
+            --light: #f9f9f9;
+            --dark: #333;
+            --gray: #666;
+            --white: #fff;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Hind Siliguri', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--white);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: var(--white);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        nav ul li a:hover {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        /* Hero Section */
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            padding: 80px 0;
+            background-color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            max-height: 400px;
+        }
+        
+        .hero-content {
+            flex: 1;
+            min-width: 300px;
+            padding: 0 30px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-dark);
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: var(--gray);
+        }
+        
+        .price {
+            display: flex;
+            align-items: center;
+            margin: 25px 0;
+        }
+        
+        .current-price {
+            font-size: 2.2rem;
+            color: var(--secondary);
+            font-weight: bold;
+            margin-right: 15px;
+        }
+        
+        .original-price {
+            font-size: 1.5rem;
+            color: var(--gray);
+            text-decoration: line-through;
+        }
+        
+        .discount-badge {
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            margin-left: 15px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: var(--transition);
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .cta-button.outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .cta-button:hover {
+            background-color: #d35400;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(230, 126, 34, 0.3);
+        }
+        
+        .cta-button.outline:hover {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+        
+        .benefits {
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            background-color: var(--light);
+            padding: 10px 15px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+        }
+        
+        .benefit-item i {
+            margin-right: 8px;
+            color: var(--primary);
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 2.2rem;
+            color: var(--primary-dark);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary);
+            border-radius: 2px;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 50px;
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background-color: var(--primary);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 15px;
+            color: var(--dark);
+            font-size: 1.3rem;
+        }
+        
+        .feature-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+        
+        /* Color Options */
+        .colors {
+            padding: 50px 0;
+            background-color: var(--white);
+        }
+        
+        .color-options {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .color-option {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 3px solid transparent;
+        }
+        
+        .color-option:hover {
+            transform: scale(1.1);
+        }
+        
+        .color-name {
+            text-align: center;
+            margin-top: 15px;
+            font-weight: 500;
+        }
+        
+        /* Application Scenarios */
+        .scenarios {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+        
+        .scenario-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .scenario-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .scenario-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .scenario-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .scenario-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .scenario-content {
+            padding: 20px;
+        }
+        
+        .scenario-content h3 {
+            margin-bottom: 10px;
+            color: var(--primary-dark);
+        }
+        
+        /* Specifications Section */
+        .specs {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+        
+        .specs-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .specs-image {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .specs-image img {
+            max-width: 100%;
+            max-height: 400px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        .specs-content {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .specs-table tr {
+            border-bottom: 1px solid #eee;
+        }
+        
+        .specs-table tr:last-child {
+            border-bottom: none;
+        }
+        
+        .specs-table th, .specs-table td {
+            padding: 15px;
+            text-align: left;
+        }
+        
+        .specs-table th {
+            width: 40%;
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        /* CTA Section */
+        .cta {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .cta .cta-button {
+            background-color: var(--white);
+            color: var(--primary);
+            font-size: 1.1rem;
+            padding: 18px 40px;
+        }
+        
+        .cta .cta-button:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+            color: var(--primary-dark);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #aaa;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--white);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0 15px;
+            }
+            
+            .hero {
+                padding: 60px 0;
+                flex-direction: column;
+            }
+            
+            .hero-content {
+                padding: 30px 0;
+                text-align: center;
+            }
+            
+            .cta-buttons {
+                justify-content: center;
+            }
+            
+            .benefits {
+                justify-content: center;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .cta-button {
+                width: 100%;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-lightbulb"></i>
+                <span>আলোক</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#features">বৈশিষ্ট্য</a></li>
+                    <li><a href="#colors">রং</a></li>
+                    <li><a href="#scenarios">ব্যবহার</a></li>
+                    <li><a href="#specs">স্পেসিফিকেশন</a></li>
+                    <li><a href="#order">অর্ডার</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <div class="hero-image">
+                <img src="https://via.placeholder.com/500x500?text=পোর্টেবল+LED+ডেস্ক+ল্যাম্প" alt="পোর্টেবল LED ডেস্ক ল্যাম্প">
+            </div>
+            <div class="hero-content">
+                <h1>পোর্টেবল LED ডেস্ক ল্যাম্প</h1>
+                <p>স্থিতিশীল ভোল্টেজ এবং সমন্বয়যোগ্য উজ্জ্বলতা সহ বহুমুখী আলোর সমাধান, বাড়ি থেকে বাইরের অ্যাডভেঞ্চার পর্যন্ত সব পরিবেশের জন্য উপযুক্ত।</p>
+                
+                <div class="price">
+                    <span class="current-price">৩,৯৯৯৳</span>
+                    <span class="original-price">৪,৯৯৯৳</span>
+                    <span class="discount-badge">২০% ছাড়</span>
+                </div>
+                
+                <div class="cta-buttons">
+                    <a href="#order" class="cta-button">এখনই কিনুন</a>
+                    <a href="#features" class="cta-button outline">বিস্তারিত জানুন</a>
+                </div>
+                
+                <div class="benefits">
+                    <div class="benefit-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>বিনামূল্যে ডেলিভারি</span>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>২ বছর ওয়ারেন্টি</span>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>৩০ দিন ফেরত</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">প্রিমিয়াম বৈশিষ্ট্য</h2>
+            <p class="section-subtitle">নমনীয়তা এবং কর্মক্ষমতার জন্য ডিজাইন করা, আমাদের পোর্টেবল LED ডেস্ক ল্যাম্প আপনার আলোর প্রয়োজনীয়তা অনুযায়ী সামঞ্জস্য করে।</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>স্থিতিশীল ভোল্টেজ</h3>
+                    <p>আমাদের উন্নত ভোল্টেজ স্থিতিশীলতা প্রযুক্তি (৪ স্যালভে ভোল্টেজ সিস্টেম) সহ সামঞ্জস্যপূর্ণ কর্মক্ষমতা।</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <h3>সমন্বয়যোগ্য উজ্জ্বলতা</h3>
+                    <p>যেকোনো পরিবেশ বা কাজের জন্য উপযুক্ত একাধিক উজ্জ্বলতা স্তর দিয়ে আপনার আলো কাস্টমাইজ করুন।</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-battery-full"></i>
+                    </div>
+                    <h3>দীর্ঘ ব্যাটারি জীবন</h3>
+                    <p>সারা দিন ব্যবহারের জন্য দক্ষ শক্তি খরচ সহ বর্ধিত অপারেশন সময়।</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-weight-hanging"></i>
+                    </div>
+                    <h3>হালকা ওজন ডিজাইন</h3>
+                    <p>সর্বাধিক সুবিধার জন্য বহনযোগ্য এবং বহন করা সহজ, ওজন মাত্র ১ কেজিরও কম।</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-sliders-h"></i>
+                    </div>
+                    <h3>সমন্বয়যোগ্য কোণ</h3>
+                    <p>নমনীয় ঘাড় ডিজাইন আপনাকে আলো ঠিক যেখানে প্রয়োজন সেখানে নির্দেশ করতে দেয়।</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>চোখের সুরক্ষা</h3>
+                    <p>দীর্ঘস্থায়ী ব্যবহারের সময় চোখের চাপ কমাতে ফ্লিকার-মুক্ত আলো।</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="colors" id="colors">
+        <div class="container">
+            <h2 class="section-title">রং এর অপশন</h2>
+            <p class="section-subtitle">আপনার স্টাইল এবং পরিবেশের সাথে মেলে নিখুঁত রং নির্বাচন করুন।</p>
+            
+            <div class="color-options">
+                <div>
+                    <div class="color-option" style="background-color: #f5f5f5;"></div>
+                    <div class="color-name">ধূসর সাদা</div>
+                </div>
+                <div>
+                    <div class="color-option" style="background-color: #2ecc71;"></div>
+                    <div class="color-name">সবুজ</div>
+                </div>
+                <div>
+                    <div class="color-option" style="background-color: #3498db;"></div>
+                    <div class="color-name">নীল</div>
+                </div>
+                <div>
+                    <div class="color-option" style="background-color: #8e44ad;"></div>
+                    <div class="color-name">ওয়াইন রেড</div>
+                </div>
+                <div>
+                    <div class="color-option" style="background-color: #795548;"></div>
+                    <div class="color-name">বাদামী</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="scenarios" id="scenarios">
+        <div class="container">
+            <h2 class="section-title">ব্যবহারের পরিস্থিতি</h2>
+            <p class="section-subtitle">বিভিন্ন পরিবেশ এবং ব্যবহারের জন্য উপযুক্ত।</p>
+            
+            <div class="scenario-grid">
+                <div class="scenario-card">
+                    <div class="scenario-image">
+                        <img src="https://via.placeholder.com/600x400?text=হোটেল+রুম" alt="হোটেল রুম">
+                    </div>
+                    <div class="scenario-content">
+                        <h3>হোটেল</h3>
+                        <p>অতিথি কক্ষ এবং লবির জন্য কমপ্যাক্ট এবং স্টাইলিশ আলোর সমাধান।</p>
+                    </div>
+                </div>
+                
+                <div class="scenario-card">
+                    <div class="scenario-image">
+                        <img src="https://via.placeholder.com/600x400?text=রেস্তোরাঁ" alt="রেস্তোরাঁ">
+                    </div>
+                    <div class="scenario-content">
+                        <h3>রেস্তোরাঁ</h3>
+                        <p>ডাইনিং অভিজ্ঞতার জন্য নিখুঁত পরিবেশ তৈরি করুন।</p>
+                    </div>
+                </div>
+                
+                <div class="scenario-card">
+                    <div class="scenario-image">
+                        <img src="https://via.placeholder.com/600x400?text=অ্যাপার্টমেন্ট" alt="অ্যাপার্টমেন্ট">
+                    </div>
+                    <div class="scenario-content">
+                        <h3>অ্যাপার্টমেন্ট</h3>
+                        <p>ছোট বসবাসের স্থানের জন্য স্থান-সাশ্রয়ী আলো।</p>
+                    </div>
+                </div>
+                
+                <div class="scenario-card">
+                    <div class="scenario-image">
+                        <img src="https://via.placeholder.com/600x400?text=ক্যাম্পিং" alt="ক্যাম্পিং">
+                    </div>
+                    <div class="scenario-content">
+                        <h3>বাইরের ক্যাম্পিং</h3>
+                        <p>আপনার বাইরের অ্যাডভেঞ্চারের জন্য বহনযোগ্য আলো।</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="specs" id="specs">
+        <div class="container">
+            <h2 class="section-title">প্রযুক্তিগত স্পেসিফিকেশন</h2>
+            <p class="section-subtitle">আমাদের পোর্টেবল LED ডেস্ক ল্যাম্প সম্পর্কে বিস্তারিত প্রযুক্তিগত তথ্য।</p>
+            
+            <div class="specs-container">
+                <div class="specs-image">
+                    <img src="https://via.placeholder.com/400x400?text=প্রযুক্তিগত+বিস্তারিত" alt="প্রযুক্তিগত স্পেসিফিকেশন">
+                </div>
+                <div class="specs-content">
+                    <table class="specs-table">
+                        <tr>
+                            <th>পণ্যের নাম</th>
+                            <td>পোর্টেবল LED ডেস্ক ল্যাম্প</td>
+                        </tr>
+                        <tr>
+                            <th>ভোল্টেজ সিস্টেম</th>
+                            <td>৪ স্যালভে ভোল্টেজ</td>
+                        </tr>
+                        <tr>
+                            <th>প্যাকেজ সাইজ</th>
+                            <td>১৮.৫ × ১৮.৫ × ৩৯.৩ সেমি</td>
+                        </tr>
+                        <tr>
+                            <th>পণ্যের ওজন</th>
+                            <td>প্রায় ০.৮ কেজি</td>
+                        </tr>
+                        <tr>
+                            <th>আলোর উৎস</th>
+                            <td>LED (শক্তি-সাশ্রয়ী)</td>
+                        </tr>
+                        <tr>
+                            <th>রঙের তাপমাত্রা</th>
+                            <td>৩০০০K-৬০০০K (সমন্বয়যোগ্য)</td>
+                        </tr>
+                        <tr>
+                            <th>শক্তির উৎস</th>
+                            <td>রিচার্জেবল ব্যাটারি / USB</td>
+                        </tr>
+                        <tr>
+                            <th>উৎপত্তি</th>
+                            <td>চীন তৈরি</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta" id="order">
+        <div class="container">
+            <h2>আজই আপনার স্থান আলোকিত করুন</h2>
+            <p>আমাদের পোর্টেবল LED ডেস্ক ল্যাম্পের সাথে বহুমুখী আলো উপভোগ করুন। কাজ, বিশ্রাম বা অ্যাডভেঞ্চারের জন্য উপযুক্ত।</p>
+            <a href="#" class="cta-button">অর্ডার করুন</a>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>আলোক</h3>
+                    <p>আধুনিক জীবনধারার জন্য উদ্ভাবনী আলোর সমাধান। আমাদের পণ্যগুলি অত্যাধুনিক প্রযুক্তির সাথে মার্জিত ডিজাইনকে একত্রিত করে।</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>পণ্য</h3>
+                    <ul>
+                        <li><a href="#">ডেস্ক ল্যাম্প</a></li>
+                        <li><a href="#">ফ্লোর ল্যাম্প</a></li>
+                        <li><a href="#">পোর্টেবল লাইট</a></li>
+                        <li><a href="#">স্মার্ট লাইটিং</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>সহায়তা</h3>
+                    <ul>
+                        <li><a href="#">যোগাযোগ করুন</a></li>
+                        <li><a href="#">সচরাচর জিজ্ঞাসা</a></li>
+                        <li><a href="#">ডেলিভারি তথ্য</a></li>
+                        <li><a href="#">ফেরত নীতি</a></li>
+                        <li><a href="#">ওয়ারেন্টি</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>কোম্পানি</h3>
+                    <ul>
+                        <li><a href="#">আমাদের সম্পর্কে</a></li>
+                        <li><a href="#">ব্লগ</a></li>
+                        <li><a href="#">ক্যারিয়ার</a></li>
+                        <li><a href="#">গোপনীয়তা নীতি</a></li>
+                        <li><a href="#">সেবার শর্তাবলী</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; ২০২৩ আলোক। সর্বস্বত্ব সংরক্ষিত। পোর্টেবল LED ডেস্ক ল্যাম্প</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

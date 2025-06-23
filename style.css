@@ -1,0 +1,122 @@
+/* Base Mobile-First Styles */
+body {
+  margin: 0;
+  font-family: 'Noto Sans Bengali', sans-serif;
+  background: #f9f9ff;
+  color: #222;
+  line-height: 1.6;
+  padding: 0 15px;
+}
+
+.header {
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: white;
+  padding: 25px 15px;
+  text-align: center;
+  border-radius: 0 0 12px 12px;
+}
+
+.header h1 {
+  font-size: 1.6rem;
+  margin-bottom: 5px;
+}
+
+.header p {
+  font-size: 1rem;
+}
+
+.image-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.image-container img {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.description h2,
+.description h3 {
+  color: #6a11cb;
+  margin-top: 20px;
+}
+
+.features {
+  margin-top: 30px;
+}
+
+.features h3 {
+  color: #2575fc;
+  margin-bottom: 10px;
+}
+
+.features ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.features ul li {
+  margin-bottom: 8px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.features ul li::before {
+  content: '✔';
+  position: absolute;
+  left: 0;
+  color: #6a11cb;
+  font-weight: bold;
+}
+
+.order {
+  text-align: center;
+  margin: 30px 0 60px;
+}
+
+.order-btn {
+  background: #6a11cb;
+  color: white;
+  padding: 12px 28px;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 8px;
+  display: inline-block;
+  transition: background 0.3s ease;
+}
+
+.order-btn:hover {
+  background: #5a0fc0;
+}
+
+/* Larger Devices - Tablet & Desktop */
+@media (min-width: 768px) {
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .header p {
+    font-size: 1.2rem;
+  }
+
+  .main {
+    max-width: 900px;
+    margin: auto;
+  }
+
+  .features {
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
+  }
+
+  .features > div {
+    flex: 1;
+  }
+
+  .image-container img {
+    max-width: 400px;
+  }
+}

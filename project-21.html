@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project-21</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background: black;
+        font-family: "Hind Siliguri", sans-serif;
+        font-weight: bold;
+      }
+
+      body::before,
+      body::after {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      .stars {
+        background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png)
+          repeat;
+        z-index: 0;
+      }
+
+      body::before {
+        background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/moon2.png")
+          no-repeat top right;
+        background-size: 15%;
+        z-index: 2;
+      }
+
+      body::after {
+        content: "";
+        background: transparent;
+        z-index: 4;
+      }
+
+      @keyframes moveBackground {
+        from {
+          transform: translate3d(0, 0, 0);
+        }
+        to {
+          transform: translate3d(1000px, 0, 0);
+        }
+      }
+
+      /* Attach layers */
+      .stars,
+      .twinkling,
+      .clouds {
+        position: fixed;
+        width: 10000px;
+        height: 100%;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+      }
+      .parents-1 {
+        display: flex;
+        justify-content: center;
+        padding: 0 15px;
+      }
+      .container-1 {
+        margin-top: 50px;
+        width: 100%;
+        text-align: center;
+        color: rgb(236, 224, 224);
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 20px;
+        max-width: 1800px;
+      }
+      .title-1 {
+        font-size: 30px;
+
+        background: linear-gradient(90deg, white, black);
+      }
+
+      .desc-1 {
+        font-size: 25px;
+      }
+
+      .desc-2 {
+        font-size: 23px;
+      }
+
+      .feature-list {
+        list-style: none;
+        padding: 10px;
+        margin: 0;
+        text-align: left;
+      }
+
+      .feature-list li {
+        display: flex;
+        align-items: center;
+        font-size: 25px;
+        font-weight: normal;
+        color: white;
+        border-bottom: 1px dashed #ccc;
+        padding-bottom: 10px;
+      }
+
+      .feature-list li:last-child {
+        border-bottom: none;
+      }
+
+      .common-background {
+        background: rgba(255, 255, 255, 0.1); /* semi-transparent background */
+        backdrop-filter: blur(10px); /* blur effect */
+
+        border-radius: 12px; /* optional: rounded corners */
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* optional: soft shadow */
+        padding: 25px;
+      }
+
+      .image-container {
+        width: 100%;
+        display: flex;
+        z-index: 50;
+        justify-content: center;
+      }
+      .image-container img {
+        width: 100%;
+        max-width: 600px;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        display: block;
+        border-radius: 25px;
+        border: 3px solid#ffdf02;
+      }
+      .order-container {
+        display: flex;
+        justify-content: center;
+        padding: 20px 0;
+        margin: 0;
+      }
+      .order-btn {
+        background-color: #1c3464;
+        color: #fff;
+        display: inline-flex;
+        align-items: center;
+        padding: 12px 20px;
+        text-decoration: none;
+        font-size: 30px;
+        border-radius: 8px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        white-space: nowrap;
+      }
+      .order-btn img {
+        width: 30px;
+        margin-right: 10px;
+      }
+      .order-btn:hover {
+        background-color: #00517c;
+        animation: hover-animation-pulse 0.3s linear infinite alternate;
+      }
+
+      @keyframes hover-animation-pulse {
+        100% {
+          transform: scale(1.1);
+        }
+      }
+
+      @media (min-width: 768px) {
+        .title-1 {
+          font-size: 70px;
+        }
+
+        .desc-1 {
+          font-size: 45px;
+        }
+        .desc-2 {
+          font-size: 45px;
+        }
+
+        .section-2-p-1 {
+          font-size: 45px;
+          text-align: center;
+        }
+
+        .feature-list {
+          font-size: 30px;
+        }
+
+        .feature-list li {
+          font-size: 35px;
+          margin-top: 20px;
+        }
+
+        .common-background {
+          padding: 30px;
+        }
+      }
+
+      .colorful-text {
+        color: #f4c702;
+      }
+
+      #checkout-now {
+        z-index: 80;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+    <div class="parents-1">
+      <div class="container-1">
+        <h1 class="title-1 common-background">
+          <span class="colorful-text"> Moon Light House </span>– আপনার ঘরে আসুক
+          বাস্তবিক <span class="colorful-text"> চাঁদের আলো</span> , এক ক্লিকে
+          <span class="colorful-text"> জাদুকরী অভিজ্ঞতা</span> !
+        </h1>
+        <p class="desc-1 common-background">
+          রিয়েলিস্টিক <span class="colorful-text"> চাঁদের প্রজেকশন</span> ,
+          রিমোটে <span class="colorful-text"> নিয়ন্ত্রণযোগ্য ব্রাইটনেস</span> ও
+          মোড – এখন ঘরই হয়ে উঠুক
+          <span class="colorful-text"> স্বপ্নের জগৎ </span> !
+        </p>
+
+        <div class="image-container">
+          <img
+            src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/gadgetbd-store/images/builder/684a7f01e3db2f76fa0166b2/1749733616105_51t8QzBgPvL.jpg"
+            alt=""
+          />
+        </div>
+        
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn">
+            <img
+              src="https://builder.storex.com.bd/images/builder/allergy/finger-of-a-hand-pointing-to-right-direction-lqm9tkxe.webp"
+              alt="Order Now"
+            />
+            এখনই কিনুন
+          </a>
+        </div>
+
+        <p class="desc-2 common-background">
+          রিমোট দিয়ে সহজেই নিয়ন্ত্রণ করুন
+          <span class="colorful-text"> চাঁদের আলো </span> , সাইজ আর মোড — একটায়
+          মিলছে <span class="colorful-text">সব সুবিধা </span> !
+        </p>
+        <div class="image-container">
+          <img
+            src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/gadgetbd-store/images/builder/684a7f01e3db2f76fa0166b2/1749733139807_product-jpeg-500x500.webp"
+            alt=""
+          />
+        </div>
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn">
+            <img
+              src="https://builder.storex.com.bd/images/builder/allergy/finger-of-a-hand-pointing-to-right-direction-lqm9tkxe.webp"
+              alt="Order Now"
+            />
+            এখনই কিনুন
+          </a>
+        </div>
+        <p class="desc-1 common-background">আধুনিক ডিজাইন, সহজ ব্যবহার!</p>
+        <p class="desc-2 common-background">
+          <span class="colorful-text">ইউএসবি দিয়ে </span> চার্জ হয়, তাই কোনো
+          বাড়তি <span class="colorful-text"> ঝামেলা নেই </span>।
+        </p>
+
+        <section class="features-section">
+          <h2 style="color: #10e930; font-size: 50px">বৈশিষ্ট্য:</h2>
+          <ul class="feature-list">
+            <li
+              style="
+                font-weight: 400;
+                display: flex;
+                align-items: center;
+                margin-bottom: 12px;
+              "
+            >
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                style="width: 30px; margin-right: 20px"
+                alt="Charging Icon"
+              />
+              <span>
+                <strong style="color: #2fe1c3; font-weight: bold"
+                  >দীর্ঘস্থায়ী ব্যাটারি:</strong
+                >
+                একবার চার্জে চলে প্রায় ৮ ঘণ্টা!
+              </span>
+            </li>
+
+            <li style="font-weight: 400">
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                style="width: 30px; margin-right: 20px"
+                alt=""
+              />
+              <span>
+                <strong style="color: #2fe1c3; font-weight: bold"
+                  >ইউএসবি চার্জিং:</strong
+                >
+                সহজ ইউএসবি পোর্ট চার্জিং সুবিধা
+              </span>
+            </li>
+            <li style="font-weight: 400">
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                style="width: 30px; margin-right: 20px"
+                alt=""
+              />
+              <span>
+                <strong style="color: #2fe1c3; font-weight: bold"
+                  >রিমোট কন্ট্রোল:</strong
+                >
+                রিমোটের মাধ্যমে নিয়ন্ত্রণযোগ্য ফিচারসমূহ
+              </span>
+            </li>
+            <li style="font-weight: 400">
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                style="width: 30px; margin-right: 20px"
+                alt=""
+              />
+              <span>
+                <strong style="color: #2fe1c3; font-weight: bold"
+                  >আধুনিক ডিজাইন:</strong
+                >
+                স্টাইলিশ ও কমপ্যাক্ট ডিজাইন যা যেকোনো রুমের সাথে মানানসই
+              </span>
+            </li>
+          </ul>
+        </section>
+        <div class="image-container">
+          <img
+            src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/gadgetbd-store/images/builder/684a7f01e3db2f76fa0166b2/1749733658663_61auItiW2KL.-AC-UL210-SR210-210-.jpg"
+            alt=""
+          />
+        </div>
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn">
+            <img
+              src="https://builder.storex.com.bd/images/builder/allergy/finger-of-a-hand-pointing-to-right-direction-lqm9tkxe.webp"
+              alt="Order Now"
+            />
+            এখনই কিনুন
+          </a>
+        </div>
+
+        <section class="features-section">
+          <h2 style="color: #10e930; font-size: 50px">উপকারিতা:</h2>
+          <ul class="feature-list">
+            <li>
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                style="width: 30px; margin-right: 20px"
+                alt=""
+              />
+              <span>ঘরে শান্ত পরিবেশ</span>
+            </li>
+            <li>
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                style="width: 30px; margin-right: 20px"
+                alt=""
+              />
+              <span>নিখুঁত গিফট আইটেম</span>
+            </li>
+            <li>
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                style="width: 30px; margin-right: 20px"
+                alt=""
+              />
+              <span>সহজ ব্যবহারযোগ্য</span>
+            </li>
+            <li>
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                style="width: 30px; margin-right: 20px"
+                alt=""
+              />
+              <span>চোখের আরামদায়ক আলো</span>
+            </li>
+            <li>
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                style="width: 30px; margin-right: 20px"
+                alt=""
+              />
+              <span>ঘরের সৌন্দর্য বৃদ্ধি করে</span>
+            </li>
+          </ul>
+        </section>
+        <div class="image-container">
+          <img
+            src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/gadgetbd-store/images/builder/684a7f01e3db2f76fa0166b2/1749721292534_s-l1600.webp"
+            alt=""
+          />
+        </div>
+        <div style="background-color: black; margin: 15px 0; padding: 0">
+          <iframe
+            style="width: 100%; aspect-ratio: 2/1; border: none"
+            src="https://www.youtube.com/embed/ClpXmWAS6SQ?color=white&modestbranding=1&rel=0&controls=1"
+            title="YouTube video player"
+            frameborder="0"
+            allow=" encrypted-media"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn">
+            <img
+              src="https://builder.storex.com.bd/images/builder/allergy/finger-of-a-hand-pointing-to-right-direction-lqm9tkxe.webp"
+              alt="Order Now"
+            />
+            এখনই কিনুন
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project-18</title>
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap");
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Hind Siliguri", sans-serif;
+      background-color: black;
+    }
+
+    .root-1 {
+      display: flex;
+      justify-content: center;
+      font-weight: bold;
+    }
+    .wrapper-div {
+      width: 100%;
+      max-width: 1290px;
+      padding: 25px;
+    }
+    .common-class {
+      border-radius: 20px;
+      background-color: #1a1a2e;
+      padding: 25px 10px;
+      text-align: center;
+    }
+
+    .title-1 {
+      background-color: #16213e;
+      font-size: 50px;
+      padding: 30px 10px;
+      color: white;
+      margin-top: 35px;
+    }
+
+    .different-text-1 {
+      color: #ffff01;
+    }
+
+    .title-2 {
+      margin-top: 30px;
+      color: white;
+      font-size: 40px;
+      padding: 20px 20px;
+    }
+
+    @media (max-width: 520px) {
+      .title-1 {
+        font-size: 35px;
+      }
+      .title-2 {
+        font-size: 26px;
+      }
+    }
+
+    .image-container {
+      margin: 25px 0;
+      margin-bottom: 10px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    .image-container img {
+      width: 100%;
+      max-width: 600px;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      display: block;
+      border-radius: 25px;
+      border: 2px solid #f8f32b;
+    }
+    .order-container {
+      display: flex;
+      justify-content: center;
+      padding: 20px 0;
+      margin: 0;
+    }
+    .order-btn {
+      background-color: #e94560;
+      color: white;
+      display: inline-flex;
+      align-items: center;
+      padding: 12px 20px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: clamp(20px, 2vw, 25px);
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+    .order-btn img {
+      width: 30px;
+      margin-right: 10px;
+    }
+    .order-btn:hover {
+      background-color: #c9203c;
+      animation: hover-animation-pulse 0.3s linear infinite alternate;
+    }
+
+    @keyframes hover-animation-pulse {
+      100% {
+        transform: scale(1.1);
+      }
+    }
+
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      margin-top: 25px;
+    }
+
+    .feature-list li {
+      color: white;
+      font-size: 30px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+    }
+    .feature-list li:last-child {
+      border-bottom: none;
+    }
+
+    @media (max-width: 500px) {
+      .feature-list li {
+        font-size: 22px;
+        font-weight: normal;
+      }
+
+      .last-text {
+        font-size: 20px;
+        line-height: 35px;
+      }
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: rgb(0, 0, 0);
+      position: relative;
+    }
+
+    .box {
+      min-width: 400px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      text-align: center;
+      position: fixed;
+      background: linear-gradient(
+        90deg,
+        rgb(5, 31, 86) 0%,
+        rgb(19, 19, 92) 35%,
+        rgb(27, 146, 230)
+      );
+      color: white;
+      justify-content: center;
+      z-index: -2;
+    }
+
+    .box .design-1 {
+      width: 5px;
+      height: 5px;
+      position: absolute;
+      background-color: transparent;
+      border: 1px solid white;
+      opacity: 1;
+      border-radius: 1px;
+    }
+
+    .box .design-2 {
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      background-color: rgba(226, 211, 211, 0.6);
+      top: 5px;
+      left: 50%;
+      border-radius: 2px;
+    }
+
+    .box div:nth-child(12) {
+      top: 20%;
+      left: 10%;
+      animation: animated 9s infinite linear;
+    }
+
+    .box div:nth-child(13) {
+      top: 85%;
+      left: 20%;
+      animation: animated 7s infinite linear;
+    }
+
+    .box div:nth-child(14) {
+      top: 90%;
+      left: 50%;
+      animation: animated 10s infinite linear;
+    }
+
+    .box div:nth-child(15) {
+      top: 60%;
+      left: 30%;
+      animation: animated 7s infinite linear;
+    }
+
+    .box div:nth-child(16) {
+      top: 30%;
+      left: 50%;
+      animation: animated 9s infinite linear;
+    }
+
+    .box div:nth-child(17) {
+      top: 85%;
+      left: 80%;
+      animation: animated 6s infinite linear;
+    }
+
+    .box div:nth-child(18) {
+      top: 45%;
+      left: 85%;
+      animation: animated 8s infinite linear;
+    }
+
+    .box div:nth-child(19) {
+      top: 15%;
+      left: 80%;
+      animation: animated 10s infinite linear;
+    }
+
+    .box div:nth-child(20) {
+      top: 50%;
+      left: 5%;
+      animation: animated 9s infinite linear;
+    }
+
+    .box div:nth-child(21) {
+      top: 65%;
+      left: 70%;
+      animation: animated 7s infinite linear;
+    }
+
+    .box div:nth-child(22) {
+      top: 30%;
+      left: 30%;
+      animation: animated 8s infinite linear;
+    }
+
+    .box div:nth-child(23) {
+      top: 10%;
+      left: 40%;
+      animation: animated 8s infinite linear;
+    }
+
+    .box div:nth-child(1) {
+      top: 7%;
+      left: 6%;
+      animation: animate 10s infinite linear;
+    }
+
+    .box div:nth-child(2) {
+      top: 79%;
+      left: 10%;
+      animation: animate 8s infinite linear;
+    }
+
+    .box div:nth-child(3) {
+      top: 13%;
+      left: 35%;
+      animation: animate 6s infinite linear;
+    }
+
+    .box div:nth-child(4) {
+      top: 69%;
+      left: 49%;
+      animation: animate 5s infinite linear;
+    }
+
+    .box div:nth-child(5) {
+      top: 8%;
+      left: 69%;
+      animation: animate 9s infinite linear;
+    }
+
+    .box div:nth-child(6) {
+      top: 38%;
+      left: 49%;
+      animation: animate 5s infinite linear;
+    }
+
+    .box div:nth-child(7) {
+      top: 38%;
+      left: 9%;
+      animation: animate 6s infinite linear;
+    }
+
+    .box div:nth-child(8) {
+      top: 78%;
+      left: 79%;
+      animation: animate 8s infinite linear;
+    }
+
+    .box div:nth-child(9) {
+      top: 48%;
+      left: 79%;
+      animation: animate 5s infinite linear;
+    }
+
+    .box div:nth-child(10) {
+      top: 28%;
+      left: 82%;
+      animation: animate 7s infinite linear;
+    }
+
+    .box div:nth-child(11) {
+      top: 58%;
+      left: 18%;
+      animation: animate 9s infinite linear;
+    }
+
+    @keyframes animate {
+      0% {
+        transform: scale(0) translate() rotate();
+      }
+
+      100% {
+        transform: scale(5.3) translateY(90px) rotate(720deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes animated {
+      0% {
+        transform: translate() rotate();
+      }
+
+      100% {
+        transform: scale(2.5) translateY(90px) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+  <body>
+    <div class="box">
+      <div class="design-1"></div>
+      <div class="design-1"></div>
+      <div class="design-1"></div>
+      <div class="design-1"></div>
+      <div class="design-1"></div>
+      <div class="design-1"></div>
+      <div class="design-1"></div>
+      <div class="design-1"></div>
+      <div class="design-1"></div>
+      <div class="design-1"></div>
+      <div class="design-1"></div>
+
+      <div class="design-2"></div>
+      <div class="design-2"></div>
+      <div class="design-2"></div>
+      <div class="design-2"></div>
+      <div class="design-2"></div>
+      <div class="design-2"></div>
+      <div class="design-2"></div>
+      <div class="design-2"></div>
+      <div class="design-2"></div>
+      <div class="design-2"></div>
+      <div class="design-2"></div>
+      <div class="design-2"></div>
+    </div>
+    <div class="root-1">
+      <div class="wrapper-div">
+        <h1 class="common-class title-1">
+          আপনার <span class="different-text-1"> ভালোবাসার রাতটা </span> একটু
+          আলাদা হোক
+        </h1>
+        <h2 class="common-class title-2">
+          যখন শুধু <span class="different-text-1"> দুইজন </span>আর আকাশের
+          <span class="different-text-1"> তারারা </span>একসাথে।
+        </h2>
+
+        <div class="image-container">
+          <img
+            src="https://alishop.naturalcure.site/wp-content/uploads/2025/05/bamboo-lamp-3.jpg"
+            alt=""
+          />
+        </div>
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn">
+            <img
+              src="https://builder.storex.com.bd/images/builder/allergy/finger-of-a-hand-pointing-to-right-direction-lqm9tkxe.webp"
+              alt="Order Now"
+            />
+            অর্ডার করুন এখনই
+          </a>
+        </div>
+        <h2 class="common-class title-2">
+          প্রেমের এই <span class="different-text-1"> মুহূর্তকে </span> আরও বিশেষ
+          করে তুলুন,
+          <span class="different-text-1"> স্টার প্রজেক্টর লাইট </span>এর সাথে।
+          রাতের আকাশের জাদু আপনার ঘরেই!
+        </h2>
+        <h2 class="common-class title-2" style="font-size: 35px">
+          যতটা সুন্দর <span class="different-text-1"> আপনার সম্পর্ক </span> ,
+          ততটাই সুন্দর হতে পারে রাতের আকাশ। একসাথে কাটানো প্রতিটি মুহূর্ত হবে
+          অসীম সুন্দর, ঠিক যেন
+          <span class="different-text-1"> এক তারাময় রাত </span> ।
+        </h2>
+        <div class="image-container">
+          <img
+            src="https://alishop.naturalcure.site/wp-content/uploads/2025/05/bamboo-lamp-3.jpg"
+            alt=""
+          />
+        </div>
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn">
+            <img
+              src="https://builder.storex.com.bd/images/builder/allergy/finger-of-a-hand-pointing-to-right-direction-lqm9tkxe.webp"
+              alt="Order Now"
+            />
+            অর্ডার করুন এখনই
+          </a>
+        </div>
+        <h2 class="common-class title-2">
+          আপনার ভালোবাসার মানুষকে
+          <span class="different-text-1">উপহার দিন </span> এক অদ্ভুত সুন্দর
+          অভিজ্ঞতা - যেখানে
+          <span class="different-text-1"> শুধু আপনি, তিনি এবং রাতের আকাশ </span>
+          !
+        </h2>
+
+        <div class="image-container">
+          <img
+            src="https://alishop.naturalcure.site/wp-content/uploads/2025/05/bamboo-lamp-3.jpg"
+            alt=""
+          />
+        </div>
+        <h2 class="common-class title-2">
+          প্রতিটি রাতে হাজার হাজার
+          <span class="different-text-1"> তারকার ভালোবাসা আর সৌন্দর্যের</span>
+          মধ্যে হারিয়ে যান।
+        </h2>
+
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn">
+            <img
+              src="https://builder.storex.com.bd/images/builder/allergy/finger-of-a-hand-pointing-to-right-direction-lqm9tkxe.webp"
+              alt="Order Now"
+            />
+            অর্ডার করুন এখনই
+          </a>
+        </div>
+
+        <h2 class="common-class title-2">কিছু গুরুত্বপূর্ণ ফিচার সমূহ</h2>
+
+        <section style="width: 100%">
+          <ul class="feature-list">
+            <li style="font-weight: bold">
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                style="width: 30px; margin-right: 20px"
+                alt=""
+              />
+              <span>
+                <strong class="different-text-1">
+                  360° রোটেশন ও মাল্টি-কালার মোড
+                </strong>
+                - এতে থাকছে 360° রোটেশন ও মাল্টি-কালার মোড, যা দিয়ে লাইটের রং
+                পরিবর্তন করুন আপনার মুড অনুযায়ী।
+              </span>
+            </li>
+            <li style="font-weight: bold">
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                style="width: 30px; margin-right: 20px"
+                alt=""
+              />
+              <span>
+                <strong class="different-text-1">
+                  মিউজিক সিনক্রোনাইজেশন
+                </strong>
+                - ব্লুটুথ স্পিকার থাকার কারণে আপনার পছন্দমত যে কোন অডিও আপনি
+                শুনতে পারেন।
+              </span>
+            </li>
+            <li style="font-weight: bold">
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                style="width: 30px; margin-right: 20px"
+                alt=""
+              />
+              <span>
+                <strong class="different-text-1">
+                  রিমোট কন্ট্রোল ও টাইমার
+                </strong>
+                - রিমোট কন্ট্রোল থাকার কারণে আপনি ইচ্ছামত যে কোন জায়গা থেকেই
+                লাইটটি চালনা করতে পারবেন। তাছাড়া আরজিবি সিঙ্গেল কালার মোডও আপনি
+                ইউজ করতে পারবেন।
+              </span>
+            </li>
+            <li style="font-weight: bold">
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                style="width: 30px; margin-right: 20px"
+                alt=""
+              />
+              <span>
+                <strong class="different-text-1"> সেরা গিফট </strong>
+                - শিশু, টিনএজার, এমনকি বড়দের জন্যও পারফেক্ট উপহার!
+              </span>
+            </li>
+          </ul>
+        </section>
+
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn">
+            <img
+              src="https://builder.storex.com.bd/images/builder/allergy/finger-of-a-hand-pointing-to-right-direction-lqm9tkxe.webp"
+              alt="Order Now"
+            />
+            অর্ডার করুন এখনই
+          </a>
+        </div>
+        <h2 class="common-class title-2 last-text">
+          তো আর দেরি কেন আমাদের
+          <span class="different-text-1"> স্টক শেষ হওয়ার </span> আগেই আপনার
+          লাইট টি আজই সংগ্রহ করুন। সংগ্রহ করতে
+          <span class="different-text-1">অর্ডার নাও </span> বাটনে ক্লিক করে
+          আমাদের ওয়েবসাইট থেকে অর্ডার করুন অথবা স্ক্রিনে দেওয়া মোবাইল নাম্বারে
+          ফোন করে অর্ডার কনফার্ম করুন
+        </h2>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Project-8</title>
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap");
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Hind Siliguri", sans-serif;
+      font-weight: bold;
+      background-color: #2b6077;
+    }
+
+    .root-div {
+      display: flex;
+      justify-content: center;
+    }
+    .parent-div {
+      margin-top: 50px;
+      width: 100%;
+      max-width: 1300px;
+      text-align: center;
+    }
+
+    .text-1 {
+      color: white;
+      line-height: 90px;
+      font-size: 70px;
+    }
+
+    @media (max-width: 620px) {
+      .text-1 {
+        font-size: 50px;
+        padding: 0 25px;
+        line-height: 65px;
+      }
+    }
+
+    .image-container {
+      margin: 25px 0;
+      margin-bottom: 10px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    .image-container img {
+      width: 100%;
+      max-width: 500px;
+      height: 500px;
+      object-fit: cover;
+      display: block;
+      border-radius: 25px;
+      border: 3px solid#ffdf02;
+    }
+    .order-container {
+      display: flex;
+      justify-content: center;
+      padding: 20px 0;
+      margin: 0;
+    }
+    .order-btn {
+      background-color: #ff6b6b;
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      padding: 12px 20px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: clamp(16px, 4vw, 18px);
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+    .order-btn img {
+      width: 20px;
+      margin-right: 10px;
+    }
+    .order-btn:hover {
+      background-color: #ff5252;
+      animation: hover-animation-pulse 0.3s linear infinite alternate;
+    }
+
+    @keyframes hover-animation-pulse {
+      100% {
+        transform: scale(1.1);
+      }
+    }
+
+    .section-2 {
+      padding: 0px 25px;
+    }
+
+    .section-2-p-1 {
+      color: #7efef0;
+      font-size: 50px;
+      line-height: 65px;
+    }
+
+    .section-2-p-2 {
+      margin-top: 50px;
+      line-height: 55px;
+      font-size: 40px;
+      color: #ffff01;
+    }
+
+    @media (max-width: 620px) {
+      .section-2 {
+        padding: 0px 25px;
+      }
+      .section-2-p-1 {
+        color: #7efef0;
+        font-size: 35px;
+        line-height: 50px;
+      }
+
+      .section-2-p-2 {
+        margin-top: 30px;
+        line-height: 45px;
+        font-size: 30px;
+        color: #ffff01;
+      }
+    }
+
+    /* feature section */
+
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      text-align: left;
+    }
+
+    .feature-list li {
+      color: white;
+      font-size: 30px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px dashed #ccc;
+      padding-bottom: 10px;
+    }
+    .feature-list li:last-child {
+      border-bottom: none;
+    }
+
+    @media (max-width: 620px) {
+      .feature-list {
+        padding: 25px;
+      }
+
+      .feature-list li {
+        font-size: 22px;
+        font-weight: normal;
+      }
+      .image-container img {
+        max-width: 450px;
+        max-height: 450px;
+      }
+    }
+
+
+
+    /* feature section ends  */
+  </style>
+  <body>
+    <div class="root-div">
+      <div class="parent-div">
+        <h1 class="text-1">
+          প্রকৃতির সুগন্ধে ঘর ভরিয়ে দিন চারকোল অ্যারোমাথেরাপি মেশিনের সাথে!
+        </h1>
+        <div class="section-2">
+          <p class="section-2-p-1" style="color: #ffff01; margin-top: 30px">
+            স্বাস্থ্যকর বাতাস, আরামদায়ক পরিবেশ - এখন আপনার ঘরে স্ট্রেস-ফ্রি
+            জীবনের জন্য পারফেক্ট সমাধান
+          </p>
+        </div>
+        <div class="image-container">
+          <img
+            src="https://alishop.naturalcure.site/wp-content/uploads/2025/05/charocal-aromatherapy-machine.jpg"
+            alt=""
+          />
+        </div>
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn">
+            <img
+              src="https://builder.storex.com.bd/images/builder/allergy/finger-of-a-hand-pointing-to-right-direction-lqm9tkxe.webp"
+              alt="Order Now"
+            />
+            এখনই কিনুন
+          </a>
+        </div>
+        <div class="section-2">
+          <p class="section-2-p-2" style="color: #ffa502">
+            এই প্রিমিয়াম কোয়ালিটির চারকোল অ্যারোমাথেরাপি মেশিনটি আপনার ব্যক্তিগত
+            স্পেসকে রূপান্তর করবে এক সুগন্ধিময় স্বর্গে। মডেল V21b মিনি আপনার ঘর,
+            অফিস বা যেকোনো জায়গায় প্রাকৃতিক সুগন্ধ ছড়িয়ে দেবে।
+          </p>
+        </div>
+
+        <section class="features-section">
+          <h2
+            class="section-2-p-1"
+            style="color: #10e930; margin: 30px 0; font-size: 40px"
+          >
+            ফিচারস:
+          </h2>
+          <ul class="feature-list">
+            <li style="font-weight: 400">
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                style="width: 30px; margin-right: 20px"
+                alt=""
+              />
+              <span>
+                <strong style="color: #2fe1c3; font-weight: bold">
+                  ওয়ার্ম অ্যাটমোস্ফিয়ার লাইট:</strong
+                >
+                মৃদু আলোয় তৈরি করুন রোমান্টিক বা রিলাক্সিং মুড
+              </span>
+            </li>
+            <li style="font-weight: 400">
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                style="width: 30px; margin-right: 20px"
+                alt=""
+              />
+              <span>
+                <strong style="color: #2fe1c3; font-weight: bold">
+                  ইন্টেলিজেন্ট টাইমিং:</strong
+                >
+                সেট করুন ১-৩ ঘন্টার টাইমার, চিন্তামুক্ত অপারেশন
+              </span>
+            </li>
+            <li style="font-weight: 400">
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                style="width: 30px; margin-right: 20px"
+                alt=""
+              />
+              <span>
+                <strong style="color: #2fe1c3; font-weight: bold">
+                  স্মুথ অপারেশন:</strong
+                >
+                নিঃশব্দে কাজ করে, ঘুমে কোনো ব্যাঘাত ঘটায় না
+              </span>
+            </li>
+            <li style="font-weight: 400">
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                style="width: 30px; margin-right: 20px"
+                alt=""
+              />
+              <span>
+                <strong style="color: #2fe1c3; font-weight: bold">
+                  ওয়াটার এটমাইজেশন:</strong
+                >
+                ১৮০এমএল জলধারণ ক্ষমতা, দীর্ঘ সময় ধরে সুগন্ধ ছড়ায়
+              </span>
+            </li>
+            <li style="font-weight: 400">
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                style="width: 30px; margin-right: 20px"
+                alt=""
+              />
+              <span>
+                <strong style="color: #2fe1c3; font-weight: bold">
+                  এনার্জি এফিশিয়েন্ট:</strong
+                >
+                মাত্র ১০W পাওয়ার ব্যবহার, বিদ্যুৎ বিলের চিন্তা নেই
+              </span>
+            </li>
+          </ul>
+        </section>
+
+        <div class="image-container">
+          <img
+            src="https://alishop.naturalcure.site/wp-content/uploads/2025/05/charocal-aromatherapy-machine-2.jpg"
+            alt=""
+          />
+        </div>
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn">
+            <img
+              src="https://builder.storex.com.bd/images/builder/allergy/finger-of-a-hand-pointing-to-right-direction-lqm9tkxe.webp"
+              alt="Order Now"
+            />
+            এখনই কিনুন
+          </a>
+        </div>
+        <!-- feature section -->
+
+        <section class="features-section">
+          <h2
+            class="section-2-p-1"
+            style="color: #10e930; margin: 30px 0; font-size: 40px"
+          >
+            টেকনিক্যাল স্পেসিফিকেশন:
+          </h2>
+          <ul class="feature-list">
+            <li style="font-weight: 400">
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                style="width: 30px; margin-right: 20px"
+                alt=""
+              />
+              <span>
+                <strong style="color: #2fe1c3; font-weight: bold">
+                  মডেল:
+                </strong>
+                V21b মিনি
+              </span>
+            </li>
+            <li style="font-weight: 400">
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                style="width: 30px; margin-right: 20px"
+                alt=""
+              />
+              <span>
+                <strong style="color: #2fe1c3; font-weight: bold"> রঙ: </strong>
+                সাদা + কালো কভার
+              </span>
+            </li>
+            <li style="font-weight: 400">
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                style="width: 30px; margin-right: 20px"
+                alt=""
+              />
+              <span>
+                <strong style="color: #2fe1c3; font-weight: bold">
+                  আকার:
+                </strong>
+                ১১৫x১১৫x১২৩মিমি
+              </span>
+            </li>
+            <li style="font-weight: 400">
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                style="width: 30px; margin-right: 20px"
+                alt=""
+              />
+              <span>
+                <strong style="color: #2fe1c3; font-weight: bold">
+                  জলের ট্যাঙ্ক ক্যাপাসিটি:
+                </strong>
+                ১৮০এমএল
+              </span>
+            </li>
+            <li style="font-weight: 400">
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                style="width: 30px; margin-right: 20px"
+                alt=""
+              />
+              <span>
+                <strong style="color: #2fe1c3; font-weight: bold">
+                  স্ট্যান্ডার্ড:
+                </strong>
+                ৬৮৪৭০৬.১-২০০৫
+              </span>
+            </li>
+            <li style="font-weight: 400">
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                style="width: 30px; margin-right: 20px"
+                alt=""
+              />
+              <span>
+                <strong style="color: #2fe1c3; font-weight: bold">
+                  উৎপাদন:
+                </strong>
+                চায়না
+              </span>
+            </li>
+          </ul>
+        </section>
+
+        <!-- feature section ends -->
+        <div class="image-container">
+          <img
+            src="https://alishop.naturalcure.site/wp-content/uploads/2025/05/charocal-aromatherapy-machine-6.jpg"
+            alt=""
+          />
+        </div>
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn">
+            <img
+              src="https://builder.storex.com.bd/images/builder/allergy/finger-of-a-hand-pointing-to-right-direction-lqm9tkxe.webp"
+              alt="Order Now"
+            />
+            এখনই কিনুন
+          </a>
+        </div>
+
+        <section class="features-section">
+          <h2
+            class="section-2-p-1"
+            style="color: #10e930; margin: 30px 0; font-size: 40px"
+          >
+            কেন কিনবেন?
+          </h2>
+          <ul class="feature-list">
+            <li style="font-weight: 400">
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                style="width: 30px; margin-right: 20px"
+                alt=""
+              />
+              <span>অ্যারোমাথেরাপির মাধ্যমে মানসিক চাপ কমায়</span>
+            </li>
+            <li style="font-weight: 400">
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                style="width: 30px; margin-right: 20px"
+                alt=""
+              />
+              <span>ঘরের বাতাস পরিশুদ্ধ করে</span>
+            </li>
+            <li style="font-weight: 400">
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                style="width: 30px; margin-right: 20px"
+                alt=""
+              />
+              <span>নেগেটিভ এনার্জি দূর করে</span>
+            </li>
+            <li style="font-weight: 400">
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                style="width: 30px; margin-right: 20px"
+                alt=""
+              />
+              <span>ঘুমের গুণগত মান উন্নত করে</span>
+            </li>
+            <li style="font-weight: 400">
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                style="width: 30px; margin-right: 20px"
+                alt=""
+              />
+              <span>স্টাইলিশ ডিজাইন যে কোনো ইন্টেরিয়রের সাথে মানানসই</span>
+            </li>
+          </ul>
+        </section>
+
+        <div class="image-container">
+          <img
+            src="https://alishop.naturalcure.site/wp-content/uploads/2025/05/charocal-aromatherapy-machine-5.jpg"
+            alt=""
+          />
+        </div>
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn">
+            <img
+              src="https://builder.storex.com.bd/images/builder/allergy/finger-of-a-hand-pointing-to-right-direction-lqm9tkxe.webp"
+              alt="Order Now"
+            />
+            এখনই কিনুন
+          </a>
+        </div>
+
+        <div class="section-2">
+          <p class="section-2-p-2" style="color: #10e930; margin: 30px">
+            প্রকৃতির সুগন্ধ, সুস্থ জীবনের প্রথম পদক্ষেপ!
+          </p>
+          <p class="section-2-p-2" style="color: #ffa502; margin: 30px">
+            আজই অর্ডার করুন এবং আপনার ঘরকে সুগন্ধিতে ভরিয়ে তুলুন!
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

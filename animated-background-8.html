@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+
+        body {
+            background-color: black;
+        }
+      .waves {
+        width: 300%;
+        height: 200px;
+      }
+
+      .parallax path {
+        animation: waveMove 10s linear infinite;
+      }
+
+      .parallax path:nth-child(2) {
+        animation-delay: -2s;
+      }
+
+      .parallax path:nth-child(3) {
+        animation-delay: -4s;
+      }
+
+      .parallax path:nth-child(4) {
+        animation-delay: -6s;
+      }
+
+      @keyframes waveMove {
+        0% {
+          transform: translateX(0) translateY(var(--y));
+        }
+        100% {
+          transform: translateX(-160px) translateY(var(--y));
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <svg
+        class="waves"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 24 150 28"
+        preserveAspectRatio="none"
+        shape-rendering="auto"
+      >
+        <g class="parallax">
+          <path
+            style="--y: 0px"
+            d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+            fill="rgba(255,255,255,0.7)"
+          />
+          <path
+            style="--y: 3px"
+            d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+            fill="rgba(255,255,255,0.5)"
+          />
+          <path
+            style="--y: 5px"
+            d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+            fill="rgba(255,255,255,0.3)"
+          />
+          <path
+            style="--y: 7px"
+            d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+            fill="#fff"
+          />
+        </g>
+      </svg>
+    </div>
+  </body>
+</html>

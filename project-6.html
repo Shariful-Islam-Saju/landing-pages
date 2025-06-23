@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Project-6</title>
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap");
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Hind Siliguri", sans-serif;
+      font-weight: bold;
+      background-color: #335774;
+    }
+
+    .root-div {
+      display: flex;
+      justify-content: center;
+    }
+    .parent-div {
+      margin-top: 50px;
+      width: 100%;
+      max-width: 1300px;
+      text-align: center;
+    }
+
+    .text-1 {
+      color: white;
+      line-height: 90px;
+      font-size: 70px;
+    }
+
+    @media (max-width: 620px) {
+      .text-1 {
+        font-size: 50px;
+        padding: 0 25px;
+        line-height: 65px;
+      }
+    }
+
+    .image-container {
+      margin: 25px 0;
+      margin-bottom: 10px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    .image-container img {
+      width: 100%;
+      max-width: 450px;
+      height: 450px;
+      object-fit: cover;
+      display: block;
+      border-radius: 25px;
+      border: 3px solid#ffa502;
+    }
+    .order-container {
+      display: flex;
+      justify-content: center;
+      padding: 20px 0;
+      margin: 0;
+    }
+    .order-btn {
+      background-color: #ff6b6b;
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      padding: 12px 20px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: clamp(16px, 4vw, 18px);
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+    .order-btn img {
+      width: 20px;
+      margin-right: 10px;
+    }
+    .order-btn:hover {
+      background-color: #ff5252;
+      animation: hover-animation-pulse 0.3s linear infinite alternate;
+    }
+
+    @keyframes hover-animation-pulse {
+      100% {
+        transform: scale(1.1);
+      }
+    }
+
+    .section-2 {
+      padding: 0px 25px;
+    }
+
+    .section-2-p-1 {
+      color: #7efef0;
+      font-size: 50px;
+      line-height: 65px;
+    }
+
+    .section-2-p-2 {
+      margin-top: 50px;
+      line-height: 55px;
+      font-size: 40px;
+      color: #ffff01;
+    }
+
+    @media (max-width: 620px) {
+      .section-2 {
+        padding: 0px 25px;
+      }
+      .section-2-p-1 {
+        color: #7efef0;
+        font-size: 35px;
+        line-height: 50px;
+      }
+
+      .section-2-p-2 {
+        margin-top: 30px;
+        line-height: 45px;
+        font-size: 30px;
+        color: #ffff01;
+      }
+    }
+
+    /* feature section */
+
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      text-align: left;
+    }
+
+    .feature-list li {
+      color: white;
+      font-size: 30px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px dashed #ccc;
+      padding-bottom: 10px;
+    }
+    .feature-list li:last-child {
+      border-bottom: none;
+    }
+
+    @media (max-width: 620px) {
+      .feature-list {
+        padding: 25px;
+      }
+
+      .feature-list li {
+        font-size: 22px;
+        font-weight: normal;
+      }
+    }
+
+    /* feature section ends  */
+  </style>
+  <body>
+    <div class="root-div">
+      <div class="parent-div">
+        <h1 class="text-1">
+          স্টাইলিশ ও
+          <span style="color: #ffff01"> স্মার্ট টেবিল ল্যাম্প</span> – আপনার
+          রুমকে দিন এক নতুন লুক!
+        </h1>
+        <div class="image-container">
+          <img
+            src="https://alishop.naturalcure.site/wp-content/uploads/2025/05/portable-tower-table-lamp.jpg"
+            alt=""
+          />
+        </div>
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn">
+            <img
+              src="https://builder.storex.com.bd/images/builder/allergy/finger-of-a-hand-pointing-to-right-direction-lqm9tkxe.webp"
+              alt="Order Now"
+            />
+            এখনই কিনুন
+          </a>
+        </div>
+        <div class="section-2">
+          <p class="section-2-p-1">
+            ঘর, রেস্টুরেন্ট, অফিস বা স্টাডি রুম – যেকোনো জায়গায় মানিয়ে যায় এই
+            মডার্ন ডিজাইন ল্যাম্প।
+          </p>
+
+          <p class="section-2-p-2">
+            আপনার ডেস্ক, বেডসাইড বা অফিস টেবিলের জন্য খুঁজছেন স্টাইলিশ আলো? এই
+            ল্যাম্পই হতে পারে আপনার বেস্ট চয়েস।
+          </p>
+        </div>
+        <div class="image-container">
+          <img
+            src="https://alishop.naturalcure.site/wp-content/uploads/2025/05/portable-tower-table-lamp-9.jpg"
+            alt=""
+          />
+        </div>
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn">
+            <img
+              src="https://builder.storex.com.bd/images/builder/allergy/finger-of-a-hand-pointing-to-right-direction-lqm9tkxe.webp"
+              alt="Order Now"
+            />
+            এখনই কিনুন
+          </a>
+        </div>
+        <!-- feature section -->
+        <section class="features-section">
+          <h2 class="section-2-p-1" style="color: #10e930; margin: 20px 0">
+            প্রোডাক্টের বৈশিষ্ট্য:
+          </h2>
+          <ul class="feature-list">
+            <li>
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                style="width: 30px; margin-right: 20px"
+                alt=""
+              />
+              টাচ সুইচ সহ স্টেপলেস ডিমিং
+            </li>
+            <li>
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                style="width: 30px; margin-right: 20px"
+                alt=""
+              />5V ইউএসবি ইনপুট
+            </li>
+            <li>
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                style="width: 30px; margin-right: 20px"
+                alt=""
+              />
+              আধুনিক, স্লিম ও প্রিমিয়াম ডিজাইন
+            </li>
+            <li>
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                style="width: 30px; margin-right: 20px"
+                alt=""
+              />৪ ঘণ্টা চার্জে চলে দীর্ঘক্ষণ
+            </li>
+            <li>
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                style="width: 30px; margin-right: 20px"
+                alt=""
+              />কালার অপশন
+            </li>
+          </ul>
+        </section>
+
+        <!-- feature section ends -->
+        <div class="image-container">
+          <img
+            src="https://alishop.naturalcure.site/wp-content/uploads/2025/05/portable-tower-table-lamp-2.jpg"
+            alt=""
+          />
+        </div>
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn">
+            <img
+              src="https://builder.storex.com.bd/images/builder/allergy/finger-of-a-hand-pointing-to-right-direction-lqm9tkxe.webp"
+              alt="Order Now"
+            />
+            এখনই কিনুন
+          </a>
+        </div>
+
+        <section class="features-section">
+          <h2 class="section-2-p-1" style="color: #10e930; margin: 20px 0">
+            প্রোডাক্ট কেন কিনবেন:
+          </h2>
+          <ul class="feature-list">
+            <li>
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                style="width: 30px; margin-right: 20px"
+                alt=""
+              />
+              <span>
+                <strong style="color: #2fe1c3"
+                  >মিনিমাল ও এলিগেন্ট ডিজাইন:</strong
+                >
+                যে কোনো জায়গায় মানিয়ে যায়
+              </span>
+            </li>
+            <li>
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                style="width: 30px; margin-right: 20px"
+                alt=""
+              />
+              <span>
+                <strong style="color: #2fe1c3"> চার্জেবল ইউএসবি:</strong>
+                কোনো ব্যাটারির ঝামেলা নেই
+              </span>
+            </li>
+            <li>
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                style="width: 30px; margin-right: 20px"
+                alt=""
+              />
+              <span>
+                <strong style="color: #2fe1c3"> স্টেপলেস ডিমিং:</strong>
+                আলো নিয়ন্ত্রণ আপনার ইচ্ছামতো
+              </span>
+            </li>
+            <li>
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                style="width: 30px; margin-right: 20px"
+                alt=""
+              />
+              <span>
+                <strong style="color: #2fe1c3"> লাইটওয়েট ও পোর্টেবল:</strong>
+                সহজে বহনযোগ্য
+              </span>
+            </li>
+            <li>
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                style="width: 30px; margin-right: 20px"
+                alt=""
+              />
+              <span>
+                <strong style="color: #2fe1c3"> উপহারের জন্য সেরা:</strong>
+                উপহারের জন্যও উপযুক্ত একটি ইউনিক প্রোডাক্ট
+              </span>
+            </li>
+          </ul>
+        </section>
+
+        <div class="image-container">
+          <img
+            src="https://alishop.naturalcure.site/wp-content/uploads/2025/05/portable-tower-table-lamp-8.jpg"
+            alt=""
+          />
+        </div>
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn">
+            <img
+              src="https://builder.storex.com.bd/images/builder/allergy/finger-of-a-hand-pointing-to-right-direction-lqm9tkxe.webp"
+              alt="Order Now"
+            />
+            এখনই কিনুন
+          </a>
+        </div>
+        <div class="section-2">
+          <p class="section-2-p-1">
+            এই টেবিল ল্যাম্পটি শুধুই আলো নয় – এটি আপনার রুমের শান্তি, স্টাইল আর
+            আপনার ব্যক্তিত্বের প্রতিফলন।
+          </p>
+
+          <p class="section-2-p-2" style="font-size: 27px">
+            স্টক সীমিত – দেরি না করে এখনই অর্ডার করুন!
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project-20</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Hind Siliguri", sans-serif;
+      }
+      body {
+        font-family: "Hind Siliguri", sans-serif;
+        font-weight: bold;
+      }
+      .container-1 {
+        margin: 10px;
+        overflow-x: hidden;
+        padding: 10px;
+      }
+      .h1-title-1 {
+        background-color: #00721d;
+        padding: 40px 20px;
+        color: white;
+        font-size: 70px;
+        text-align: center;
+        border-radius: 20px;
+        font-weight: bolder;
+        margin-top: 5px;
+        margin-bottom: 20px;
+      }
+      .colored {
+        background-color: #d3fae3;
+        border-radius: 20px;
+        padding: 20px;
+      }
+      .title-h2-1 {
+        font-size: 50px;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .list {
+        display: flex;
+        justify-content: center;
+      }
+      .list div p,
+      .benefits-section-3 div:nth-child(2) p {
+        margin: 10px 0;
+        margin-left: 40px;
+        font-size: 25px;
+        font-weight: 600;
+      }
+
+      /* Image Styling */
+      .image-container {
+        display: flex;
+        justify-content: center;
+        padding: 0 15px;
+        margin-bottom: 10px;
+        margin-top: 25px;
+      }
+      .image-container img {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        border: 4px solid#cbb50c;
+        border-radius: 35px;
+        object-fit: contain;
+      }
+
+      /* Section 3 */
+
+      .h3-title-1 {
+        font-size: 45px;
+        text-align: center;
+
+      }
+      .section-3-p-1 {
+        font-size: 40px;
+        font-weight: 500;
+        text-align: center;
+      }
+      .benefits-section-3 {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .benefits-section-3-p-1 {
+        font-size: 40px;
+        text-align: center;
+      }
+
+      .order-container {
+        display: flex;
+        justify-content: center;
+        padding: 20px 0;
+      }
+      .order-btn {
+        background-color: #0000e9;
+        color: white;
+        display: inline-flex;
+        align-items: center;
+        padding: 12px 20px;
+        text-decoration: none;
+        border-radius: 8px;
+        font-size: 24px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+      }
+      .order-btn:hover {
+        background-color: #0000b5;
+        animation: hover-animation-pulse 0.3s linear infinite alternate;
+      }
+
+      @keyframes hover-animation-pulse {
+        100% {
+          transform: scale(1.1);
+        }
+      }
+
+      /* Responsive design */
+      @media (max-width: 1024px) {
+        .h1-title-1 {
+          font-size: 50px;
+          padding: 30px 15px;
+        }
+        .title-h2-1 {
+          font-size: 40px;
+        }
+        .section-3-p-1,
+        .benefits-section-3-p-1 {
+          font-size: 30px;
+        }
+        .h3-title-1 {
+          font-size: 35px;
+        }
+        .list div p,
+        .benefits-section-3 div:nth-child(2) p {
+          font-size: 20px;
+          margin-left: 20px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .h1-title-1 {
+          font-size: 40px;
+          padding: 25px 10px;
+        }
+        .title-h2-1 {
+          font-size: 32px;
+        }
+        .section-3-p-1,
+        .benefits-section-3-p-1 {
+          font-size: 24px;
+        }
+        .h3-title-1 {
+          font-size: 28px;
+        }
+        .list {
+          flex-direction: column;
+          align-items: center;
+        }
+        .list div p,
+        .benefits-section-3 div:nth-child(2) p {
+          font-size: 18px;
+          margin-left: 10px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .h1-title-1 {
+          font-size: 30px;
+          padding: 20px 10px;
+        }
+        .title-h2-1 {
+          font-size: 24px;
+        }
+        .section-3-p-1,
+        .benefits-section-3-p-1 {
+          font-size: 20px;
+        }
+        .h3-title-1 {
+          font-size: 22px;
+        }
+        .list div p,
+        .benefits-section-3 div:nth-child(2) p {
+          font-size: 16px;
+          margin-left: 5px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-1">
+      <h1 class="h1-title-1">ডায়বেটিস হওয়ার পরে যৌনশক্তি আরও কমে গিয়েছে?</h1>
+
+      <div class="colored">
+        <h2 class="title-h2-1">
+          আপনি যদি ডায়াবেটিস থেকে বের হয়ে আসতে চান, তাহলে আপনাকে ২টি কাজ করতে
+          হবে।
+        </h2>
+        <div class="list">
+          <div>
+            <p>১.কোষ পরিষ্কার করতে হবে।</p>
+            <p>২.রক্তের চিনি কে কোষের ভিতরে নিতে হবে।</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="image-container">
+        <img
+          src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/naturalcure_db2/images/builder/6847f4ddf22f822fcc3a5ca2/1749549968831_WhatsApp-Image-2025-06-10-at-15.46.15-18432913.jpg"
+          alt="৩০ ওয়াট LED ফ্ল্যাশলাইটের ছবি"
+        />
+      </div>
+      <div class="order-container">
+        <a href="#checkout-now" class="order-btn"> অর্ডার করতে চাই </a>
+      </div>
+
+      <!-- start section 3 -->
+
+      <h3 class="h3-title-1">সারা জীবন ওষুধ খাওয়াকে না বলুন</h3>
+      <p class="section-3-p-1">
+        যারা ওয়ান টাইম মেডিসিন খেয়ে কিডনী ও ধ্বজভঙ্গ রোগে আক্রান্ত হতে চান না,
+        তাদের জন্য এটা বেস্ট সলুশন
+      </p>
+
+      <div class="image-container">
+        <img
+          src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/naturalcure_db2/images/builder/6847f4ddf22f822fcc3a5ca2/1749549962139_WhatsApp-Image-2025-06-10-at-15.46.15-29183f3b.jpg"
+          alt="৩০ ওয়াট LED ফ্ল্যাশলাইটের ছবি"
+        />
+      </div>
+      <div class="order-container">
+        <a href="#checkout-now" class="order-btn"> অর্ডার করতে চাই </a>
+      </div>
+      <div class="section-3">
+        <div class="benefits-section-3 colored">
+          <div>
+            <p class="benefits-section-3-p-1" style="padding-bottom: 25px">
+              এই কম্বো তে যেসব উপকার পাবেনঃ
+            </p>
+            <div>
+              <p
+                style="display: flex; align-items: center; margin-bottom: 25px"
+              >
+                <img
+                  src="https://cdn-icons-png.flaticon.com/128/10629/10629607.png"
+                  style="width: 35px; margin-right: 15px"
+                  alt=""
+                />
+                পেনক্রিয়াসের ইনসুলিন প্রডাকশন বাড়বে
+              </p>
+              <p
+                style="display: flex; align-items: center; margin-bottom: 25px"
+              >
+                <img
+                  src="https://cdn-icons-png.flaticon.com/128/10629/10629607.png"
+                  style="width: 35px; margin-right: 15px"
+                  alt=""
+                />
+                টেস্টস্টেরন হরমোন এর ঘাটতি পূরন হবে
+              </p>
+              <p
+                style="display: flex; align-items: center; margin-bottom: 25px"
+              >
+                <img
+                  src="https://cdn-icons-png.flaticon.com/128/10629/10629607.png"
+                  style="width: 35px; margin-right: 15px"
+                  alt=""
+                />
+                ডায়বেটিস সম্পুর্ন নিয়ন্ত্রনে থাকবে
+              </p>
+              <p
+                style="display: flex; align-items: center; margin-bottom: 25px"
+              >
+                <img
+                  src="https://cdn-icons-png.flaticon.com/128/10629/10629607.png"
+                  style="width: 35px; margin-right: 15px"
+                  alt=""
+                />
+                শারিরীক শক্তি অনেকগুন বেড়ে যাবে
+              </p>
+              <p
+                style="display: flex; align-items: center; margin-bottom: 25px"
+              >
+                <img
+                  src="https://cdn-icons-png.flaticon.com/128/10629/10629607.png"
+                  style="width: 35px; margin-right: 15px"
+                  alt=""
+                />
+                ইন্সট্যান্ট পাওয়ার পাবেন।
+              </p>
+              <p
+                style="display: flex; align-items: center; margin-bottom: 25px"
+              >
+                <img
+                  src="https://cdn-icons-png.flaticon.com/128/10629/10629607.png"
+                  style="width: 35px; margin-right: 15px"
+                  alt=""
+                />
+                পার্শ্বপ্রতিক্রিয়া নেই।
+              </p>
+              <p
+                style="display: flex; align-items: center; margin-bottom: 25px"
+              >
+                <img
+                  src="https://cdn-icons-png.flaticon.com/128/10629/10629607.png"
+                  style="width: 35px; margin-right: 15px"
+                  alt=""
+                />
+                কাজ করবে একশো একশো ইনশা'আল্লাহ
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="image-container">
+        <img
+          src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/naturalcure_db2/images/builder/6847f4ddf22f822fcc3a5ca2/1749549988124_WhatsApp-Image-2025-06-10-at-15.46.13-0b89fa5a.jpg"
+          alt="৩০ ওয়াট LED ফ্ল্যাশলাইটের ছবি"
+        />
+      </div>
+      <div class="order-container">
+        <a href="#checkout-now" class="order-btn"> অর্ডার করতে চাই </a>
+      </div>
+    </div>
+  </body>
+</html>

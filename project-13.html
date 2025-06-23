@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project-13</title>
+    <style>@import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Hind Siliguri", sans-serif;
+        font-weight: bold;
+        line-height: 1.5;
+        padding: 20px;
+      }
+      .root-1 {
+        display: flex;
+        justify-content: center;
+      }
+      .wrapper-div {
+        width: 100%;
+        max-width: 1300px;
+      }
+      .common-class {
+        border-radius: 20px;
+        background-color: #e0f7fa;
+        padding: 25px 0px;
+        text-align: center;
+        color: black;
+      }
+      
+      .h1-title-1 {
+        font-size: 45px;
+        margin-top: 20px;
+        text-align: center;
+        border-radius: 20px;
+        background-color: #008685;
+        padding: 25px 0px;
+        text-align: center;
+        color: white;
+      }
+      
+      .desc {
+        font-size: 30px;
+        text-align: center;
+        margin: 20px 0;
+        padding: 20px;
+      }
+      .desc2 {
+        text-align: center;
+        font-size: 26px;
+      }
+      
+      .image-container {
+        margin: 25px 0;
+        margin-bottom: 10px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+      .image-container img {
+        width: 100%;
+        max-width: 750px;
+        aspect-ratio: 1 / 1; /* Makes height equal to width */
+        object-fit: cover;
+        display: block;
+        border-radius: 25px;
+        border: 2px solid #008685; /* Added space between 'solid' and color */
+      }
+      .order-container {
+        display: flex;
+        justify-content: center;
+        padding: 20px 0;
+        margin: 0;
+        margin-top: 25px;
+      }
+      .order-btn {
+        background-color: #cfe7d3;
+        color: black;
+        display: inline-flex;
+        align-items: center;
+        padding: 12px 20px;
+        text-decoration: none;
+        border-radius: 15px;
+        font-size: clamp(25px, 4vw, 30px);
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+        border: #008685 solid 2px;
+      }
+      
+      .order-btn img {
+        width: 30px;
+        margin-right: 10px;
+      }
+      .order-btn:hover {
+        background-color: #a2d2aa;
+        animation: hover-animation-pulse 0.3s linear infinite alternate;
+      }
+      
+      @keyframes hover-animation-pulse {
+        100% {
+          transform: scale(1.1);
+        }
+      }
+      
+      
+      
+      /* new section starts */
+      
+      .two-img-container {
+        display: grid;
+        grid-template-columns: 1fr  1fr;
+        gap: 10px;
+      }
+      
+      .two-img-container div {
+        width: 100%;
+        border-radius: 15px;
+        border: #008685 solid 2px;
+        padding: 10px;
+      }
+      
+      .two-img-container div img {
+        border-radius: 15px;
+        width: 100%;
+        aspect-ratio: 1/1;
+      }
+      @media (max-width: 520px) {
+        .two-img-container {
+          grid-template-columns: 1fr;
+          
+        }
+        .h1-title-1 {
+          font-size: 35px;
+        }
+        .desc {
+          font-size: 25px;
+        }
+      
+        .desc2 {
+          font-size: 22px;
+        }
+      }
+      </style>
+  </head>
+  <body>
+    <div class="root-1">
+      <div class="wrapper-div">
+        <h1 class="h1-title-1">
+          গ্যাস্ট্রিকের ঔষধ তো বর্তমানে আপনার জীবন সঙ্গীর মতোই তাই না?
+        </h1>
+        <p class="desc">
+          তাছাড়াও মূল যে মহামারী রোগ
+          <span style="color: #fe5331">
+            কোষ্ঠকাঠিন্য, কষাভাব, অতিরিক্ত মাত্রায় গ্যাসের সমস্যা
+          </span>
+          তো আছেই।
+        </p>
+
+        <p class="common-class desc">
+          নিজেকে সুস্থ রাখতে আমাদের এই টক্সিন আউট এবং ফাইবার সিড অবশ্যই কার্যকরী
+          যা ল্যাব টেস্টের মাধ্যমে প্রমাণিত। ১০০% আয়ুর্বেদিক হওয়াতে কোন
+          পার্শ্ব প্রতিক্রিয়া নেই আলহামদুলিল্লাহ।
+        </p>
+
+        <!-- TODO: insert double image section -->
+
+        <div class="two-img-container">
+          <div><img src="img-1.jpg" alt="" /></div>
+          <div><img src="img-2.jpg" alt="" /></div>
+        </div>
+
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/2838/2838838.png"
+              alt="Order Now"
+            />
+            এখনই অর্ডার করুন
+          </a>
+        </div>
+
+        <p class="common-class desc">
+          আমাদের খাদ্য কেনার সক্ষমতা বাড়লেও কমেছে খাদ্যজ্ঞান। সারাদিন রোজা রেখে
+          ইফতার করছি ছোলা ভুনা, পিয়াজু, বেগুনি, চিনির শরবত, জিলিপি সহ আরো কড়া
+          তেলের সব ভাজাপুরা খাবার। যার ফলাফল আপনার হজমতন্ত্রকে নষ্ট করে নিজেকে
+          বড় ধরনের রোগের দিকে ঠেলে দিচ্ছেন। আর হজম ঠিকঠাক মতো না হলে টয়লেটের
+          কষা ভাব এবং অতিরিক্ত গ্যাস্টিক সমস্যা দেখা দিবে। যার ফলে আপনার শরীর
+          কিন্তু ধীরে ধীরে লিভার ডিজিজ, হৃদরোগ ও ডায়াবেটিস কে আমন্ত্রণ
+          জানাচ্ছে।
+        </p>
+
+        <div class="image-container">
+          <img
+            src="https://alishop.naturalcure.site/wp-content/uploads/2025/05/bamboo-lamp-3.jpg"
+            alt=""
+          />
+        </div>
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/2838/2838838.png"
+              alt="Order Now"
+            />
+            এখনই অর্ডার করুন
+          </a>
+        </div>
+
+        <p class="common-class desc">
+          আর ঠিক এইসব কারণেই রোজার ভেতরেই আপনার শরীরকে সম্পূর্ণভাবে পরিশুদ্ধ বা
+          ডিটক্স করতে ১০০% একটি কার্যকরী প্রোডাক্ট হচ্ছে টক্সিন আউট ও ফাইবার সিড
+          মিক্সড। যা আপনার উচ্চ রক্তচাপ নিয়ন্ত্রণ করবে, অতিরিক্ত কষাভাব দূর
+          করবে, টয়লেট ক্লিয়ার হবে, অতিরিক্ত গ্যাসের সমস্যা দূর করবে, খাবারের
+          রুচি ফিরিয়ে দেবে, গ্যাস্ট্রিকের ঔষধ খাওয়া থেকে মুক্তি দেবে।
+        </p>
+        <div class="image-container">
+          <img
+            src="https://alishop.naturalcure.site/wp-content/uploads/2025/05/bamboo-lamp-3.jpg"
+            alt=""
+          />
+        </div>
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/2838/2838838.png"
+              alt="Order Now"
+            />
+            এখনই অর্ডার করুন
+          </a>
+        </div>
+        <p class="common-class desc">
+          রোজা হচ্ছে আল্লাহ তায়ালার পক্ষ থেকে এক অশেষ নেয়ামত। রমজান কি শুধুই
+          আত্মশুদ্ধির মাস? না রমজান শুধু আত্মশুদ্ধির মাস নয়, দৈনিক সুস্থতার
+          জন্যেও এই রমজান। রোজার মাধ্যমে আপনি যেমন নিজেকে পরিশুদ্ধ করছেন, ঠিক
+          তেমনি আপনার শরীর কেউ সুস্থ রাখার এবং পরিশুদ্ধ করার সঠিক সময় হচ্ছে এই
+          রমজান মাস। এক মাস রোজা রাখার ফলে আপনার শরীর সম্পূর্ণরূপে ডিটক্স হয়ে
+          যায়। সেই সাথে শরীরের রোগ প্রতিরোধ ক্ষমতা অনেক গুণ বেড়ে যায়। আবু
+          হুরায়রা (র) থেকে বর্ণিত একটি সহি হাদিসে নবীজি (স) বলেছেন, “রোজা রাখো
+          যাতে তোমরা সুস্থ থাকতে পারো।”
+        </p>
+        <p class="common-class desc">
+          নিজেকে সুস্থ রাখতে আমাদের এই টক্সিন আউট এবং ফাইবার সিড অবশ্যই কার্যকরী
+          যা ল্যাব টেস্টের মাধ্যমে প্রমাণিত। ১০০% আয়ুর্বেদিক হওয়াতে কোন
+          পার্শ্ব প্রতিক্রিয়া নেই আলহামদুলিল্লাহ।
+        </p>
+        <div class="image-container">
+          <img
+            src="https://alishop.naturalcure.site/wp-content/uploads/2025/05/bamboo-lamp-3.jpg"
+            alt=""
+          />
+        </div>
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/2838/2838838.png"
+              alt="Order Now"
+            />
+            এখনই অর্ডার করুন
+          </a>
+        </div>
+        <p class="desc2">
+          আমাদের এই টক্সিন আউট মেডিসিন টি হাতে পেতে চাইলে অর্ডার নাও বাটনে ক্লিক
+          করুন, অথবা স্ক্রীনে দেওয়া নম্বরে কল করুন।
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

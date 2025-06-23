@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project-26</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap");
+
+      body {
+        font-family: "Hind Siliguri", sans-serif;
+        position: relative;
+        min-height: 100vh;
+        background: url("https://images.pexels.com/photos/16724960/pexels-photo-16724960.jpeg?cs=srgb&dl=pexels-cipotesv-16724960.jpg&fm=jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed; /* ⬅️ Makes the image fixed during scroll */
+      }
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(
+          0,
+          0,
+          0,
+          0.6
+        ); /* Adjust 0.4 to control darkness */
+        z-index: -2;
+      }
+
+      .root-1 {
+        display: flex;
+        justify-content: center;
+        font-weight: bold;
+        box-sizing: border-box;
+        color: white; /* Main text color */
+        text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
+          2px 2px 0 black, 0px 0px 2px black;
+      }
+      .wrapper-div {
+        width: 100%;
+        max-width: 1290px;
+        padding: 15px;
+      }
+      .common-class {
+        border-radius: 20px;
+        padding: 15px 10px;
+        margin: 15px 0;
+
+        text-align: center;
+        background-color: rgba(255, 166, 0, 0.281);
+        backdrop-filter: blur(15px); /* Correct syntax */
+        -webkit-backdrop-filter: blur(5px); /* For Safari support */
+      }
+      .title-1 {
+        font-size: 50px;
+        padding: 20px 10px;
+        color: white;
+      }
+
+      .different-text-1 {
+        color: #ffff01;
+      }
+
+      .title-2 {
+        color: white;
+        font-size: 40px;
+        padding: 20px 20px;
+      }
+
+      .image-container {
+        margin: 25px 0;
+        margin-bottom: 10px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+      .image-container img {
+        width: 100%;
+        max-width: 550px;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        display: block;
+        border-radius: 25px;
+        border: 2px solid #f8f32b;
+      }
+      .order-container {
+        display: flex;
+        justify-content: center;
+        padding: 20px 0;
+        margin: 0;
+      }
+      .order-btn {
+        background-color: rgb(209, 137, 3);
+        color: white;
+        display: inline-flex;
+        align-items: center;
+        padding: 12px 20px;
+        text-decoration: none;
+        border-radius: 8px;
+        font-size: 23px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+      }
+      .order-btn img {
+        width: 30px;
+        margin-right: 10px;
+      }
+      .order-btn:hover {
+        background-color: orange;
+        animation: hover-animation-pulse 0.3s linear infinite alternate;
+      }
+
+      @keyframes hover-animation-pulse {
+        100% {
+          transform: scale(1.1);
+        }
+      }
+
+      .feature-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        margin-top: 25px;
+      }
+
+      .feature-list li {
+        color: white;
+        font-size: 30px;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+      }
+      .feature-list li:last-child {
+        border-bottom: none;
+      }
+
+      /* why buy section */
+      .unorder {
+        list-style: none;
+        padding: 0;
+        padding-left: 15px;
+        margin-top: 25px;
+        color: white;
+      }
+
+      .unorder li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .unorder li p {
+        margin: 0;
+        font-size: 30px;
+        font-weight: 500;
+      }
+      .title-3 {
+        font-size: 30px;
+      }
+
+      @media (max-width: 500px) {
+        .title-1 {
+          font-size: 40px;
+        }
+        .title-2 {
+          font-size: 28px;
+        }
+        .title-3 {
+          font-size: 23px;
+        }
+        .feature-list li {
+          font-size: 22px;
+          font-weight: normal;
+        }
+
+        .last-text {
+          font-size: 23px;
+          line-height: 35px;
+        }
+        .unorder li p {
+          font-size: 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="root-1">
+      <div class="wrapper-div">
+        <h1 class="title-1 common-class">
+          জুসারের <span class="different-text-1"> শব্দ </span> এবং তার লাগানোর
+          ঝামেলার কথা <span class="different-text-1"> ভুলে </span> যান
+        </h1>
+        <h2 class="common-class title-2">
+          এই
+          <span class="different-text-1"> প্রিমিয়াম ইন্টেলিজেন্ট জুসার </span>
+          আপনার টেবিলেই এনে দিচ্ছে হোটেল-কোয়ালিটির
+          <span class="different-text-1"> ঠাণ্ডা </span>,
+          <span class="different-text-1"> ফ্রেশ জুস</span>
+        </h2>
+
+        <div class="image-container">
+          <img
+            src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/gadgetbd-store/images/builder/6852473cbed42b6b0fce8825/1750306899523_photo-2025-06-19-10-21-29.jpg"
+            alt=""
+          />
+        </div>
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn">
+            <img
+              src="https://builder.storex.com.bd/images/builder/allergy/finger-of-a-hand-pointing-to-right-direction-lqm9tkxe.webp"
+              alt="Order Now"
+            />
+            অর্ডার করুন এখনই
+          </a>
+        </div>
+        <h2 class="common-class title-2">কেন কিনবেন?</h2>
+        <section>
+          <ul class="unorder" style="list-style: none; padding: 0">
+            <li style="display: flex; align-items: center; margin-bottom: 12px">
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/10629/10629607.png"
+                style="width: 40px; margin-right: 20px"
+                alt="check"
+              />
+              <p>
+                🔌 USB চার্জিং সুবিধা – ঘরে বা বাইরে, যেকোনো জায়গা থেকে চার্জ
+                করে ব্যবহার করুন।
+              </p>
+            </li>
+            <li style="display: flex; align-items: center; margin-bottom: 12px">
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/10629/10629607.png"
+                style="width: 40px; margin-right: 20px"
+                alt="check"
+              />
+              <p>
+                🌀 শক্তিশালী ও প্রিমিয়াম ব্লেড – দ্রুত ও গভীর জুস এক্সট্রাকশনের
+                জন্য বিশেষভাবে ডিজাইনকৃত ব্লেড।
+              </p>
+            </li>
+            <li style="display: flex; align-items: center; margin-bottom: 12px">
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/10629/10629607.png"
+                style="width: 40px; margin-right: 20px"
+                alt="check"
+              />
+              <p>
+                👆 এক ক্লিকেই চালু – একটি বাটনে ক্লিক করলেই চালু হয়ে যাবে ।
+              </p>
+            </li>
+            <li style="display: flex; align-items: center; margin-bottom: 12px">
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/10629/10629607.png"
+                style="width: 40px; margin-right: 20px"
+                alt="check"
+              />
+              <p>🧼 সহজে পরিষ্কার – যেকোনো অংশ সহজেই খুলে পরিষ্কার করা যায়।</p>
+            </li>
+            <li style="display: flex; align-items: center; margin-bottom: 12px">
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/10629/10629607.png"
+                style="width: 40px; margin-right: 20px"
+                alt="check"
+              />
+              <p>
+                🧃 ফ্রেশ জুস, ইনস্ট্যান্টলি – মাত্র কয়েক সেকেন্ডেই পান করুন সতেজ
+                জুস।
+              </p>
+            </li>
+            <li style="display: flex; align-items: center; margin-bottom: 12px">
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/10629/10629607.png"
+                style="width: 40px; margin-right: 20px"
+                alt="check"
+              />
+              <p>🔇 শব্দ কম প্রযুক্তি – জুস বানানোর সময় শব্দ অনেক কম হয়।</p>
+            </li>
+            <li style="display: flex; align-items: center; margin-bottom: 12px">
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/10629/10629607.png"
+                style="width: 40px; margin-right: 20px"
+                alt="check"
+              />
+              <p>
+                🍋 নানান সাইট্রাস ফলের জন্য উপযুক্ত – কমলা, মালটা, লেবু,
+                জাম্বুরা—সবকিছুর জন্য পারফেক্ট।
+              </p>
+            </li>
+            <li style="display: flex; align-items: center; margin-bottom: 12px">
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/10629/10629607.png"
+                style="width: 40px; margin-right: 20px"
+                alt="check"
+              />
+              <p>
+                🛡️ দীর্ঘস্থায়ী ও টেকসই – উন্নত মানের ABS এবং স্টেইনলেস স্টিল
+                বডি।
+              </p>
+            </li>
+            <li style="display: flex; align-items: center; margin-bottom: 12px">
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/10629/10629607.png"
+                style="width: 40px; margin-right: 20px"
+                alt="check"
+              />
+              <p>
+                🌍 চায়না স্ট্যান্ডার্ড কোয়ালিটি – আন্তর্জাতিক মানের প্রোডাকশন ও
+                পরীক্ষা-নিরীক্ষায় উত্তীর্ণ।
+              </p>
+            </li>
+          </ul>
+        </section>
+        <h2 class="common-class title-2">
+          <span class="different-text-1"> চায়না</span> থেকে
+          <span class="different-text-1"> সরাসরি আমদানি</span> — বাংলাদেশে
+          একমাত্র <span class="different-text-1">আমাদের </span> কাছেই পাবেন!
+        </h2>
+        <div class="image-container">
+          <img
+            src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/gadgetbd-store/images/builder/6852473cbed42b6b0fce8825/1750306911826_photo-2025-06-19-10-21-24.jpg"
+            alt=""
+          />
+        </div>
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn">
+            <img
+              src="https://builder.storex.com.bd/images/builder/allergy/finger-of-a-hand-pointing-to-right-direction-lqm9tkxe.webp"
+              alt="Order Now"
+            />
+            অর্ডার করুন এখনই
+          </a>
+        </div>
+        <h2 class="common-class title-2">
+          শব্দহীন এবং <span class="different-text-1"> রিচার্জেবল </span> হওয়ায়
+          ব্যবহারে <span class="different-text-1"> স্বস্তি </span> এবং
+          <span class="different-text-1"> আরামদায়ক</span>
+        </h2>
+
+        <div class="image-container">
+          <img
+            src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/gadgetbd-store/images/builder/6852473cbed42b6b0fce8825/1750306963157_photo-2025-06-19-10-21-27.jpg"
+            alt=""
+          />
+        </div>
+
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn">
+            <img
+              src="https://builder.storex.com.bd/images/builder/allergy/finger-of-a-hand-pointing-to-right-direction-lqm9tkxe.webp"
+              alt="Order Now"
+            />
+            অর্ডার করুন এখনই
+          </a>
+        </div>
+        <h2 class="common-class title-3">
+          তো আর দেরি কেন আমাদের
+          <span class="different-text-1"> স্টক শেষ হওয়ার </span> আগেই আপনার
+          লাইট টি আজই সংগ্রহ করুন। সংগ্রহ করতে
+          <span class="different-text-1">অর্ডার নাও </span> বাটনে ক্লিক করে
+          আমাদের ওয়েবসাইট থেকে অর্ডার করুন অথবা স্ক্রিনে দেওয়া
+          <span class="different-text-1"> মোবাইল নাম্বারে </span>
+          ফোন করে অর্ডার কনফার্ম করুন
+        </h2>
+      </div>
+    </div>
+  </body>
+</html>

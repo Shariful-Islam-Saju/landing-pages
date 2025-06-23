@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Hind Siliguri", sans-serif;
+        font-weight: bold;
+        background-color: #1c1c1c;
+        line-height: 1.5;
+      }
+
+      .container-1 {
+        display: flex;
+        justify-content: center;
+      }
+
+      .wrapper {
+        max-width: 1250px;
+        width: 100%;
+      }
+
+      .h1-title-1 {
+        font-size: 70px;
+
+        line-height: 82px;
+        color: white;
+        text-align: center;
+        margin-top: 45px;
+        padding: 0 50px;
+      }
+
+      .section-2 {
+        font-weight: bolder;
+        font-size: 40px;
+        padding: 20px;
+        line-height: 48px;
+        text-align: center;
+        color: white;
+        margin-top: 15px;
+      }
+
+      @keyframes blink {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+      }
+
+      .blink {
+        animation: blink 1s infinite;
+      }
+
+      .blink-text {
+        color: #e3930f;
+        display: flex;
+        justify-content: center;
+        font-size: 25px;
+        padding: 10px 0;
+      }
+
+      .image-container {
+        display: flex;
+        justify-content: center;
+        padding: 0 25px;
+        margin-bottom: 30px;
+      }
+
+      .image-container img {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        border: 4px solid #ffff01;
+        border-radius: 35px;
+        object-fit: contain;
+      }
+
+      .order-container {
+        display: flex;
+        justify-content: center;
+        padding: 20px 0;
+      }
+
+      .order-btn {
+        background-color: #ffff01;
+        color: black;
+        display: inline-flex;
+        align-items: center;
+        padding: 12px 20px;
+        text-decoration: none;
+        border-radius: 8px;
+        font-size: 22px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+      }
+
+      .order-btn:hover {
+        background-color: lightblue;
+        animation: hover-animation-pulse 0.3s linear infinite alternate;
+      }
+
+      @keyframes hover-animation-pulse {
+        100% {
+          transform: scale(1.1);
+        }
+      }
+
+      .torch-feature-section {
+        color: white;
+      }
+
+      .torch-feature-container {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        gap: 25px;
+      }
+
+      .torch-column {
+        flex: 1;
+        min-width: 280px;
+        max-width: 500px;
+        padding: 0 20px;
+      }
+
+      .torch-heading {
+        background-color: #2e2e2e;
+        padding: 12px;
+        border-radius: 8px;
+        text-align: center;
+        font-size: 32px;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+
+      .torch-list {
+        list-style: none;
+        padding-left: 0;
+        line-height: 1.8;
+        font-size: 18px;
+      }
+
+      .torch-list li {
+        border-bottom: 1px dotted #444;
+        padding: 8px 0;
+      }
+
+      .torch-list li:last-child {
+        border-bottom: none;
+      }
+
+      @media (max-width: 500px) {
+        .h1-title-1 {
+          font-size: 50px;
+          line-height: 60px;
+          padding: 0 30px;
+        }
+
+        .section-2 {
+          font-size: 35px;
+          line-height: 50px;
+        }
+        .torch-feature-container {
+          flex-direction: column;
+        }
+      }
+    </style>
+    <title>project-4</title>
+  </head>
+  <body>
+    <div class="container-1">
+      <div class="wrapper">
+        <h1 class="h1-title-1">
+          শক্তিশালী আলো, দুর্দান্ত পারফরম্যান্স – আপনার হাতে এখন
+          <span class="blink" style="color: #ffff01">৩০ ওয়াটের শক্তি</span>!
+        </h1>
+
+        <p class="section-2">
+          রাতের অন্ধকারে এখন আর <span style="color: #ffff01">ভয় নয়</span>! চলো
+          আলোর পথে
+        </p>
+
+        <div class="image-container">
+          <img src="img-1.jpg" alt="সেলফ ডিফেন্স এক্সটেন্ডেবল স্টিকের ছবি" />
+        </div>
+
+        <p class="blink blink-text">দেখাবে গাজর, দিবে মুলা</p>
+
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn"> অর্ডার করতে চাই </a>
+        </div>
+
+        <p class="h1-title-1 section-2">
+          আপনি কি এমন একটি
+          <span style="color: #ffff01">শক্তিশালী টর্চ খুঁজছেন</span>, যা
+          অন্ধকারেও <span style="color: #ffff01">দিবালোকে</span> পরিণত করতে
+          পারে?
+        </p>
+
+        <div class="image-container">
+          <img src="img-1.jpg" alt="সেলফ ডিফেন্স এক্সটেন্ডেবল স্টিকের ছবি" />
+        </div>
+
+        <p class="h1-title-1 section-2">
+          পরিচয় করিয়ে দিচ্ছি আমাদের নতুন 30W LED Flashlight. এটি হতে পারে আপনার
+          <span style="color: #ffff01">রাতের সাহসী সঙ্গী</span>।
+        </p>
+
+        <div class="image-container">
+          <img src="img-1.jpg" alt="সেলফ ডিফেন্স এক্সটেন্ডেবল স্টিকের ছবি" />
+        </div>
+
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn"> অর্ডার করতে চাই </a>
+        </div>
+
+        <!-- new features start -->
+        <section class="torch-feature-section">
+          <div class="torch-feature-container">
+            <div class="torch-column">
+              <h2 class="torch-heading">ফিচারস</h2>
+              <ul class="torch-list">
+                <li>✅ আধুনিক ডিজাইন</li>
+                <li>✅ সুপার ব্রাইট LED</li>
+                <li>✅ ব্যাটারি 6000mAh</li>
+                <li>
+                  ✅ 7 মোড আলোর অপশন (High, Medium, Low, SOS, Strobe ইত্যাদি)
+                </li>
+                <li>✅ Zoomable Focus Function</li>
+                <li>✅ Type-C Fast Charging</li>
+                <li>✅ শক্তিশালী 3.7V Li-ion Battery</li>
+                <li>✅ একবার ফুল চার্জে চলে প্রায় ৫-৬ ঘণ্টা</li>
+                <li>✅ ডিসপ্লেতে স্ক্রিন ব্যাটারি পার্সেন্টেজ দেখার সুবিধা</li>
+                <li>✅ পাওয়ার ব্যাংক সুবিধা</li>
+              </ul>
+            </div>
+
+            <div class="torch-column">
+              <h2 class="torch-heading">প্যাকেজের মধ্যে যা আছে</h2>
+              <ul class="torch-list">
+                <li>✅ ১টি KEZU KZ-F01 LED Torch</li>
+                <li>✅ ১টি 26650 Rechargeable Battery (6000mAh)</li>
+                <li>✅ ১টি USB চার্জিং ক্যাবল</li>
+                <li>✅ স্টেইনলেস বক্স</li>
+              </ul>
+              <div class="order-container">
+                <a href="#checkout-now" class="order-btn"> অর্ডার করতে চাই </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>

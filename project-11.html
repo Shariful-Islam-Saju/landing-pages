@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project-11</title>
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap");
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Hind Siliguri", sans-serif;
+      background: url("https://alishop.naturalcure.site/wp-content/uploads/2025/03/9-2.jpg");
+      background-position: center;
+      position: relative;
+      z-index: 0;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6); /* Adjust 0.6 for more or less darkness */
+      z-index: -1;
+    }
+
+    .root-1 {
+      display: flex;
+      justify-content: center;
+    }
+    .wrapper-div {
+      width: 100%;
+      max-width: 1290px;
+      padding: 25px;
+    }
+    .common-class {
+      border-radius: 20px;
+      background-color: #1a1a2e;
+      padding: 25px 10px;
+      text-align: center;
+    }
+
+    .title-1 {
+      background-color: #16213e;
+      font-size: 50px;
+      padding: 50px 10px;
+      color: white;
+    }
+
+    .different-text-1 {
+      color: #ffff01;
+    }
+
+    .title-2 {
+      margin-top: 30px;
+      color: white;
+      font-size: 40px;
+    }
+
+    @media (max-width: 500px) {
+      .title-1 {
+        font-size: 40px;
+      }
+      .title-2 {
+        font-size: 28px;
+      }
+    }
+
+    .image-container {
+      margin: 25px 0;
+      margin-bottom: 10px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    .image-container img {
+      width: 100%;
+      max-width: 450px;
+      max-height: 450px;
+      object-fit: cover;
+      display: block;
+      border-radius: 25px;
+      border: 2px solid #f8f32b;
+    }
+    .order-container {
+      display: flex;
+      justify-content: center;
+      padding: 20px 0;
+      margin: 0;
+    }
+    .order-btn {
+      background-color: #e94560;
+      color: white;
+      display: inline-flex;
+      align-items: center;
+      padding: 12px 20px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: clamp(20px, 2vw, 25px);
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+    .order-btn img {
+      width: 30px;
+      margin-right: 10px;
+    }
+    .order-btn:hover {
+      background-color: #c9203c;
+      animation: hover-animation-pulse 0.3s linear infinite alternate;
+    }
+
+    @keyframes hover-animation-pulse {
+      100% {
+        transform: scale(1.1);
+      }
+    }
+
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      margin-top: 25px;
+    }
+
+    .feature-list li {
+      color: white;
+      font-size: 30px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+    }
+    .feature-list li:last-child {
+      border-bottom: none;
+    }
+
+    @media (max-width: 500px) {
+      .feature-list li {
+        font-size: 22px;
+        font-weight: normal;
+      }
+
+      .last-text {
+        font-size: 20px;
+        line-height: 35px;
+      }
+    }
+  </style>
+  <body>
+    <div class="root-1">
+      <div class="wrapper-div">
+        <h1 class="common-class title-1">
+          এক <span class="different-text-1"> স্বপ্নীল জগতে </span>ভেসে বেড়ান
+        </h1>
+        <h2 class="common-class title-2">
+          আপনার ঘরের ছাদ কে দিন
+          <span class="different-text-1">মায়াময় আকাশের রূপ। </span>
+        </h2>
+
+        <div class="image-container">
+          <img
+            src="https://alishop.naturalcure.site/wp-content/uploads/2025/05/bamboo-lamp-3.jpg"
+            alt=""
+          />
+        </div>
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn">
+            <img
+              src="https://builder.storex.com.bd/images/builder/allergy/finger-of-a-hand-pointing-to-right-direction-lqm9tkxe.webp"
+              alt="Order Now"
+            />
+            অর্ডার করুন এখনই
+          </a>
+        </div>
+        <h2 class="common-class title-2">
+          <span class="different-text-1" style="display: block">
+            আপনার বাচ্চা কি ঘুমাতে চায় না?
+          </span>
+          এই লাইট থাকলে এবার সে বিছানায় যাওয়ার জন্য ব্যাকুল হয়ে উঠবে, আর কখন
+          স্বপ্নময় এই লাইট দেখতে দেখতে ঘুমের করলে ঢলে পড়বে বুঝতেই পারবে না।
+        </h2>
+        <div class="image-container">
+          <img
+            src="https://alishop.naturalcure.site/wp-content/uploads/2025/05/bamboo-lamp-3.jpg"
+            alt=""
+          />
+        </div>
+
+        <h2 class="common-class title-2">
+          এই লাইট জ্বেলে ঘরের মধ্যে তৈরি করুন এক
+          <span class="different-text-1">
+            আধ্যাত্মিক আবহাওয়া যার মাধ্যমে ইবাদতে পাবেন অন্যরকম প্রশান্তি</span
+          >
+        </h2>
+
+        <div class="image-container">
+          <img
+            style="max-width: 350px; max-height: 350px"
+            src="https://alishop.naturalcure.site/wp-content/uploads/2025/05/bamboo-lamp-3.jpg"
+            alt=""
+          />
+        </div>
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn">
+            <img
+              src="https://builder.storex.com.bd/images/builder/allergy/finger-of-a-hand-pointing-to-right-direction-lqm9tkxe.webp"
+              alt="Order Now"
+            />
+            অর্ডার করুন এখনই
+          </a>
+        </div>
+
+        <h2 class="common-class title-2">কিছু গুরুত্বপূর্ণ ফিচার সমূহ</h2>
+
+        <section style="width: 100%">
+          <ul class="feature-list">
+            <li style="font-weight: 400">
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                style="width: 30px; margin-right: 20px"
+                alt=""
+              />
+              <span>
+                <strong class="different-text-1">
+                  360° রোটেশন ও মাল্টি-কালার মোড
+                </strong>
+                - এতে থাকছে 360° রোটেশন ও মাল্টি-কালার মোড, যা দিয়ে লাইটের রং
+                পরিবর্তন করুন আপনার মুড অনুযায়ী।
+              </span>
+            </li>
+            <li style="font-weight: 400">
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                style="width: 30px; margin-right: 20px"
+                alt=""
+              />
+              <span>
+                <strong class="different-text-1">
+                  মিউজিক সিনক্রোনাইজেশন
+                </strong>
+                - ব্লুটুথ স্পিকার থাকার কারণে আপনার পছন্দমত যে কোন অডিও আপনি
+                শুনতে পারেন।
+              </span>
+            </li>
+            <li style="font-weight: 400">
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                style="width: 30px; margin-right: 20px"
+                alt=""
+              />
+              <span>
+                <strong class="different-text-1">
+                  রিমোট কন্ট্রোল ও টাইমার
+                </strong>
+                - রিমোট কন্ট্রোল থাকার কারণে আপনি ইচ্ছামত যে কোন জায়গা থেকেই
+                লাইটটি চালনা করতে পারবেন। তাছাড়া আরজিবি সিঙ্গেল কালার মোডও আপনি
+                ইউজ করতে পারবেন।
+              </span>
+            </li>
+            <li style="font-weight: 400">
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                style="width: 30px; margin-right: 20px"
+                alt=""
+              />
+              <span>
+                <strong class="different-text-1"> সেরা গিফট </strong>
+                - শিশু, টিনএজার, এমনকি বড়দের জন্যও পারফেক্ট উপহার!
+              </span>
+            </li>
+          </ul>
+        </section>
+
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn">
+            <img
+              src="https://builder.storex.com.bd/images/builder/allergy/finger-of-a-hand-pointing-to-right-direction-lqm9tkxe.webp"
+              alt="Order Now"
+            />
+            অর্ডার করুন এখনই
+          </a>
+        </div>
+        <h2 class="common-class title-2 last-text">
+          তো আর দেরি কেন আমাদের
+          <span class="different-text-1"> স্টক শেষ হওয়ার </span> আগেই আপনার
+          লাইট টি আজই সংগ্রহ করুন। সংগ্রহ করতে
+          <span class="different-text-1">অর্ডার নাও </span> বাটনে ক্লিক করে
+          আমাদের ওয়েবসাইট থেকে অর্ডার করুন অথবা স্ক্রিনে দেওয়া মোবাইল নাম্বারে
+          ফোন করে অর্ডার কনফার্ম করুন
+        </h2>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project-10</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Hind Siliguri", sans-serif;
+        font-weight: bold;
+        line-height: 1.5;
+        padding: 20px;
+        background-color: black;
+      }
+      .root {
+        display: flex;
+        justify-content: center;
+      }
+      .parent-div {
+        width: 100%;
+        max-width: 1300px;
+      }
+      .common-class {
+        border-radius: 20px;
+        background-color: #1a1a1a;
+        padding: 25px 10px;
+        text-align: center;
+      }
+      .h1-title-1 {
+        font-size: 55px;
+        margin-top: 25px;
+        color: #74f40f;
+        text-align: center;
+      }
+      .h2-title-1 {
+        margin-top: 25px;
+        padding: 15px;
+        font-size: 45px;
+        text-align: center;
+        color: #74f40f;
+      }
+      .h2-title-3 {
+        font-size: 50px;
+        color: white;
+        padding: 15px 0;
+        margin: 25px 0;
+      }
+      .image-container {
+        margin: 25px 0;
+        margin-bottom: 10px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+      .image-container img {
+        width: 100%;
+        max-width: 350px;
+        max-height: 350px;
+        object-fit: cover;
+        display: block;
+        border-radius: 25px;
+        border: 2px solid #6d4c41;
+      }
+      .order-container {
+        display: flex;
+        justify-content: center;
+        padding: 20px 0;
+        margin: 0;
+      }
+      .order-btn {
+        background-color: #01d119;
+        color: black;
+        display: inline-flex;
+        align-items: center;
+        padding: 12px 20px;
+        text-decoration: none;
+        border-radius: 8px;
+        font-size: clamp(20px, 2vw, 25px);
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+      }
+      .order-btn img {
+        width: 30px;
+        margin-right: 10px;
+      }
+      .order-btn:hover {
+        background-color: #009b13;
+        animation: hover-animation-pulse 0.3s linear infinite alternate;
+      }
+      .h2-title-2 {
+        font-size: 40px;
+      }
+      @keyframes hover-animation-pulse {
+        100% {
+          transform: scale(1.1);
+        }
+      }
+      @media (max-width: 520px) {
+        .h2-title-1 {
+          font-size: 30px;
+          line-height: 45px;
+        }
+        .h2-title-2 {
+          font-size: 35px;
+        }
+
+        .h2-title-3 {
+          font-size: 35px;
+          color: white;
+          padding: 15px 0;
+          margin: 20px 0;
+        }
+        .desc p {
+          font-size: 25px;
+        }
+      }
+      .features-section {
+        color: white;
+        border-radius: 8px;
+        margin: 0 auto;
+        padding-top: 35px;
+      }
+      .feature-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 15px;
+        border-bottom: solid white 1px;
+        padding-bottom: 15px;
+        font-size: 25px;
+        font-weight: normal;
+      }
+      .check-icon {
+        width: 30px;
+        height: 30px;
+        margin-top: 4px;
+        border-radius: 0;
+      }
+
+      .desc img {
+        width: 70px;
+        margin-bottom: 20px;
+      }
+
+      .desc {
+        display: flex;
+        flex-direction: column;
+        color: white;
+        justify-content: center;
+        align-items: center;
+        padding-top: 15px;
+        font-size: 35px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="root">
+      <div class="parent-div">
+        <!-- main section start -->
+
+        <h1 class="h1-title-1">
+          আপনার স্টাইলকে নতুন উচ্চতায় নিয়ে যান স্পিনিং ডায়ালসহ প্রিমিয়াম ঘড়ি
+        </h1>
+
+        <div class="image-container">
+          <img
+            src="https://alishop.naturalcure.site/wp-content/uploads/2025/05/bamboo-lamp-3.jpg"
+            alt=""
+          />
+        </div>
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/2838/2838838.png"
+              alt="Order Now"
+            />
+            অর্ডার করুন এখনই
+          </a>
+        </div>
+        <h2 class="h2-title-1">
+          গাড়ির ইঞ্জিনিয়ারিং থেকে অনুপ্রাণিত, আপনার হাতে এক মাস্টারপিস!
+        </h2>
+        <div class="image-container">
+          <img
+            src="https://alishop.naturalcure.site/wp-content/uploads/2025/05/bamboo-lamp-3.jpg"
+            alt=""
+          />
+        </div>
+        <h2 class="h2-title-1">একটি ঘড়ি, যা গতির সাথে তাল মিলিয়ে চলে!</h2>
+        <div class="image-container">
+          <img
+            src="https://alishop.naturalcure.site/wp-content/uploads/2025/05/bamboo-lamp-3.jpg"
+            alt=""
+          />
+        </div>
+        <h2 class="h2-title-1">
+          অটোমোটিভ প্রেমীদের জন্য প্রিমিয়াম স্পিনিং ওয়াচ!
+        </h2>
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/2838/2838838.png"
+              alt="Order Now"
+            />
+            অর্ডার করুন এখনই
+          </a>
+        </div>
+        <h2 class="common-class h2-title-3">কিছু গুরুত্বপূর্ণ ফিচার সমূহ</h2>
+        <section class="features-section">
+          <div class="feature-item">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/16597/16597199.png"
+              alt="check"
+              class="check-icon"
+            />
+            <p>গাড়ির চাকা ডিজাইন করা স্পিনিং ডায়াল</p>
+          </div>
+          <div class="feature-item">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/16597/16597199.png"
+              alt="check"
+              class="check-icon"
+            />
+            <p>
+              ৪৩ মিমি স্টেইনলেস স্টিল কেস, ব্ল্যাক টাইটানিয়াম কার্বাইড কোটিং সহ
+            </p>
+          </div>
+          <div class="feature-item">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/16597/16597199.png"
+              alt="check"
+              class="check-icon"
+            />
+            <p>প্রিমিয়াম স্ট্রাপ অপশন: স্টেইনলেস স্টিল</p>
+          </div>
+          <div class="feature-item">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/16597/16597199.png"
+              alt="check"
+              class="check-icon"
+            />
+            <p>রয়েছে অনেকগুলো কালার অপশন</p>
+          </div>
+        </section>
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/2838/2838838.png"
+              alt="Order Now"
+            />
+            অর্ডার করুন এখনই
+          </a>
+        </div>
+        <h2 class="common-class h2-title-3">ঘড়িটির বৈশিষ্ট্য</h2>
+        <div class="desc">
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/12335/12335053.png"
+            alt=""
+          />
+          <p>আপনি হাত ঝাকালেই ঘড়ির ভেতরের হুইলটি সুন্দর করে ঘুরতে থাকবে</p>
+        </div>
+        <!-- main section end -->
+      </div>
+    </div>
+  </body>
+</html>

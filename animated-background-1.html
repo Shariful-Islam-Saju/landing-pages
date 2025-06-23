@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animation Background 1</title>
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background: rgb(0, 0, 0);
+        position: relative;
+      }
+
+      .box {
+        min-width: 400px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        text-align: center;
+        position: fixed;
+        background: linear-gradient(
+          90deg,
+          rgb(5, 31, 86) 0%,
+          rgb(19, 19, 92) 35%,
+          rgb(27, 146, 230)
+        );
+        color: white;
+        justify-content: center;
+        z-index: -2;
+      }
+
+      .box .design-1 {
+        width: 5px;
+        height: 5px;
+        position: absolute;
+        background-color: transparent;
+        border: 1px solid white;
+        opacity: 1;
+        border-radius: 1px;
+      }
+
+      .box .design-2 {
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        background-color: rgba(226, 211, 211, 0.6);
+        top: 5px;
+        left: 50%;
+        border-radius: 2px;
+      }
+
+      .box div:nth-child(12) {
+        top: 20%;
+        left: 10%;
+        animation: animated 9s infinite linear;
+      }
+
+      .box div:nth-child(13) {
+        top: 85%;
+        left: 20%;
+        animation: animated 7s infinite linear;
+      }
+
+      .box div:nth-child(14) {
+        top: 90%;
+        left: 50%;
+        animation: animated 10s infinite linear;
+      }
+
+      .box div:nth-child(15) {
+        top: 60%;
+        left: 30%;
+        animation: animated 7s infinite linear;
+      }
+
+      .box div:nth-child(16) {
+        top: 30%;
+        left: 50%;
+        animation: animated 9s infinite linear;
+      }
+
+      .box div:nth-child(17) {
+        top: 85%;
+        left: 80%;
+        animation: animated 6s infinite linear;
+      }
+
+      .box div:nth-child(18) {
+        top: 45%;
+        left: 85%;
+        animation: animated 8s infinite linear;
+      }
+
+      .box div:nth-child(19) {
+        top: 15%;
+        left: 80%;
+        animation: animated 10s infinite linear;
+      }
+
+      .box div:nth-child(20) {
+        top: 50%;
+        left: 5%;
+        animation: animated 9s infinite linear;
+      }
+
+      .box div:nth-child(21) {
+        top: 65%;
+        left: 70%;
+        animation: animated 7s infinite linear;
+      }
+
+      .box div:nth-child(22) {
+        top: 30%;
+        left: 30%;
+        animation: animated 8s infinite linear;
+      }
+
+      .box div:nth-child(23) {
+        top: 10%;
+        left: 40%;
+        animation: animated 8s infinite linear;
+      }
+
+      .box div:nth-child(1) {
+        top: 7%;
+        left: 6%;
+        animation: animate 10s infinite linear;
+      }
+
+      .box div:nth-child(2) {
+        top: 79%;
+        left: 10%;
+        animation: animate 8s infinite linear;
+      }
+
+      .box div:nth-child(3) {
+        top: 13%;
+        left: 35%;
+        animation: animate 6s infinite linear;
+      }
+
+      .box div:nth-child(4) {
+        top: 69%;
+        left: 49%;
+        animation: animate 5s infinite linear;
+      }
+
+      .box div:nth-child(5) {
+        top: 8%;
+        left: 69%;
+        animation: animate 9s infinite linear;
+      }
+
+      .box div:nth-child(6) {
+        top: 38%;
+        left: 49%;
+        animation: animate 5s infinite linear;
+      }
+
+      .box div:nth-child(7) {
+        top: 38%;
+        left: 9%;
+        animation: animate 6s infinite linear;
+      }
+
+      .box div:nth-child(8) {
+        top: 78%;
+        left: 79%;
+        animation: animate 8s infinite linear;
+      }
+
+      .box div:nth-child(9) {
+        top: 48%;
+        left: 79%;
+        animation: animate 5s infinite linear;
+      }
+
+      .box div:nth-child(10) {
+        top: 28%;
+        left: 82%;
+        animation: animate 7s infinite linear;
+      }
+
+      .box div:nth-child(11) {
+        top: 58%;
+        left: 18%;
+        animation: animate 9s infinite linear;
+      }
+
+      @keyframes animate {
+        0% {
+          transform: scale(0) translate() rotate();
+        }
+
+        100% {
+          transform: scale(5.3) translateY(90px) rotate(720deg);
+          opacity: 0;
+        }
+      }
+
+      @keyframes animated {
+        0% {
+          transform: translate() rotate();
+        }
+
+        100% {
+          transform: scale(2.5) translateY(90px) rotate(360deg);
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="design-1"></div>
+      <div class="design-1"></div>
+      <div class="design-1"></div>
+      <div class="design-1"></div>
+      <div class="design-1"></div>
+      <div class="design-1"></div>
+      <div class="design-1"></div>
+      <div class="design-1"></div>
+      <div class="design-1"></div>
+      <div class="design-1"></div>
+      <div class="design-1"></div>
+
+      <div class="design-2"></div>
+      <div class="design-2"></div>
+      <div class="design-2"></div>
+      <div class="design-2"></div>
+      <div class="design-2"></div>
+      <div class="design-2"></div>
+      <div class="design-2"></div>
+      <div class="design-2"></div>
+      <div class="design-2"></div>
+      <div class="design-2"></div>
+      <div class="design-2"></div>
+      <div class="design-2"></div>
+    </div>
+  </body>
+</html>

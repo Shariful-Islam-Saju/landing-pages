@@ -1,0 +1,362 @@
+<style>@import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap");
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: "Hind Siliguri", sans-serif;
+    font-weight: bold;
+    background-color: #f9f9f9;
+    line-height: 1.5;
+  }
+  /* Headings */
+  .h1-title-1 {
+    font-weight: bolder;
+    font-size: clamp(32px, 7vw, 70px);
+    line-height: 1.3;
+    color: #ffffff;
+    background-color: #2078ef;
+    text-align: center;
+    padding: clamp(20px, 6vw, 50px);
+    margin-bottom: 30px;
+  }
+  .h2-title-1 {
+    font-weight: bolder;
+    font-size: clamp(24px, 5vw, 50px);
+    line-height: 1.4;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #222;
+    padding: 0 10px;
+  }
+  /* Blink Animation */
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+  .blink {
+    animation: blink 1s infinite;
+  }
+  /* Image Container */
+  .image-container {
+    display: flex;
+    justify-content: center;
+    padding: 0 15px;
+    margin-bottom: 30px;
+  }
+  .image-container img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border: 2px solid #f4c702;
+    border-radius: 35px;
+    object-fit: contain;
+  }
+  /* Description Section */
+  .container-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 10px;
+    margin-bottom: 30px;
+  }
+  .container-2 p {
+    font-size: clamp(18px, 4.5vw, 26px);
+    margin-bottom: 10px;
+  }
+  /* Order Button */
+  .order-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+  }
+  .order-btn {
+    background-color: #00953e;
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: clamp(16px, 4vw, 18px);
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+  }
+  .order-btn img {
+    width: 20px;
+    margin-right: 10px;
+  }
+  .order-btn:hover {
+    background-color: #2cbf6c;
+    animation: hover-animation-pulse 0.3s linear infinite alternate;
+  }
+  @keyframes hover-animation-pulse {
+    100% {
+      transform: scale(1.1);
+    }
+  }
+  /* Features Section */
+  .features-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 15px;
+  }
+  .features-header {
+    background-color: #2078ef;
+    color: #fff;
+    padding: 15px 20px;
+    font-size: clamp(20px, 4vw, 30px);
+    font-weight: bold;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .feature-list li {
+    display: flex;
+    align-items: center;
+    font-size: clamp(16px, 4vw, 22px);
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    word-break: break-word;
+  }
+  .feature-list li::before {
+    content: "➤";
+    color: #2078ef;
+    margin-right: 10px;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+  /* Description Text */
+  .desc {
+    font-size: clamp(20px, 5vw, 28px);
+    text-align: center;
+    padding: 0 15px;
+    margin-bottom: 20px;
+  }
+  /* Highlight Section */
+  .highlight-section {
+    background-color: #2078ef;
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+  }
+  .highlight-heading {
+    font-size: clamp(24px, 5vw, 40px);
+    font-weight: bold;
+    margin-bottom: 40px;
+  }
+  /* Feature Grid */
+  .feature-grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 15px;
+  }
+  .feature-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 15px 20px;
+    border-radius: 10px;
+  }
+  .feature-title {
+    font-size: clamp(18px, 4.5vw, 28px);
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .feature-description {
+    font-size: clamp(14px, 3.5vw, 16px);
+    line-height: 1.6;
+    font-weight: 400;
+  }
+  /* Responsive grid columns */
+  @media (min-width: 600px) {
+    .feature-grid-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (min-width: 992px) {
+    .feature-grid-container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .order-btn {
+      flex-direction: row;
+      justify-content: center;
+    }
+    .feature-list li {
+      font-size: 18px;
+    }
+    .highlight-heading {
+      margin-bottom: 20px;
+    }
+  }
+  @media (max-width: 480px) {
+    .h1-title-1 {
+      font-size: clamp(24px, 10vw, 40px);
+      padding: clamp(10px, 5vw, 20px);
+    }
+    .h2-title-1 {
+      font-size: clamp(18px, 8vw, 28px);
+    }
+    .container-2 p {
+      font-size: clamp(16px, 5vw, 22px);
+    }
+    .order-btn {
+      font-size: clamp(14px, 5vw, 16px);
+      padding: 10px 15px;
+    }
+    .feature-list li {
+      font-size: 16px;
+    }
+    .feature-title {
+      font-size: clamp(16px, 5vw, 22px);
+    }
+    .feature-description {
+      font-size: clamp(13px, 4vw, 15px);
+    }
+    .highlight-heading {
+      font-size: clamp(20px, 7vw, 28px);
+      margin-bottom: 20px;
+    }
+  }
+</style>
+<div class="container-1">
+  <h1 class="h1-title-1">
+    দেখতে
+    <span style="color: #ffff00">পাওয়ার ব্যাংক</span> কাজে
+    <span class="blink" style="color: #ffff00">জেনারেটর</span>
+  </h1>
+  <h2 class="h2-title-1">কারেন্ট না থাকলেও সারাক্ষণ চলবে মোবাইল
+  </h2>
+  <div class="image-container">
+    <img src="" alt="Power Bank Generator" />
+  </div>
+  <div class="container-2">
+    <p>দামে কম মানে ভালো দেশ সেরা পাওয়ার ব্যাংক
+    </p>
+    <p style="color: #2078ef">টর্চ লাইটের দামে পাওয়ার ব্যাংক নিয়ে নিন
+    </p>
+  </div>
+  <div class="order-container">
+    <a href="#checkout-now" class="order-btn">
+      <img
+           src="https://builder.storex.com.bd/images/builder/allergy/finger-of-a-hand-pointing-to-right-direction-lqm9tkxe.webp"
+           alt="Order Now"
+           />
+      অর্ডার করতে চাই
+    </a>
+  </div>
+  <div class="image-container">
+    <img src="" alt="Power Bank Generator" />
+  </div>
+  <!-- features section -->
+  <div class="features-container">
+    <div class="features-header">RECRSI 20000mAh পাওয়ার ব্যাংক
+    </div>
+    <ul class="feature-list">
+      <li>সাইজে বড় হলেও খুবই হ্যান্ডি।
+      </li>
+      <li>ডিজাইনের সুবিধা আছে।
+      </li>
+      <li>দুটি পাওয়ারফুল চার্জ লাইট দেয়া আছে।
+      </li>
+      <li>Type C পোর্ট চার্জিং সুবিধা।
+      </li>
+      <li>একসাথে দুটি মোবাইল চার্জ দেয়া যাবে।
+      </li>
+      <li>ভ্রমণে আপনার সেরা সঙ্গী হতে পারে।
+      </li>
+      <li>দীর্ঘ মেয়াদি পারফরম্যান্স নিশ্চিত করে।
+      </li>
+    </ul>
+  </div>
+  <div class="features-container desc">
+    <p>
+      জীবন আপনাকে যেখানেই নিয়ে যাক,
+      <span style="color: #2078ef">
+        20000 mAh পাওয়ার ব্যাংক</span
+        >
+      - এর সাথে সর্বদা ফুল চার্জে থাকুন! কমপ্যাক্ট, নির্ভরযোগ্য এবং দীর্ঘস্থায়ী
+      এই উচ্চ ক্ষমতা সম্পন্ন পোর্টেবল চার্জার আপনার ডিভাইসকে সারাদিন সক্রিয়
+      রাখবে - যেকোনো মুহূর্তে ব্যাটারি "লো" হওয়ার চিন্তা মুক্ত হোন।
+    </p>
+  </div>
+  <div class="order-container">
+    <a href="#checkout-now" class="order-btn">
+      <img
+           src="https://builder.storex.com.bd/images/builder/allergy/finger-of-a-hand-pointing-to-right-direction-lqm9tkxe.webp"
+           alt="Order Now"
+           />
+      অর্ডার করতে চাই
+    </a>
+    <!-- highlight section -->
+  </div>
+  <section class="highlight-section">
+    <div class="highlight-wrapper">
+      <div class="highlight-heading">প্রধান বৈশিষ্ট্য:
+      </div>
+      <div class="feature-grid-container">
+        <div class="feature-card">
+          <h3 class="feature-title">বিশাল ব্যাটারি ক্ষমতা
+          </h3>
+          <p class="feature-description">
+            স্মার্টফোন ৪-৫ বার, ট্যাবলেট ২-৩ বার এবং ওয়্যারলেস ইয়ারবাড,
+            স্মার্টওয়াচের মতো গ্যাজেট কয়েক দিন পর্যন্ত চার্জ রাখে।
+          </p>
+        </div>
+        <div class="feature-card">
+          <h3 class="feature-title">কমপ্যাক্ট ও ভ্রমণবান্ধব
+          </h3>
+          <p class="feature-description">
+            ব্যাগ বা ব্যাকপ্যাকে সহজেই বহনযোগ্য - যাত্রা, ক্যাম্পিং বা দৈনন্দিন
+            ব্যবহারের জন্য পারফেক্ট।
+          </p>
+        </div>
+        <div class="feature-card">
+          <h3 class="feature-title">ডুয়াল USB আউটপুট
+          </h3>
+          <p class="feature-description">
+            একসাথে ২ টি ডিভাইস চার্জ করুন। বন্ধু বা পরিবারের সাথে শেয়ার করা
+            কিংবা একাধিক ডিভাইস চালানোর জন্য আদর্শ।
+          </p>
+        </div>
+        <div class="feature-card">
+          <h3 class="feature-title">LED ব্যাটারি ইন্ডিকেটর
+          </h3>
+          <p class="feature-description">
+            LED ডিসপ্লের মাধ্যমে ব্যাটারির পরিমাণ জানুন।
+          </p>
+        </div>
+        <div class="feature-card">
+          <h3 class="feature-title">টেকসই বিল্ড কোয়ালিটি
+          </h3>
+          <p class="feature-description">
+            স্ক্র্যাচ ও আঘাত প্রতিরোধী মজবুত বডি, দীর্ঘমেয়াদি পারফরম্যান্স
+            নিশ্চিত করে।
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div>
+    <p>
+    </p>
+  </div>
+</div>

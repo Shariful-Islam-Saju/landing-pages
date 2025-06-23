@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project-16</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Hind Siliguri", sans-serif;
+        font-weight: bold;
+        background-color: #1c1c1c;
+        line-height: 1.5;
+        padding: 5px;
+        padding-top: 30px;
+      }
+
+      .container-1 {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .wrapper {
+        max-width: 1250px;
+        width: 100%;
+        padding: 0 15px;
+      }
+
+      /* Main Heading */
+      .h1-title-1 {
+        font-size: 60px;
+        font-weight: bolder;
+        line-height: 90px;
+        color: white;
+        border-radius: 25px;
+        text-align: center;
+      }
+
+      /* Section Paragraph */
+      .section-2 {
+        font-size: 38px;
+        padding: 30px;
+        line-height: 55px;
+        text-align: center;
+      }
+
+      /* Blinking Effect */
+      @keyframes blink {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+      }
+      .blink {
+        animation: blink 1s infinite;
+      }
+
+      /* Image Styling */
+      .image-container {
+        display: flex;
+        justify-content: center;
+        padding: 0 15px;
+        margin-bottom: 30px;
+      }
+      .image-container img {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        border: 4px solid#cbb50c;
+        border-radius: 35px;
+        object-fit: contain;
+      }
+
+      /* Order Button */
+      .order-container {
+        display: flex;
+        justify-content: center;
+        padding: 20px 0;
+      }
+      .order-btn {
+        background-color: #ffff01;
+        color: black;
+        display: inline-flex;
+        align-items: center;
+        padding: 12px 20px;
+        text-decoration: none;
+        border-radius: 8px;
+        font-size: 24px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+      }
+      .order-btn:hover {
+        background-color: lightblue;
+        animation: hover-animation-pulse 0.3s linear infinite alternate;
+      }
+
+      @keyframes hover-animation-pulse {
+        100% {
+          transform: scale(1.1);
+        }
+      }
+
+      /* Torch Feature Section */
+      .torch-feature-section {
+        color: white;
+        font-family: "Hind Siliguri", sans-serif;
+        padding: 0 10px;
+        margin-top: 35px;
+      }
+
+      .torch-feature-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 30px;
+        margin: auto;
+      }
+
+      /* .torch-column {
+      } */
+
+      .torch-heading {
+        background-color: #2e2e2e;
+        padding: 12px;
+        border-radius: 8px;
+        text-align: center;
+        font-size: 25px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      .torch-img {
+        width: 100%;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        border-radius: 20px;
+        border: 4px solid #cbb50c;
+      }
+      .torch-list {
+        list-style: none;
+        padding-left: 0;
+        line-height: 1.8;
+        font-size: 18px;
+      }
+
+      .torch-list :last-child {
+        border: none;
+      }
+
+      .torch-list li {
+        border-bottom: 1px dotted #444;
+        padding: 8px 0;
+      }
+
+      .torch-order-button-wrapper {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+      }
+
+      .torch-order-button {
+        background-color: #3fff00;
+        color: black;
+        padding: 12px 24px;
+        font-size: 18px;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 8px;
+        transition: background-color 0.3s ease;
+      }
+      .torch-order-button:hover {
+        background-color: #32e600;
+      }
+
+      @media (max-width: 600px) {
+        .h1-title-1 {
+          font-size: 32px;
+          line-height: 42px;
+        }
+
+        .torch-feature-container {
+          grid-template-columns: 1fr;
+        }
+
+        .section-2 {
+          font-size: 22px;
+          line-height: 32px;
+          padding: 16px;
+        }
+
+        .order-btn {
+          font-size: 18px;
+          padding: 8px 14px;
+        }
+
+        .torch-heading {
+          font-size: 24px;
+        }
+
+        .torch-list {
+          font-size: 18px;
+        }
+
+        .torch-order-button {
+          font-size: 16px;
+          padding: 10px 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-1">
+      <div class="wrapper">
+        <h1 class="h1-title-1">
+          শক্তিশালী আলো, দুর্দান্ত পারফরম্যান্স – আপনার হাতে এখন !
+          <span class="blink" style="color: #ffff01"
+            >বাজারের সেরা টর্চ লাইট </span
+          >!
+        </h1>
+        <p class="h1-title-1 section-2">
+          রাতের অন্ধকারে এখন আর
+          <span style="color: #ffff01">ভয় নয়</span>! চলো আলোর পথে
+        </p>
+        <div class="image-container">
+          <img src="img-1.jpg" alt="৩০ ওয়াট LED ফ্ল্যাশলাইটের ছবি" />
+        </div>
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn"> অর্ডার করতে চাই </a>
+        </div>
+        <p class="h1-title-1 section-2">
+          আপনি কি এমন একটি
+          <span style="color: #ffff01">শক্তিশালী টর্চ খুঁজছেন</span>, যা
+          অন্ধকারেও <span style="color: #ffff01"> দিবালোকে</span> পরিণত করতে
+          পারে?
+        </p>
+        <div class="image-container">
+          <img src="img-1.jpg" alt="৩০ ওয়াট LED ফ্ল্যাশলাইটের ছবি" />
+        </div>
+
+        <p class="h1-title-1 section-2">
+          পরিচয় করিয়ে দিচ্ছি আমাদের নতুন জাম্বো স্ট্রং ফ্ল্যাশলাইট গুলোর সাথে। যেগুলো হতে পারে আপনার
+          <span style="color: #ffff01"> রাতের সাহসী সঙ্গী</span>।
+        </p>
+        <div class="image-container">
+          <img src="img-1.jpg" alt="৩০ ওয়াট LED ফ্ল্যাশলাইটের ছবি" />
+        </div>
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn"> অর্ডার করতে চাই </a>
+        </div>
+
+        <!-- new features start -->
+      </div>
+      <section class="torch-feature-section">
+        <div class="torch-feature-container">
+          <div class="torch-column">
+            <div style="width: 100%; margin: 10px 0">
+              <img src="img-1.jpg" alt="" class="torch-img" />
+            </div>
+            <h2 class="torch-heading">KH-W514</h2>
+            <ul class="torch-list">
+              <li>✅ এটিতে ২৬৬৫০ এর বড় ব্যাটারি আছে</li>
+              <li>✅ শক্তিশালী এলইডি ব্যাবহার করা হয়েছে</li>
+              <li>✅ রেডিয়ামের জন্য অন্ধকারে খুজে পাওয়া সহজ </li>
+              <li>✅ স্টাইলিশ এবং বেস্ট পারফরম্যান্স </li>
+            </ul>
+          </div>
+
+          <div class="torch-column">
+            <div style="width: 100%; margin: 10px 0">
+              <img src="img-2.jpg" alt="" class="torch-img" />
+            </div>
+            <h2 class="torch-heading">KH-W515-A</h2>
+            <ul class="torch-list">
+              <li>✅ এতে ১৮৬৫০ ব্যাটারি ব্যবহার করা হয়েছে</li>
+              <li>✅ ডিজিটাল ডিসপ্লে দিয়ে চার্জ লেভেল জানা যায়</li>
+              <li>✅ ফ্লুরোসেন্ট স্ট্রিপ ও রঙিন লাইন আছে</li>
+              <li>✅ দৈনন্দিন ও ঘরোয়া ব্যবহারে উপযোগী</li>
+            </ul>
+          </div>
+          <div class="torch-columg">
+            <div style="width: 100%; margin: 10px 0">
+              <img src="img-3.jpg" alt="" class="torch-img" />
+            </div>
+            <h2 class="torch-heading">KH-W510</h2>
+            <ul class="torch-list">
+              <li>✅ এতে ২৬৬৫০ ব্যাটারি ব্যবহার করা হয়েছে</li>
+              <li>✅ হাই-ফোকাস লেজার আলো ব্যবহৃত হয়েছে</li>
+              <li>✅ আউটডোর ও ক্যাম্পিং এর জন্য উপযুক্ত</li>
+              <li>✅ মিনিমাল ডিজাইন  এবং পকেট ফ্রেন্ডলি টর্চ</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

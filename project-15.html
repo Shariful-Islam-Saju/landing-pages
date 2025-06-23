@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project-15</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Hind Siliguri", sans-serif;
+        font-weight: bold;
+        background-color: black;
+        padding: 15px;
+      }
+      .root-1 {
+        display: flex;
+        justify-content: center;
+      }
+      .wrapper-div {
+        width: 100%;
+        max-width: 1300px;
+      }
+
+      .title1 {
+        font-size: 43px;
+        color: red;
+        text-align: center;
+        margin-top: 18px;
+        span {
+          color: white;
+        }
+      }
+
+      .image-container {
+        margin: 25px 0;
+        margin-bottom: 10px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+      .image-container img {
+        width: 100%;
+        max-width: 450px;
+        aspect-ratio: 1 / 1; /* Makes height equal to width */
+        object-fit: cover;
+        display: block;
+        border-radius: 25px;
+        border: 2px solid red; /* Added space between 'solid' and color */
+      }
+      .order-container {
+        display: flex;
+        justify-content: center;
+        padding: 20px 0;
+        margin: 0;
+        margin-top: 25px;
+      }
+      .order-btn {
+        background-color: red;
+        color: black;
+        display: inline-flex;
+        align-items: center;
+        padding: 12px 20px;
+        text-decoration: none;
+        border-radius: 15px;
+        font-size: clamp(20px, 2vw, 25px);
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+      }
+
+      .order-btn img {
+        width: 30px;
+        margin-right: 10px;
+      }
+      .order-btn:hover {
+        animation: hover-animation-pulse 0.3s linear infinite alternate;
+      }
+
+      @keyframes hover-animation-pulse {
+        100% {
+          transform: scale(1.1);
+        }
+      }
+
+      .desc1 {
+        margin: 25px 0;
+        color: #ffff01;
+        font-size: 40px;
+        text-align: center;
+      }
+
+      .desc2 {
+        color: white;
+        font-size: 26px;
+        text-align: center;
+        border: 1px solid#f96500;
+        padding: 10px;
+        border-radius: 15px;
+      }
+
+      .desc3 {
+        font-size: 28px;
+        background-color: #ffff01;
+        border: 2px solid#f96500;
+        border-radius: 15px;
+        text-align: center;
+        padding: 13px 10px;
+        margin-bottom: 20px;
+      }
+
+      @media (max-width: 520px) {
+        .title1 {
+          font-size: 32px;
+        }
+        .desc1 {
+          font-size: 26px;
+        }
+
+        .desc3 {
+          font-size: 25px;
+        }
+      }
+
+      .two-element {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-top: 25px;
+        gap: 25px;
+
+        .first {
+          img {
+            width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            border-radius: 20px;
+            border: solid 2px red;
+          }
+        }
+
+        .second {
+          h2 {
+            color: white;
+            background-color: red;
+            padding: 10px;
+            text-align: center;
+            font-size: 24px;
+            border-radius: 15px;
+          }
+        }
+      }
+
+      .feature-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        margin-top: 25px;
+      }
+
+      .feature-list li {
+        color: white;
+        font-size: 23px;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #ccc;
+        margin-bottom: 10px;
+        padding-bottom: 5px;
+        font-weight: 500;
+      }
+      .feature-list li:last-child {
+        border-bottom: none;
+      }
+
+      @media (max-width: 520px) {
+        .feature-list li {
+          font-size: 19px;
+          font-weight: normal;
+        }
+
+        .two-element {
+          grid-template-columns: 1fr;
+        }
+
+        .second {
+          h2 {
+            font-size: 20px;
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="root-1">
+      <div class="wrapper-div">
+        <h1 class="title1">
+          দেশের সেরা <span> শক্তিশালী এবং পাওয়ারফুল </span> টর্চলাইট
+        </h1>
+
+        <div class="image-container">
+          <img
+            src="https://alishop.naturalcure.site/wp-content/uploads/2025/05/bamboo-lamp-3.jpg"
+            alt=""
+          />
+        </div>
+
+        <p class="desc1">
+          রাতের আঁধারে দিনের আলো দিবে এই সুপার পাওয়ার টর্চ লাইট
+        </p>
+        <p class="desc2">
+          পাওয়ারফুল আলোর সাথে সাথে লাইটটি মেটাল বডি হওয়ার কারণে আপনি
+          নিরাপত্তার ক্ষেত্রেও ব্যবহার করতে পারবেন।
+        </p>
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/2838/2838838.png"
+              alt="Order Now"
+            />
+            এখনই অর্ডার করুন
+          </a>
+        </div>
+
+        <div class="two-element">
+          <div class="first">
+            <img
+              src="https://alishop.naturalcure.site/wp-content/uploads/2025/05/bamboo-lamp-3.jpg"
+              alt=""
+            />
+          </div>
+          <div class="second">
+            <h2>Waterproof Rechargeable LED Zoom Torch Light</h2>
+            <section style="width: 100%">
+              <ul class="feature-list">
+                <li>
+                  <img
+                    src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                    style="width: 23px; margin-right: 15px"
+                    alt=""
+                  />
+                  <span
+                    >হাই কোয়ালিটি ওয়াটারপ্রুফ পাওয়ারফুল বিদেশি জুম টর্চ
+                    লাইট</span
+                  >
+                </li>
+                <li>
+                  <img
+                    src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                    style="width: 23px; margin-right: 15px"
+                    alt=""
+                  />
+                  <span>ব্যাটারির কাপাসিটি ৬৫০০ mAh</span>
+                </li>
+                <li>
+                  <img
+                    src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                    style="width: 23px; margin-right: 15px"
+                    alt=""
+                  />
+                  <span>এক চার্জে ২ থেকে ৬ ঘন্টা পর্যন্ত চালাতে পারবেন</span>
+                </li>
+                <li>
+                  <img
+                    src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                    style="width: 23px; margin-right: 15px"
+                    alt=""
+                  />
+                  <span>৮০০ থেকে ১০০০ মিটার দূর পর্যন্ত আলো দেয়</span>
+                </li>
+                <li>
+                  <img
+                    src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                    style="width: 23px; margin-right: 15px"
+                    alt=""
+                  />
+                  <span
+                    >সম্পূর্ণ কালো বডি জিংক অ্যালয় দ্বারা প্রস্তুতকৃত, হাতে
+                    নিলে অনেক প্রিমিয়াম ফিল দেয়।</span
+                  >
+                </li>
+                <li>
+                  <img
+                    src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                    style="width: 23px; margin-right: 15px"
+                    alt=""
+                  />
+                  <span>চার্জিং মোড : USB Type - C </span>
+                </li>
+                <li>
+                  <img
+                    src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                    style="width: 23px; margin-right: 15px"
+                    alt=""
+                  />
+                  <span>ওজন : ৪০০ গ্রাম +</span>
+                </li>
+                <li>
+                  <img
+                    src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                    style="width: 23px; margin-right: 15px"
+                    alt=""
+                  />
+                  <span>পাওয়ার ব্যাংক</span>
+                </li>
+                <li>
+                  <img
+                    src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                    style="width: 23px; margin-right: 15px"
+                    alt=""
+                  />
+                  <span>এসওএস সুবিধা</span>
+                </li>
+              </ul>
+            </section>
+          </div>
+        </div>
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/2838/2838838.png"
+              alt="Order Now"
+            />
+            এখনই অর্ডার করুন
+          </a>
+        </div>
+
+        <p class="desc3">এত পাওয়ারফুল লাইট রাতের আধারে দিনের মত আলো দেয়।</p>
+        <p class="desc3">
+          বাসায় ফেরার সময় এই লাইটটি আপনাকে দেবে অধিক আলো এবং নিরাপত্তা ।
+        </p>
+        <p class="desc3">মাছ ধরতে এই লাইটটি হতে পারে আপনার নিত্য দিনের সঙ্গী</p>
+      </div>
+    </div>
+  </body>
+</html>

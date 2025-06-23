@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>svg</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Hind Siliguri", sans-serif;
+        font-weight: bold;
+        background-color: #f8fafc;
+        line-height: 1.5;
+      }
+
+      /* Headings */
+      .h1-title-1 {
+        font-weight: bolder;
+        font-size: clamp(24px, 10vw, 40px); /* Mobile default */
+        line-height: 1.3;
+        color: #ffffff;
+        background-color: #2078ef;
+        text-align: center;
+        padding: clamp(10px, 5vw, 20px);
+        padding-bottom: 0;
+        position: relative;
+        z-index: 5;
+      }
+
+      .h2-title-1 {
+        font-weight: bolder;
+        font-size: clamp(18px, 8vw, 28px);
+        line-height: 1.4;
+        text-align: center;
+        margin-bottom: 30px;
+        padding: 0 25px;
+        color: #222;
+      }
+
+      /* Blink Animation */
+      @keyframes blink {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+      }
+
+      .blink {
+        animation: blink 1s infinite;
+      }
+
+      /* Image Container */
+      .image-container {
+        display: flex;
+        justify-content: center;
+        padding: 0 15px;
+        margin-bottom: 5px;
+      }
+
+      .image-container img {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        border: 2px solid #f4c702;
+        border-radius: 35px;
+        object-fit: contain;
+      }
+
+      /* Description Section */
+      .container-2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 0 15px;
+        margin-bottom: 30px;
+      }
+
+      .container-2 p {
+        font-size: clamp(16px, 5vw, 22px);
+        margin-bottom: 10px;
+      }
+
+      /* Order Button */
+      .order-container {
+        display: flex;
+        justify-content: center;
+        padding: 20px 0;
+      }
+
+      .order-btn {
+        background-color: #00953e;
+        color: #fff;
+        display: inline-flex;
+        align-items: center;
+        padding: 10px 15px;
+        text-decoration: none;
+        border-radius: 8px;
+        font-size: clamp(14px, 5vw, 16px);
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+      }
+
+      .order-btn img {
+        width: 20px;
+        margin-right: 10px;
+      }
+
+      .order-btn:hover {
+        background-color: #2cbf6c;
+        animation: hover-animation-pulse 0.3s linear infinite alternate;
+      }
+
+      @keyframes hover-animation-pulse {
+        100% {
+          transform: scale(1.1);
+        }
+      }
+
+      /* Features Section */
+      .features-container {
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 0 15px;
+      }
+
+      .features-header {
+        background-color: #2078ef;
+        color: #fff;
+        padding: 15px 20px;
+        font-size: clamp(20px, 4vw, 30px);
+        font-weight: bold;
+        border-radius: 10px;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .feature-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .feature-list li {
+        display: flex;
+        align-items: center;
+        font-size: clamp(16px, 4vw, 22px);
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+        word-break: break-word;
+      }
+
+      .feature-list li::before {
+        content: "➤";
+        color: #2078ef;
+        margin-right: 10px;
+        font-size: 20px;
+        flex-shrink: 0;
+      }
+
+      /* Description Text */
+      .desc {
+        font-size: clamp(20px, 5vw, 28px);
+        text-align: center;
+        padding: 0 15px;
+        margin-bottom: 20px;
+      }
+
+      /* Highlight Section */
+      .highlight-section {
+        background-color: #2078ef;
+        color: white;
+        padding: 30px 20px;
+        text-align: center;
+      }
+
+      .highlight-heading {
+        font-size: clamp(20px, 7vw, 28px);
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+
+      /* Feature Grid */
+      .feature-grid-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        max-width: 1200px;
+        margin: auto;
+        padding: 0 15px;
+      }
+
+      .feature-card {
+        background-color: rgba(255, 255, 255, 0.05);
+        padding: 15px 20px;
+        border-radius: 10px;
+      }
+
+      .feature-title {
+        font-size: clamp(16px, 5vw, 22px);
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .feature-description {
+        font-size: clamp(13px, 4vw, 15px);
+        line-height: 1.6;
+        font-weight: 400;
+      }
+
+      /* Laptops and larger screens */
+      @media (min-width: 1200px) {
+        .h1-title-1 {
+          font-size: clamp(32px, 7vw, 70px);
+          padding: clamp(20px, 6vw, 50px);
+          padding-bottom: 0;
+        }
+
+        .h2-title-1 {
+          font-size: clamp(24px, 5vw, 45px);
+          padding: 0 400px;
+        }
+
+        .container-2 p {
+          font-size: clamp(18px, 4.5vw, 26px);
+        }
+
+        .order-btn {
+          font-size: clamp(16px, 4vw, 18px);
+          padding: 12px 20px;
+        }
+
+        .highlight-heading {
+          font-size: clamp(24px, 5vw, 40px);
+          margin-bottom: 40px;
+        }
+
+        .feature-list li {
+          font-size: clamp(18px, 2vw, 22px);
+        }
+
+        .feature-grid-container {
+          grid-template-columns: repeat(3, 1fr);
+        }
+
+        .feature-title {
+          font-size: clamp(18px, 4.5vw, 28px);
+        }
+
+        .feature-description {
+          font-size: clamp(14px, 3.5vw, 16px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div data-negative="false">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1000 100"
+        preserveAspectRatio="none"
+      >
+        <path
+          class="elementor-shape-fill"
+          opacity="0.33"
+          d="M473,67.3c-203.9,88.3-263.1-34-320.3,0C66,119.1,0,59.7,0,59.7V0h1000v59.7 c0,0-62.1,26.1-94.9,29.3c-32.8,3.3-62.8-12.3-75.8-22.1C806,49.6,745.3,8.7,694.9,4.7S492.4,59,473,67.3z"
+        ></path>
+        <path
+          class="elementor-shape-fill"
+          opacity="0.66"
+          d="M734,67.3c-45.5,0-77.2-23.2-129.1-39.1c-28.6-8.7-150.3-10.1-254,39.1 s-91.7-34.4-149.2,0C115.7,118.3,0,39.8,0,39.8V0h1000v36.5c0,0-28.2-18.5-92.1-18.5C810.2,18.1,775.7,67.3,734,67.3z"
+        ></path>
+        <path
+          class="elementor-shape-fill"
+          d="M766.1,28.9c-200-57.5-266,65.5-395.1,19.5C242,1.8,242,5.4,184.8,20.6C128,35.8,132.3,44.9,89.9,52.5C28.6,63.7,0,0,0,0 h1000c0,0-9.9,40.9-83.6,48.1S829.6,47,766.1,28.9z"
+        ></path>
+      </svg>
+    </div>
+
+    this is another svg
+    <div class="elementor-shape elementor-shape-bottom" data-negative="false">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1000 100"
+        preserveAspectRatio="none"
+      >
+        <path
+          class="elementor-shape-fill"
+          opacity="0.33"
+          d="M473,67.3c-203.9,88.3-263.1-34-320.3,0C66,119.1,0,59.7,0,59.7V0h1000v59.7 c0,0-62.1,26.1-94.9,29.3c-32.8,3.3-62.8-12.3-75.8-22.1C806,49.6,745.3,8.7,694.9,4.7S492.4,59,473,67.3z"
+        ></path>
+        <path
+          class="elementor-shape-fill"
+          opacity="0.66"
+          d="M734,67.3c-45.5,0-77.2-23.2-129.1-39.1c-28.6-8.7-150.3-10.1-254,39.1 s-91.7-34.4-149.2,0C115.7,118.3,0,39.8,0,39.8V0h1000v36.5c0,0-28.2-18.5-92.1-18.5C810.2,18.1,775.7,67.3,734,67.3z"
+        ></path>
+        <path
+          class="elementor-shape-fill"
+          d="M766.1,28.9c-200-57.5-266,65.5-395.1,19.5C242,1.8,242,5.4,184.8,20.6C128,35.8,132.3,44.9,89.9,52.5C28.6,63.7,0,0,0,0 h1000c0,0-9.9,40.9-83.6,48.1S829.6,47,766.1,28.9z"
+        ></path>
+      </svg>
+    </div>
+  </body>
+</html>

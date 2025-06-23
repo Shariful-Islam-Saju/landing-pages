@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project 27</title>
+    <style>
+      :root {
+        --img-width: 150px;
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        min-height: 100vh;
+        font-family: "Hind Siliguri", sans-serif;
+      }
+      /* Animation section */
+      .image-container-slider {
+        position: relative;
+        width: 100%;
+        height: calc(var(--img-width) + 40px);
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        margin: 25px 0;
+      }
+
+      .animated-image-1,
+      .animated-image-2 {
+        position: absolute;
+        width: var(--img-width);
+        top: 15px;
+        aspect-ratio: 1 / 1;
+        /* box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.438); */
+      }
+
+      .divider-1 {
+        width: 0px;
+        height: 100%;
+        border: 2px solid rgb(219, 198, 7);
+        z-index: 5;
+      }
+      .left-side {
+        flex: 1;
+        z-index: 2;
+        overflow-x: hidden;
+        position: relative;
+      }
+
+      .right-side {
+        flex: 1;
+        z-index: 2;
+        overflow-x: hidden;
+        position: relative;
+      }
+
+      .animated-image-1 {
+        animation: slideInAndOut-1 4s ease-in-out infinite alternate;
+        z-index: 3;
+      }
+
+      .animated-image-2 {
+        animation: slideInAndOut-2 4s ease-in-out infinite alternate;
+      }
+
+      @keyframes slideInAndOut-1 {
+        0%,
+        20% {
+          left: 0;
+        }
+        50% {
+        }
+        80%,
+        100% {
+          left: calc(200% - var(--img-width));
+        }
+      }
+
+      @keyframes slideInAndOut-2 {
+        0%,
+        20% {
+          left: -100%;
+        }
+        50% {
+        }
+        80%,
+        100% {
+          left: calc(100% - var(--img-width));
+        }
+      }
+
+      /* Normal Body */
+
+      .root-1 {
+        display: flex;
+        justify-content: center;
+        font-weight: bold;
+      }
+      .wrapper-div {
+        width: 100%;
+        max-width: 1250px;
+        padding: 10px;
+        position: relative;
+      }
+
+      .hero-section {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .colorful-text {
+        color: green;
+      }
+
+      .common-class {
+        border-radius: 20px;
+        padding: 15px 10px;
+        margin: 15px 0;
+        text-align: center;
+        backdrop-filter: blur(15px); /* Correct syntax */
+        background-color: rgba(128, 128, 128, 0.301);
+        -webkit-backdrop-filter: blur(5px); /* For Safari support */
+        box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.445);
+      }
+      .title-1 {
+        font-size: 35px;
+        text-align: center;
+        transform: rotateX(20deg);
+        text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.541);
+      }
+      .title-2 {
+        font-size: 29px;
+
+      }
+
+      .title-3 {
+        font-size: 25px;
+        margin-top: 25px;
+      }
+      .image-container {
+        margin: 25px 0;
+        margin-bottom: 10px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+      .image-container img {
+        width: 100%;
+        max-width: 550px;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        display: block;
+        border-radius: 25px;
+        border: 2px solid #f8f32b;
+      }
+      .order-container {
+        display: flex;
+        justify-content: center;
+        padding: 20px 0;
+        margin: 0;
+      }
+      .order-btn {
+        background-color: green;
+        color: white;
+        display: inline-flex;
+        align-items: center;
+        padding: 12px 20px;
+        text-decoration: none;
+        border-radius: 8px;
+        font-size: 23px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+      }
+      .order-btn img {
+        width: 30px;
+        margin-right: 10px;
+      }
+      .order-btn:hover {
+        background-color: rgb(4, 158, 4);
+        animation: hover-animation-pulse 0.3s linear infinite alternate;
+      }
+
+      /* Health section */
+      .health-benefits {
+        list-style: none;
+        padding: 10px;
+        margin: 0;
+      }
+
+      .health-benefits-li {
+        display: flex;
+        align-items: center;
+        margin: 15px 0;
+        font-size: 24px;
+      }
+      .health-benefits-li img {
+        width: 30px;
+        margin-right: 20px;
+      }
+      @keyframes hover-animation-pulse {
+        100% {
+          transform: scale(1.1);
+        }
+      }
+
+      @media (min-width: 900px) {
+        :root {
+          --img-width: 400px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="root-1">
+      <div class="wrapper-div">
+        <div class="hero-section">
+          <div>
+            <h1 class="title-1">
+              🌿 মহা ঔষধ কালোজিরার চাটনি – <br />প্রকৃতির মহৌষধ এখন 🍯 মজাদার
+              স্বাদে!
+            </h1>
+            <div class="image-container-slider">
+              <div class="left-side">
+                <img
+                  src="kalijira-ingrident.jpg"
+                  alt="Moving 1"
+                  class="animated-image-1"
+                />
+              </div>
+              <div class="divider-1"></div>
+              <div class="right-side">
+                <img src="kalijira-can.jpg" class="animated-image-2" />
+              </div>
+            </div>
+            <div class="order-container">
+              <a href="#checkout-now" class="order-btn">
+                <img
+                  src="https://builder.storex.com.bd/images/builder/allergy/finger-of-a-hand-pointing-to-right-direction-lqm9tkxe.webp"
+                  alt="Order Now"
+                />
+                অর্ডার করুন এখনই
+              </a>
+            </div>
+            <h2 class="common-class title-2">
+              <span class="colorful-text">"মৃত্যু ছাড়া সব রোগের ঔষুধ" </span> –
+              স্বয়ং নবী করিম (সা.) এর হাদিসে 📜 প্রমাণিত এই মহৌষধের নাম
+              <span class="colorful-text">🌿 কালোজিরা </span>!
+            </h2>
+          </div>
+        </div>
+   
+        <h2 class="common-class title-3">
+          কিন্তু এই <span class="colorful-text"> গুণসমৃদ্ধ বীজ </span>খাওয়া কি
+          আপনার জন্যও কষ্টকর❓ ✅
+          <span class="colorful-text"> সমাধান </span> এসেছে আপনার দোরগোড়ায় 🏠
+        </h2>
+        <div class="image-container">
+          <img src="im.webp" alt="" />
+        </div>
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn">
+            <img
+              src="https://builder.storex.com.bd/images/builder/allergy/finger-of-a-hand-pointing-to-right-direction-lqm9tkxe.webp"
+              alt="Order Now"
+            />
+            অর্ডার করুন এখনই
+          </a>
+        </div>
+        <h3 class="common-class title-2">
+          🌿 কালোজিরার ৫টি গুরুত্বপূর্ণ স্বাস্থ্য উপকারিতা
+        </h3>
+
+        <ul class="health-benefits">
+          <li class="health-benefits-li">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/16597/16597199.png"
+              alt=""
+              class="check-image-1"
+            />
+            হাঁপানি ও অ্যালার্জি নিয়ন্ত্রণ
+          </li>
+          <li class="health-benefits-li">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/16597/16597199.png"
+              alt=""
+              class="check-image-1"
+            />
+            রোগ প্রতিরোধ ক্ষমতা ২x বৃদ্ধি
+          </li>
+          <li class="health-benefits-li">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/16597/16597199.png"
+              alt=""
+              class="check-image-1"
+            />
+            ডায়াবেটিস ও কোলেস্টেরল কমায়
+          </li>
+          <li class="health-benefits-li">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/16597/16597199.png"
+              alt=""
+              class="check-image-1"
+            />
+            লিভার ও কিডনি সুরক্ষা
+          </li>
+          <li class="health-benefits-li">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/16597/16597199.png"
+              alt=""
+              class="check-image-1"
+            />
+            প্রাকৃতিক ব্যথানাশক!
+          </li>
+        </ul>
+        <div class="image-container">
+          <img src="im.webp" alt="" />
+        </div>
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn">
+            <img
+              src="https://builder.storex.com.bd/images/builder/allergy/finger-of-a-hand-pointing-to-right-direction-lqm9tkxe.webp"
+              alt="Order Now"
+            />
+            অর্ডার করুন এখনই
+          </a>
+        </div>
+        <h3 class="common-class title-2">
+          🤔 কেন এই কালোজিরার চাটনিই হতে পারে আপনার স্বাস্থ্যরক্ষার সেরা সমাধান
+          ?
+        </h3>
+        <ul class="health-benefits">
+          <li class="health-benefits-li">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/16597/16597199.png"
+              alt=""
+              class="check-image-1"
+            />
+            নবীজি (সা.) হাদিসে বর্ণিত মহৌষধ—এখন সুস্বাদু চাটনিতে!
+          </li>
+          <li class="health-benefits-li">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/16597/16597199.png"
+              alt=""
+              class="check-image-1"
+            />
+            প্রতিদিন কালোজিরা ঘষে খাওয়ার ঝামেলা নেই, এখন এক চামচেই সব উপকার!
+          </li>
+          <li class="health-benefits-li">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/16597/16597199.png"
+              alt=""
+              class="check-image-1"
+            />
+            গরম ভাতের সাথে খান—এমনি এমনিও উপভোগ করুন!
+          </li>
+          <li class="health-benefits-li">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/16597/16597199.png"
+              alt=""
+              class="check-image-1"
+            />
+            হাঁপানি, গ্যাস্ট্রিক ও ডায়াবেটিস—সব কিছুর এক প্রাকৃতিক সমাধান!
+          </li>
+
+          <li class="health-benefits-li">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/16597/16597199.png"
+              alt=""
+              class="check-image-1"
+            />
+            রসুন, আদা, মধু, টমেটো ও ভিনেগারে তৈরি—স্বাদে ও গুণে অনন্য
+          </li>
+          <li class="health-benefits-li">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/16597/16597199.png"
+              alt=""
+              class="check-image-1"
+            />
+            স্মৃতিশক্তি ও মনোযোগ বাড়াতে সহায়ক—ছাত্রছাত্রীদের জন্য আদর্শ
+          </li>
+
+          <li class="health-benefits-li">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/16597/16597199.png"
+              alt=""
+              class="check-image-1"
+            />
+            ১০০+ ভেষজ উপাদানে তৈরি—পরিবারের প্রতিটি সদস্যের জন্য উপযোগী
+          </li>
+        </ul>
+
+        <h2 class="common-class title-3">
+          তো আর দেরি কেন আমাদের
+          <span class="colorful-text"> স্টক শেষ হওয়ার </span> আগেই আপনার লাইট
+          টি আজই সংগ্রহ করুন। সংগ্রহ করতে
+          <span class="colorful-text"> অর্ডার নাও </span> বাটনে ক্লিক করে আমাদের
+          ওয়েবসাইট থেকে অর্ডার করুন অথবা স্ক্রিনে দেওয়া
+          <span class="colorful-text"> মোবাইল নাম্বারে </span>
+          ফোন করে অর্ডার কনফার্ম করুন
+        </h2>
+      </div>
+    </div>
+  </body>
+</html>

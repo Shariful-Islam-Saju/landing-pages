@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>project-17</title>
+    <style>
+      @import url("https://fonts.cdnfonts.com/css/solaimanlipi");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "SolaimanLipi", sans-serif;
+        font-weight: bold;
+      }
+      .container-1 {
+        display: flex;
+        justify-content: center;
+        color: #192a3d;
+      }
+      .wrapper-div {
+        width: 100%;
+        max-width: 1300px;
+        padding: 15px;
+      }
+
+      .title-1 {
+        font-size: 26px;
+        background-color: #f96500;
+        text-align: center;
+        padding: 20px;
+        color: white;
+      }
+
+      .desc1 {
+        font-size: 25px;
+        text-align: center;
+        margin: 18px 0;
+        padding: 0 20px;
+        line-height: 38px;
+      }
+
+      .desc2 {
+        background-color: #ffe4d1;
+        padding: 10px;
+        border-radius: 10px;
+        font-size: 22px;
+        text-align: center;
+        line-height: 32px;
+      }
+
+      .image-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+      .image-container img {
+        width: 100%;
+        max-width: 450px;
+        object-fit: contain;
+      }
+      .order-container {
+        display: flex;
+        justify-content: center;
+      }
+      .order-btn {
+        background-color: #f96500;
+        color: white;
+        display: inline-flex;
+        align-items: center;
+        padding: 12px 20px;
+        text-decoration: none;
+        border-radius: 10px;
+        font-size: 25px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .order-btn:hover {
+        background-color: #b46229;
+        animation: hover-animation-pulse 0.3s linear infinite alternate;
+      }
+
+      @keyframes hover-animation-pulse {
+        100% {
+          transform: scale(1.1);
+        }
+      }
+
+      .two-element {
+        display: grid;
+        grid-template-columns: 1fr;
+        margin: 25px 0;
+        gap: 30px;
+      }
+
+      .two-element div {
+        width: 100%;
+      }
+      .two-element .first img {
+        width: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+        border: 2px solid#d86618;
+      }
+
+      .second h2 {
+        font-size: 18px;
+        background-color: #f96500;
+        color: white;
+        border-radius: 10px;
+        padding: 10px 0;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .feature-list li {
+        list-style-type: none;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        margin: 5px 0;
+        font-size: 19px;
+        padding: 8px 0;
+        border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+      }
+      .feature-list li:last-child {
+        border: none;
+      }
+
+      /* 📲 Tablet (769px and up) */
+      @media (min-width: 769px) {
+        .title-1 {
+          font-size: 35px;
+          padding: 35px 0;
+        }
+
+        .desc1 {
+          font-size: 35px;
+          margin: 22px 0;
+          line-height: 50px;
+        }
+
+        .image-container img {
+          max-width: 550px;
+        }
+
+        .desc2 {
+          font-size: 23px;
+          line-height: 38px;
+        }
+
+        .two-element {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .second h2 {
+          font-size: 20px;
+        }
+      }
+
+      /* 💻 Desktop (1025px and up) */
+      @media (min-width: 1025px) {
+        .title-1 {
+          font-size: 38px;
+          padding: 50px 0;
+        }
+        .desc1 {
+          font-size: 40px;
+          margin: 30px 0;
+        }
+
+        .desc2 {
+          font-size: 29px;
+          line-height: 42px;
+        }
+        .image-container img {
+          max-width: 750px;
+        }
+
+        .second h2 {
+          font-size: 27px;
+        }
+
+        .feature-list li {
+          font-size: 25px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="title-1">
+      বর্তমান সময়ে বেস্ট এবং জনপ্রিয় ফোল্ডিং মোবাইল স্ট্যান্ড পেয়ে যাচ্ছেন
+      পাইকারি মূল্যে
+    </h1>
+    <div class="container-1">
+      <div class="wrapper-div">
+        <p class="desc1">
+          মোবাইল স্ট্যান্ডের সকল সুবিধা, একি সাথে পাচ্ছেন আমাদের একটি
+          স্ট্যান্ডেই
+        </p>
+
+        <div class="image-container">
+          <img
+            src="https://alishop.today/wp-content/uploads/2025/03/2-1-768x432.png"
+            alt=""
+          />
+        </div>
+
+        <p class="desc1">
+          আপনার প্রয়োজন মত মোবাইল স্ট্যান্ডটিকে ৩৬০ ডিগ্রী অ্যাঙ্গেলে ঘুরাতে
+          পারবেন।
+        </p>
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn"> অর্ডার করতে চাই </a>
+        </div>
+
+        <p class="desc1">
+          প্রিমিয়াম বিল কোয়ালিটি, শক্তপোক্ত হওয়ায় অনেকদিন ব্যবহার করা যাবে।
+          সহজে নষ্ট হবে না
+        </p>
+
+        <p class="desc2">
+          আপনার যদি অনলাইনে ক্লাস করার দরকার হয় অথবা আপনি যদি মোবাইলে মুভি দেখে
+          অভ্যস্ত কিংবা ওয়ার্কিং ডেস্কের পাশে আপনার মোবাইলটি স্ট্যান্ড করে
+          রাখার দরকার হয়। তাহলে অবশ্যই আমাদের এই মোবাইল স্ট্যান্ডটি আপনার জন্য।
+        </p>
+
+        <div class="image-container" style="margin: 25px 0">
+          <img
+            src="https://alishop.today/wp-content/uploads/2025/03/3-1-768x432.png"
+            alt=""
+          />
+        </div>
+
+        <p class="desc2">
+          আমাদের এই মোবাইল স্ট্যান্ডটি, চমৎকার বিল্ড কোয়ালিটির পাশাপাশি খুবই
+          শক্ত পোক্ত যা সহজেই নষ্ট হবে না। ৩৬০ ডিগ্রি এঙ্গেলে আপনার পছন্দমত
+          ঘুরিয়ে নিতে পারবেন, ফোল্ডিং করে রাখতে পারবেন আপনার যতটুকু প্রয়োজন
+          এবং ব্যবহারের সুবিধার্থে সাইজ ছোট বড় করতে পারবেন আপনার সুবিধামতো।
+        </p>
+        <div class="two-element">
+          <div class="first">
+            <img
+              src="https://alishop.today/wp-content/uploads/2025/03/1-1-768x432.png"
+              alt=""
+            />
+          </div>
+          <div class="second">
+            <h2>Premium Phone Holder Features</h2>
+            <section style="width: 100%">
+              <ul class="feature-list">
+                <li>
+                  <img
+                    src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                    style="width: 23px; margin-right: 15px"
+                    alt=""
+                  />
+                  <span>৩৬০ ডিগ্রি এঙ্গেলে ঘোড়ানো যায়।</span>
+                </li>
+                <li>
+                  <img
+                    src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                    style="width: 23px; margin-right: 15px"
+                    alt=""
+                  />
+                  <span>স্ট্যান্ডটি রোটেট করে রাখা যায়।</span>
+                </li>
+                <li>
+                  <img
+                    src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                    style="width: 23px; margin-right: 15px"
+                    alt=""
+                  />
+                  <span
+                    >চাইলে সাইজ ছোট বড় করে নেওয়া যায়, বিল কোয়ালিটি চমৎকার
+                    খুবই শক্ত পোক্ত।</span
+                  >
+                </li>
+                <li>
+                  <img
+                    src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                    style="width: 23px; margin-right: 15px"
+                    alt=""
+                  />
+                  <span>চমৎকার স্টেবল ক্ষমতা সম্পন্ন। </span>
+                </li>
+                <li>
+                  <img
+                    src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                    style="width: 23px; margin-right: 15px"
+                    alt=""
+                  />
+                  <span>মোবাইল এবং ট্যাব উভয়ই স্টেন্ড করে রাখা যাবে ।</span>
+                </li>
+              </ul>
+            </section>
+          </div>
+        </div>
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn"> অর্ডার করতে চাই </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

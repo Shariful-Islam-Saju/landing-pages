@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project-12</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Hind Siliguri", sans-serif;
+        font-weight: bold;
+        line-height: 1.5;
+        padding: 20px;
+      }
+      .root-1 {
+        display: flex;
+        justify-content: center;
+      }
+      .wrapper-div {
+        width: 100%;
+        max-width: 1300px;
+      }
+      .common-class {
+        border-radius: 20px;
+        background-color: #8c0a2d;
+        padding: 25px 0px;
+        text-align: center;
+        color: white;
+        box-shadow: 0px 0px 10px 2px black;
+      }
+      .h1-title-1 {
+        font-size: 50px;
+        margin-top: 20px;
+        text-align: center;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      .h2-title-1 {
+        margin-top: 25px;
+        padding: 15px;
+        font-size: 35px;
+        text-align: center;
+      }
+
+      .h2-title-2 {
+        font-size: 30px;
+        margin-top: 35px;
+      }
+
+      .desc {
+        margin-top: 35px;
+        text-align: center;
+        padding: 35px 25px;
+        background-color: #ffdfdf;
+        border-radius: 25px;
+        font-size: 30px;
+      }
+
+      @media (max-width: 520px) {
+        .h1-title-1 {
+          font-size: 30px;
+        }
+
+        .h2-title-1 {
+          font-size: 25px;
+        }
+
+        .h2-title-2 {
+          font-size: 22px;
+        }
+
+        .desc {
+          padding: 25px 15px;
+          font-size: 18px;
+        }
+      }
+
+      .image-container {
+        margin: 25px 0;
+        margin-bottom: 10px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+      .image-container img {
+        width: 100%;
+        max-width: 280px;
+        max-height: 280px;
+        object-fit: cover;
+        display: block;
+        border-radius: 25px;
+        border: 2px solid #7d090a;
+      }
+      .order-container {
+        display: flex;
+        justify-content: center;
+        padding: 20px 0;
+        margin: 0;
+        margin-top: 25px;
+      }
+      .order-btn {
+        background-color: #28ae60;
+        color: white;
+        display: inline-flex;
+        align-items: center;
+        padding: 12px 20px;
+        text-decoration: none;
+        border-radius: 25px;
+        font-size: clamp(30px, 4vw, 40px);
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+        box-shadow: 0px 0px 15px 2px black;
+      }
+
+      .order-btn:hover {
+        background-color: #2ecc71;
+        animation: hover-animation-pulse 0.3s linear infinite alternate;
+      }
+
+      @keyframes hover-animation-pulse {
+        100% {
+          transform: scale(1.1);
+        }
+      }
+
+      .colorfull {
+        color: #ffff01;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="root-1">
+      <div class="wrapper-div">
+        <h1 class="common-class h1-title-1">
+          আমাদের
+          <span class="colorfull"> রোজ ডায়মন্ড ল্যাম্প </span>প্রোডাক্টটির
+          মাশাল্লাহ অনেক চাহিদা থাকার কারণে খুব অল্পদিনেই
+          <span class="colorfull"> স্টক আউট</span> হয়ে যায়।
+        </h1>
+        <div class="image-container">
+          <img
+            style="max-width: 350px; max-height: 350px"
+            src="https://alishop.naturalcure.site/wp-content/uploads/2025/05/bamboo-lamp-3.jpg"
+            alt=""
+          />
+        </div>
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn"> প্রোডাক্টটি কিনতে চাই </a>
+        </div>
+        <h2 class="common-class h2-title-1">
+          তারপর থেকে আপনাদের
+          <span class="colorfull"> শতশত মেসেজ এবং কমেন্টসের </span> মাধ্যমে
+          আপনাদের আগ্রহ দেখতে পাই। যে কারণে আমরা আবারো রোজ ডায়মন্ড টেবিলটি
+          <span class="colorfull"> রিস্টক </span> করেছি।
+        </h2>
+
+        <h2 class="common-class h2-title-2">
+          ব্যস্ত দিনের শেষে কি আপনি সত্যিই একটু
+          <span class="colorfull"> প্রশান্তি </span>খুঁজছেন?
+        </h2>
+        <div class="image-container">
+          <img
+            style="max-width: 350px; max-height: 350px"
+            src="https://alishop.naturalcure.site/wp-content/uploads/2025/05/bamboo-lamp-3.jpg"
+            alt=""
+          />
+        </div>
+        <h2 class="common-class h2-title-2">
+          এমন একটি পরিবেশ যেখানে নরম আলো আপনার
+          <span class="colorfull"> মনকে শান্ত করবে </span> , আর ঘর জুড়ে ছড়াবে
+          <span class="colorfull"> স্বপ্নময় এক মায়া? </span>
+        </h2>
+        <h2 class="common-class h2-title-2">
+          প্রিয়জনকে চমৎকার কিছু <span class="colorfull"> উপহার </span> দিতে
+          চাচ্ছেন? কিন্তু ভেবে পাচ্ছেন না
+          <span class="colorfull"> মনের মত কিছু? </span>
+        </h2>
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn"> প্রোডাক্টটি কিনতে চাই </a>
+        </div>
+        <h2 class="common-class h2-title-1">রঙিন আলোর রহস্য</h2>
+        <p class="desc">
+          এটিতে আছে ১৬ টি মনমুগ্ধকর রং যা থেকে মনের মতো রং বেছে নিন এবং
+          মুহূর্তকে আরও বিশেষ করে তুলুন। ঘুমের সময় মৃদু আলো, রোমান্টিক
+          মুহূর্তের জন্য গোলাপি আভা, পড়াশোনার জন্য উজ্জ্বল আলো – সবই পাবেন এক
+          ল্যাম্পে। আলতো টাচের মাধ্যমে পরিবর্তন করতে পারেন পছন্দ মত রং অথবা
+          বিছানায় শুয়েই আলোর রঙ ও উজ্জ্বলতা পরিবর্তন করুন রিমোট কন্ট্রোলের
+          সাহায্যে। এই ল্যাম্প শুধু আলোই দেয় না, এটি আপনার মনের প্রশান্তির জন্য
+          তৈরি করবে শান্তির ঘুম এবং স্বপ্নময় মুহূর্ত।
+        </p>
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn"> প্রোডাক্টটি কিনতে চাই </a>
+        </div>
+        <h2 class="common-class h2-title-2">
+          স্পর্শ করুন বা রিমোট কন্ট্রোল ব্যবহার করুন – আপনার মনের মতো পরিবেশ
+          তৈরি করুন।
+        </h2>
+        <h2 class="common-class h2-title-1">
+          তাহলে আপনার জন্য আছে আমাদের
+          <span class="colorfull">রোজ ডায়মন্ড ল্যাম্প </span> – একটি আলোর জাদু,
+          যা বদলে দেবে আপনার <span class="colorfull"> ঘরের পরিবেশ</span>, এমনকি
+          আপনার <span class="colorfull"> মুডও </span>
+        </h2>
+        <div class="image-container">
+          <img
+            style="max-width: 350px; max-height: 350px"
+            src="https://alishop.naturalcure.site/wp-content/uploads/2025/05/bamboo-lamp-3.jpg"
+            alt=""
+          />
+        </div>
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn"> প্রোডাক্টটি কিনতে চাই </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

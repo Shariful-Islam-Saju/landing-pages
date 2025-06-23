@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project-19</title>
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap");
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Hind Siliguri", sans-serif;
+      position: relative;
+      margin: 0;
+      min-height: 100vh;
+      background: url("https://alishop.today/wp-content/uploads/2025/03/9-2.jpg");
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7); /* Adjust 0.4 to control darkness */
+      z-index: -3; /* Ensures it's behind your content */
+    }
+
+    .root-1 {
+      display: flex;
+      justify-content: center;
+      font-weight: bold;
+    }
+    .wrapper-div {
+      width: 100%;
+      max-width: 1290px;
+      padding: 25px;
+    }
+    .common-class {
+      border-radius: 20px;
+      padding: 25px 10px;
+      text-align: center;
+      backdrop-filter: blur(5px); /* Correct syntax */
+      -webkit-backdrop-filter: blur(5px); /* For Safari support */
+    }
+    .title-1 {
+      font-size: 50px;
+      padding: 30px 10px;
+      color: white;
+      margin-top: 35px;
+    }
+
+    .different-text-1 {
+      color: #ffff01;
+    }
+
+    .title-2 {
+      margin-top: 30px;
+      color: white;
+      font-size: 40px;
+      padding: 20px 20px;
+    }
+
+    @media (max-width: 520px) {
+      .title-1 {
+        font-size: 35px;
+      }
+      .title-2 {
+        font-size: 26px;
+      }
+    }
+
+    .image-container {
+      margin: 25px 0;
+      margin-bottom: 10px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    .image-container img {
+      width: 100%;
+      max-width: 350px;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      display: block;
+      border-radius: 25px;
+      border: 2px solid #f8f32b;
+    }
+    .order-container {
+      display: flex;
+      justify-content: center;
+      padding: 20px 0;
+      margin: 0;
+    }
+    .order-btn {
+      background-color: #e94560;
+      color: white;
+      display: inline-flex;
+      align-items: center;
+      padding: 12px 20px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: clamp(20px, 2vw, 25px);
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+    .order-btn img {
+      width: 30px;
+      margin-right: 10px;
+    }
+    .order-btn:hover {
+      background-color: #c9203c;
+      animation: hover-animation-pulse 0.3s linear infinite alternate;
+    }
+
+    @keyframes hover-animation-pulse {
+      100% {
+        transform: scale(1.1);
+      }
+    }
+
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      margin-top: 25px;
+    }
+
+    .feature-list li {
+      color: white;
+      font-size: 30px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+    }
+    .feature-list li:last-child {
+      border-bottom: none;
+    }
+
+    @media (max-width: 500px) {
+      .feature-list li {
+        font-size: 22px;
+        font-weight: normal;
+      }
+
+      .last-text {
+        font-size: 20px;
+        line-height: 35px;
+      }
+    }
+
+    .glowing-box {
+      position: fixed;
+      width: 100%;
+      z-index: -1;
+    }
+
+    .glowing {
+      position: relative;
+      min-width: 500px;
+      height: 550px;
+      transform-origin: right;
+      animation: colorChange 20s linear infinite;
+    }
+
+    .glowing:nth-child(even) {
+      transform-origin: left;
+    }
+    .glowing:nth-child(odd) {
+      transform-origin: top;
+    }
+
+    @keyframes colorChange {
+      0% {
+        filter: hue-rotate(0deg);
+        transform: rotate(0deg);
+      }
+      100% {
+        filter: hue-rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+
+    .glowing span {
+      position: absolute;
+      top: calc(80px * var(--i));
+      left: calc(80px * var(--i));
+      bottom: calc(80px * var(--i));
+      right: calc(80px * var(--i));
+    }
+
+    .glowing span::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: -8px;
+      width: 15px;
+      height: 15px;
+      background: #f00;
+      border-radius: 50%;
+    }
+
+    .glowing span:nth-child(3n + 1)::before {
+      background: rgba(134, 255, 0, 1);
+      box-shadow: 0 0 20px rgba(134, 255, 0, 1), 0 0 40px rgba(134, 255, 0, 1),
+        0 0 60px rgba(134, 255, 0, 1), 0 0 80px rgba(134, 255, 0, 1),
+        0 0 0 8px rgba(134, 255, 0, 0.1);
+    }
+
+    .glowing span:nth-child(3n + 2)::before {
+      background: rgba(255, 214, 0, 1);
+      box-shadow: 0 0 20px rgba(255, 214, 0, 1), 0 0 40px rgba(255, 214, 0, 1),
+        0 0 60px rgba(255, 214, 0, 1), 0 0 80px rgba(255, 214, 0, 1),
+        0 0 0 8px rgba(255, 214, 0, 0.1);
+    }
+
+    .glowing span:nth-child(3n + 3)::before {
+      background: rgba(0, 226, 255, 1);
+      box-shadow: 0 0 20px rgba(0, 226, 255, 1), 0 0 40px rgba(0, 226, 255, 1),
+        0 0 60px rgba(0, 226, 255, 1), 0 0 80px rgba(0, 226, 255, 1),
+        0 0 0 8px rgba(0, 226, 255, 0.1);
+    }
+
+    .glowing span:nth-child(3n + 4)::before {
+      background: rgba(255, 85, 85, 1);
+      box-shadow: 0 0 20px rgba(255, 85, 85, 1), 0 0 40px rgba(255, 85, 85, 1),
+        0 0 60px rgba(255, 85, 85, 1), 0 0 80px rgba(255, 85, 85, 1),
+        0 0 0 8px rgba(255, 85, 85, 0.1);
+    }
+
+    .glowing span:nth-child(3n + 5)::before {
+      background: rgba(85, 170, 255, 1);
+      box-shadow: 0 0 20px rgba(85, 170, 255, 1), 0 0 40px rgba(85, 170, 255, 1),
+        0 0 60px rgba(85, 170, 255, 1), 0 0 80px rgba(85, 170, 255, 1),
+        0 0 0 8px rgba(85, 170, 255, 0.1);
+    }
+
+    .glowing span:nth-child(3n + 6)::before {
+      background: rgba(170, 255, 85, 1);
+      box-shadow: 0 0 20px rgba(170, 255, 85, 1), 0 0 40px rgba(170, 255, 85, 1),
+        0 0 60px rgba(170, 255, 85, 1), 0 0 80px rgba(170, 255, 85, 1),
+        0 0 0 8px rgba(170, 255, 85, 0.1);
+    }
+
+    .glowing span:nth-child(3n + 7)::before {
+      background: rgba(255, 85, 255, 1);
+      box-shadow: 0 0 20px rgba(255, 85, 255, 1), 0 0 40px rgba(255, 85, 255, 1),
+        0 0 60px rgba(255, 85, 255, 1), 0 0 80px rgba(255, 85, 255, 1),
+        0 0 0 8px rgba(255, 85, 255, 0.1);
+    }
+
+    .glowing span:nth-child(3n + 8)::before {
+      background: rgba(255, 255, 85, 1);
+      box-shadow: 0 0 20px rgba(255, 255, 85, 1), 0 0 40px rgba(255, 255, 85, 1),
+        0 0 60px rgba(255, 255, 85, 1), 0 0 80px rgba(255, 255, 85, 1),
+        0 0 0 8px rgba(255, 255, 85, 0.1);
+    }
+
+    .glowing span:nth-child(3n + 9)::before {
+      background: rgba(85, 255, 255, 1);
+      box-shadow: 0 0 20px rgba(85, 255, 255, 1), 0 0 40px rgba(85, 255, 255, 1),
+        0 0 60px rgba(85, 255, 255, 1), 0 0 80px rgba(85, 255, 255, 1),
+        0 0 0 8px rgba(85, 255, 255, 0.1);
+    }
+
+    .glowing span:nth-child(3n + 10)::before {
+      background: rgba(255, 170, 85, 1);
+      box-shadow: 0 0 20px rgba(255, 170, 85, 1), 0 0 40px rgba(255, 170, 85, 1),
+        0 0 60px rgba(255, 170, 85, 1), 0 0 80px rgba(255, 170, 85, 1),
+        0 0 0 8px rgba(255, 170, 85, 0.1);
+    }
+
+    .glowing span:nth-child(3n + 11)::before {
+      background: rgba(170, 85, 255, 1);
+      box-shadow: 0 0 20px rgba(170, 85, 255, 1), 0 0 40px rgba(170, 85, 255, 1),
+        0 0 60px rgba(170, 85, 255, 1), 0 0 80px rgba(170, 85, 255, 1),
+        0 0 0 8px rgba(170, 85, 255, 0.1);
+    }
+
+    .glowing span:nth-child(3n + 12)::before {
+      background: rgba(85, 255, 170, 1);
+      box-shadow: 0 0 20px rgba(85, 255, 170, 1), 0 0 40px rgba(85, 255, 170, 1),
+        0 0 60px rgba(85, 255, 170, 1), 0 0 80px rgba(85, 255, 170, 1),
+        0 0 0 8px rgba(85, 255, 170, 0.1);
+    }
+
+    .glowing span:nth-child(3n + 1) {
+      animation: animate 10s alternate infinite;
+    }
+
+    .glowing span:nth-child(3n + 2) {
+      animation: animate-reverse 3s alternate infinite;
+    }
+
+    .glowing span:nth-child(3n + 3) {
+      animation: animate 8s alternate infinite;
+    }
+    .glowing span:nth-child(3n + 4) {
+      animation: animate-reverse 10s alternate infinite;
+    }
+
+    .glowing span:nth-child(3n + 5) {
+      animation: animate 9s alternate infinite;
+    }
+
+    .glowing span:nth-child(3n + 6) {
+      animation: animate-reverse 7s alternate infinite;
+    }
+    .glowing span:nth-child(3n + 7) {
+      animation: animate 6s alternate infinite;
+    }
+
+    .glowing span:nth-child(3n + 8) {
+      animation: animate-reverse 5s alternate infinite;
+    }
+
+    .glowing span:nth-child(3n + 9) {
+      animation: animate 7s alternate infinite;
+    }
+
+    .glowing span:nth-child(3n + 10) {
+      animation: animate-reverse 6s alternate infinite;
+    }
+
+    .glowing span:nth-child(3n + 11) {
+      animation: animate 5s alternate infinite;
+    }
+
+    .glowing span:nth-child(3n + 12) {
+      animation: animate-reverse 8s alternate infinite;
+    }
+
+    @keyframes animate {
+      0% {
+        transform: rotate(180deg);
+      }
+      50% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes animate-reverse {
+      0% {
+        transform: rotate(360deg);
+      }
+
+      50% {
+        transform: rotate(180deg);
+      }
+
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+  </style>
+  <body>
+    <div class="glowing-box">
+      <div class="glowing">
+        <span style="--i: 1"></span>
+        <span style="--i: 2"></span>
+        <span style="--i: 3"></span>
+        <span style="--i: 4"></span>
+        <span style="--i: 5"></span>
+        <span style="--i: 6"></span>
+        <span style="--i: 7"></span>
+        <span style="--i: 8"></span>
+        <span style="--i: 9"></span>
+        <span style="--i: 10"></span>
+        <span style="--i: 11"></span>
+        <span style="--i: 12"></span>
+      </div>
+      <div class="glowing">
+        <span style="--i: 1"></span>
+        <span style="--i: 2"></span>
+        <span style="--i: 3"></span>
+        <span style="--i: 4"></span>
+        <span style="--i: 5"></span>
+        <span style="--i: 6"></span>
+        <span style="--i: 7"></span>
+        <span style="--i: 8"></span>
+        <span style="--i: 9"></span>
+        <span style="--i: 10"></span>
+        <span style="--i: 11"></span>
+        <span style="--i: 12"></span>
+      </div>
+      <div class="glowing">
+        <span style="--i: 1"></span>
+        <span style="--i: 2"></span>
+        <span style="--i: 3"></span>
+        <span style="--i: 4"></span>
+        <span style="--i: 5"></span>
+        <span style="--i: 6"></span>
+        <span style="--i: 7"></span>
+        <span style="--i: 8"></span>
+        <span style="--i: 9"></span>
+        <span style="--i: 10"></span>
+        <span style="--i: 11"></span>
+        <span style="--i: 12"></span>
+      </div>
+    </div>
+
+    <div class="root-1">
+      <div class="wrapper-div">
+        <h1 class="title-1 common-class">
+          বাচ্চা <span class="different-text-1"> ঘুমাতে চায় না </span>? খেতে
+          বসলে <span class="different-text-1"> কান্নাকাটি করে</span> ?
+        </h1>
+        <h2 class="common-class title-2">
+          অর্ধেক খাওয়া রেখেই উঠে যায়? তার মানে তো
+          <span class="different-text-1"> অর্ধেক পুষ্টি প্লেটেই থেকে যায় </span
+          >।
+        </h2>
+
+        <div class="image-container">
+          <img
+            src="https://alishop.today/wp-content/uploads/2025/03/8-1-300x300.jpg"
+            alt=""
+          />
+        </div>
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn">
+            <img
+              src="https://builder.storex.com.bd/images/builder/allergy/finger-of-a-hand-pointing-to-right-direction-lqm9tkxe.webp"
+              alt="Order Now"
+            />
+            অর্ডার করুন এখনই
+          </a>
+        </div>
+        <h2 class="common-class title-2">
+          এখন বাচ্চার খাওয়া এবং ঘুমের সময় তাকে শান্ত রাখার জন্য
+          <span class="different-text-1"> মোবাইল ফোনে কার্টুন </span> অথবা অন্য
+          কিছু ছেড়ে দিয়ে <span class="different-text-1">শান্ত রাখছেন </span> ,
+          কিন্তু আপনার বাচ্চার জন্য এই মোবাইল ফোন কতটা
+          <span class="different-text-1">ক্ষতিকারক </span> তা একজন সচেতন বাবা-মা
+          হিসেবে অবশ্যই আপনার জানা থাকার কথা।
+        </h2>
+        <h2 class="common-class title-2" style="font-size: 35px">
+          এবার সব সমস্যার সমাধান এক ম্যাজিক লাইটেই !
+          <span class="different-text-1"> Starry Projector Led Light </span>আনছে
+          এক আকর্ষণীয় <span class="different-text-1"> তারাভরা জগৎ </span>, যা
+          বাচ্চাদের <span class="different-text-1"> মনোযোগ ধরে রাখবে </span> আর
+          ঘুম ও খাওয়ার সময়কে করবে উপভোগ্য!
+        </h2>
+        <div class="image-container">
+          <img
+            src="https://alishop.today/wp-content/uploads/2025/03/11-1-300x300.jpg"
+            alt=""
+          />
+        </div>
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn">
+            <img
+              src="https://builder.storex.com.bd/images/builder/allergy/finger-of-a-hand-pointing-to-right-direction-lqm9tkxe.webp"
+              alt="Order Now"
+            />
+            অর্ডার করুন এখনই
+          </a>
+        </div>
+        <h2 class="common-class title-2">
+          তারাভরা আকাশের মুগ্ধতায়
+          <span class="different-text-1"> বাচ্চা ঘুমাতে যাবে আগ্রহ নিয়ে </span>
+          ! খাওয়ার সময়ের আকর্ষণীয় লাইট দেখে বাচ্চা সহজেই খেতে রাজি হবে।
+          <span class="different-text-1"> রিমোট কন্ট্রোল ও টাইমার </span> থাকায়
+          বাবা-মায়ের জন্য ডিভাইসটি নিয়ন্ত্রণ করা খুবই সহজ।
+        </h2>
+
+        <div class="image-container">
+          <img
+            src="https://alishop.today/wp-content/uploads/2025/03/6-2-300x300.jpg"
+            alt=""
+          />
+        </div>
+        <h2 class="common-class title-2">
+          বাচ্চার জন্য ঘুম আর খাওয়ার সময় হবে এক
+          <span class="different-text-1"> আনন্দময় অভিজ্ঞতা </span>। মায়েরা বলছেন
+          :
+        </h2>
+        <h2 class="common-class title-2">
+          “আগে খাওয়ানো ছিল <span class="different-text-1"> যুদ্ধের মতো </span> !
+          এখন Starry Projector Light জ্বালালেই
+          <span class="different-text-1"> হাসতে হাসতে </span> খেয়ে নেয়!”
+        </h2>
+        <h2 class="common-class title-2">
+          “আমার বাচ্চা এখন নিজেই ঘুমাতে চায় !
+          <span class="different-text-1">
+            Starry Projector Light সত্যিই ম্যাজিক
+          </span>
+          !”
+        </h2>
+
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn">
+            <img
+              src="https://builder.storex.com.bd/images/builder/allergy/finger-of-a-hand-pointing-to-right-direction-lqm9tkxe.webp"
+              alt="Order Now"
+            />
+            অর্ডার করুন এখনই
+          </a>
+        </div>
+
+        <h2 class="common-class title-2">কিছু গুরুত্বপূর্ণ ফিচার সমূহ</h2>
+
+        <section style="width: 100%">
+          <ul class="feature-list">
+            <li style="font-weight: bold">
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                style="width: 30px; margin-right: 20px"
+                alt=""
+              />
+              <span>
+                <strong class="different-text-1">
+                  360° রোটেশন ও মাল্টি-কালার মোড
+                </strong>
+                - এতে থাকছে 360° রোটেশন ও মাল্টি-কালার মোড, যা দিয়ে লাইটের রং
+                পরিবর্তন করুন আপনার মুড অনুযায়ী।
+              </span>
+            </li>
+            <li style="font-weight: bold">
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                style="width: 30px; margin-right: 20px"
+                alt=""
+              />
+              <span>
+                <strong class="different-text-1">
+                  মিউজিক সিনক্রোনাইজেশন
+                </strong>
+                - ব্লুটুথ স্পিকার থাকার কারণে আপনার পছন্দমত যে কোন অডিও আপনি
+                শুনতে পারেন।
+              </span>
+            </li>
+            <li style="font-weight: bold">
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                style="width: 30px; margin-right: 20px"
+                alt=""
+              />
+              <span>
+                <strong class="different-text-1">
+                  রিমোট কন্ট্রোল ও টাইমার
+                </strong>
+                - রিমোট কন্ট্রোল থাকার কারণে আপনি ইচ্ছামত যে কোন জায়গা থেকেই
+                লাইটটি চালনা করতে পারবেন। তাছাড়া আরজিবি সিঙ্গেল কালার মোডও আপনি
+                ইউজ করতে পারবেন।
+              </span>
+            </li>
+            <li style="font-weight: bold">
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                style="width: 30px; margin-right: 20px"
+                alt=""
+              />
+              <span>
+                <strong class="different-text-1"> সেরা গিফট </strong>
+                - শিশু, টিনএজার, এমনকি বড়দের জন্যও পারফেক্ট উপহার!
+              </span>
+            </li>
+          </ul>
+        </section>
+
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn">
+            <img
+              src="https://builder.storex.com.bd/images/builder/allergy/finger-of-a-hand-pointing-to-right-direction-lqm9tkxe.webp"
+              alt="Order Now"
+            />
+            অর্ডার করুন এখনই
+          </a>
+        </div>
+        <h2 class="common-class title-2 last-text">
+          তো আর দেরি কেন আমাদের
+          <span class="different-text-1"> স্টক শেষ হওয়ার </span> আগেই আপনার
+          লাইট টি আজই সংগ্রহ করুন। সংগ্রহ করতে
+          <span class="different-text-1">অর্ডার নাও </span> বাটনে ক্লিক করে
+          আমাদের ওয়েবসাইট থেকে অর্ডার করুন অথবা স্ক্রিনে দেওয়া মোবাইল নাম্বারে
+          ফোন করে অর্ডার কনফার্ম করুন
+        </h2>
+      </div>
+    </div>
+  </body>
+</html>

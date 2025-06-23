@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project-5</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Hind Siliguri", sans-serif;
+        font-weight: bold;
+        line-height: 1.5;
+        padding: 20px;
+        background-color: rgb(39, 38, 38);
+      }
+      .root {
+        display: flex;
+        justify-content: center;
+      }
+      .parent-div {
+        width: 100%;
+        max-width: 1300px;
+      }
+      .common-class {
+        border-radius: 20px;
+        background-color: #faf3e0;
+        padding: 25px 10px;
+        text-align: center;
+      }
+      .h1-title-1 {
+        font-size: 50px;
+        margin-top: 25px;
+      }
+      .h2-title-1 {
+        margin-top: 25px;
+        padding: 15px;
+        font-size: 25px;
+      }
+      .image-container {
+        margin: 25px 0;
+        margin-bottom: 10px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+      .image-container img {
+        width: 100%;
+        max-width: 450px;
+        height: 600px;
+        object-fit: cover;
+        display: block;
+        border-radius: 25px;
+        border: 2px solid #6d4c41;
+      }
+      .order-container {
+        display: flex;
+        justify-content: center;
+        padding: 20px 0;
+        margin: 0;
+      }
+      .order-btn {
+        background-color: #e67e22;
+        color: #fff;
+        display: inline-flex;
+        align-items: center;
+        padding: 12px 20px;
+        text-decoration: none;
+        border-radius: 8px;
+        font-size: clamp(16px, 4vw, 18px);
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+      }
+      .order-btn img {
+        width: 20px;
+        margin-right: 10px;
+      }
+      .order-btn:hover {
+        background-color: #b65500;
+        animation: hover-animation-pulse 0.3s linear infinite alternate;
+      }
+      .h2-title-2 {
+        font-size: 40px;
+      }
+      @keyframes hover-animation-pulse {
+        100% {
+          transform: scale(1.1);
+        }
+      }
+      @media (max-width: 520px) {
+        .h2-title-1 {
+          font-size: 30px;
+          line-height: 45px;
+        }
+        .h2-title-2 {
+          font-size: 35px;
+        }
+      }
+      .features-section {
+        color: white;
+        border-radius: 8px;
+        margin: 0 auto;
+        padding-top: 35px;
+      }
+      .feature-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 15px;
+        border-bottom: solid white 1px;
+        padding-bottom: 15px;
+        font-size: 25px;
+        font-weight: normal;
+      }
+      .check-icon {
+        width: 30px;
+        height: 30px;
+        margin-top: 4px;
+        border-radius: 0;
+      }
+
+      .video-section {
+        margin-top: 25px;
+        width: 100%;
+      }
+
+      .video-section iframe {
+        width: 100%;
+        height: 80vh;
+        border-radius: 25px;
+        border: 2px solid #6d4c41;
+      }
+
+      @media (max-width: 520px) {
+        .video-section iframe {
+          height: 40vh;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="root">
+      <div class="parent-div">
+        <h1 class="h1-title-1 common-class">
+          আপনার ঘরে প্রকৃতির উষ্ণ স্পর্শ আনুন!
+        </h1>
+        <h2 class="common-class h2-title-1">
+          ১০০% হাতে তৈরি ব্যাম্বু ল্যাম্প, যা আপনার ঘরকে দিবে এক অনন্য ন্যাচারাল
+          লুক!
+        </h2>
+        <div class="image-container">
+          <img
+            src="https://alishop.naturalcure.site/wp-content/uploads/2025/05/bamboo-lamp-3.jpg"
+            alt=""
+          />
+        </div>
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn">
+            <img
+              src="https://builder.storex.com.bd/images/builder/allergy/finger-of-a-hand-pointing-to-right-direction-lqm9tkxe.webp"
+              alt="Order Now"
+            />
+            এখনই কিনুন
+          </a>
+        </div>
+        <h2 class="common-class h2-title-1 h2-title-2">
+          আমাদের ব্যাম্বো ল্যাম্প কেন সেরা?
+        </h2>
+        <section class="features-section">
+          <div class="feature-item">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/16597/16597199.png"
+              alt="check"
+              class="check-icon"
+            />
+            <p>১০০% প্রাকৃতিক বাঁশ দিয়ে তৈরি – সম্পূর্ণ পরিবেশবান্ধব</p>
+          </div>
+          <div class="feature-item">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/16597/16597199.png"
+              alt="check"
+              class="check-icon"
+            />
+            <p>হাতে তৈরি শিল্পকর্ম, প্রতিটি ল্যাম্প অনন্য</p>
+          </div>
+          <div class="feature-item">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/16597/16597199.png"
+              alt="check"
+              class="check-icon"
+            />
+            <p>উষ্ণ আলো যা ঘরকে করে তোলে আরামদায়ক</p>
+          </div>
+          <div class="feature-item">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/16597/16597199.png"
+              alt="check"
+              class="check-icon"
+            />
+            <p>ডিমেবল লাইট – আলোর উজ্জ্বলতা নিয়ন্ত্রণ করতে পারবেন</p>
+          </div>
+          <div class="feature-item">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/16597/16597199.png"
+              alt="check"
+              class="check-icon"
+            />
+            <p>শক্তিশালী ও দীর্ঘস্থায়ী – টেকসই কাটিংমো</p>
+          </div>
+          <div class="feature-item">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/16597/16597199.png"
+              alt="check"
+              class="check-icon"
+            />
+            <p>
+              ঘরের যেকোনো জায়গায় মানানসই – বেডরুম, লিভিং রুম, অফিস,
+              রেস্টুরেন্ট
+            </p>
+          </div>
+        </section>
+        <h2 class="common-class h2-title-1 h2-title-2">লাইভ ডেমো / ভিডিও</h2>
+
+        <div class="video-section">
+          <iframe
+            width="560"
+            height="600"
+            src="https://www.youtube.com/embed/8E_OlWMYsZY"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          >
+          </iframe>
+        </div>
+
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn">
+            <img
+              src="https://builder.storex.com.bd/images/builder/allergy/finger-of-a-hand-pointing-to-right-direction-lqm9tkxe.webp"
+              alt="Order Now"
+            />
+            এখনই কিনুন
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project-25</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Hind Siliguri", sans-serif;
+        position: relative;
+        margin: 0;
+        min-height: 100vh;
+        background: url("https://alishop.today/wp-content/uploads/2025/03/9-2.jpg");
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(
+          0,
+          0,
+          0,
+          0.5
+        ); /* Adjust 0.4 to control darkness */
+        z-index: -3; /* Ensures it's behind your content */
+      }
+
+      .root-1 {
+        display: flex;
+        justify-content: center;
+        font-weight: bold;
+      }
+      .wrapper-div {
+        width: 100%;
+        max-width: 1290px;
+        padding: 25px;
+      }
+      .common-class {
+        border-radius: 20px;
+        padding: 25px 10px;
+        text-align: center;
+        backdrop-filter: blur(5px); /* Correct syntax */
+        -webkit-backdrop-filter: blur(5px); /* For Safari support */
+      }
+      .title-1 {
+        font-size: 50px;
+        padding: 30px 10px;
+        color: white;
+      }
+
+      .different-text-1 {
+        color: #ffff01;
+      }
+
+      .title-2 {
+        color: white;
+        font-size: 40px;
+        padding: 20px 20px;
+      }
+
+      .image-container {
+        margin: 25px 0;
+        margin-bottom: 10px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+      .image-container img {
+        width: 100%;
+        max-width: 550px;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        display: block;
+        border-radius: 25px;
+        border: 2px solid #f8f32b;
+      }
+      .order-container {
+        display: flex;
+        justify-content: center;
+        padding: 20px 0;
+        margin: 0;
+      }
+      .order-btn {
+        background-color: #0b460e;
+        color: white;
+        display: inline-flex;
+        align-items: center;
+        padding: 12px 20px;
+        text-decoration: none;
+        border-radius: 8px;
+        font-size: 23px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+      }
+      .order-btn img {
+        width: 30px;
+        margin-right: 10px;
+      }
+      .order-btn:hover {
+        background-color: #0e7205;
+        animation: hover-animation-pulse 0.3s linear infinite alternate;
+      }
+
+      @keyframes hover-animation-pulse {
+        100% {
+          transform: scale(1.1);
+        }
+      }
+
+      .feature-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        margin-top: 25px;
+      }
+
+      .feature-list li {
+        color: white;
+        font-size: 30px;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+      }
+      .feature-list li:last-child {
+        border-bottom: none;
+      }
+
+      /* why buy section */
+      .unorder {
+        list-style: none;
+        padding: 0;
+        padding-left: 15px;
+        margin-top: 25px;
+        color: white;
+      }
+
+      .unorder li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .unorder li p {
+        margin: 0;
+        font-size: 30px;
+        font-weight: 500;
+      }
+
+      @media (max-width: 500px) {
+        .title-1 {
+          font-size: 40px;
+        }
+        .title-2 {
+          font-size: 28px;
+        }
+        .feature-list li {
+          font-size: 22px;
+          font-weight: normal;
+        }
+
+        .last-text {
+          font-size: 23px;
+          line-height: 35px;
+        }
+        .unorder li p {
+          font-size: 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="root-1">
+      <div class="wrapper-div">
+        <h1 class="title-1 common-class">
+          বিজ্ঞানের <span class="different-text-1"> জাদু </span> দেখুন! আপনার
+          টেবিলে এখন ভাসবে <span class="different-text-1"> আলো </span>
+        </h1>
+        <h2 class="common-class title-2">
+          <span class="different-text-1"> MOOCCI লেভিটেটিং ল্যাম্প </span>-
+          আপনার ঘর বা অফিসে নিয়ে আসুন
+          <span class="different-text-1"> ভবিষ্যতের আলো </span>
+        </h2>
+
+        <div class="image-container">
+          <img
+            src="https://alishop.today/wp-content/uploads/2025/03/8-1-300x300.jpg"
+            alt=""
+          />
+        </div>
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn">
+            <img
+              src="https://builder.storex.com.bd/images/builder/allergy/finger-of-a-hand-pointing-to-right-direction-lqm9tkxe.webp"
+              alt="Order Now"
+            />
+            অর্ডার করুন এখনই
+          </a>
+        </div>
+        <h2 class="common-class title-2">কেন কিনবেন?</h2>
+        <section>
+          <ul class="unorder">
+            <li>
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/10629/10629607.png"
+                style="width: 40px; margin-right: 20px"
+                alt="check"
+              />
+              <p>
+                বাতাসে ভাসমান ডিজাইন — উন্নত ম্যাগনেটিক লেভিটেশন প্রযুক্তিতে
+                তৈরি এই গ্লোবটি যে কাউকে অবাক করে দিবে ।
+              </p>
+            </li>
+            <li>
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/10629/10629607.png"
+                style="width: 40px; margin-right: 20px"
+                alt="check"
+              />
+              <p>
+                ওয়্যারলেস চার্জিং — গ্লোবটি ভাসমান অবস্থাতেই চার্জ হয়, কোনো
+                তারের ঝামেলা নেই।
+              </p>
+            </li>
+            <li>
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/10629/10629607.png"
+                style="width: 40px; margin-right: 20px"
+                alt="check"
+              />
+              <p>
+                ৩টি আলোর মোড — উষ্ণ, শীতল ও দিনের আলো; আপনার পছন্দ অনুযায়ী
+                ব্যবহার করতে পারবেন।
+              </p>
+            </li>
+            <li>
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/10629/10629607.png"
+                style="width: 40px; margin-right: 20px"
+                alt="check"
+              />
+              <p>
+                স্পর্শে নিয়ন্ত্রণ — আপনার প্রয়োজন অনুযায়ী আলো নিয়ন্ত্রণ করতে
+                পারবেন ।
+              </p>
+            </li>
+            <li>
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/10629/10629607.png"
+                style="width: 40px; margin-right: 20px"
+                alt="check"
+              />
+              <p>শব্দহীন অপারেশন — ব্যবহারের সময় কোন ধরনের শব্দ হবে না ।</p>
+            </li>
+          </ul>
+        </section>
+        <h2 class="common-class title-2">
+          <span class="different-text-1"> চায়না</span> থেকে
+          <span class="different-text-1"> সরাসরি আমদানি</span> — বাংলাদেশে
+          একমাত্র <span class="different-text-1">আমাদের </span> কাছেই পাবেন!
+        </h2>
+        <div class="image-container">
+          <img
+            src="https://alishop.today/wp-content/uploads/2025/03/11-1-300x300.jpg"
+            alt=""
+          />
+        </div>
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn">
+            <img
+              src="https://builder.storex.com.bd/images/builder/allergy/finger-of-a-hand-pointing-to-right-direction-lqm9tkxe.webp"
+              alt="Order Now"
+            />
+            অর্ডার করুন এখনই
+          </a>
+        </div>
+        <h2 class="common-class title-2">
+          <span class="different-text-1"> রাত জেগে </span> পড়াশোনা বা অফিসের
+          কাজ? চোখের ক্লান্তি দূর করুন
+          <span class="different-text-1"> ম্যাজিক্যাল ফ্লোটিং লাইটে </span>!
+        </h2>
+
+        <div class="image-container">
+          <img
+            src="https://alishop.today/wp-content/uploads/2025/03/6-2-300x300.jpg"
+            alt=""
+          />
+        </div>
+
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn">
+            <img
+              src="https://builder.storex.com.bd/images/builder/allergy/finger-of-a-hand-pointing-to-right-direction-lqm9tkxe.webp"
+              alt="Order Now"
+            />
+            অর্ডার করুন এখনই
+          </a>
+        </div>
+        <h2 class="common-class title-2 last-text">
+          তো আর দেরি কেন আমাদের
+          <span class="different-text-1"> স্টক শেষ হওয়ার </span> আগেই আপনার
+          লাইট টি আজই সংগ্রহ করুন। সংগ্রহ করতে
+          <span class="different-text-1">অর্ডার নাও </span> বাটনে ক্লিক করে
+          আমাদের ওয়েবসাইট থেকে অর্ডার করুন অথবা স্ক্রিনে দেওয়া
+          <span class="different-text-1"> মোবাইল নাম্বারে </span>
+          ফোন করে অর্ডার কনফার্ম করুন
+        </h2>
+      </div>
+    </div>
+  </body>
+</html>

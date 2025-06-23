@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asthma Relief Combo</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Hind Siliguri", sans-serif !important;
+      }
+
+      body {
+        font-weight: bold;
+        font-family: "Hind Siliguri", sans-serif !important;
+      }
+
+      .asthma-container {
+        margin: 10px;
+        padding: 10px;
+        overflow-x: hidden;
+      }
+
+      .colorful-text {
+        font-weight: bold;
+      }
+
+      .asthma-header {
+        background-color: #00721d;
+        padding: 20px 10px;
+        color: white;
+        font-size: 43px;
+        line-height: 55px;
+        text-align: center;
+        border-radius: 20px;
+        font-weight: bolder;
+        margin: 5px 0 20px;
+      }
+
+      .asthma-highlight {
+        background-color: #d3fae3;
+        border-radius: 20px;
+        padding: 20px;
+        font-size: 22px;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .asthma-image-wrapper {
+        display: flex;
+        justify-content: center;
+        padding: 0 15px;
+        margin: 25px 0 10px;
+      }
+
+      .asthma-image-wrapper img {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        border: 4px solid #cbb50c;
+        border-radius: 35px;
+        object-fit: contain;
+      }
+
+      .asthma-subtitle {
+        font-size: 22px;
+        text-align: center;
+        margin: 0;
+        background-color: #d3fae3;
+        border-radius: 20px;
+        padding: 20px;
+      }
+
+      .asthma-description {
+        font-size: 20px;
+        font-weight: 500;
+        text-align: center;
+        margin-top: 25px;
+      }
+
+      .asthma-benefit-section {
+        display: flex;
+        justify-content: center;
+        background-color: #d3fae3;
+        border-radius: 20px;
+        padding: 20px;
+        margin-top: 25px;
+        flex-direction: column;
+      }
+
+      .asthma-benefit-title {
+        font-size: 28px;
+        font-weight: bold;
+        text-align: center;
+        padding-bottom: 25px;
+        width: 100%;
+      }
+
+      .asthma-benefit-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px;
+        font-size: 20px;
+        font-weight: 600;
+      }
+
+      .asthma-benefit-item img {
+        width: 35px;
+        margin-right: 15px;
+      }
+
+      .asthma-order-box {
+        display: flex;
+        justify-content: center;
+        margin: 15px 0;
+      }
+
+      .asthma-order-btn {
+        background-color: #0000e9;
+        color: white;
+        display: inline-flex;
+        align-items: center;
+        padding: 12px 20px;
+        text-decoration: none;
+        border-radius: 8px;
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+      }
+
+      .asthma-order-btn:hover {
+        background-color: #0000b5;
+        animation: pulse-scale 0.3s linear infinite alternate;
+      }
+
+      @keyframes pulse-scale {
+        100% {
+          transform: scale(1.1);
+        }
+      }
+
+      .asthma-price-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-top: 20px;
+      }
+
+      .asthma-price-card {
+        padding: 15px;
+        border-radius: 8px;
+        text-align: center;
+        border: 1px solid green;
+      }
+
+      .asthma-price-card img {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 8px;
+      }
+
+      .asthma-price-label {
+        margin-top: 10px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #fff;
+        background: #ff6600;
+        display: inline-block;
+        padding: 6px 12px;
+        border-radius: 5px;
+      }
+
+      .order-callout {
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 1.6;
+        text-align: center;
+        padding: 20px;
+        margin-top: 30px;
+        border-radius: 12px;
+        background-color: #fff9e6;
+        color: #111;
+      }
+
+      .highlight-text {
+        color: #d62828;
+        font-weight: 700;
+      }
+
+      @media (min-width: 768px) {
+        .asthma-header {
+          font-size: 65px;
+          padding: 40px 20px;
+        }
+
+        .asthma-highlight {
+          font-size: 40px;
+        }
+
+        .asthma-description {
+          font-size: 30px;
+        }
+
+        .asthma-subtitle {
+          font-size: 40px;
+        }
+
+        .asthma-price-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .asthma-order-btn {
+          font-size: 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="asthma-container">
+      <h1 class="asthma-header">
+        দেরি মানেই <span class="colorful-text"> বিপদ</span> !
+      </h1>
+      <h2 class="asthma-highlight">
+        হাঁপানি ও শ্বাসকষ্ট প্রাথমিকভাবে সহজে নিয়ন্ত্রণযোগ্য, কিন্তু অবহেলা করলে
+        তা হতে পারে মৃত্যুঝুঁকির কারণ।
+      </h2>
+
+      <div class="asthma-image-wrapper">
+        <img
+          src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/naturalcure_db2/images/builder/6847f4ddf22f822fcc3a5ca2/1749549968831_WhatsApp-Image-2025-06-10-at-15.46.15-18432913.jpg"
+          alt="Product"
+        />
+      </div>
+
+      <div class="asthma-order-box">
+        <a href="#checkout-now" class="asthma-order-btn"> অর্ডার করতে চাই </a>
+      </div>
+
+      <h3 class="asthma-subtitle">
+        শ্বাস নিন আরাম করে – প্রাকৃতিক উপায়ে হাঁপানি ও কাশি মুক্ত জীবনের জন্য
+        G-COUGH ও LOBERIN কম্বো
+      </h3>
+      <p class="asthma-description">
+        G-COUGH সিরাপ ও LOBERIN ক্যাপসুল একসাথে কাজ করে আপনার ফুসফুসকে করে তোলে
+        শক্তিশালী এবং শ্বাসপ্রশ্বাসকে করে মুক্ত।
+      </p>
+
+      <div class="asthma-image-wrapper">
+        <img
+          src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/naturalcure_db2/images/builder/6847f4ddf22f822fcc3a5ca2/1749549962139_WhatsApp-Image-2025-06-10-at-15.46.15-29183f3b.jpg"
+          alt="Product"
+        />
+      </div>
+
+      <div class="asthma-order-box">
+        <a href="#checkout-now" class="asthma-order-btn"> অর্ডার করতে চাই </a>
+      </div>
+
+      <div class="asthma-benefit-section">
+        <p class="asthma-benefit-title">এই কম্বো তে যেসব উপকার পাবেনঃ</p>
+
+        <div>
+          <p class="asthma-benefit-item">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/10629/10629607.png"
+              alt=""
+            />
+            হাঁপানি ও শ্বাসকষ্টে দ্রুত আরাম
+          </p>
+          <p class="asthma-benefit-item">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/10629/10629607.png"
+              alt=""
+            />
+            বারবার কাশির প্রকোপ কমায়
+          </p>
+          <p class="asthma-benefit-item">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/10629/10629607.png"
+              alt=""
+            />
+            ফুসফুস পরিষ্কার রাখতে সহায়ক
+          </p>
+          <p class="asthma-benefit-item">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/10629/10629607.png"
+              alt=""
+            />
+            মিউকাস ও কফ নিঃসরণে সহায়তা করে
+          </p>
+          <p class="asthma-benefit-item">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/10629/10629607.png"
+              alt=""
+            />
+            প্রাকৃতিক ভেষজ উপাদানে প্রস্তুত – পার্শ্বপ্রতিক্রিয়া নেই
+          </p>
+          <p class="asthma-benefit-item">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/10629/10629607.png"
+              alt=""
+            />
+            শিশু থেকে বৃদ্ধ – সকলের জন্য নিরাপদ
+          </p>
+        </div>
+      </div>
+
+      <div class="asthma-order-box">
+        <a href="#checkout-now" class="asthma-order-btn"> অর্ডার করতে চাই </a>
+      </div>
+
+      <div class="asthma-price-grid">
+        <div class="asthma-price-card">
+          <img
+            src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/naturecure-online/images/builder/68515df0dcf43175b943813b/1750226756783_photo-2025-06-18-12-05-23.jpg"
+            alt="product image"
+          />
+          <p class="asthma-price-label">
+            ৳
+            <span style="text-decoration: line-through; margin-right: 6px">
+              875
+            </span>
+            595
+          </p>
+        </div>
+        <div class="asthma-price-card">
+          <img
+            src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/naturecure-online/images/builder/68515df0dcf43175b943813b/1750226764842_photo-2025-06-18-12-05-34.jpg"
+            alt="product image"
+          />
+          <p class="asthma-price-label">৳ 495</p>
+        </div>
+      </div>
+      <h2 class="order-callout">
+        তো আর দেরি কেন?
+        <span class="highlight-text">স্টক শেষ হওয়ার</span> আগেই অর্ডার নিশ্চিত
+        করুন। অর্ডার করতে <span class="highlight-text">অর্ডার নাও</span> বাটনে
+        ক্লিক করুন অথবা স্ক্রিনে দেওয়া
+        <span class="highlight-text">মোবাইল নাম্বারে</span>
+        ফোন করুন।
+      </h2>
+    </div>
+  </body>
+</html>
