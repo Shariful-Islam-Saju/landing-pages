@@ -1,72 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Water Drop</title>
-    <style>
-      body {
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: #e8e8e8;
-        overflow: hidden;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Multi-Wave Drop</title>
+  <style>
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #e8e8e8;
+      overflow: hidden;
+    }
 
-      .drop {
-        position: absolute;
-        width: 250px;
-        height: 250px;
-        top: 30%;
-        left: 35%;
-        background: transparent;
-        border-radius: 57% 43% 37% 63% / 45% 52% 48% 52%;
-        box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.05),
-          15px 25px 10px rgba(0, 0, 0, 0.1), 15px 20px 20px rgba(0, 0, 0, 0.05),
-          inset -10px -10px 15px rgba(237, 237, 237, 0.9);
-        /* animation: anim 1s infinite alternate; */
-      }
+    .drop {
+      position: relative;
+      width: 150px;
+      height: 150px;
+      background: transparent;
+      border-radius: 57% 43% 37% 63% / 45% 52% 48% 52%;
+      box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.05),
+        15px 25px 10px rgba(0, 0, 0, 0.1),
+        15px 20px 20px rgba(0, 0, 0, 0.05),
+        inset -10px -10px 15px rgba(237, 237, 237, 0.9);
+      cursor: pointer;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 16px;
+      font-weight: bold;
+      color: #333;
+      user-select: none;
+    }
 
-      .drop:before {
-        content: "";
-        position: absolute;
-        left: 25px;
-        top: 35px;
-        width: 20px;
-        height: 20px;
-        border-radius: 42% 58% 37% 63% / 40% 43% 57% 60%;
-        background: #fff;
-      }
+    .drop::before {
+      content: "";
+      position: absolute;
+      left: 25px;
+      top: 35px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #fff;
+      z-index: 2;
+    }
 
-      /* Visit https://democoding.in/ for more free css animation */
-      .drop:after {
-        content: "";
-        position: absolute;
-        left: 60px;
-        top: 25px;
-        width: 10px;
-        height: 10px;
-        border-radius: 42% 58% 37% 63% / 40% 43% 57% 60%;
-        background: #ffffff;
-      }
+    /* 1st wave ring */
+    .drop::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 30px;
+      height: 30px;
+      border: 2px solid rgba(0, 160, 255, 0.6);
+      border-radius: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      opacity: 0;
+      pointer-events: none;
+      z-index: 1;
+      animation: none;
+    }
 
-      @keyframes anim {
-        0% {
-          transform: translateY(0);
-          height: 150px;
-          width: 150px;
-        }
+    .drop:active::after {
+      animation: wave 1.5s ease-out forwards;
+    }
 
-        100% {
-          transform: translateY(40px);
-          height: 135px;
-          width: 160px;
-        }
+    /* Additional wave rings */
+    .drop::before,
+    .drop::after {
+      animation: none;
+    }
+
+
+
+    .drop:active .wave-ring {
+      animation: wave-ring 1.5s ease-out forwards;
+    }
+
+    .drop .wave-ring {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 30px;
+      height: 30px;
+      border: 2px solid rgba(0, 160, 255, 0.4);
+      border-radius: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      opacity: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .drop:active .wave-ring:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .drop:active .wave-ring:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    .drop:active .wave-ring:nth-child(4) {
+      animation-delay: 0.6s;
+    }
+
+    @keyframes wave {
+      0% {
+        transform: translate(-50%, -50%) scale(0.2);
+        opacity: 0.5;
       }
-    </style>
-  </head>
-  <body>
-    <div class="drop">Click me</div>
-  </body>
+      70% {
+        opacity: 0.3;
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(4);
+        opacity: 0;
+      }
+    }
+
+    @keyframes wave-ring {
+      0% {
+        transform: translate(-50%, -50%) scale(0.2);
+        opacity: 0.4;
+      }
+      70% {
+        opacity: 0.2;
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(4);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="drop">
+    Click me
+    <span class="wave-ring"></span>
+    <span class="wave-ring"></span>
+    <span class="wave-ring"></span>
+  </div>
+</body>
 </html>

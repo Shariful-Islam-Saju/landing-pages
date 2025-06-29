@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animated Project 14</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Hind Siliguri", sans-serif;
+        font-weight: bold;
+        padding: 15px;
+      }
+
+      .root-1 {
+        display: flex;
+        justify-content: center;
+      }
+
+      .wrapper-div {
+        width: 100%;
+        max-width: 1300px;
+      }
+
+      .title1 {
+        font-size: 50px;
+        text-align: center;
+      }
+
+      .image-container {
+        margin: 15px 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+
+      .image-stack {
+        position: relative;
+        width: 100%;
+        max-width: 450px;
+        aspect-ratio: 1 / 1;
+      }
+
+      .image-stack img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        top: 0;
+        left: 0;
+      }
+
+      .top-img {
+        animation: disappear 10s 5s linear infinite;
+        z-index: 2;
+      }
+      .bottom-img {
+        animation: disappear 10s linear infinite;
+        z-index: 2;
+      }
+      @keyframes disappear {
+        0% {
+          clip-path: inset(0% 0% 0% 0%);
+        }
+        30% {
+          clip-path: inset(100% 0% 0% 0%);
+        }
+        31% {
+          clip-path: inset(0% 0% 0% 0%);
+        }
+        60% {
+          z-index: 1;
+        }
+        100% {
+          clip-path: inset(0% 0% 0% 0%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="root-1">
+      <div class="wrapper-div">
+        <h1 class="title1">Hello World</h1>
+        <div class="image-container">
+          <div class="image-stack">
+            <img src="medicine-1.jpg" alt="Top Image" class="top-img" />
+            <img src="medicine-2.jpg" alt="Top Image" class="bottom-img" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
