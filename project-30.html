@@ -7,11 +7,13 @@
   </head>
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap");
+  
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+  
     body {
       font-family: "Hind Siliguri", sans-serif;
       position: relative;
@@ -19,50 +21,52 @@
       min-height: 100vh;
       background-color: #2c1b66;
     }
-
+  
     .root-1 {
       display: flex;
       justify-content: center;
       font-weight: bold;
     }
+  
     .wrapper-div {
       width: 100%;
-      max-width: 1290px;
       padding: 25px;
     }
+  
     .common-class {
-     border-top-right-radius: 25px;
-     border-bottom-left-radius: 25px;
+      border-top-right-radius: 25px;
+      border-bottom-left-radius: 25px;
       padding: 25px 10px;
       text-align: center;
-background-color: #1e1e1e;
-border: 3px solid #6e44ff;
+      background-color: #1e1e1e;
+      border: 3px solid #6e44ff;
     }
+  
     .title-1 {
-      font-size: 50px;
+      font-size: 35px;
       padding: 30px 10px;
       color: white;
       margin-top: 35px;
     }
-
+  
     .different-text-1 {
       color: #ffff01;
     }
-
+  
     .title-2 {
       margin-top: 30px;
       color: white;
-      font-size: 40px;
+      font-size: 26px;
       padding: 20px 20px;
     }
-
+  
     .image-container {
-      margin: 25px 0;
-      margin-bottom: 10px;
+      margin: 25px 0 10px;
       width: 100%;
       display: flex;
       justify-content: center;
     }
+  
     .image-container img {
       width: 100%;
       max-width: 350px;
@@ -72,12 +76,14 @@ border: 3px solid #6e44ff;
       border-radius: 25px;
       border: 2px solid #f8f32b;
     }
+  
     .order-container {
       display: flex;
       justify-content: center;
       padding: 20px 0;
       margin: 0;
     }
+  
     .order-btn {
       background-color: #e94560;
       color: white;
@@ -92,59 +98,75 @@ border: 3px solid #6e44ff;
       transition: all 0.3s ease;
       white-space: nowrap;
     }
+  
     .order-btn img {
       width: 30px;
       margin-right: 10px;
     }
+  
     .order-btn:hover {
       background-color: #c9203c;
       animation: hover-animation-pulse 0.3s linear infinite alternate;
     }
-
+  
     @keyframes hover-animation-pulse {
       100% {
         transform: scale(1.1);
       }
     }
-
+  
     .feature-list {
       list-style: none;
       padding: 0;
-      margin: 0;
-      margin-top: 25px;
+      margin: 25px 0 0;
     }
-
+  
     .feature-list li {
       color: white;
-      font-size: 30px;
+      font-size: 22px;
+      font-weight: normal;
       display: flex;
       align-items: center;
       border-bottom: 1px solid #ccc;
       padding-bottom: 10px;
       margin-bottom: 10px;
     }
+  
     .feature-list li:last-child {
       border-bottom: none;
     }
-
-    @media (max-width: 520px) {
+  
+    .last-text {
+      font-size: 20px;
+      line-height: 35px;
+    }
+  
+    /* Larger screen styles for tablets/desktops */
+    @media (min-width: 764px) {
+      .wrapper-div {
+        max-width: 1290px;
+      }
+  
       .title-1 {
-        font-size: 35px;
+        font-size: 50px;
       }
+  
       .title-2 {
-        font-size: 26px;
+        font-size: 40px;
       }
+  
       .feature-list li {
-        font-size: 22px;
-        font-weight: normal;
+        font-size: 30px;
+        font-weight: bold;
       }
-
+  
       .last-text {
-        font-size: 20px;
-        line-height: 35px;
+        font-size: 24px;
+        line-height: 40px;
       }
     }
   </style>
+  
   <body>
     <div class="root-1">
       <div class="wrapper-div">

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Project 31</title>
+    <title>Project 33</title>
     <style>
       * {
         margin: 0;
@@ -54,19 +54,55 @@
       }
       /* Image Styling */
       .image-container {
+        margin: 25px 0;
+        width: 100%;
         display: flex;
         justify-content: center;
-        padding: 0 15px;
-        margin-bottom: 10px;
-        margin-top: 25px;
       }
-      .image-container img {
+
+      .image-stack {
+        position: relative;
         width: 100%;
-        max-width: 500px;
-        height: auto;
-        border: 4px solid#cbb50c;
-        border-radius: 35px;
-        object-fit: contain;
+        max-width: 450px;
+        aspect-ratio: 1 / 1;
+        box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.466);
+      }
+
+      .image-stack img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        top: 0;
+        left: 0;
+      }
+
+      .top-img {
+        animation: disappear 10s 5s linear infinite;
+        z-index: 2;
+      }
+
+      .bottom-img {
+        animation: disappear 10s linear infinite;
+        z-index: 2;
+      }
+
+      @keyframes disappear {
+        0% {
+          clip-path: inset(0% 0% 0% 0%);
+        }
+        30% {
+          clip-path: inset(100% 0% 0% 0%);
+        }
+        31% {
+          clip-path: inset(0% 0% 0% 0%);
+        }
+        60% {
+          z-index: 1;
+        }
+        100% {
+          clip-path: inset(0% 0% 0% 0%);
+        }
       }
       /* Section 3 */
       .h3-title-1 {
@@ -242,11 +278,12 @@
           </div>
         </div>
       </div>
+
       <div class="image-container">
-        <img
-          src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/naturecure-online/images/builder/685d14e879ef2278233a3f7a/1751093867491_20250628-122707.jpg"
-          alt="৩০ ওয়াট LED ফ্ল্যাশলাইটের ছবি"
-        />
+        <div class="image-stack">
+          <img src="medicine-1.jpg" alt="Top Image" class="top-img" />
+          <img src="medicine-2.jpg" alt="Top Image" class="bottom-img" />
+        </div>
       </div>
       <div class="order-container">
         <a href="#checkout-now" class="order-btn"> অর্ডার করতে চাই </a>
@@ -257,11 +294,12 @@
         যারা ওয়ান টাইম মেডিসিন খেয়ে কিডনী ও ধ্বজভঙ্গ রোগে আক্রান্ত হতে চান না,
         তাদের জন্য এটা বেস্ট সলুশন
       </p>
+
       <div class="image-container">
-        <img
-          src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/naturalcure_db2/images/builder/6847f4ddf22f822fcc3a5ca2/1749549968831_WhatsApp-Image-2025-06-10-at-15.46.15-18432913.jpg"
-          alt="৩০ ওয়াট LED ফ্ল্যাশলাইটের ছবি"
-        />
+        <div class="image-stack">
+          <img src="medicine-1.jpg" alt="Top Image" class="top-img" />
+          <img src="medicine-2.jpg" alt="Top Image" class="bottom-img" />
+        </div>
       </div>
       <div class="order-container">
         <a href="#checkout-now" class="order-btn"> অর্ডার করতে চাই </a>
@@ -347,7 +385,12 @@
           </div>
         </div>
       </div>
-
+      <div class="image-container">
+        <div class="image-stack">
+          <img src="medicine-1.jpg" alt="Top Image" class="top-img" />
+          <img src="medicine-2.jpg" alt="Top Image" class="bottom-img" />
+        </div>
+      </div>
       <div class="order-container">
         <a href="#checkout-now" class="order-btn"> অর্ডার করতে চাই </a>
       </div>
@@ -371,7 +414,7 @@
             src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/naturecure-online/images/products/36fe433383814826a54e/1748768049120_spirulina.webp"
             alt=""
           />
-          <p class="price-text">৳ ৫৯৫</p>
+          <p class="price-text">৳ ৬০০</p>
         </div>
       </div>
     </div>
