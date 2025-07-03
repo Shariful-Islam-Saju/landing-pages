@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animated Design</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f4f4f4;
+      }
+      .submit-btn {
+        position: relative;
+        overflow: hidden;
+        padding: 16px 48px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        background: linear-gradient(90deg, #e53935, #d32f2f);
+        cursor: pointer;
+        box-shadow:
+          0 10px 20px rgba(0, 0, 0, 0.3),
+          0 6px 6px rgba(0, 0, 0, 0.22);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        z-index: 0;
+      }
+      .submit-btn:hover {
+        transform: translateY(-6px);
+        box-shadow:
+          0 10px 10px rgba(0, 0, 0, 0.35),
+          0 8px 8px rgba(0, 0, 0, 0.25);
+      }
+      .submit-btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 0.4) 50%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        transform: skewX(-20deg);
+        animation: shimmer 2.5s infinite;
+        z-index: 1;
+      }
+
+      .submit-btn span {
+        position: relative;
+        z-index: 2;
+      }
+
+      @keyframes shimmer {
+        0% {
+          left: -100%;
+        }
+        100% {
+          left: 120%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <button class="submit-btn"><span>Submit</span></button>
+  </body>
+</html>

@@ -2,55 +2,301 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>3D Cube with Three.js</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prototype</title>
     <style>
-      body {
+      @import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap");
+
+      * {
         margin: 0;
-        overflow: hidden;
-        background: #000;
+        padding: 0;
+        box-sizing: border-box;
       }
-      canvas {
-        display: block;
+
+      body {
+        font-family: "Hind Siliguri", sans-serif;
+        position: relative;
+        min-height: 100vh;
+        background-color: #2c1b66;
+        color: white;
+      }
+
+      .root-1 {
+        display: flex;
+        justify-content: center;
+        font-weight: bold;
+      }
+
+      .wrapper-div {
+        width: 100%;
+        padding: 20px 16px;
+      }
+
+      .common-class {
+        border-top-right-radius: 25px;
+        border-bottom-left-radius: 25px;
+        padding: 25px 16px;
+        text-align: center;
+        background-color: #1e1e1e;
+        border: 3px solid #6e44ff;
+        margin-bottom: 25px;
+      }
+
+      .title-1 {
+        font-size: 35px;
+      }
+
+      .different-text-1 {
+        color: #ffff01;
+      }
+
+      .title-2 {
+        margin-top: 20px;
+        font-size: 26px;
+      }
+
+      .image-container {
+        margin: 25px 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+
+      .image-stack {
+        position: relative;
+        width: 100%;
+        max-width: 450px;
+        aspect-ratio: 1 / 1;
+      }
+
+      .image-stack img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        top: 0;
+        left: 0;
+      }
+
+      .top-img {
+        animation: disappear 10s 5s linear infinite;
+        z-index: 2;
+      }
+
+      .bottom-img {
+        animation: disappear 10s linear infinite;
+        z-index: 2;
+      }
+
+      @keyframes disappear {
+        0% {
+          clip-path: inset(0% 0% 0% 0%);
+        }
+        30% {
+          clip-path: inset(100% 0% 0% 0%);
+        }
+        31% {
+          clip-path: inset(0% 0% 0% 0%);
+        }
+        60% {
+          z-index: 1;
+        }
+        100% {
+          clip-path: inset(0% 0% 0% 0%);
+        }
+      }
+
+      .order-container {
+        display: flex;
+        justify-content: center;
+        padding: 20px 0;
+      }
+
+      .order-btn {
+        background-color: #b1001d;
+        display: inline-flex;
+        align-items: center;
+        padding: 12px 20px;
+        text-decoration: none;
+        border-radius: 8px;
+        font-size: 22px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+        color: white;
+      }
+
+      .order-btn img {
+        width: 30px;
+        margin-right: 10px;
+      }
+
+      .order-btn:hover {
+        background-color: #d10023;
+        animation: hover-animation-pulse 0.3s linear infinite alternate;
+      }
+
+      @keyframes hover-animation-pulse {
+        100% {
+          transform: scale(1.1);
+        }
+      }
+
+      .feature-list {
+        list-style: none;
+        padding: 0;
+        margin: 30px 0;
+      }
+
+      .feature-list li {
+        font-size: 22px;
+        font-weight: normal;
+        display: flex;
+        align-items: flex-start;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 12px;
+        margin-bottom: 12px;
+        gap: 12px;
+      }
+
+      .feature-list li:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+      }
+
+      .last-text {
+        font-size: 20px;
+        line-height: 32px;
+        margin-top: 25px;
+      }
+
+      /*  Testimonial Design  secton start*/
+
+      /*  Testimonial Design  secton end*/
+
+      /* Larger screen styles */
+      @media (min-width: 764px) {
+        .wrapper-div {
+          max-width: 1290px;
+          padding: 40px 20px;
+        }
+
+        .title-1 {
+          font-size: 55px;
+        }
+
+        .title-2 {
+          font-size: 40px;
+        }
+
+        .order-btn {
+          font-size: 25px;
+        }
+
+        .feature-list li {
+          font-size: 30px;
+          font-weight: bold;
+        }
+
+        .last-text {
+          font-size: 28px;
+          line-height: 38px;
+        }
       }
     </style>
   </head>
   <body>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.min.js"></script>
-    <script>
-      // Scene, camera, renderer
-      const scene = new THREE.Scene();
-      const camera = new THREE.PerspectiveCamera(
-        75,
-        window.innerWidth / window.innerHeight,
-        0.1,
-        1000
-      );
-      const renderer = new THREE.WebGLRenderer({ antialias: true });
-      renderer.setSize(window.innerWidth, window.innerHeight);
-      document.body.appendChild(renderer.domElement);
+    <div class="root-1">
+      <div class="wrapper-div">
+        <h1 class="common-class title-1">
+          ব্যস্ত দিনের শেষে কি আপনি সত্যিই একটু প্রশান্তি খুঁজছেন?
+        </h1>
 
-      // Cube geometry and material
-      const geometry = new THREE.BoxGeometry();
-      const material = new THREE.MeshStandardMaterial({ color: 0x00bcd4 });
-      const cube = new THREE.Mesh(geometry, material);
-      scene.add(cube);
+        <div class="testimonial-design"></div>
 
-      // Light
-      const light = new THREE.PointLight(0xffffff, 1, 100);
-      light.position.set(5, 5, 5);
-      scene.add(light);
-
-      // Camera position
-      camera.position.z = 3;
-
-      // Animation loop
-      function animate() {
-        requestAnimationFrame(animate);
-        cube.rotation.x += 0.01;
-        cube.rotation.y += 0.01;
-        renderer.render(scene, camera);
-      }
-      animate();
-    </script>
+        <div class="image-container">
+          <div class="image-stack">
+            <img src="medicine-1.jpg" alt="Top Image" class="top-img" />
+            <img src="medicine-2.jpg" alt="Top Image" class="bottom-img" />
+          </div>
+        </div>
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn">
+            <img
+              src="https://builder.storex.com.bd/images/builder/allergy/finger-of-a-hand-pointing-to-right-direction-lqm9tkxe.webp"
+              alt="Order Now"
+            />
+            অর্ডার করুন এখনই
+          </a>
+        </div>
+        <section style="width: 100%">
+          <ul class="feature-list">
+            <li style="font-weight: bold">
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                style="width: 30px; margin-right: 20px"
+                alt=""
+              />
+              <span>
+                <strong class="different-text-1">
+                  360° রোটেশন ও মাল্টি-কালার মোড
+                </strong>
+                - এতে থাকছে 360° রোটেশন ও মাল্টি-কালার মোড, যা দিয়ে লাইটের রং
+                পরিবর্তন করুন আপনার মুড অনুযায়ী।
+              </span>
+            </li>
+            <li style="font-weight: bold">
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                style="width: 30px; margin-right: 20px"
+                alt=""
+              />
+              <span>
+                <strong class="different-text-1">
+                  মিউজিক সিনক্রোনাইজেশন
+                </strong>
+                - ব্লুটুথ স্পিকার থাকার কারণে আপনার পছন্দমত যে কোন অডিও আপনি
+                শুনতে পারেন।
+              </span>
+            </li>
+            <li style="font-weight: bold">
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                style="width: 30px; margin-right: 20px"
+                alt=""
+              />
+              <span>
+                <strong class="different-text-1">
+                  রিমোট কন্ট্রোল ও টাইমার
+                </strong>
+                - রিমোট কন্ট্রোল থাকার কারণে আপনি ইচ্ছামত যে কোন জায়গা থেকেই
+                লাইটটি চালনা করতে পারবেন। তাছাড়া আরজিবি সিঙ্গেল কালার মোডও আপনি
+                ইউজ করতে পারবেন।
+              </span>
+            </li>
+            <li style="font-weight: bold">
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                style="width: 30px; margin-right: 20px"
+                alt=""
+              />
+              <span>
+                <strong class="different-text-1"> সেরা গিফট </strong>
+                - শিশু, টিনএজার, এমনকি বড়দের জন্যও পারফেক্ট উপহার!
+              </span>
+            </li>
+          </ul>
+        </section>
+        <h2 class="common-class last-text">
+          তো আর দেরি কেন আমাদের
+          <span class="different-text-1"> স্টক শেষ হওয়ার </span> আগেই আপনার
+          লাইট টি আজই সংগ্রহ করুন। সংগ্রহ করতে
+          <span class="different-text-1">অর্ডার নাও </span> বাটনে ক্লিক করে
+          আমাদের ওয়েবসাইট থেকে অর্ডার করুন অথবা স্ক্রিনে দেওয়া মোবাইল নাম্বারে
+          ফোন করে অর্ডার কনফার্ম করুন
+        </h2>
+      </div>
+    </div>
   </body>
 </html>

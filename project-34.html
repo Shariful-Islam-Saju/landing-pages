@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project 33</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Hind Siliguri", sans-serif;
+      }
+      body {
+        font-family: "Hind Siliguri", sans-serif;
+        font-weight: bold;
+      }
+      .container-1 {
+        margin: 10px;
+        overflow-x: hidden;
+        padding: 10px;
+      }
+      .h1-title-1 {
+        background-color: #00721d;
+        padding: 20px 10px;
+        color: white;
+        font-size: 55px;
+        text-align: center;
+        border-radius: 20px;
+        font-weight: bolder;
+        margin-top: 5px;
+        margin-bottom: 20px;
+      }
+      .colored {
+        background-color: #d3fae3;
+        border-radius: 20px;
+        padding: 20px;
+      }
+      .title-h2-1 {
+        font-size: 45px;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .list {
+        display: flex;
+        justify-content: center;
+      }
+      .list div p,
+      .benefits-section-3 div:nth-child(2) p {
+        margin: 10px 0;
+        margin-left: 40px;
+        font-size: 25px;
+        font-weight: 600;
+      }
+      /* Image Styling */
+      .image-container {
+        margin: 25px 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+
+      .image-stack {
+        position: relative;
+        width: 100%;
+        max-width: 450px;
+        aspect-ratio: 1 / 1;
+        box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.466);
+      }
+
+      .image-stack img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        top: 0;
+        left: 0;
+      }
+
+      .top-img {
+        animation: disappear 10s 5s linear infinite;
+        z-index: 2;
+      }
+
+      .bottom-img {
+        animation: disappear 10s linear infinite;
+        z-index: 2;
+      }
+
+      @keyframes disappear {
+        0% {
+          clip-path: inset(0% 0% 0% 0%);
+        }
+        30% {
+          clip-path: inset(100% 0% 0% 0%);
+        }
+        31% {
+          clip-path: inset(0% 0% 0% 0%);
+        }
+        60% {
+          z-index: 1;
+        }
+        100% {
+          clip-path: inset(0% 0% 0% 0%);
+        }
+      }
+      /* Section 3 */
+      .h3-title-1 {
+        font-size: 45px;
+        text-align: center;
+        margin: 0px 0;
+      }
+      .section-3-p-1 {
+        font-size: 40px;
+        font-weight: 500;
+        text-align: center;
+      }
+      .benefits-section-3 {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .benefits-section-3-p-1 {
+        font-size: 40px;
+        text-align: center;
+      }
+      .order-container {
+        display: flex;
+        justify-content: center;
+        margin: 10px 0;
+      }
+      .order-btn {
+        background-color: #0000e9;
+        color: white;
+        display: inline-flex;
+        align-items: center;
+        padding: 12px 20px;
+        text-decoration: none;
+        border-radius: 8px;
+        font-size: 24px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+      }
+      .order-btn:hover {
+        background-color: #0000b5;
+        animation: hover-animation-pulse 0.3s linear infinite alternate;
+      }
+      @keyframes hover-animation-pulse {
+        100% {
+          transform: scale(1.1);
+        }
+      }
+
+      .price-value {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 20px;
+        margin-top: 15px;
+      }
+      .price-desc {
+        padding: 15px;
+        border-radius: 8px;
+        text-align: center;
+        border: 1px solid green;
+      }
+
+      .price-desc img {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 8px;
+      }
+
+      .price-text {
+        margin-top: 10px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #fff; /* change to #000 if background is light */
+        background: #ff6600;
+        display: inline-block;
+        padding: 6px 12px;
+        border-radius: 5px;
+      }
+
+      @media (max-width: 720px) {
+        .h1-title-1 {
+          font-size: 30px;
+          padding: 10px;
+        }
+        .title-h2-1 {
+          font-size: 26px;
+        }
+        .section-3-p-1,
+        .benefits-section-3-p-1 {
+          font-size: 25px;
+        }
+        .h3-title-1 {
+          font-size: 22px;
+        }
+        .list div p,
+        .benefits-section-3 div:nth-child(2) p {
+          font-size: 20px;
+          margin-left: 5px;
+        }
+
+        .price-value {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-1">
+      <h1 class="h1-title-1">
+        আপনার ⚡ ক্লান্তি, ওজন বেড়ে যাওয়া বা ত্বকের সমস্যা থাইরয়েড না 🩺 লিভার
+        জনিত?… নাকি দুটোই?
+      </h1>
+
+      <h2 class="title-h2-1 colored">
+        "আপনার শরীরটা তো দিন দিন দুর্বল হয়ে যাচ্ছে 📉 … অথচ রিপোর্ট ঠিক ✅।"
+      </h2>
+
+      <div class="image-container">
+        <div class="image-stack">
+          <img src="medicine-1.jpg" alt="Top Image" class="top-img" />
+          <img src="medicine-2.jpg" alt="Top Image" class="bottom-img" />
+        </div>
+      </div>
+      <div class="order-container">
+        <a href="#checkout-now" class="order-btn"> অর্ডার করতে চাই </a>
+      </div>
+      <!-- start section 3 -->
+      <h2 class="title-h2-1 colored">
+        "🚨 বুক ধড়ফড়, 💇 চুল পড়া, ঘুম ঠিক নেই – কিছুই কন্ট্রোলে নেই!"
+      </h2>
+      <h2 class="title-h2-1 colored">
+        " ডাক্তার বলছে স্ট্রেস – 🤔 কিন্তু আপনি জানেন কিছু একটা ভুল❗হচ্ছে
+        শরীরে..."
+      </h2>
+
+      <div class="image-container">
+        <div class="image-stack">
+          <img src="medicine-1.jpg" alt="Top Image" class="top-img" />
+          <img src="medicine-2.jpg" alt="Top Image" class="bottom-img" />
+        </div>
+      </div>
+      <div class="order-container">
+        <a href="#checkout-now" class="order-btn"> অর্ডার করতে চাই </a>
+      </div>
+
+      <h2 class="title-h2-1 colored">
+        থাইরয়েড ও লিভার – দুটি অঙ্গ যদি একসাথে ভারসাম্য হারায় ⚖️, শরীরের
+        কার্যক্ষমতা 💪🏽 একসময় বন্ধ হয়ে যেতে পারে।
+      </h2>
+      <div class="section-3">
+        <div class="benefits-section-3 colored">
+          <div>
+            <p class="benefits-section-3-p-1" style="padding-bottom: 15px">
+              থাইরয়েড ও লিভার সমস্যার কারণে শরীরে যে ক্ষতিকর দিকগুলো
+            </p>
+            <div>
+              <p
+                style="display: flex; align-items: center; margin-bottom: 15px"
+              >
+                ১. ব্রেন ফগ, ভুলে যাওয়া, মানসিক অবসাদ
+              </p>
+              <p
+                style="display: flex; align-items: center; margin-bottom: 15px"
+              >
+                ২. হরমোনের গোলমাল
+              </p>
+              <p
+                style="display: flex; align-items: center; margin-bottom: 15px"
+              >
+                ৩. ওজন হঠাৎ বেড়ে যাওয়া বা কমে যাওয়া
+              </p>
+              <p
+                style="display: flex; align-items: center; margin-bottom: 15px"
+              >
+                ৪. লিভারের কোষ ধ্বংস – যা ভবিষ্যতে সিরাসিস বা ফ্যাটি লিভারে
+                পরিণত হতে পারে
+              </p>
+              <p
+                style="display: flex; align-items: center; margin-bottom: 15px"
+              >
+                ৫. নারীদের পিরিয়ড সমস্যা, PCOS বৃদ্ধি
+              </p>
+              <p
+                style="display: flex; align-items: center; margin-bottom: 15px"
+              >
+                ৬. পুরুষদের শক্তি ও স্ট্যামিনা হ্রাস
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="image-container">
+        <div class="image-stack">
+          <img src="medicine-1.jpg" alt="Top Image" class="top-img" />
+          <img src="medicine-2.jpg" alt="Top Image" class="bottom-img" />
+        </div>
+      </div>
+      <div class="order-container">
+        <a href="#checkout-now" class="order-btn"> অর্ডার করতে চাই </a>
+      </div>
+
+      <div class="section-3">
+        <div class="benefits-section-3 colored">
+          <div>
+            <p class="benefits-section-3-p-1" style="padding-bottom: 15px">
+              কেন আপনি এই কম্বো মেডিসিন এখনই শুরু করবেন?
+            </p>
+            <div>
+              <p
+                style="display: flex; align-items: center; margin-bottom: 15px"
+              >
+                <span style="font-size: 24px; margin-right: 12px">🔒</span>
+                থাইরয়েড ও লিভার একসাথে ঠিক না করলে ভবিষ্যতের জটিলতা নিশ্চিত
+              </p>
+              <p
+                style="display: flex; align-items: center; margin-bottom: 15px"
+              >
+                <span style="font-size: 24px; margin-right: 12px">⚙️</span>
+                সাধারণ চিকিৎসায় উপসর্গ কমে, মূল সমস্যা থেকে যায়
+              </p>
+              <p
+                style="display: flex; align-items: center; margin-bottom: 15px"
+              >
+                <span style="font-size: 24px; margin-right: 12px">🏥</span>
+                সবসময় ক্লিনিকে না গিয়ে ঘরে বসেই কেয়ারে থাকুন
+              </p>
+              <p
+                style="display: flex; align-items: center; margin-bottom: 15px"
+              >
+                <span style="font-size: 24px; margin-right: 12px">🧘‍♂️</span>
+                শরীরের ভিতর থেকে ঠিক হলে সবকিছুই বদলে যাবে
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="price-value">
+        <div class="price-desc">
+          <img
+            src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/naturecure-online/images/products/b017b0f4f1eb4b52961a/1744637477641_digedex-30.webp"
+            alt=""
+          />
+          <p class="price-text">৳ 270</p>
+        </div>
+        <div class="price-desc">
+          <img
+            src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/naturecure-online/images/products/bfe9bbb94e6d4388ada8/1744637421898_carmidex.webp"
+            alt=""
+          />
+          <p class="price-text">৳ 250</p>
+        </div>
+        <div class="price-desc">
+          <img
+            src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/naturecure-online/images/products/36fe433383814826a54e/1748768049120_spirulina.webp"
+            alt=""
+          />
+          <p class="price-text">৳ 750</p>
+        </div>
+        <div class="price-desc">
+          <img
+            src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/naturecure-online/images/products/26244e8df97f46849eb7/1744631650358_g-liva-2.webp"
+            alt=""
+          />
+          <p class="price-text">৳ 1000</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
