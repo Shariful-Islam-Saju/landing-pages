@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rotating Clip-Path</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Hind Siliguri", sans-serif;
+        font-weight: bold;
+        padding: 15px;
+      }
+
+      .root-1 {
+        display: flex;
+        justify-content: center;
+      }
+
+      .wrapper-div {
+        width: 100%;
+        max-width: 1300px;
+      }
+
+      .title1 {
+        font-size: 50px;
+        text-align: center;
+      }
+
+      .image-container {
+        margin: 15px 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+
+      .image-stack {
+        position: relative;
+        width: 100%;
+        max-width: 450px;
+        aspect-ratio: 1 / 1;
+      }
+
+      .image-stack img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        top: 0;
+        left: 0;
+      }
+
+      /* Clip shape rotates */
+      .clip-wrapper {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+      }
+
+      /* This image is clipped and stays visually static */
+      .bottom-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        animation: morphStar 20s ease infinite;
+      }
+
+      @keyframes morphStar {
+        0% {
+          clip-path: polygon(
+            77% 56%,
+            92% 78%,
+            59% 68%,
+            44% 94%,
+            37% 66%,
+            5% 68%,
+            28% 44%,
+            17% 10%,
+            44% 33%,
+            64% 11%,
+            70% 36%,
+            96% 33%
+          );
+        }
+
+        25% {
+          clip-path: polygon(
+            61% 61%,
+            45% 91%,
+            41% 60%,
+            7% 69%,
+            30% 45%,
+            14% 8%,
+            43% 30%,
+            55% 8%,
+            61% 36%,
+            89% 18%,
+            75% 49%,
+            87% 83%
+          );
+        }
+        50% {
+          clip-path: polygon(
+            45% 55%,
+            10% 83%,
+            33% 46%,
+            6% 22%,
+            43% 32%,
+            59% 3%,
+            62% 32%,
+            96% 24%,
+            76% 50%,
+            94% 85%,
+            61% 58%,
+            52% 92%
+          );
+        }
+        75% {
+        clip-path: polygon(37% 32%, 41% 4%, 60% 30%, 90% 12%, 75% 41%, 93% 74%, 65% 58%, 59% 100%, 46% 64%, 18% 91%, 32% 48%, 0 36%);
+        }
+
+        100% {
+          clip-path: polygon(
+            77% 56%,
+            92% 78%,
+            59% 68%,
+            44% 94%,
+            37% 66%,
+            5% 68%,
+            28% 44%,
+            17% 10%,
+            44% 33%,
+            64% 11%,
+            70% 36%,
+            96% 33%
+          );
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="root-1">
+      <div class="wrapper-div">
+        <h1 class="title1">Hello World</h1>
+        <div class="image-container">
+          <div class="image-stack">
+            <img src="medicine-1.jpg" alt="Top Image" />
+
+            <
+            <div class="clip-wrapper">
+              <img src="medicine-2.jpg" alt="Bottom Image" class="bottom-img" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
