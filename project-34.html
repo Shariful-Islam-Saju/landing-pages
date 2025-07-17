@@ -3,8 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Project 33</title>
+    <title>Project 34</title>
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap");
+
       * {
         margin: 0;
         padding: 0;
@@ -124,34 +126,72 @@
         font-size: 40px;
         text-align: center;
       }
-      .order-container {
+       .order-container {
         display: flex;
         justify-content: center;
-        margin: 10px 0;
+        margin: 20px 0;
       }
-      .order-btn {
-        background-color: #0000e9;
-        color: white;
-        display: inline-flex;
-        align-items: center;
-        padding: 12px 20px;
-        text-decoration: none;
-        border-radius: 8px;
-        font-size: 24px;
-        font-weight: bold;
+
+      .submit-btn {
+        position: relative;
+        overflow: hidden;
+        padding: 16px 48px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #fff;
+        border: none;
+        border-radius: 12px;
+        background: linear-gradient(145deg, #006600, #00aa00);
         cursor: pointer;
-        transition: all 0.3s ease;
-        white-space: nowrap;
+        transform: rotateX(12deg) rotateY(0deg); /* Leaning back slightly */
+        transform-style: preserve-3d;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 4px 6px rgba(0, 0, 0, 0.3),
+          inset 0 -4px 10px rgba(0, 0, 0, 0.35),
+          inset 0 4px 4px rgba(255, 255, 255, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        z-index: 0;
       }
-      .order-btn:hover {
-        background-color: #0000b5;
-        animation: hover-animation-pulse 0.3s linear infinite alternate;
+
+      .submit-btn:hover {
+        transform: translateY(-10px) rotateX(8deg) scale(1.03);
+        box-shadow: 0 16px 24px rgba(0, 0, 0, 0.45),
+          inset 0 -2px 6px rgba(255, 255, 255, 0.1),
+          inset 0 2px 3px rgba(255, 255, 255, 0.05);
       }
-      @keyframes hover-animation-pulse {
+
+      .submit-btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 60%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 0.4) 50%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        transform: skewX(-20deg);
+        animation: shimmer 2.5s infinite;
+        z-index: 1;
+      }
+
+      .submit-btn span {
+        position: relative;
+        z-index: 2;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+      }
+
+      @keyframes shimmer {
+        0% {
+          left: -100%;
+        }
         100% {
-          transform: scale(1.1);
+          left: 120%;
         }
       }
+
 
       .price-value {
         display: grid;
@@ -228,7 +268,9 @@
         </div>
       </div>
       <div class="order-container">
-        <a href="#checkout-now" class="order-btn"> অর্ডার করতে চাই </a>
+        <a href="#checkout-now" class="order-btn">
+          <button class="submit-btn"><span> অর্ডার করতে চাই </span></button>
+        </a>
       </div>
       <!-- start section 3 -->
       <h2 class="title-h2-1 colored">
@@ -245,8 +287,10 @@
           <img src="medicine-2.jpg" alt="Top Image" class="bottom-img" />
         </div>
       </div>
-      <div class="order-container">
-        <a href="#checkout-now" class="order-btn"> অর্ডার করতে চাই </a>
+       <div class="order-container">
+        <a href="#checkout-now" class="order-btn">
+          <button class="submit-btn"><span> অর্ডার করতে চাই </span></button>
+        </a>
       </div>
 
       <h2 class="title-h2-1 colored">
@@ -302,7 +346,9 @@
         </div>
       </div>
       <div class="order-container">
-        <a href="#checkout-now" class="order-btn"> অর্ডার করতে চাই </a>
+        <a href="#checkout-now" class="order-btn">
+          <button class="submit-btn"><span> অর্ডার করতে চাই </span></button>
+        </a>
       </div>
 
       <div class="section-3">
@@ -346,28 +392,28 @@
             src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/naturecure-online/images/products/b017b0f4f1eb4b52961a/1744637477641_digedex-30.webp"
             alt=""
           />
-          <p class="price-text">৳ 270</p>
+          <p class="price-text">৳ 440</p>
         </div>
         <div class="price-desc">
           <img
             src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/naturecure-online/images/products/bfe9bbb94e6d4388ada8/1744637421898_carmidex.webp"
             alt=""
           />
-          <p class="price-text">৳ 250</p>
+          <p class="price-text">৳ <del>1000</del> 890</p>
         </div>
         <div class="price-desc">
           <img
             src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/naturecure-online/images/products/36fe433383814826a54e/1748768049120_spirulina.webp"
             alt=""
           />
-          <p class="price-text">৳ 750</p>
+          <p class="price-text">৳ <del>750</del> 595</p>
         </div>
         <div class="price-desc">
           <img
             src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/naturecure-online/images/products/26244e8df97f46849eb7/1744631650358_g-liva-2.webp"
             alt=""
           />
-          <p class="price-text">৳ 1000</p>
+          <p class="price-text">৳ <del>1000</del> 890</p>
         </div>
       </div>
     </div>
