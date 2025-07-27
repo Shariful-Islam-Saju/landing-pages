@@ -217,6 +217,7 @@
           0 6px 6px rgba(0, 0, 0, 0.22);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         z-index: 0;
+        font-family: "Hind Siliguri", sans-serif;
       }
       .submit-btn:hover {
         transform: translateY(-5px);
@@ -280,9 +281,44 @@
         }
       }
 
+      /*  Price value start  */
+
+      .price-value {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .price-desc {
+        padding: 15px;
+        border-radius: 8px;
+        text-align: center;
+        border: 1px solid green;
+      }
+      .price-desc img {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 8px;
+      }
+      .price-text {
+        margin-top: 10px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #fff;
+        background: #ff6600;
+        display: inline-block;
+        padding: 6px 12px;
+        border-radius: 5px;
+        text-decoration: none;
+      }
+      /*  Price value end  */
+
       @media (min-width: 900px) {
         :root {
           --img-width: 400px;
+        }
+
+        .price-value {
+          grid-template-columns: 1fr 1fr 1fr;
         }
       }
     </style>
@@ -505,7 +541,50 @@
             লিভার ও ব্লাড 🩸 ডিটক্স
           </li>
         </ul>
-
+        <div class="image-container">
+          <div class="image-stack">
+            <img
+              src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/naturecure-online/images/builder/6875ed64b66dbadcbe86f63a/1752574139556_bwd2.jpg"
+              alt="Top Image"
+              class="top-img"
+            />
+            <img
+              src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/naturecure-online/images/builder/6875ed64b66dbadcbe86f63a/1752574128843_bwd.jpg"
+              alt="Top Image"
+              class="bottom-img"
+            />
+          </div>
+        </div>
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn">
+            <button class="submit-btn"><span> অর্ডার করতে চাই </span></button>
+          </a>
+        </div>
+        <div class="price-value">
+          <div class="price-desc">
+            <img
+              src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/naturecure-online/images/builder/68529009d4c3b469df30390d/1750241415411_photo-2025-06-16-15-25-07.jpg"
+              alt=""
+            />
+            <a href="#checkout-now" class="price-text"
+              >৳ <del id="ia2dj">1400</del> 990</a
+            >
+          </div>
+          <div class="price-desc">
+            <img
+              src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/naturecure-online/images/products/26244e8df97f46849eb7/1744631650358_g-liva-2.webp"
+              alt=""
+            />
+            <a href="#checkout-now" class="price-text">৳ <del>1000</del> 890</a>
+          </div>
+          <div class="price-desc">
+            <img
+              src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/naturalcure_db2/images/builder/6863cd30d202e7b6e95a9278/1751373176957_photo-2025-07-01-18-26-28.jpg"
+              alt=""
+            />
+            <a href="#checkout-now" class="price-text">৳ <del>750 </del> 595</a>
+          </div>
+        </div>
         <h2 class="common-class title-3">
           তো আর দেরি কেন আমাদের
           <span class="colorful-text"> স্টক শেষ হওয়ার </span> আগেই আপনার পণ্যটি
