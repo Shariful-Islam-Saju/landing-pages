@@ -18,8 +18,8 @@
 // console.log(minValue)
 
 const arr = [
-  42, 17, 89, 3, 56, 74, 28, 61, 9, 38, 92, 25, 7, 84, 46, 13,9, 70, 99, 31, 60,
-  -5, -83, 134,
+  42, 17, 89, 3, 56, 74, 28, 61, 9, 38, 92, 25, 7, 84, 46, 13, 9, 70, 99, 31,
+  60, -5, -83, 134,
 ];
 
 // function bubbleSort(arr) {
@@ -107,26 +107,40 @@ const arr = [
 //   return arr;
 // }
 
-function selectionSort(arr) {
-  const n = arr.length;
+// function selectionSort(arr) {
+//   const n = arr.length;
 
-  for (let i = 0; i < n; i++) {
-    let mindex = i;
-    for (let j = i + 1; j < n; j++) {
-      if (arr[mindex] > arr[j]) {
-        mindex = j;
-      }
-    }
+//   for (let i = 0; i < n; i++) {
+//     let mindex = i;
+//     for (let j = i + 1; j < n; j++) {
+//       if (arr[mindex] > arr[j]) {
+//         mindex = j;
+//       }
+//     }
 
-    if (mindex !== i) {
-      const temp = arr[i];
-      arr[i] = arr[mindex];
-      arr[mindex] = temp;
-    }
-  }
+//     if (mindex !== i) {
+//       const temp = arr[i];
+//       arr[i] = arr[mindex];
+//       arr[mindex] = temp;
+//     }
+//   }
 
-  return arr;
-}
+//   return arr;
+// }
+
+// function sort(arr) {
+//   const n = arr.length;
+//   if (n <= 0) {
+//     return arr;
+//   }
+//   let mindex = 0;
+//   let maxindex = 0;
+//   for (let i = 0; i < n; i++) {
+//     if (arr[mindex] > arr[i]) {
+//       const temp = arr[i]
+//       arr[]
+//     }
+//   }
+// }
 
 
-console.log(selectionSort(arr))
