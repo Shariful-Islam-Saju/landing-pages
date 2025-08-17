@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project 40</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Hind Siliguri", sans-serif;
+      }
+
+      body {
+        font-weight: bold;
+        background-color: #f8f8f8;
+      }
+
+      .page-wrapper {
+        margin: 10px;
+        overflow-x: hidden;
+        padding: 10px;
+      }
+
+      .hero-title {
+        background-color: #00721d;
+        padding: 10px;
+        color: white;
+        font-size: 40px;
+        text-align: center;
+        border-radius: 20px;
+        font-weight: bolder;
+        margin: 10px 0;
+      }
+
+      .highlight-box {
+        background-color: #d3fae3;
+        border-radius: 20px;
+        padding: 20px;
+      }
+
+      .highlight-title {
+        font-size: 30px;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .highlight-list {
+        display: flex;
+        justify-content: center;
+      }
+
+      .highlight-list p {
+        margin: 10px 0 10px 40px;
+        font-size: 20px;
+        font-weight: 600;
+      }
+
+      .image-section {
+        margin: 25px 0;
+        display: flex;
+        justify-content: center;
+      }
+
+      .image-stack {
+        position: relative;
+        max-width: 450px;
+        aspect-ratio: 1 / 1;
+        width: 100%;
+        box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.466);
+      }
+
+      .image-stack img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        top: 0;
+        left: 0;
+      }
+
+      .top-img {
+        animation: disappear 10s 5s linear infinite;
+        z-index: 2;
+      }
+
+      .bottom-img {
+        animation: disappear 10s linear infinite;
+        z-index: 2;
+      }
+
+      @keyframes disappear {
+        0% {
+          clip-path: inset(0% 0% 0% 0%);
+        }
+        30% {
+          clip-path: inset(100% 0% 0% 0%);
+        }
+        31% {
+          clip-path: inset(0% 0% 0% 0%);
+        }
+        60% {
+          z-index: 1;
+        }
+        100% {
+          clip-path: inset(0% 0% 0% 0%);
+        }
+      }
+
+      .order-button-wrapper {
+        display: flex;
+        justify-content: center;
+        margin: 20px 0;
+      }
+
+      .submit-btn {
+        position: relative;
+        overflow: hidden;
+        padding: 16px 48px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #fff;
+        border: none;
+        border-radius: 12px;
+        background: linear-gradient(145deg, #006600, #00aa00);
+        cursor: pointer;
+        transform: rotateX(12deg);
+        transform-style: preserve-3d;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 4px 6px rgba(0, 0, 0, 0.3),
+          inset 0 -4px 10px rgba(0, 0, 0, 0.35),
+          inset 0 4px 4px rgba(255, 255, 255, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        z-index: 0;
+      }
+
+      .submit-btn:hover {
+        transform: translateY(-10px) rotateX(8deg) scale(1.03);
+      }
+
+      .submit-btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 60%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 0.4) 50%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        transform: skewX(-20deg);
+        animation: shimmer 2.5s infinite;
+        z-index: 1;
+      }
+
+      .submit-btn span {
+        position: relative;
+        z-index: 2;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+      }
+
+      @keyframes shimmer {
+        0% {
+          left: -100%;
+        }
+        100% {
+          left: 120%;
+        }
+      }
+
+      .section-title {
+        font-size: 35px;
+        text-align: center;
+      }
+
+      .benefit-description {
+        font-size: 25px;
+        font-weight: 500;
+        text-align: center;
+      }
+
+      .benefits-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .benefit-list {
+        padding-bottom: 25px;
+        font-size: 30px;
+        text-align: center;
+      }
+
+      .benefit-list p {
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px;
+        font-size: 20px;
+        font-weight: 600;
+        text-align: start;
+      }
+
+      .benefit-list img {
+        width: 35px;
+        margin-right: 15px;
+      }
+
+      .product-prices {
+        display: grid;
+        margin-top: 20px;
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .price-card {
+        padding: 15px;
+        border-radius: 8px;
+        text-align: center;
+        border: 1px solid green;
+      }
+
+      .price-card img {
+        width: 100%;
+        border-radius: 8px;
+      }
+
+      .price-text {
+        margin-top: 10px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #fff;
+        background: #ff6600;
+        display: inline-block;
+        padding: 6px 12px;
+        border-radius: 5px;
+        text-decoration: none;
+      }
+
+      @media (min-width: 1024px) {
+        .hero-title {
+          font-size: 60px;
+          padding: 30px 15px;
+        }
+        .highlight-title {
+          font-size: 40px;
+        }
+        .benefit-description,
+        .benefit-list {
+          font-size: 30px;
+        }
+        .section-title {
+          font-size: 35px;
+        }
+        .highlight-list p,
+        .benefit-list p {
+          font-size: 25px;
+          margin-left: 20px;
+        }
+        .product-prices {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page-wrapper">
+      <h1 class="hero-title">
+        🌿 প্রাকৃতিক স্বাস্থ্য সুরক্ষা – মেথি মিক্স বুস্টার & ফাইবার সিড 🌿
+      </h1>
+
+      <div class="highlight-box">
+        <h2 class="highlight-title">
+          👉 শরীর সুস্থ রাখতে চান? <br />
+          👉 ডায়াবেটিস, কোলেস্টেরল, কোষ্ঠকাঠিন্য, গ্যাস, ওজন নিয়ন্ত্রণসহ নানা
+          সমস্যার প্রাকৃতিক সমাধান খুঁজছেন?
+        </h2>
+      </div>
+
+      <div class="image-section">
+        <div class="image-stack">
+          <img src="YOUR_IMAGE_1_URL" class="top-img" alt="Product Image 1" />
+          <img
+            src="YOUR_IMAGE_2_URL"
+            class="bottom-img"
+            alt="Product Image 2"
+          />
+        </div>
+      </div>
+
+      <div class="order-button-wrapper">
+        <a href="#checkout-now">
+          <button class="submit-btn"><span> অর্ডার করতে চাই </span></button>
+        </a>
+      </div>
+
+      <h3 class="section-title">
+        তাহলে মেথি মিক্স বুস্টার ও ফাইবার সিড হতে পারে আপনার সঠিক পছন্দ!
+      </h3>
+
+      <div class="highlight-box">
+        <div class="benefits-container">
+          <div>
+            <p class="benefit-list">মেথি মিক্স বুস্টার এর উপকারিতা:</p>
+            <div class="benefit-list">
+              <p>ডায়াবেটিস নিয়ন্ত্রণে সহায়তা করে</p>
+              <p>শরীরের বাড়তি চর্বি কমাতে সাহায্য করে</p>
+              <p>গ্যাস, অ্যাসিডিটি ও কোষ্ঠকাঠিন্যে উপকারী</p>
+              <p>হৃদরোগের ঝুঁকি কমাতে সহায়ক</p>
+              <p>ক্ষুধামান্দ্য ও হজমে সহায়তা করে</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="image-section">
+        <div class="image-stack">
+          <img src="YOUR_IMAGE_1_URL" class="top-img" alt="Product Image 1" />
+          <img
+            src="YOUR_IMAGE_2_URL"
+            class="bottom-img"
+            alt="Product Image 2"
+          />
+        </div>
+      </div>
+
+      <div class="order-button-wrapper">
+        <a href="#checkout-now">
+          <button class="submit-btn"><span> অর্ডার করতে চাই </span></button>
+        </a>
+      </div>
+      <div class="highlight-box" style="margin-top: 20px">
+        <div class="benefits-container">
+          <div>
+            <p class="benefit-list">ফাইবার সিড এর উপকারিতা:</p>
+            <div class="benefit-list">
+              <p>কোষ্ঠকাঠিন্য দূর করে হজম শক্তি বৃদ্ধি করে</p>
+              <p>ডায়াবেটিস নিয়ন্ত্রণে সাহায্য করে</p>
+              <p>শরীর থেকে টক্সিন বের করে দেয়</p>
+              <p>অতিরিক্ত চর্বি ও কোলেস্টেরল কমাতে সহায়তা করে</p>
+              <p>হৃদরোগ প্রতিরোধে কার্যকর</p>
+              <p>ওজন কমাতে সহায়ক</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-prices">
+        <div class="price-card">
+          <img
+            src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/naturalcure_db2/images/products/8c5e1367032c471abd52/1744955042331_panagold-2.webp"
+            alt="মেথি মিক্স বুস্টার"
+          />
+          <a href="#checkout-now" class="price-text">৳ <del>650</del> 500</a>
+        </div>
+        <div class="price-card">
+          <img
+            src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/naturalcure_db2/images/products/5873a2c5f46f41c489b9/1748931401702_bhidex-2.webp"
+            alt="ফাইবার সিড"
+          />
+          <a href="#checkout-now" class="price-text">৳ 550</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
