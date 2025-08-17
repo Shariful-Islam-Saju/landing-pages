@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap");
+
       * {
         box-sizing: border-box;
       }
@@ -112,6 +114,7 @@
         justify-content: center;
         margin: 20px 0;
       }
+
       .submit-btn {
         position: relative;
         overflow: hidden;
@@ -120,25 +123,28 @@
         font-weight: 600;
         color: #fff;
         border: none;
-        border-radius: 8px;
-        background: rgb(0, 83, 0);
+        border-radius: 12px;
+        background: linear-gradient(145deg, #006600, #00aa00);
         cursor: pointer;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3),
-          0 6px 6px rgba(0, 0, 0, 0.22);
+        transform: rotateX(12deg) rotateY(0deg); /* Leaning back slightly */
+        transform-style: preserve-3d;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 4px 6px rgba(0, 0, 0, 0.3),
+          inset 0 -4px 10px rgba(0, 0, 0, 0.35),
+          inset 0 4px 4px rgba(255, 255, 255, 0.1);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         z-index: 0;
       }
+
       .submit-btn:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.35),
-          0 8px 8px rgba(0, 0, 0, 0.25);
+        transform: translateY(-10px) rotateX(8deg) scale(1.03);
       }
+
       .submit-btn::before {
         content: "";
         position: absolute;
         top: 0;
         left: -100%;
-        width: 50%;
+        width: 60%;
         height: 100%;
         background: linear-gradient(
           90deg,
@@ -150,12 +156,25 @@
         animation: shimmer 2.5s infinite;
         z-index: 1;
       }
+
       .submit-btn span {
         position: relative;
         z-index: 2;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
       }
+
+      @keyframes shimmer {
+        0% {
+          left: -100%;
+        }
+        100% {
+          left: 120%;
+        }
+      }
+
       .price-value {
         display: grid;
+        margin-top: 15px;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         gap: 20px;
       }
@@ -514,17 +533,6 @@
               </button></a
             >
           </div>
-          <div class="colored">
-            <h2 class="title-h2-1">যাদের জন্য কিডনির ওষুধ কাজ করবে নাঃ</h2>
-            <div class="list">
-              <div>
-                <p>১. যারা কিডনি ডায়ালাইসিস করেন।</p>
-                <p>২. যাদের eGFR 30 এর কম</p>
-                <p>৩. যাদের কিডনি বড় বা ছোট হয়ে গেছে</p>
-                <p>৪. কিডনির পাথর ৮mm এর বড় হয়ে গিয়েছে</p>
-              </div>
-            </div>
-          </div>
 
           <div class="price-value">
             <div class="price-desc">
@@ -541,7 +549,9 @@
                 src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/naturecure-online/images/builder/68529009d4c3b469df30390d/1750241431697_imageye-----1748931401702-bhidex-2.webp"
                 alt=""
               />
-              <a href="#checkout-now" class="price-text">৳ 500</a>
+              <a href="#checkout-now" class="price-text"
+                >৳ <del> 600</del> 500</a
+              >
             </div>
             <div class="price-desc">
               <img
@@ -554,12 +564,10 @@
             </div>
             <div class="price-desc">
               <img
-                src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/naturalcure-today/images/products/cc5bc0bbd30241d99863/1750912444846_gcopep.webp"
+                src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/naturalcure_db2/images/products/23423d56d6474939b700/1744544676686_12.webp"
                 alt=""
               />
-              <a href="#checkout-now" class="price-text"
-                >৳ <del>750</del> 490</a
-              >
+              <a href="#checkout-now" class="price-text">৳ 270</a>
             </div>
           </div>
         </div>
