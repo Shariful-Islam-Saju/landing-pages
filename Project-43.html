@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>G-Pro | Fermented Soy 500mg</title>
+   <style>
+      @import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Hind Siliguri", sans-serif;
+      }
+      body {
+        font-family: "Hind Siliguri", sans-serif;
+        font-weight: bold;
+      }
+      .container-1 {
+        margin: 10px;
+        overflow-x: hidden;
+        padding: 10px;
+      }
+      .h1-title-1 {
+        background-color: #00721d;
+        padding: 40px 20px;
+        color: white;
+        font-size: 70px;
+        text-align: center;
+        border-radius: 20px;
+        font-weight: bolder;
+        margin-top: 5px;
+        margin-bottom: 20px;
+      }
+      .colored {
+        background-color: #d3fae3;
+        border-radius: 20px;
+        padding: 20px;
+      }
+      .title-h2-1 {
+        font-size: 50px;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .list {
+        display: flex;
+        justify-content: center;
+      }
+      .list div p,
+      .benefits-section-3 div:nth-child(2) p {
+        margin: 10px 0;
+        margin-left: 40px;
+        font-size: 25px;
+        font-weight: 600;
+      }
+      /* Image Styling */
+      .image-container {
+        margin: 25px 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+
+      .image-stack {
+        position: relative;
+        width: 100%;
+        max-width: 450px;
+        aspect-ratio: 1 / 1;
+        box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.466);
+      }
+
+      .image-stack img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        top: 0;
+        left: 0;
+      }
+
+      .top-img {
+        animation: disappear 10s 5s linear infinite;
+        z-index: 2;
+      }
+
+      .bottom-img {
+        animation: disappear 10s linear infinite;
+        z-index: 2;
+      }
+
+      @keyframes disappear {
+        0% {
+          clip-path: inset(0% 0% 0% 0%);
+        }
+        30% {
+          clip-path: inset(100% 0% 0% 0%);
+        }
+        31% {
+          clip-path: inset(0% 0% 0% 0%);
+        }
+        60% {
+          z-index: 1;
+        }
+        100% {
+          clip-path: inset(0% 0% 0% 0%);
+        }
+      }
+      /* Section 3 */
+      .h3-title-1 {
+        font-size: 45px;
+        text-align: center;
+        margin: 0px 0;
+      }
+      .section-3-p-1 {
+        font-size: 40px;
+        font-weight: 500;
+        text-align: center;
+      }
+      .benefits-section-3 {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .benefits-section-3-p-1 {
+        font-size: 40px;
+        text-align: center;
+      }
+      .order-container {
+        display: flex;
+        justify-content: center;
+        margin: 20px 0;
+      }
+
+      .submit-btn {
+        position: relative;
+        overflow: hidden;
+        padding: 16px 48px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #fff;
+        border: none;
+        border-radius: 12px;
+        background: linear-gradient(145deg, #006600, #00aa00);
+        cursor: pointer;
+        transform: rotateX(12deg) rotateY(0deg); /* Leaning back slightly */
+        transform-style: preserve-3d;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 4px 6px rgba(0, 0, 0, 0.3),
+          inset 0 -4px 10px rgba(0, 0, 0, 0.35),
+          inset 0 4px 4px rgba(255, 255, 255, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        z-index: 0;
+      }
+
+      .submit-btn:hover {
+        transform: translateY(-10px) rotateX(8deg) scale(1.03);
+      }
+
+      .submit-btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 60%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 0.4) 50%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        transform: skewX(-20deg);
+        animation: shimmer 2.5s infinite;
+        z-index: 1;
+      }
+
+      .submit-btn span {
+        position: relative;
+        z-index: 2;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+      }
+
+      @keyframes shimmer {
+        0% {
+          left: -100%;
+        }
+        100% {
+          left: 120%;
+        }
+      }
+
+      .price-value {
+        display: grid;
+        margin-top: 20px;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+      .price-desc {
+        padding: 15px;
+        border-radius: 8px;
+        text-align: center;
+        border: 1px solid green;
+      }
+
+      .price-desc img {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        max-width: 100%;
+        border-radius: 8px;
+      }
+
+      .price-text {
+        margin-top: 10px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #fff; /* change to #000 if background is light */
+        background: #ff6600;
+        display: inline-block;
+        padding: 6px 12px;
+        border-radius: 5px;
+        text-decoration: none;
+      }
+
+      /* Responsive design */
+      @media (max-width: 1024px) {
+        .h1-title-1 {
+          font-size: 50px;
+          padding: 30px 15px;
+        }
+        .title-h2-1 {
+          font-size: 40px;
+        }
+        .section-3-p-1,
+        .benefits-section-3-p-1 {
+          font-size: 30px;
+        }
+        .h3-title-1 {
+          font-size: 35px;
+        }
+        .list div p,
+        .benefits-section-3 div:nth-child(2) p {
+          font-size: 20px;
+          margin-left: 20px;
+        }
+        .price-value {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 768px) {
+        .h1-title-1 {
+          font-size: 40px;
+          padding: 25px 10px;
+        }
+        .title-h2-1 {
+          font-size: 32px;
+        }
+        .section-3-p-1,
+        .benefits-section-3-p-1 {
+          font-size: 24px;
+        }
+        .h3-title-1 {
+          font-size: 28px;
+        }
+        .list {
+          flex-direction: column;
+          align-items: center;
+        }
+        .list div p,
+        .benefits-section-3 div:nth-child(2) p {
+          font-size: 18px;
+          margin-left: 10px;
+        }
+
+        .price-value {
+          display: grid;
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .h1-title-1 {
+          font-size: 45px;
+          line-height: 55px;
+          padding: 20px 10px;
+        }
+        .title-h2-1 {
+          font-size: 24px;
+        }
+        .section-3-p-1,
+        .benefits-section-3-p-1 {
+          font-size: 20px;
+        }
+        .h3-title-1 {
+          font-size: 22px;
+        }
+        .list div p,
+        .benefits-section-3 div:nth-child(2) p {
+          font-size: 16px;
+          margin-left: 5px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-1">
+      <h1 class="h1-title-1">পেটের গ্যাস, অম্লতা আর হজমের সমস্যায় ভুগছেন?</h1>
+      <div class="colored">
+        <h2 class="title-h2-1">
+          আপনার জন্য এসেছে প্রাকৃতিক সমাধান <br />
+          <b>G-Pro </b>
+        </h2>
+      </div>
+     <div class="image-container">
+        <div class="image-stack">
+          <img
+            src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/naturalcure_db2/images/builder/6873870cd59ffcdbd9bd80cb/1752409433098_photo-2025-07-13-18-23-49.jpg"
+            alt="Top Image"
+            class="top-img"
+          />
+          <img
+            src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/naturalcure_db2/images/builder/6873870cd59ffcdbd9bd80cb/1752409445222_photo-2025-07-13-18-21-16.jpg"
+            alt="Top Image"
+            class="bottom-img"
+          />
+        </div>
+      </div>
+      <div class="order-container">
+        <a href="#checkout-now" class="order-btn">
+          <button class="submit-btn"><span> অর্ডার করতে চাই </span></button>
+        </a>
+      </div>
+      <p class="h1-title-1 title-h2-1">
+        প্রতিদিন খাবারের সাথে নিন প্রাকৃতিক হজম সহায়ক
+      </p>
+      <div class="section-3">
+        <div class="benefits-section-3 colored">
+          <div>
+            <p class="benefits-section-3-p-1" style="padding-bottom: 25px">
+              এই কম্বো তে যেসব উপকার পাবেনঃ
+            </p>
+            <div>
+              <p
+                style="display: flex; align-items: center; margin-bottom: 25px"
+              >
+                <img
+                  src="https://cdn-icons-png.flaticon.com/128/10629/10629607.png"
+                  style="width: 35px; margin-right: 15px"
+                  alt=""
+                />
+                পেটের গ্যাস ও অম্লতা দূর করে
+              </p>
+              <p
+                style="display: flex; align-items: center; margin-bottom: 25px"
+              >
+                <img
+                  src="https://cdn-icons-png.flaticon.com/128/10629/10629607.png"
+                  style="width: 35px; margin-right: 15px"
+                  alt=""
+                />
+                হজম শক্তি বাড়ায়
+              </p>
+              <p
+                style="display: flex; align-items: center; margin-bottom: 25px"
+              >
+                <img
+                  src="https://cdn-icons-png.flaticon.com/128/10629/10629607.png"
+                  style="width: 35px; margin-right: 15px"
+                  alt=""
+                />
+                লিভার ও অন্ত্রকে পরিষ্কার রাখে
+              </p>
+              <p
+                style="display: flex; align-items: center; margin-bottom: 25px"
+              >
+                <img
+                  src="https://cdn-icons-png.flaticon.com/128/10629/10629607.png"
+                  style="width: 35px; margin-right: 15px"
+                  alt=""
+                />
+                রোগ প্রতিরোধ ক্ষমতা বৃদ্ধি করে
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="order-container">
+        <a href="#checkout-now" class="order-btn">
+          <button class="submit-btn"><span> অর্ডার করতে চাই </span></button>
+        </a>
+      </div>
+
+      <h3 class="h3-title-1">কেন G-Pro আপনার জন্য সেরা?</h3>
+      <p class="section-3-p-1">
+        100% প্রাকৃতিকভাবে তৈরি এই ক্যাপসুলটি আপনার হজম প্রক্রিয়াকে করে তুলবে
+        সহজ, শরীরকে রাখবে হালকা ও সুস্থ।
+      </p>
+
+     <div class="image-container">
+        <div class="image-stack">
+          <img
+            src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/naturalcure_db2/images/builder/6873870cd59ffcdbd9bd80cb/1752409433098_photo-2025-07-13-18-23-49.jpg"
+            alt="Top Image"
+            class="top-img"
+          />
+          <img
+            src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/naturalcure_db2/images/builder/6873870cd59ffcdbd9bd80cb/1752409445222_photo-2025-07-13-18-21-16.jpg"
+            alt="Top Image"
+            class="bottom-img"
+          />
+        </div>
+      </div>
+      <div class="order-container">
+        <a href="#checkout-now" class="order-btn">
+          <button class="submit-btn"><span> অর্ডার করতে চাই </span></button>
+        </a>
+      </div>
+
+      <div class="section-3">
+        <div class="benefits-section-3 colored">
+          <div>
+            <p class="benefits-section-3-p-1" style="padding-bottom: 25px">
+              G-Pro থেকে যেসব উপকার পাবেন:
+            </p>
+            <div>
+              <p>🌱 পেটের অস্বস্তি দূর করবে</p>
+              <p>🌱 ক্ষুধামন্দা কমাবে</p>
+              <p>🌱 হজমের গতি বাড়াবে</p>
+              <p>🌱 প্রাকৃতিকভাবে শরীরকে রাখবে ফিট</p>
+              <p>🌱 কোনো পার্শ্বপ্রতিক্রিয়া নেই</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
