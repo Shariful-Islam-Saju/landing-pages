@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>আয়ুর্বেদিক কেয়ার কম্বো — নির্ভরযোগ্য হেলথ সাপোর্ট</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap");
+
+      :root {
+        --img-width: 150px;
+        box-sizing: border-box;
+        font-family: "Hind Siliguri", sans-serif;
+      }
+
+      body {
+        margin: 0;
+        padding: 15px;
+        overflow-x: hidden;
+        min-height: 100vh;
+        font-family: "Hind Siliguri", sans-serif;
+        background: #ffffff;
+      }
+      /* Animation section */
+      .image-container-slider {
+        position: relative;
+        width: 100%;
+        height: calc(var(--img-width) + 40px);
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        margin: 25px 0;
+      }
+
+      .animated-image-1,
+      .animated-image-2 {
+        position: absolute;
+        width: var(--img-width);
+        top: 15px;
+        aspect-ratio: 1 / 1;
+      }
+
+      .divider-1 {
+        width: 0px;
+        height: 100%;
+        border: 2px solid #00721d;
+        z-index: 5;
+      }
+      .left-side {
+        flex: 1;
+        z-index: 2;
+        overflow-x: hidden;
+        position: relative;
+      }
+
+      .right-side {
+        flex: 1;
+        z-index: 2;
+        overflow-x: hidden;
+        position: relative;
+      }
+
+      .animated-image-1 {
+        animation: slideInAndOut-1 4s ease-in-out infinite alternate;
+        z-index: 3;
+      }
+
+      .animated-image-2 {
+        animation: slideInAndOut-2 4s ease-in-out infinite alternate;
+      }
+
+      @keyframes slideInAndOut-1 {
+        0%,
+        20% {
+          left: 0;
+        }
+        80%,
+        100% {
+          left: calc(200% - var(--img-width));
+        }
+      }
+
+      @keyframes slideInAndOut-2 {
+        0%,
+        20% {
+          left: -100%;
+        }
+        80%,
+        100% {
+          left: calc(100% - var(--img-width));
+        }
+      }
+
+      /* Normal Body */
+
+      .root-1 {
+        display: flex;
+        justify-content: center;
+        font-weight: bold;
+      }
+      .wrapper-div {
+        width: 100%;
+        max-width: 1250px;
+        padding: 10px;
+        position: relative;
+      }
+
+      .hero-section {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .colorful-text {
+        color: #2a8f3b;
+      }
+
+      .common-class {
+        border-radius: 20px;
+        padding: 15px 20px;
+        margin: 15px 0;
+        text-align: center;
+        backdrop-filter: blur(15px);
+        background-color: #d3fae3;
+        -webkit-backdrop-filter: blur(5px);
+        box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.06);
+      }
+      .title-1 {
+        font-size: 35px;
+        text-align: center;
+        transform: rotateX(20deg);
+        background: #00721d;
+        color: white;
+        text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
+      }
+      .title-2 {
+        font-size: 25px;
+      }
+
+      .title-3 {
+        font-size: 25px;
+        margin-top: 25px;
+      }
+      .image-container {
+        margin: 25px 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+
+      .image-stack {
+        position: relative;
+        width: 100%;
+        max-width: 450px;
+        aspect-ratio: 1 / 1;
+        box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.12);
+        background: #fff;
+        overflow: hidden;
+      }
+
+      .image-stack img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        top: 0;
+        left: 0;
+      }
+
+      .top-img {
+        animation: disappear 10s 5s linear infinite;
+        z-index: 2;
+      }
+
+      .bottom-img {
+        animation: disappear 10s linear infinite;
+        z-index: 2;
+      }
+
+      @keyframes disappear {
+        0% {
+          clip-path: inset(0% 0% 0% 0%);
+        }
+        30% {
+          clip-path: inset(100% 0% 0% 0%);
+        }
+        31% {
+          clip-path: inset(0% 0% 0% 0%);
+        }
+        60% {
+          z-index: 1;
+        }
+        100% {
+          clip-path: inset(0% 0% 0% 0%);
+        }
+      }
+
+      /* Button Design section start */
+      .order-container {
+        display: flex;
+        justify-content: center;
+        margin: 20px 0;
+      }
+     .submit-btn {
+        position: relative;
+        overflow: hidden;
+        padding: 16px 48px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #fff;
+        border: none;
+        border-radius: 12px;
+        background: linear-gradient(145deg, #006600, #00aa00);
+        cursor: pointer;
+        transform: rotateX(12deg) rotateY(0deg); /* Leaning back slightly */
+        transform-style: preserve-3d;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 4px 6px rgba(0, 0, 0, 0.3),
+          inset 0 -4px 10px rgba(0, 0, 0, 0.35),
+          inset 0 4px 4px rgba(255, 255, 255, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        z-index: 0;
+      }
+
+      .submit-btn:hover {
+        transform: translateY(-10px) rotateX(8deg) scale(1.03);
+      }
+
+      .submit-btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 60%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 0.4) 50%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        transform: skewX(-20deg);
+        animation: shimmer 2.5s infinite;
+        z-index: 1;
+      }
+
+      .submit-btn span {
+        position: relative;
+        z-index: 2;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+      }
+
+      @keyframes shimmer {
+        0% {
+          left: -100%;
+        }
+        100% {
+          left: 120%;
+        }
+      }
+      /* Button Design section end */
+
+      /* Health section */
+      .health-benefits {
+        list-style: none;
+        padding: 10px;
+        margin: 0;
+      }
+
+      .health-benefits-li {
+        display: flex;
+        align-items: center;
+        margin: 15px 0;
+        font-size: 20px;
+      }
+      .health-benefits-li img {
+        width: 30px;
+        margin-right: 18px;
+      }
+
+      /*  Price value start  */
+
+      .price-value {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .price-desc {
+        padding: 15px;
+        border-radius: 8px;
+        text-align: center;
+        border: 1px solid #e6e6e6;
+        background: #fff;
+      }
+      .price-desc img {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 8px;
+      }
+      .price-text {
+        margin-top: 10px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        color: #fff;
+        background: #ff6600;
+        display: inline-block;
+        padding: 6px 12px;
+        border-radius: 5px;
+        text-decoration: none;
+      }
+      /*  Price value end  */
+
+      @media (min-width: 900px) {
+        :root {
+          --img-width: 400px;
+        }
+
+        .price-value {
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="root-1">
+      <div class="wrapper-div">
+        <div class="hero-section">
+          <div>
+            <h1 class="common-class title-1">
+              ডায়াবেটিসকে কি আজীবন সঙ্গী ভেবে নিয়েছেন?
+            </h1>
+            <h3 class="common-class title-2">
+              ডায়াবেটিস থেকে বের হওয়ার স্থায়ী সমাধান চাচ্ছেন
+            </h3>
+            <div class="image-container-slider">
+              <div class="left-side">
+                <img
+                  src="/whatsapp.jpg"
+                  alt="Product Left"
+                  class="animated-image-1"
+                />
+              </div>
+              <div class="divider-1"></div>
+              <div class="right-side">
+                <img
+                  src="/whatsapp2.jpg"
+                  alt="Product Right"
+                  class="animated-image-2"
+                />
+              </div>
+            </div>
+
+            <div class="order-container">
+              <a href="#checkout-now" class="order-btn">
+                <button class="submit-btn">
+                  <span> এখনই অর্ডার করুন </span>
+                </button>
+              </a>
+            </div>
+
+            <h2 class="common-class title-2">
+              লক্ষ টাকা খরচ করেও ডাক্তাররা যেটা স্থায়ীভাবে দিতে পারে না,
+            </h2>
+          </div>
+        </div>
+
+        <h2 class="common-class title-3">
+          সে টি দিচ্ছে সম্পূর্ণ হারবাল প্রক্রিয়া তৈরি কোন পার্শ্ব
+          প্রতিক্রিয়াহীন ঔষধ ডায়ামাম
+        </h2>
+
+        <div class="image-container">
+          <div class="image-stack">
+            <!-- প্রধান প্রোডাক্ট ইমেজ — ছবি অপরিবর্তিত রেখে এখানে ব্যবহার -->
+            <img src="whatsapp.jpg" alt="Product Main" class="top-img" />
+            <img
+              src="whatsapp2.jpg"
+              alt="Product Main Alt"
+              class="bottom-img"
+            />
+          </div>
+        </div>
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn">
+            <button class="submit-btn">
+              <span> এখনই অর্ডার করুন </span>
+            </button>
+          </a>
+        </div>
+        <h3 class="common-class title-2">
+          ডায়াবেটিস হলে শরীরে দুর্বলতা, অবসাদ ও শক্তি কমে যায়। এই সমস্যা দূর
+          করতে ব্যবহার করুন <span class="colorful-text">ডায়ামাম ভিডেক্স </span>
+        </h3>
+        <div class="image-container">
+          <div class="image-stack">
+            <!-- প্রধান প্রোডাক্ট ইমেজ — ছবি অপরিবর্তিত রেখে এখানে ব্যবহার -->
+            <img src="whatsapp.jpg" alt="Product Main" class="top-img" />
+            <img
+              src="whatsapp2.jpg"
+              alt="Product Main Alt"
+              class="bottom-img"
+            />
+          </div>
+        </div>
+
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn">
+            <button class="submit-btn">
+              <span> এখনই অর্ডার করুন </span>
+            </button>
+          </a>
+        </div>
+        <!-- <ul class="health-benefits">
+          <li class="health-benefits-li">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/16597/16597199.png"
+              alt=""
+            />
+            রোজকার উচ্চ বা অস্থির ব্লাড সুগার নিয়ে উদ্বেগ — অভিজ্ঞ আয়ুর্বেদিক
+            সাপোর্ট।
+          </li>
+          <li class="health-benefits-li">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/16597/16597199.png"
+              alt=""
+            />
+            হালকা ঠিক না থাকা লিভার/দেহের জঞ্জাল — দৈনিক ডিটক্সে সহায়তা করে।
+          </li>
+          <li class="health-benefits-li">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/16597/16597199.png"
+              alt=""
+            />
+            শক্তির অভাব, ক্ষীণ মনোযোগ ও ক্লান্তি — দিনভর সজীবতা বাড়াতে সাহায্য।
+          </li>
+        </ul> -->
+        <h3 class="common-class title-2">
+          ডায়াবেটিস হলে খাওয়া-দাওয়ার অনেক রেস্ট্রিকশন পড়ে, এজন্য শরীরে
+          পুষ্টির ঘাটতি দেখা দেয় । এই পুষ্টির ঘাটতি মেটাতে ব্যবহার করুন
+          <span class="colorful-text"> ডায়ামাম ও জেনথিলিনা </span>
+        </h3>
+
+        <div class="image-container">
+          <div class="image-stack">
+            <!-- প্রধান প্রোডাক্ট ইমেজ — ছবি অপরিবর্তিত রেখে এখানে ব্যবহার -->
+            <img src="whatsapp.jpg" alt="Product Main" class="top-img" />
+            <img
+              src="whatsapp2.jpg"
+              alt="Product Main Alt"
+              class="bottom-img"
+            />
+          </div>
+        </div>
+
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn">
+            <button class="submit-btn">
+              <span> এখনই অর্ডার করুন </span>
+            </button>
+          </a>
+        </div>
+
+        <h3 class="common-class title-2">
+          ডায়াবেটিস হলে কিডনিতে নানা সমস্যা তৈরি হয়। এই সমস্যার সমাধানে
+          ব্যবহার করুন <span class="colorful-text"> ডায়ামাম জি-হেপা </span>
+        </h3>
+
+        <div class="image-container">
+          <div class="image-stack">
+            <!-- প্রধান প্রোডাক্ট ইমেজ — ছবি অপরিবর্তিত রেখে এখানে ব্যবহার -->
+            <img src="whatsapp.jpg" alt="Product Main" class="top-img" />
+            <img
+              src="whatsapp2.jpg"
+              alt="Product Main Alt"
+              class="bottom-img"
+            />
+          </div>
+        </div>
+
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn">
+            <button class="submit-btn">
+              <span> এখনই অর্ডার করুন </span>
+            </button>
+          </a>
+        </div>
+
+        <h3 class="common-class title-2">
+          সব ধরনের সমস্যার পূর্ণ সমাধানে ব্যবহার করুন
+          <span class="colorful-text">
+            ডায়ামাম, জেনথিলিনা, জি-হেপা ও ভিডেক্স
+          </span>
+        </h3>
+
+        <div class="image-container">
+          <div class="image-stack">
+            <!-- প্রধান প্রোডাক্ট ইমেজ — ছবি অপরিবর্তিত রেখে এখানে ব্যবহার -->
+            <img src="whatsapp.jpg" alt="Product Main" class="top-img" />
+            <img
+              src="whatsapp2.jpg"
+              alt="Product Main Alt"
+              class="bottom-img"
+            />
+          </div>
+        </div>
+
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn">
+            <button class="submit-btn">
+              <span> এখনই অর্ডার করুন </span>
+            </button>
+          </a>
+        </div>
+
+        <div class="price-value">
+          <div class="price-desc">
+            <img
+              src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/naturecure-online/images/builder/68529009d4c3b469df30390d/1750241415411_photo-2025-06-16-15-25-07.jpg"
+              alt="Pack A"
+            />
+            <a href="#checkout-now" class="price-text">৳ <del>1100</del> 900</a>
+          </div>
+          <div class="price-desc">
+            <img
+              src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/naturalcure_db2/images/builder/6863cd30d202e7b6e95a9278/1751373176957_photo-2025-07-01-18-26-28.jpg"
+              alt="Pack B"
+            />
+            <a href="#checkout-now" class="price-text">৳ <del>750</del> 595</a>
+          </div>
+          <div class="price-desc">
+            <img src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/naturalcure_db2/images/products/b138e66ecca74f3d91ea/1748766948425_zanthilina-2.webp" alt="Pack C" />
+            <a href="#checkout-now" class="price-text">৳ 585 </a>
+
+          </div>
+          <div class="price-desc">
+            <img src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/naturecure-online/images/builder/68529009d4c3b469df30390d/1750241431697_imageye-----1748931401702-bhidex-2.webp" alt="Pack C" />
+            <a href="#checkout-now" class="price-text">৳ <del>600</del> 500</a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
