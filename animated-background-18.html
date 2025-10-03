@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reviews Section</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --card-bg: #ffffff;
+        --border-color: #e2e8f0;
+        --text-primary: #1e293b;
+        --text-secondary: #475569;
+        --text-muted: #94a3b8;
+        --yellow: #facc15;
+      }
+
+      body {
+        font-family: "Hind Siliguri", sans-serif;
+        background: #f1f5f9;
+        margin: 0;
+        padding: 2rem;
+        color: var(--text-primary);
+      }
+
+      .reviews-section {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        padding: 3rem 0;
+      }
+
+      /* gradient fades */
+      .fade-left,
+      .fade-right {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 1.5rem;
+        pointer-events: none;
+        z-index: 10;
+      }
+      .fade-left {
+        left: 0;
+        background: linear-gradient(
+          to right,
+          rgba(241, 245, 249, 0.95) 30%,
+          /* white covers only 30% */ transparent 100%
+        );
+      }
+
+      .fade-right {
+        right: 0;
+        background: linear-gradient(
+          to left,
+          rgba(241, 245, 249, 0.95) 30%,
+          /* white covers only 30% */ transparent 100%
+        );
+      }
+
+      /* scroll container */
+      .scroll-container {
+        display: flex;
+        width: max-content;
+        gap: 2rem;
+        animation: scroll 10s linear infinite;
+      }
+
+      @keyframes scroll {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
+      .reviews-wrapper {
+        display: flex;
+        gap: 2rem;
+      }
+
+      .review-card {
+        flex: 0 0 auto;
+        background: #ffffff; /* clean white background */
+        border-radius: 1rem;
+        border: 1px solid #e2e8f0; /* subtle border for card definition */
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12),
+          0 4px 6px rgba(0, 0, 0, 0.08); /* stronger layered shadow */
+        min-width: 230px;
+        max-width: 260px;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+      }
+      .review-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      .review-content {
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-between;
+      }
+
+      .stars {
+        display: flex;
+        gap: 0.25rem;
+        margin-bottom: 0.75rem;
+      }
+      .star {
+        width: 18px;
+        height: 18px;
+        fill: var(--yellow);
+      }
+      .star.gray {
+        fill: #d1d5db;
+      }
+
+      .review-title {
+        font-size: 1.125rem;
+        font-weight: 600;
+        margin: 0;
+        color: var(--text-primary);
+      }
+      .review-desc {
+        margin-top: 0.5rem;
+        font-size: 0.875rem;
+        color: var(--text-secondary);
+        line-height: 1.5;
+      }
+
+      .review-footer {
+        margin-top: 1rem;
+        padding-top: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .avatar {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: #2563eb;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        font-size: 1rem;
+        flex-shrink: 0;
+      }
+
+      .reviewer-info {
+        display: flex;
+        flex-direction: column;
+      }
+      .reviewer-name {
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        margin: 0;
+      }
+      .reviewer-phone {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        margin: 0;
+      }
+
+      @media (min-width: 768px) {
+        .review-card {
+          min-width: 260px;
+          max-width: 320px;
+        }
+        .avatar {
+          width: 50px;
+          height: 50px;
+          font-size: 1.05rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="reviews-section">
+      <div class="fade-left"></div>
+      <div class="fade-right"></div>
+
+      <div class="scroll-container">
+        <div class="reviews-wrapper">
+          <!-- Review Card 1 -->
+          <div class="review-card">
+            <div class="review-content">
+              <div>
+                <div class="stars">
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star gray">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                </div>
+                <h3 class="review-title">চমৎকার ইবুক</h3>
+                <p class="review-desc">
+                  এই ইবুকটি পড়ে অনেক কিছু শিখেছি। ব্যাখ্যা গুলো সহজ ও সুন্দর।
+                </p>
+              </div>
+              <div class="review-footer">
+                <div class="avatar">A</div>
+                <div class="reviewer-info">
+                  <p class="reviewer-name">আলিম উদ্দিন</p>
+                  <p class="reviewer-phone">017******45</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review Card 2 -->
+          <div class="review-card">
+            <div class="review-content">
+              <div>
+                <div class="stars">
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star gray">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star gray">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star gray">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                </div>
+                <h3 class="review-title">ভালো লেগেছে</h3>
+                <p class="review-desc">
+                  কিছু অংশ আরও বিস্তারিত হতে পারত, তবে মোটের উপর ভালো।
+                </p>
+              </div>
+              <div class="review-footer">
+                <div class="avatar">S</div>
+                <div class="reviewer-info">
+                  <p class="reviewer-name">সাব্বির হোসেন</p>
+                  <p class="reviewer-phone">018******21</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Duplicate wrapper for seamless scroll -->
+        <div class="reviews-wrapper">
+          <!-- Repeat cards here -->
+          <div class="review-card">
+            <div class="review-content">
+              <div>
+                <div class="stars">
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star gray">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                </div>
+                <h3 class="review-title">চমৎকার ইবুক</h3>
+                <p class="review-desc">
+                  এই ইবুকটি পড়ে অনেক কিছু শিখেছি। ব্যাখ্যা গুলো সহজ ও সুন্দর।
+                </p>
+              </div>
+              <div class="review-footer">
+                <div class="avatar">A</div>
+                <div class="reviewer-info">
+                  <p class="reviewer-name">আলিম উদ্দিন</p>
+                  <p class="reviewer-phone">017******45</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

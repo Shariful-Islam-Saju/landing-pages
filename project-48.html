@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      margin: 0;
+      font-family: "Hind Siliguri", sans-serif;
+      background-color: black;
+      padding: 0;
+      height: 100%;
+      background: rgb(0, 0, 0);
+      position: relative;
+    }
+    .adb-row {
+      display: flex;
+      justify-content: flex-start;
+      align-items: stretch;
+      flex-wrap: nowrap;
+      padding: 10px;
+    }
+    .adb-cell {
+      min-height: 75px;
+      flex-grow: 1;
+      flex-basis: 100%;
+    }
+    #i4lp {
+      padding: 0px 0px 0px 0px;
+    }
+    .root-1 {
+      display: flex;
+      justify-content: center;
+      font-weight: bold;
+    }
+    .wrapper-div {
+      width: 100%;
+      max-width: 1290px;
+      padding: 25px;
+    }
+    .common-class {
+      border-radius: 20px;
+      background-color: #1a1a2e;
+      padding: 25px 10px;
+      text-align: center;
+    }
+    .title-1 {
+      background-color: #16213e;
+      font-size: 50px;
+      padding: 30px 10px;
+      color: white;
+      margin-top: 35px;
+    }
+    .different-text-1 {
+      color: #ffff01;
+    }
+    .title-2 {
+      margin-top: 30px;
+      color: white;
+      font-size: 40px;
+      padding: 20px 20px;
+    }
+    .title-3 {
+      margin-top: 30px;
+      color: white;
+      font-size: 30px;
+      padding: 20px 20px;
+    }
+    .image-container {
+      margin: 25px 0;
+      margin-bottom: 10px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    .image-container img {
+      width: 100%;
+      max-width: 600px;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      display: block;
+      border-radius: 25px;
+      border: 2px solid #f8f32b;
+    }
+    .order-container {
+      display: flex;
+      justify-content: center;
+      padding: 20px 0;
+      margin: 0;
+    }
+    .order-btn {
+      background-color: #e94560;
+      color: white;
+      display: inline-flex;
+      align-items: center;
+      padding: 12px 20px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: clamp(20px, 2vw, 25px);
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+    .order-btn img {
+      width: 30px;
+      margin-right: 10px;
+    }
+    .order-btn:hover {
+      background-color: #c9203c;
+      animation: hover-animation-pulse 0.3s linear infinite alternate;
+    }
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      margin-top: 25px;
+    }
+    .feature-list li {
+      color: white;
+      font-size: 30px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+    }
+    .feature-list li:last-child {
+      border-bottom: none;
+    }
+    .box {
+      min-width: 400px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      text-align: center;
+      position: fixed;
+      background: linear-gradient(
+        90deg,
+        rgb(5, 31, 86) 0%,
+        rgb(19, 19, 92) 35%,
+        rgb(27, 146, 230)
+      );
+      color: white;
+      justify-content: center;
+      z-index: -2;
+    }
+    .box .design-1 {
+      width: 5px;
+      height: 5px;
+      position: absolute;
+      background-color: transparent;
+      border: 1px solid white;
+      opacity: 1;
+      border-radius: 1px;
+    }
+    .box .design-2 {
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      background-color: rgba(226, 211, 211, 0.6);
+      top: 5px;
+      left: 50%;
+      border-radius: 2px;
+    }
+    .box div:nth-child(12) {
+      top: 20%;
+      left: 10%;
+      animation: animated 9s infinite linear;
+    }
+    .box div:nth-child(13) {
+      top: 85%;
+      left: 20%;
+      animation: animated 7s infinite linear;
+    }
+    .box div:nth-child(14) {
+      top: 90%;
+      left: 50%;
+      animation: animated 10s infinite linear;
+    }
+    .box div:nth-child(15) {
+      top: 60%;
+      left: 30%;
+      animation: animated 7s infinite linear;
+    }
+    .box div:nth-child(16) {
+      top: 30%;
+      left: 50%;
+      animation: animated 9s infinite linear;
+    }
+    .box div:nth-child(17) {
+      top: 85%;
+      left: 80%;
+      animation: animated 6s infinite linear;
+    }
+    .box div:nth-child(18) {
+      top: 45%;
+      left: 85%;
+      animation: animated 8s infinite linear;
+    }
+    .box div:nth-child(19) {
+      top: 15%;
+      left: 80%;
+      animation: animated 10s infinite linear;
+    }
+    .box div:nth-child(20) {
+      top: 50%;
+      left: 5%;
+      animation: animated 9s infinite linear;
+    }
+    .box div:nth-child(21) {
+      top: 65%;
+      left: 70%;
+      animation: animated 7s infinite linear;
+    }
+    .box div:nth-child(22) {
+      top: 30%;
+      left: 30%;
+      animation: animated 8s infinite linear;
+    }
+    .box div:nth-child(23) {
+      top: 10%;
+      left: 40%;
+      animation: animated 8s infinite linear;
+    }
+    .box div:nth-child(1) {
+      top: 7%;
+      left: 6%;
+      animation: animate 10s infinite linear;
+    }
+    .box div:nth-child(2) {
+      top: 79%;
+      left: 10%;
+      animation: animate 8s infinite linear;
+    }
+    .box div:nth-child(3) {
+      top: 13%;
+      left: 35%;
+      animation: animate 6s infinite linear;
+    }
+    .box div:nth-child(4) {
+      top: 69%;
+      left: 49%;
+      animation: animate 5s infinite linear;
+    }
+    .box div:nth-child(5) {
+      top: 8%;
+      left: 69%;
+      animation: animate 9s infinite linear;
+    }
+    .box div:nth-child(6) {
+      top: 38%;
+      left: 49%;
+      animation: animate 5s infinite linear;
+    }
+    .box div:nth-child(7) {
+      top: 38%;
+      left: 9%;
+      animation: animate 6s infinite linear;
+    }
+    .box div:nth-child(8) {
+      top: 78%;
+      left: 79%;
+      animation: animate 8s infinite linear;
+    }
+    .box div:nth-child(9) {
+      top: 48%;
+      left: 79%;
+      animation: animate 5s infinite linear;
+    }
+    .box div:nth-child(10) {
+      top: 28%;
+      left: 82%;
+      animation: animate 7s infinite linear;
+    }
+    .box div:nth-child(11) {
+      top: 58%;
+      left: 18%;
+      animation: animate 9s infinite linear;
+    }
+    #ilnoz {
+      width: 100%;
+    }
+    #ijmpc {
+      font-weight: bold;
+      
+    }
+    #ie1in {
+      width: 30px;
+      margin-right: 20px;
+    }
+    #ibzy59 {
+      font-weight: bold;
+    }
+    #im1mhv {
+      width: 30px;
+      margin-right: 20px;
+    }
+    #i5dx8b {
+      font-weight: bold;
+    }
+    #i6qd1c {
+      width: 30px;
+      margin-right: 20px;
+    }
+    #iiovaj {
+      font-weight: bold;
+    }
+    #i3wc53 {
+      width: 30px;
+      margin-right: 20px;
+    }
+    @keyframes hover-animation-pulse {
+      100% {
+        transform: scale(1.1);
+      }
+    }
+    @keyframes animate {
+      0% {
+        transform: scale(0) translate() rotate();
+      }
+      100% {
+        transform: scale(5.3) translateY(90px) rotate(720deg);
+        opacity: 0;
+      }
+    }
+    @keyframes animated {
+      0% {
+        transform: translate() rotate();
+      }
+      100% {
+        transform: scale(2.5) translateY(90px) rotate(360deg);
+        opacity: 0;
+      }
+    }
+    @media (max-width: 768px) {
+      .adb-row {
+        flex-wrap: wrap;
+      }
+    }
+    @media (max-width: 520px) {
+      .title-1 {
+        font-size: 35px;
+      }
+      .title-2 {
+        font-size: 26px;
+      }
+      .title-3 {
+        font-size: 18px;
+      }
+    }
+    @media (max-width: 500px) {
+      .feature-list li {
+        font-size: 22px;
+        font-weight: normal;
+      }
+      .last-text {
+        font-size: 20px;
+        line-height: 35px;
+      }
+    }
+  </style>
+  <body id="icmr">
+    <div id="i5aj">
+      <div id="i4lp" class="adb-row">
+        <div id="ivrs" class="adb-cell">
+          <div id="ipvr">
+            <div class="box">
+              <div class="design-1"></div>
+              <div class="design-1"></div>
+              <div class="design-1"></div>
+              <div class="design-1"></div>
+              <div class="design-1"></div>
+              <div class="design-1"></div>
+              <div class="design-1"></div>
+              <div class="design-1"></div>
+              <div class="design-1"></div>
+              <div class="design-1"></div>
+              <div class="design-1"></div>
+              <div class="design-2"></div>
+              <div class="design-2"></div>
+              <div class="design-2"></div>
+              <div class="design-2"></div>
+              <div class="design-2"></div>
+              <div class="design-2"></div>
+              <div class="design-2"></div>
+              <div class="design-2"></div>
+              <div class="design-2"></div>
+              <div class="design-2"></div>
+              <div class="design-2"></div>
+              <div class="design-2"></div>
+            </div>
+            <div class="root-1">
+              <div class="wrapper-div">
+                <h1 class="common-class title-1">
+                  আপনার
+                  <span class="different-text-1"> তিলাওয়াতে মনোযোগ বাড়ান</span>,
+                  বই ধরার ঝামেলা ছাড়াই!
+                </h1>
+                <h2 class="common-class title-2">
+                  প্রিমিয়াম অ্যাডজাস্টেবল কোরআন স্ট্যান্ড - এখন ঘাড় বা পিঠ ব্যথা
+                  ছাড়াই দাঁড়িয়ে অথবা বসে পড়ুন ঘণ্টার পর ঘণ্টা।
+                </h2>
+                <div class="image-container">
+                  <img
+                    src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/gadgetbd-store/images/builder/683efad04155ba3fd967a9e1/1748957991338_imageye-----8-1.jpg"
+                    alt=""
+                    id="izidj"
+                  />
+                </div>
+                <div class="order-container">
+                  <a href="#checkout-now" class="order-btn">
+                    <img
+                      src="https://builder.storex.com.bd/images/builder/allergy/finger-of-a-hand-pointing-to-right-direction-lqm9tkxe.webp"
+                      alt="Order Now"
+                    />
+                    অর্ডার করুন এখনই
+                  </a>
+                </div>
+                <h2 class="common-class title-2">
+                  আপনিও কি এই সমস্যাগুলোর মুখোমুখি হচ্ছেন?
+                </h2>
+                <section id="ilnoz">
+                  <ul class="feature-list">
+                    <li id="ijmpc">
+                      <img
+                        src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                        alt=""
+                        class="check-icon"
+                      />
+                      <span>দীর্ঘক্ষণ কোরআন পড়লে ঘাড় বা পিঠে ব্যথা হয়। </span>
+                    </li>
+                    <li id="ibzy59">
+                      <img
+                        src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                        alt=""
+                        class="check-icon"
+                      />
+                      <span
+                        >এক হাতে বই ধরে অন্য হাতে পৃষ্ঠা ওল্টানো কষ্টকর।</span
+                      >
+                    </li>
+                    <li id="i5dx8b">
+                      <img
+                        src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                        alt=""
+                        class="check-icon"
+                      />
+                      <span
+                        >শারীরিক অস্বস্তির কারণে তিলাওয়াতে মনোযোগ থাকে না।</span
+                      >
+                    </li>
+                  </ul>
+                </section>
+                <h2 class="common-class title-2">
+                  এর সহজ সমাধান আমাদের প্রিমিয়াম কোরআন স্ট্যান্ড!
+                </h2>
+                <h3 class="common-class title-3">
+                  এই স্ট্যান্ডটি আপনার কোরআনকে চোখের লেভেলে রাখবে, ফলে আপনার
+                  মেরুদণ্ড সোজা থাকবে এবং কোনো রকম শারীরিক কষ্ট ছাড়াই আপনি
+                  তিলাওয়াতে পুরোপুরি মনোযোগ দিতে পারবেন।
+                </h3>
+                <div class="image-container">
+                  <img
+                    src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/gadgetbd-store/images/builder/683efad04155ba3fd967a9e1/1748958006456_imageye-----17-r2na4w68dzncn621n0a8982e4bwr0am9yfvvzj61rk.jpg"
+                    alt=""
+                    id="iqiwe"
+                  />
+                </div>
+                <div class="order-container">
+                  <a href="#checkout-now" class="order-btn">
+                    <img
+                      src="https://builder.storex.com.bd/images/builder/allergy/finger-of-a-hand-pointing-to-right-direction-lqm9tkxe.webp"
+                      alt="Order Now"
+                    />
+                    অর্ডার করুন এখনই
+                  </a>
+                </div>
+                <h2 class="common-class title-2">
+                  কেন আমাদের কোরআন স্ট্যান্ড সেরা?
+                </h2>
+                <section id="ilnoz-2">
+                  <ul class="feature-list">
+                    <li id="ijmpc-2">
+                      <img
+                        src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                        alt=""
+                        class="check-icon"
+                      />
+                      <span>
+                        <strong class="different-text-1"
+                          >সম্পূর্ণ অ্যাডজাস্টেবল ডিজাইন</strong
+                        >
+                        - দাঁড়িয়ে বা বসে, যেকোনো উচ্চতায় পড়ার সুবিধা। সাইডের নব
+                        দিয়ে সহজেই অ্যাঙ্গেল পরিবর্তন করা যায়, যা আপনাকে দেবে
+                        পারফেক্ট ভিউইং অ্যাঙ্গেল।
+                      </span>
+                    </li>
+                    <li id="ibzy59-2">
+                      <img
+                        src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                        alt=""
+                        class="check-icon"
+                      />
+                      <span>
+                        <strong class="different-text-1"
+                          >মজবুত ও টেকসই নির্মাণ</strong
+                        >
+                        - এর prémium মেটাল বডি এবং ভারী Y-শেপ বেস এটিকে করে
+                        তুলেছে অত্যন্ত মজবুত। সহজে মরিচা পড়ে না এবং বছরের পর বছর
+                        টিকে।
+                      </span>
+                    </li>
+                    <li id="i5dx8b-2">
+                      <img
+                        src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                        alt=""
+                        class="check-icon"
+                      />
+                      <span>
+                        <strong class="different-text-1"
+                          >মাল্টি-পারপাস ব্যবহার</strong
+                        >
+                        - শুধু কোরআন নয়, যেকোনো বড় কিতাব, বই, লেকচার নোট বা
+                        রেসিপি বুক রাখার জন্যও এটি অসাধারণ।
+                      </span>
+                    </li>
+                  </ul>
+                </section>
+                <div class="image-container">
+                  <img
+                    src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/gadgetbd-store/images/builder/683efad04155ba3fd967a9e1/1748958012590_imageye-----6-2.jpg"
+                    alt=""
+                    id="iubsg"
+                  />
+                </div>
+                <h2 class="common-class title-2">
+                  কাদের জন্য এই স্ট্যান্ডটি আদর্শ?
+                </h2>
+                <section id="ilnoz-3">
+                  <ul class="feature-list">
+                    <li id="ijmpc-3">
+                      <img
+                        src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                        alt=""
+                        class="check-icon"
+                      />
+                      <span>
+                        <strong class="different-text-1"
+                          >মসজিদের ইমাম ও খতিব</strong
+                        >
+                        - খুতবা বা দরস দেওয়ার সময় হাত ফাঁকা রেখে নোটস দেখা সহজ
+                        হয়।
+                      </span>
+                    </li>
+                    <li id="ibzy59-3">
+                      <img
+                        src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                        alt=""
+                        class="check-icon"
+                      />
+                      <span>
+                        <strong class="different-text-1"
+                          >হিফজ শিক্ষার্থী</strong
+                        >
+                        - দীর্ঘ সময় দাঁড়িয়ে কোরআন মুখস্থ করার জন্য এটি অত্যন্ত
+                        উপকারী।
+                      </span>
+                    </li>
+                    <li id="i5dx8b-3">
+                      <img
+                        src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                        alt=""
+                        class="check-icon"
+                      />
+                      <span>
+                        <strong class="different-text-1">বয়স্ক ব্যক্তি</strong>
+                        - চেয়ারে বা সোফায় বসে আরাম করে তিলাওয়াতের জন্য সেরা।
+                      </span>
+                    </li>
+                    <li id="i5dx8b-4">
+                      <img
+                        src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                        alt=""
+                        class="check-icon"
+                      />
+                      <span>
+                        <strong class="different-text-1">উপহার</strong>
+                        - বাবা-মা বা প্রিয়জনকে দেওয়ার জন্য এটি একটি অমূল্য ও
+                        চিন্তাশীল উপহার।
+                      </span>
+                    </li>
+                  </ul>
+                </section>
+                <div class="order-container">
+                  <a href="#checkout-now" class="order-btn">
+                    <img
+                      src="https://builder.storex.com.bd/images/builder/allergy/finger-of-a-hand-pointing-to-right-direction-lqm9tkxe.webp"
+                      alt="Order Now"
+                    />
+                    অর্ডার করুন এখনই
+                  </a>
+                </div>
+                <h2 class="common-class title-2">মূল সুবিধা</h2>
+                <section id="ilnoz-4">
+                  <ul class="feature-list">
+                    <li id="ijmpc-4">
+                      <img
+                        src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                        alt=""
+                        class="check-icon"
+                      />
+                      <span>
+                        <strong class="different-text-1"
+                          >উচ্চতা ও অ্যাঙ্গেল অ্যাডজাস্ট</strong
+                        >
+                        - নিজের সুবিধা মতো সেট করুন।
+                      </span>
+                    </li>
+                    <li id="ibzy59-4">
+                      <img
+                        src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                        alt=""
+                        class="check-icon"
+                      />
+                      <span>
+                        <strong class="different-text-1"
+                          >ভারী অ্যান্টি-স্লিপ বেস</strong
+                        >
+                        - একদম স্থির, নড়বড়ে নয়।
+                      </span>
+                    </li>
+                    <li id="i5dx8b-5">
+                      <img
+                        src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                        alt=""
+                        class="check-icon"
+                      />
+                      <span>
+                        <strong class="different-text-1">শক্ত মেটাল বডি</strong>
+                        - বছরের পর বছর ব্যবহারের জন্য টেকসই।
+                      </span>
+                    </li>
+                    <li id="iiovaj">
+                      <img
+                        src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png"
+                        alt=""
+                        class="check-icon"
+                      />
+                      <span>
+                        <strong class="different-text-1"
+                          >ক্যাশ অন ডেলিভারি</strong
+                        >
+                        - পণ্য হাতে পেয়ে টাকা দিন।
+                      </span>
+                    </li>
+                  </ul>
+                </section>
+                <div class="order-container">
+                  <a href="#checkout-now" class="order-btn">
+                    <img
+                      src="https://builder.storex.com.bd/images/builder/allergy/finger-of-a-hand-pointing-to-right-direction-lqm9tkxe.webp"
+                      alt="Order Now"
+                    />
+                    অর্ডার করুন এখনই
+                  </a>
+                </div>
+                <h2 class="common-class title-2 last-text">
+                  তো আর দেরি কেন আমাদের
+                  <span class="different-text-1"> স্টক শেষ হওয়ার </span> আগেই
+                  আপনার স্ট্যান্ড টি আজই সংগ্রহ করুন। সংগ্রহ করতে
+                  <span class="different-text-1">অর্ডার নাও </span> বাটনে ক্লিক
+                  করে আমাদের ওয়েবসাইট থেকে অর্ডার করুন অথবা স্ক্রিনে দেওয়া
+                  মোবাইল নাম্বারে ফোন করে অর্ডার কনফার্ম করুন
+                </h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
