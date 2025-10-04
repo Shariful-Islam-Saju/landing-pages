@@ -1,0 +1,1537 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>project-54</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap");
+
+      :root {
+        --img-width: 150px;
+        --card-bg: #ffffff;
+        --border-color: #e2e8f0;
+        --text-primary: #1e293b;
+        --text-secondary: #475569;
+        --text-muted: #94a3b8;
+        --yellow: #facc15;
+        --background: #0758c2;
+        box-sizing: border-box;
+        font-family: "Hind Siliguri", sans-serif;
+      }
+
+      body {
+        margin: 0;
+        overflow-x: hidden;
+        min-height: 100vh;
+        font-family: "Hind Siliguri", sans-serif;
+      }
+
+      /* Animation section */
+      .image-container-slider {
+        position: relative;
+        width: 100%;
+        height: calc(var(--img-width) + 40px);
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        margin: 25px 0;
+      }
+
+      .animated-image-1,
+      .animated-image-2 {
+        position: absolute;
+        width: var(--img-width);
+        top: 15px;
+        object-fit: cover;
+        aspect-ratio: 1 / 1;
+
+        /* box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.438); */
+      }
+
+      .divider-1 {
+        width: 0px;
+        height: 100%;
+        border: 2px solid var(--background);
+        z-index: 5;
+      }
+      .left-side {
+        flex: 1;
+        z-index: 2;
+        overflow-x: hidden;
+        position: relative;
+      }
+
+      .right-side {
+        flex: 1;
+        z-index: 2;
+        overflow-x: hidden;
+        position: relative;
+      }
+
+      .animated-image-1 {
+        animation: slideInAndOut-1 4s ease-in-out infinite alternate;
+        z-index: 3;
+      }
+
+      .animated-image-2 {
+        animation: slideInAndOut-2 4s ease-in-out infinite alternate;
+      }
+
+      @keyframes slideInAndOut-1 {
+        0%,
+        20% {
+          left: 0;
+        }
+        50% {
+        }
+        80%,
+        100% {
+          left: calc(200% - var(--img-width));
+        }
+      }
+
+      @keyframes slideInAndOut-2 {
+        0%,
+        20% {
+          left: -100%;
+        }
+        50% {
+        }
+        80%,
+        100% {
+          left: calc(100% - var(--img-width));
+        }
+      }
+
+      /* Normal Body */
+
+      .root-1 {
+        display: flex;
+        justify-content: center;
+        font-weight: bold;
+      }
+      .wrapper-div {
+        width: 100%;
+        max-width: 1250px;
+        padding: 10px;
+        position: relative;
+      }
+
+      .hero-section {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .colorful-text {
+        color: green;
+      }
+
+      .common-class {
+        border-radius: 20px;
+        padding: 15px 10px;
+        margin: 15px 0;
+        text-align: center;
+        backdrop-filter: blur(15px); /* Correct syntax */
+        background-color: rgba(128, 128, 128, 0.301);
+        -webkit-backdrop-filter: blur(5px); /* For Safari support */
+        box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.445);
+      }
+      .title-1 {
+        font-size: 30px;
+        text-align: center;
+        transform: rotateX(20deg);
+        background: var(--background);
+        color: white;
+        text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.541);
+      }
+      .title-2 {
+        font-size: 22px;
+      }
+
+      .title-3 {
+        font-size: 22px;
+        margin-top: 25px;
+      }
+      .image-container {
+        margin: 25px 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+
+      .image-stack {
+        position: relative;
+        width: 100%;
+        max-width: 450px;
+        aspect-ratio: 1 / 1;
+        box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.466);
+      }
+
+      .image-stack img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        top: 0;
+        left: 0;
+      }
+
+      .top-img {
+        animation: disappear 10s 5s linear infinite;
+        z-index: 2;
+      }
+
+      .bottom-img {
+        animation: disappear 10s linear infinite;
+        z-index: 2;
+      }
+
+      @keyframes disappear {
+        0% {
+          clip-path: inset(0% 0% 0% 0%);
+        }
+        30% {
+          clip-path: inset(100% 0% 0% 0%);
+        }
+        31% {
+          clip-path: inset(0% 0% 0% 0%);
+        }
+        60% {
+          z-index: 1;
+        }
+        100% {
+          clip-path: inset(0% 0% 0% 0%);
+        }
+      }
+
+      /* Button Design section start */
+      .order-container {
+        display: flex;
+        justify-content: center;
+        margin: 20px 0;
+        font-family: "Hind Siliguri", sans-serif;
+      }
+      .submit-btn {
+        background: var(--background);
+        font-family: "Hind Siliguri", sans-serif;
+        position: relative;
+        overflow: hidden;
+        padding: 16px 48px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #fff;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        transform-style: preserve-3d;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 4px 6px rgba(0, 0, 0, 0.3),
+          inset 0 -4px 10px rgba(0, 0, 0, 0.35),
+          inset 0 4px 4px rgba(255, 255, 255, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        z-index: 0;
+
+        /* 🎯 Apply the floating animation */
+        animation: floatTilt 4s ease-in-out infinite;
+      }
+      @keyframes floatTilt {
+        0% {
+          transform: translateY(0) rotateX(0deg) scale(1);
+        }
+
+        25% {
+          transform: translateY(-10px) rotateX(6deg) scale(1.03); /* Bounce up */
+        }
+
+        50% {
+          transform: translateY(0) rotateX(0deg) scale(1);
+        }
+        75% {
+          transform: translateY(-10px) rotateX(6deg) scale(1.03); /* Bounce up */
+        }
+
+        100% {
+          transform: translateY(0) rotateX(0deg) scale(1);
+        }
+      }
+
+      .submit-btn::before {
+        content: "";
+        position: absolute;
+        font-family: "Hind Siliguri", sans-serif;
+
+        top: 0;
+        left: -100%;
+        width: 60%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 0.4) 50%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        transform: skewX(-20deg);
+        animation: shimmer 2.5s infinite;
+        z-index: 1;
+      }
+
+      .submit-btn span {
+        position: relative;
+        z-index: 2;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+      }
+
+      @keyframes shimmer {
+        0% {
+          left: -100%;
+        }
+        100% {
+          left: 120%;
+        }
+      }
+      /* Button Design section end */
+
+      /* Health section */
+      .health-benefits {
+        list-style: none;
+        padding: 10px;
+        margin: 0;
+      }
+
+      .health-benefits-li {
+        display: flex;
+        align-items: center;
+        margin: 15px 0;
+        font-size: 18px;
+      }
+      .health-benefits-li img {
+        width: 30px;
+        margin-right: 20px;
+      }
+      @keyframes hover-animation-pulse {
+        100% {
+          transform: scale(1.1);
+        }
+      }
+
+      /*  Price value start  */
+
+      .price-value {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .price-desc {
+        padding: 15px;
+        border-radius: 8px;
+        text-align: center;
+        border: 1px solid green;
+      }
+      .price-desc img {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 8px;
+      }
+      .price-text {
+        margin-top: 10px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #fff;
+        background: #ff6600;
+        display: inline-block;
+        padding: 6px 12px;
+        border-radius: 5px;
+        text-decoration: none;
+      }
+      /*  Price value end  */
+
+      @media (min-width: 900px) {
+        :root {
+          --img-width: 400px;
+        }
+
+        .price-value {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      /* review section  start here  */
+
+      .reviews-section {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        padding: 3rem 0;
+      }
+
+      /* gradient fades */
+      .fade-left,
+      .fade-right {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 1.5rem;
+        pointer-events: none;
+        z-index: 10;
+      }
+      .fade-left {
+        left: 0;
+        background: linear-gradient(
+          to right,
+          rgba(241, 245, 249, 0.95) 30%,
+          /* white covers only 30% */ transparent 100%
+        );
+      }
+
+      .fade-right {
+        right: 0;
+        background: linear-gradient(
+          to left,
+          rgba(241, 245, 249, 0.95) 30%,
+          /* white covers only 30% */ transparent 100%
+        );
+      }
+
+      /* scroll container */
+      .scroll-container {
+        display: flex;
+        width: max-content;
+        gap: 2rem;
+        animation: scroll 120s linear infinite;
+      }
+
+      @keyframes scroll {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
+      .reviews-wrapper {
+        display: flex;
+        gap: 2rem;
+      }
+
+      .review-card {
+        flex: 0 0 auto;
+        background: #ffffff; /* clean white background */
+        border-radius: 1rem;
+        border: 1px solid #e2e8f0; /* subtle border for card definition */
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12),
+          0 4px 6px rgba(0, 0, 0, 0.08); /* stronger layered shadow */
+        min-width: 230px;
+        max-width: 260px;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+      }
+      .review-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      .review-content {
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-between;
+      }
+
+      .stars {
+        display: flex;
+        gap: 0.25rem;
+        margin-bottom: 0.75rem;
+      }
+      .star {
+        width: 18px;
+        height: 18px;
+        fill: var(--yellow);
+      }
+      .star.gray {
+        fill: #d1d5db;
+      }
+
+      .review-title {
+        font-size: 1.125rem;
+        font-weight: 600;
+        margin: 0;
+        color: var(--text-primary);
+      }
+      .review-desc {
+        margin-top: 0.5rem;
+        font-size: 0.875rem;
+        color: var(--text-secondary);
+        line-height: 1.5;
+      }
+
+      .review-footer {
+        margin-top: 1rem;
+        padding-top: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .avatar {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: var(--background);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        font-size: 1rem;
+        flex-shrink: 0;
+      }
+
+      .reviewer-info {
+        display: flex;
+        flex-direction: column;
+      }
+      .reviewer-name {
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        margin: 0;
+      }
+      .reviewer-phone {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        margin: 0;
+      }
+
+      @media (min-width: 768px) {
+        .review-card {
+          min-width: 260px;
+          max-width: 320px;
+        }
+        .avatar {
+          width: 50px;
+          height: 50px;
+          font-size: 1.05rem;
+        }
+      }
+
+      /* review section end here  */
+    </style>
+  </head>
+  <body>
+    <div class="root-1">
+      <div class="wrapper-div">
+        <div class="hero-section">
+          <div>
+            <h1 class="common-class title-1">
+              স্ট্রেস, দুর্বলতা ও ক্লান্তি আর নয়! 🌿 <br />
+              Reboost + Panagold কম্বো – পুরুষ স্বাস্থ্যের সম্পূর্ণ সমাধান 💚
+            </h1>
+
+            <div class="image-container-slider">
+              <div class="left-side">
+                <img
+                  src="s293.jpg"
+                  alt="Reboost and Panagold Combo"
+                  class="animated-image-1"
+                />
+              </div>
+              <div class="divider-1"></div>
+              <div class="right-side">
+                <img
+                  src="s293.jpg"
+                  alt="Herbal Combo Pack"
+                  class="animated-image-2"
+                />
+              </div>
+            </div>
+
+            <div class="order-container">
+              <a href="#checkout-now" class="order-btn">
+                <button class="submit-btn">
+                  <span> আজই অর্ডার করুন </span>
+                </button>
+              </a>
+            </div>
+
+            <h2 class="common-class title-2">
+              কেমিক্যাল ছাড়াই 🛡
+              <span class="colorful-text">100% হারবাল ফর্মুলা</span> – <br />
+              <span class="colorful-text"
+                >পুরুষ শক্তি, ইমিউনিটি ও এনার্জির</span
+              >
+              সুরক্ষায় পরীক্ষিত ও কার্যকর!
+            </h2>
+          </div>
+        </div>
+
+        <h3 class="common-class title-2">
+          কম্বো প্রোডাক্ট 💊 –
+          <span class="colorful-text">Reboost + Panagold</span> <br />
+          – ভেতর থেকে শরীরকে শক্তিশালী করে, আনে আত্মবিশ্বাস।
+        </h3>
+
+        <ul class="health-benefits">
+          <li class="health-benefits-li">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/4333/4333609.png"
+              alt="brain"
+              class="check-image-1"
+            />
+            Reboost: স্নায়ুর দুর্বলতা ও মানসিক চাপ কমায়, ঘুমের মান উন্নত করে 💤
+          </li>
+          <li class="health-benefits-li">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/4359/4359963.png"
+              alt="relax"
+              class="check-image-1"
+            />
+            স্মৃতি শক্তি ও মনোযোগ বাড়ায়, ইমিউন সাপোর্ট দেয় এবং এনার্জি ধরে
+            রাখে ⚡
+          </li>
+          <li class="health-benefits-li">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/2750/2750726.png"
+              alt="muscle"
+              class="check-image-1"
+            />
+            Panagold: যৌন দুর্বলতা ও আত্মবিশ্বাসের সমস্যা দূর করে 💪
+          </li>
+          <li class="health-benefits-li">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/4317/4317102.png"
+              alt="sperm"
+              class="check-image-1"
+            />
+            শুক্রাণুর মান ও সংখ্যা উন্নত করে, যৌন সক্ষমতা বাড়ায় 🔥
+          </li>
+          <li class="health-benefits-li">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/4315/4315609.png"
+              alt="safe"
+              class="check-image-1"
+            />
+            ১০০% প্রাকৃতিক, পার্শ্বপ্রতিক্রিয়ামুক্ত – দীর্ঘমেয়াদি ব্যবহারে
+            নিরাপদ ✅
+          </li>
+        </ul>
+
+        <h3 class="common-class title-2">
+          স্ট্রেস, দুর্বলতা ও পুরুষ স্বাস্থ্যের সমস্যার একসাথে সমাধান! <br />
+          <span class="colorful-text"
+            >Reboost + Panagold কম্বোতে পান নতুন শক্তি ও আত্মবিশ্বাস</span
+          >
+        </h3>
+
+        <div class="image-container">
+          <div class="image-stack">
+            <img
+              src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/naturecure-online/images/builder/6875ed64b66dbadcbe86f63a/1752574139556_bwd2.jpg"
+              alt="Reboost and Panagold Combo"
+              class="top-img"
+            />
+            <img
+              src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/naturecure-online/images/builder/6875ed64b66dbadcbe86f63a/1752574128843_bwd.jpg"
+              alt="Herbal Medicine Bottle"
+              class="bottom-img"
+            />
+          </div>
+        </div>
+
+        <div class="order-container">
+          <a href="#checkout-now" class="order-btn">
+            <button class="submit-btn">
+              <span> অর্ডার কনফার্ম করুন </span>
+            </button>
+          </a>
+        </div>
+
+        <h3 class="common-class title-2">আমাদের গ্রাহকদের বাস্তব অভিজ্ঞতা</h3>
+      </div>
+    </div>
+    <section class="reviews-section">
+      <div class="fade-left"></div>
+      <div class="fade-right"></div>
+
+      <div class="scroll-container">
+        <div class="reviews-wrapper">
+          <div class="review-card">
+            <div class="review-content">
+              <div>
+                <div class="stars">
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                </div>
+                <h3 class="review-title">স্ট্রেস ও ঘুমের সমস্যা থেকে মুক্তি</h3>
+                <p class="review-desc">
+                  অফিসের কাজের চাপের কারণে প্রচণ্ড স্ট্রেসে থাকতাম, রাতে ঘুম হত
+                  না। Reboost + Panagold ব্যবহার শুরু করার ২ সপ্তাহের মধ্যে
+                  ঘুমের মান অনেক ভালো হয়েছে এবং মনটা অনেক শান্ত থাকে।
+                </p>
+              </div>
+              <div class="review-footer">
+                <div class="avatar">S</div>
+                <div class="reviewer-info">
+                  <p class="reviewer-name">সাদিয়া রহমান</p>
+                  <p class="reviewer-phone">০১৭*******২৫</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-content">
+              <div>
+                <div class="stars">
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                </div>
+                <h3 class="review-title">পুরুষ স্বাস্থ্যে দারুণ কাজ করেছে</h3>
+                <p class="review-desc">
+                  কিছুদিন ধরে এনার্জি কমে যাচ্ছিল এবং আত্মবিশ্বাসও নষ্ট হচ্ছিল।
+                  এই কম্বো নিয়মিত খাওয়ার পর এখন শরীরে শক্তি আছে, এবং বৈবাহিক
+                  জীবনেও অনেক পরিবর্তন অনুভব করছি।
+                </p>
+              </div>
+              <div class="review-footer">
+                <div class="avatar">R</div>
+                <div class="reviewer-info">
+                  <p class="reviewer-name">রিয়াজ আহমেদ</p>
+                  <p class="reviewer-phone">০১৮*******৭৩</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="review-card">
+            <div class="review-content">
+              <div>
+                <div class="stars">
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                </div>
+                <h3 class="review-title">ইমিউনিটি ও শক্তি বাড়াতে দারুণ</h3>
+                <p class="review-desc">
+                  পরিবর্তনটা বুঝতে সময় লাগেনি। আগের চেয়ে এনার্জি লেভেল অনেক
+                  বেড়েছে, সকালে উঠে ফ্রেশ লাগে। নিয়মিত Reboost + Panagold
+                  খাওয়ার কারণে এখন কাজের ফোকাসও বেশি।
+                </p>
+              </div>
+              <div class="review-footer">
+                <div class="avatar">M</div>
+                <div class="reviewer-info">
+                  <p class="reviewer-name">মোহাম্মদ আরিফ</p>
+                  <p class="reviewer-phone">০১৯*******৬৫</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="review-content">
+              <div>
+                <div class="stars">
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                </div>
+                <h3 class="review-title">স্ট্রেস ও ঘুমের সমস্যা থেকে মুক্তি</h3>
+                <p class="review-desc">
+                  অফিসের কাজের চাপের কারণে প্রচণ্ড স্ট্রেসে থাকতাম, রাতে ঘুম হত
+                  না। Reboost + Panagold ব্যবহার শুরু করার ২ সপ্তাহের মধ্যে
+                  ঘুমের মান অনেক ভালো হয়েছে এবং মনটা অনেক শান্ত থাকে।
+                </p>
+              </div>
+              <div class="review-footer">
+                <div class="avatar">S</div>
+                <div class="reviewer-info">
+                  <p class="reviewer-name">সাদিয়া রহমান</p>
+                  <p class="reviewer-phone">০১৭*******২৫</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-content">
+              <div>
+                <div class="stars">
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                </div>
+                <h3 class="review-title">পুরুষ স্বাস্থ্যে দারুণ কাজ করেছে</h3>
+                <p class="review-desc">
+                  কিছুদিন ধরে এনার্জি কমে যাচ্ছিল এবং আত্মবিশ্বাসও নষ্ট হচ্ছিল।
+                  এই কম্বো নিয়মিত খাওয়ার পর এখন শরীরে শক্তি আছে, এবং বৈবাহিক
+                  জীবনেও অনেক পরিবর্তন অনুভব করছি।
+                </p>
+              </div>
+              <div class="review-footer">
+                <div class="avatar">R</div>
+                <div class="reviewer-info">
+                  <p class="reviewer-name">রিয়াজ আহমেদ</p>
+                  <p class="reviewer-phone">০১৮*******৭৩</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="review-card">
+            <div class="review-content">
+              <div>
+                <div class="stars">
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                </div>
+                <h3 class="review-title">ইমিউনিটি ও শক্তি বাড়াতে দারুণ</h3>
+                <p class="review-desc">
+                  পরিবর্তনটা বুঝতে সময় লাগেনি। আগের চেয়ে এনার্জি লেভেল অনেক
+                  বেড়েছে, সকালে উঠে ফ্রেশ লাগে। নিয়মিত Reboost + Panagold
+                  খাওয়ার কারণে এখন কাজের ফোকাসও বেশি।
+                </p>
+              </div>
+              <div class="review-footer">
+                <div class="avatar">M</div>
+                <div class="reviewer-info">
+                  <p class="reviewer-name">মোহাম্মদ আরিফ</p>
+                  <p class="reviewer-phone">০১৯*******৬৫</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="review-content">
+              <div>
+                <div class="stars">
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                </div>
+                <h3 class="review-title">স্ট্রেস ও ঘুমের সমস্যা থেকে মুক্তি</h3>
+                <p class="review-desc">
+                  অফিসের কাজের চাপের কারণে প্রচণ্ড স্ট্রেসে থাকতাম, রাতে ঘুম হত
+                  না। Reboost + Panagold ব্যবহার শুরু করার ২ সপ্তাহের মধ্যে
+                  ঘুমের মান অনেক ভালো হয়েছে এবং মনটা অনেক শান্ত থাকে।
+                </p>
+              </div>
+              <div class="review-footer">
+                <div class="avatar">S</div>
+                <div class="reviewer-info">
+                  <p class="reviewer-name">সাদিয়া রহমান</p>
+                  <p class="reviewer-phone">০১৭*******২৫</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-content">
+              <div>
+                <div class="stars">
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                </div>
+                <h3 class="review-title">পুরুষ স্বাস্থ্যে দারুণ কাজ করেছে</h3>
+                <p class="review-desc">
+                  কিছুদিন ধরে এনার্জি কমে যাচ্ছিল এবং আত্মবিশ্বাসও নষ্ট হচ্ছিল।
+                  এই কম্বো নিয়মিত খাওয়ার পর এখন শরীরে শক্তি আছে, এবং বৈবাহিক
+                  জীবনেও অনেক পরিবর্তন অনুভব করছি।
+                </p>
+              </div>
+              <div class="review-footer">
+                <div class="avatar">R</div>
+                <div class="reviewer-info">
+                  <p class="reviewer-name">রিয়াজ আহমেদ</p>
+                  <p class="reviewer-phone">০১৮*******৭৩</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="review-card">
+            <div class="review-content">
+              <div>
+                <div class="stars">
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                </div>
+                <h3 class="review-title">ইমিউনিটি ও শক্তি বাড়াতে দারুণ</h3>
+                <p class="review-desc">
+                  পরিবর্তনটা বুঝতে সময় লাগেনি। আগের চেয়ে এনার্জি লেভেল অনেক
+                  বেড়েছে, সকালে উঠে ফ্রেশ লাগে। নিয়মিত Reboost + Panagold
+                  খাওয়ার কারণে এখন কাজের ফোকাসও বেশি।
+                </p>
+              </div>
+              <div class="review-footer">
+                <div class="avatar">M</div>
+                <div class="reviewer-info">
+                  <p class="reviewer-name">মোহাম্মদ আরিফ</p>
+                  <p class="reviewer-phone">০১৯*******৬৫</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="review-content">
+              <div>
+                <div class="stars">
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                </div>
+                <h3 class="review-title">স্ট্রেস ও ঘুমের সমস্যা থেকে মুক্তি</h3>
+                <p class="review-desc">
+                  অফিসের কাজের চাপের কারণে প্রচণ্ড স্ট্রেসে থাকতাম, রাতে ঘুম হত
+                  না। Reboost + Panagold ব্যবহার শুরু করার ২ সপ্তাহের মধ্যে
+                  ঘুমের মান অনেক ভালো হয়েছে এবং মনটা অনেক শান্ত থাকে।
+                </p>
+              </div>
+              <div class="review-footer">
+                <div class="avatar">S</div>
+                <div class="reviewer-info">
+                  <p class="reviewer-name">সাদিয়া রহমান</p>
+                  <p class="reviewer-phone">০১৭*******২৫</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-content">
+              <div>
+                <div class="stars">
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                </div>
+                <h3 class="review-title">পুরুষ স্বাস্থ্যে দারুণ কাজ করেছে</h3>
+                <p class="review-desc">
+                  কিছুদিন ধরে এনার্জি কমে যাচ্ছিল এবং আত্মবিশ্বাসও নষ্ট হচ্ছিল।
+                  এই কম্বো নিয়মিত খাওয়ার পর এখন শরীরে শক্তি আছে, এবং বৈবাহিক
+                  জীবনেও অনেক পরিবর্তন অনুভব করছি।
+                </p>
+              </div>
+              <div class="review-footer">
+                <div class="avatar">R</div>
+                <div class="reviewer-info">
+                  <p class="reviewer-name">রিয়াজ আহমেদ</p>
+                  <p class="reviewer-phone">০১৮*******৭৩</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="review-card">
+            <div class="review-content">
+              <div>
+                <div class="stars">
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                </div>
+                <h3 class="review-title">ইমিউনিটি ও শক্তি বাড়াতে দারুণ</h3>
+                <p class="review-desc">
+                  পরিবর্তনটা বুঝতে সময় লাগেনি। আগের চেয়ে এনার্জি লেভেল অনেক
+                  বেড়েছে, সকালে উঠে ফ্রেশ লাগে। নিয়মিত Reboost + Panagold
+                  খাওয়ার কারণে এখন কাজের ফোকাসও বেশি।
+                </p>
+              </div>
+              <div class="review-footer">
+                <div class="avatar">M</div>
+                <div class="reviewer-info">
+                  <p class="reviewer-name">মোহাম্মদ আরিফ</p>
+                  <p class="reviewer-phone">০১৯*******৬৫</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="review-content">
+              <div>
+                <div class="stars">
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                </div>
+                <h3 class="review-title">স্ট্রেস ও ঘুমের সমস্যা থেকে মুক্তি</h3>
+                <p class="review-desc">
+                  অফিসের কাজের চাপের কারণে প্রচণ্ড স্ট্রেসে থাকতাম, রাতে ঘুম হত
+                  না। Reboost + Panagold ব্যবহার শুরু করার ২ সপ্তাহের মধ্যে
+                  ঘুমের মান অনেক ভালো হয়েছে এবং মনটা অনেক শান্ত থাকে।
+                </p>
+              </div>
+              <div class="review-footer">
+                <div class="avatar">S</div>
+                <div class="reviewer-info">
+                  <p class="reviewer-name">সাদিয়া রহমান</p>
+                  <p class="reviewer-phone">০১৭*******২৫</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-content">
+              <div>
+                <div class="stars">
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                </div>
+                <h3 class="review-title">পুরুষ স্বাস্থ্যে দারুণ কাজ করেছে</h3>
+                <p class="review-desc">
+                  কিছুদিন ধরে এনার্জি কমে যাচ্ছিল এবং আত্মবিশ্বাসও নষ্ট হচ্ছিল।
+                  এই কম্বো নিয়মিত খাওয়ার পর এখন শরীরে শক্তি আছে, এবং বৈবাহিক
+                  জীবনেও অনেক পরিবর্তন অনুভব করছি।
+                </p>
+              </div>
+              <div class="review-footer">
+                <div class="avatar">R</div>
+                <div class="reviewer-info">
+                  <p class="reviewer-name">রিয়াজ আহমেদ</p>
+                  <p class="reviewer-phone">০১৮*******৭৩</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="review-card">
+            <div class="review-content">
+              <div>
+                <div class="stars">
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                </div>
+                <h3 class="review-title">ইমিউনিটি ও শক্তি বাড়াতে দারুণ</h3>
+                <p class="review-desc">
+                  পরিবর্তনটা বুঝতে সময় লাগেনি। আগের চেয়ে এনার্জি লেভেল অনেক
+                  বেড়েছে, সকালে উঠে ফ্রেশ লাগে। নিয়মিত Reboost + Panagold
+                  খাওয়ার কারণে এখন কাজের ফোকাসও বেশি।
+                </p>
+              </div>
+              <div class="review-footer">
+                <div class="avatar">M</div>
+                <div class="reviewer-info">
+                  <p class="reviewer-name">মোহাম্মদ আরিফ</p>
+                  <p class="reviewer-phone">০১৯*******৬৫</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="review-content">
+              <div>
+                <div class="stars">
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                </div>
+                <h3 class="review-title">স্ট্রেস ও ঘুমের সমস্যা থেকে মুক্তি</h3>
+                <p class="review-desc">
+                  অফিসের কাজের চাপের কারণে প্রচণ্ড স্ট্রেসে থাকতাম, রাতে ঘুম হত
+                  না। Reboost + Panagold ব্যবহার শুরু করার ২ সপ্তাহের মধ্যে
+                  ঘুমের মান অনেক ভালো হয়েছে এবং মনটা অনেক শান্ত থাকে।
+                </p>
+              </div>
+              <div class="review-footer">
+                <div class="avatar">S</div>
+                <div class="reviewer-info">
+                  <p class="reviewer-name">সাদিয়া রহমান</p>
+                  <p class="reviewer-phone">০১৭*******২৫</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-content">
+              <div>
+                <div class="stars">
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                </div>
+                <h3 class="review-title">পুরুষ স্বাস্থ্যে দারুণ কাজ করেছে</h3>
+                <p class="review-desc">
+                  কিছুদিন ধরে এনার্জি কমে যাচ্ছিল এবং আত্মবিশ্বাসও নষ্ট হচ্ছিল।
+                  এই কম্বো নিয়মিত খাওয়ার পর এখন শরীরে শক্তি আছে, এবং বৈবাহিক
+                  জীবনেও অনেক পরিবর্তন অনুভব করছি।
+                </p>
+              </div>
+              <div class="review-footer">
+                <div class="avatar">R</div>
+                <div class="reviewer-info">
+                  <p class="reviewer-name">রিয়াজ আহমেদ</p>
+                  <p class="reviewer-phone">০১৮*******৭৩</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="review-card">
+            <div class="review-content">
+              <div>
+                <div class="stars">
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                </div>
+                <h3 class="review-title">ইমিউনিটি ও শক্তি বাড়াতে দারুণ</h3>
+                <p class="review-desc">
+                  পরিবর্তনটা বুঝতে সময় লাগেনি। আগের চেয়ে এনার্জি লেভেল অনেক
+                  বেড়েছে, সকালে উঠে ফ্রেশ লাগে। নিয়মিত Reboost + Panagold
+                  খাওয়ার কারণে এখন কাজের ফোকাসও বেশি।
+                </p>
+              </div>
+              <div class="review-footer">
+                <div class="avatar">M</div>
+                <div class="reviewer-info">
+                  <p class="reviewer-name">মোহাম্মদ আরিফ</p>
+                  <p class="reviewer-phone">০১৯*******৬৫</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="root-1">
+      <div class="wrapper-div">
+        <div class="price-value">
+          <div class="price-desc">
+            <img
+              src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/natureplusbd-admin/images/products/c2a4d90b6cb04715b1f8/1758359198367_Reboost-3.webp"
+              alt="Diamum Capsules"
+            />
+            <a href="#checkout-now" class="price-text">৳ 400</a>
+          </div>
+          <div class="price-desc">
+            <img
+              src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/natureplusbd-admin/images/products/759c30d500eb4560b2b7/1744954686345_panagold-3.webp"
+              alt="Combo Pack"
+            />
+            <a href="#checkout-now" class="price-text">৳ 750</a>
+          </div>
+        </div>
+        <h2 class="common-class title-3">
+          আর দেরি না করে আজই সংগ্রহ করুন আমাদের
+          <span class="colorful-text"> সীমিত সময়ের প্রাকৃতিক সমাধান </span>।
+          "আজই কিনুন" বাটনে ক্লিক করে অর্ডার সম্পন্ন করুন এবং
+          <span class="colorful-text">নিজের স্বাস্থ্য সুরক্ষিত করুন</span> ।
+          স্টক সীমিত, তাই দ্রুত ব্যবস্থা নিন!
+        </h2>
+      </div>
+    </div>
+  </body>
+</html>
