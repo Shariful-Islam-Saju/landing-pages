@@ -1,442 +1,239 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>[Product Name] - Your Best Choice</title>
-    <link rel="stylesheet" href="product_style.css" />
-    <style>
-      /* General Styles */
-      body {
-        margin: 0;
-        font-family: "Poppins", sans-serif; /* Modern, clean font */
-        color: #333;
-        line-height: 1.7;
-        background-color: #f4f7f6; /* Soft off-white background */
-        overflow-x: hidden;
-      }
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Combo Herbal Product Landing Page</title>
+<style>
+  /* Background gradient animation */
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(-45deg, #a1c4fd, #c2e9fb, #89f7fe, #66a6ff);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+  }
 
-      h1,
-      h2,
-      h3 {
-        font-family: "Montserrat", sans-serif; /* More distinct font for headings */
-        color: #1a202c;
-      }
+  @keyframes gradientBG {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+  }
 
-      .section-title {
-        text-align: center;
-        font-size: 2.8em;
-        margin-bottom: 60px;
-        position: relative;
-        padding-bottom: 20px;
-      }
+  header {
+    text-align: center;
+    color: #000; /* header text black */
+    padding: 50px 20px 20px;
+  }
 
-      .section-title::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 80px;
-        height: 4px;
-        background-color: #007bff; /* Accent color */
-        border-radius: 2px;
-      }
+  header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
 
-      a {
-        text-decoration: none;
-        color: #007bff;
-      }
+  header p {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
 
-      /* Hero Section - Animated Background */
-      .hero-section {
-        position: relative;
-        width: 100%;
-        height: 80vh; /* Slightly less than full screen for better product focus */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        color: #fff;
-        overflow: hidden;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      }
+  /* Hook points box */
+  .hook-points {
+    max-width: 700px;
+    margin: 20px auto;
+    background-color: #e74c3c; /* red background */
+    padding: 20px 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    color: #fff; /* white text */
+    font-size: 16px;
+    line-height: 1.6;
+    transition: all 0.3s ease;
+  }
 
-      /* Animated Background - Subtle Gradient Flow */
-      .hero-section::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        /* More sophisticated gradient for a premium feel */
-        background: linear-gradient(
-          120deg,
-          #845ec2 0%,
-          #d65db1 40%,
-          #ff6b6b 80%,
-          #ffa600 100%
-        );
-        background-size: 400% 400%;
-        animation: subtleGradient 18s ease infinite;
-        z-index: -1;
-      }
+  /* Dynamic hover effect */
+  .hook-points:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.35), 0 0 25px rgba(255,255,255,0.5); /* glow + deeper shadow */
+    animation: bounceHover 0.4s ease;
+  }
 
-      @keyframes subtleGradient {
-        0% {
-          background-position: 0% 0%;
-        }
-        50% {
-          background-position: 100% 100%;
-        }
-        100% {
-          background-position: 0% 0%;
-        }
-      }
+  @keyframes bounceHover {
+    0% { transform: scale(1.05); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1.05); }
+  }
 
-      .hero-content {
-        z-index: 1;
-        padding: 20px;
-      }
+  .hook-points ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin: 0;
+  }
 
-      .product-title {
-        font-size: 3.8em;
-        margin-bottom: 15px;
-        font-weight: 700;
-        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
-      }
+  .hook-points ul li {
+    margin-bottom: 12px;
+  }
 
-      .product-tagline {
-        font-size: 1.6em;
-        margin-bottom: 40px;
-        max-width: 700px;
-        margin-left: auto;
-        margin-right: auto;
-        text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.3);
-        font-weight: 300;
-      }
+  /* Product container */
+  .product-section {
+    position: relative;
+    max-width: 600px;
+    width: 90%;
+    margin: 20px auto 40px auto;
+    display: grid;
+    grid-template-areas:
+      "top"
+      "image"
+      "details"
+      "order";
+    gap: 20px;
+    text-align: center;
+  }
 
-      .cta-button {
-        display: inline-block;
-        padding: 18px 35px;
-        background-color: #28a745; /* Green for Buy/Add to Cart */
-        color: #fff;
-        font-size: 1.3em;
-        font-weight: 600;
-        border-radius: 5px;
-        transition: background-color 0.3s ease, transform 0.3s ease,
-          box-shadow 0.3s ease;
-        box-shadow: 0 5px 20px rgba(40, 167, 69, 0.4);
-      }
+  /* Circular Image fade animation with border + shadow */
+  .product-image {
+    grid-area: image;
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: auto;
+  }
 
-      .cta-button:hover {
-        background-color: #218838;
-        transform: translateY(-4px);
-        box-shadow: 0 8px 25px rgba(40, 167, 69, 0.6);
-      }
+  .product-image img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    border-radius: 50%; /* circular */
+    border: 5px solid rgba(255,255,255,0.7);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    opacity: 0;
+    animation: fadeImages 6s infinite;
+  }
 
-      /* Product Details Section */
-      .product-details-section {
-        display: flex;
-        flex-wrap: wrap; /* Allow wrapping on smaller screens */
-        justify-content: center;
-        align-items: center;
-        padding: 80px 40px;
-        max-width: 1200px;
-        margin: 60px auto;
-        background-color: #fff;
-        border-radius: 10px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-        gap: 40px; /* Space between image and info */
-      }
+  .product-image img:nth-child(1) { animation-delay: 0s; }
+  .product-image img:nth-child(2) { animation-delay: 3s; }
 
-      .product-image-container {
-        flex: 1; /* Takes up available space */
-        min-width: 300px; /* Minimum width before wrapping */
-        text-align: center;
-      }
+  @keyframes fadeImages {
+    0% {opacity: 0;}
+    25% {opacity: 1;}
+    50% {opacity: 0;}
+    100% {opacity: 0;}
+  }
 
-      .product-main-image {
-        max-width: 100%;
-        height: auto;
-        border-radius: 8px;
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-      }
+  /* Product details */
+  .product-details {
+    grid-area: details;
+    background-color: #00ffff55;
+    padding: 25px;
+    border-radius: 15px;
+    color: #333;
+    text-align: left;
+  }
 
-      .product-info {
-        flex: 1.2; /* Takes slightly more space */
-        min-width: 300px;
-        text-align: left;
-      }
+  .product-details h2 {
+    margin-top: 0;
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
 
-      .product-info h2 {
-        font-size: 2.5em;
-        margin-bottom: 20px;
-        color: #1a202c;
-      }
+  .product-details ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin: 0;
+  }
 
-      .product-description {
-        font-size: 1.1em;
-        margin-bottom: 30px;
-        color: #555;
-      }
+  .product-details ul li {
+    font-size: 15px;
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
 
-      .product-features {
-        list-style: none;
-        padding: 0;
-        margin-bottom: 30px;
-      }
+  /* Order Button */
+  .order-btn {
+    grid-area: order;
+    display: inline-block;
+    margin-top: 10px;
+    padding: 15px 35px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #25D366; /* WhatsApp green */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
 
-      .product-features li {
-        margin-bottom: 15px;
-        font-size: 1.1em;
-        color: #444;
-        padding-left: 30px;
-        position: relative;
-      }
+  .order-btn:hover {
+    background-color: #128C7E;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  }
 
-      .product-features li::before {
-        content: "✔"; /* Checkmark icon */
-        position: absolute;
-        left: 0;
-        top: 0;
-        color: #28a745; /* Green */
-        font-weight: bold;
-      }
+  /* Responsive */
+  @media (max-width: 600px) {
+    .product-image { width: 220px; height: 220px; }
+    .product-details h2 { font-size: 20px; }
+    .product-details ul li { font-size: 14px; }
+    .hook-points { font-size: 14px; padding: 15px; }
+    .order-btn { width: 100%; padding: 12px; font-size: 16px; }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Combo Herbal Package</h1>
+    <p>ইচিনেসিয়া + জিঙ্কো বিলোবা মিলিত প্রোডাক্ট</p>
+  </header>
 
-      .pricing-area {
-        margin-bottom: 30px;
-        background-color: #e9ecef;
-        padding: 20px;
-        border-radius: 5px;
-        display: inline-block; /* To not take full width */
-      }
+  <!-- Hook points box -->
+  <div class="hook-points">
+    <ul>
+      <li>ইমিউনিটি বুস্ট + মেমোরি পাওয়ার! ইচিনেসিয়া ও জিঙ্কো বিলোবা দিয়ে থাকুন সুস্থ ও স্মার্ট!</li>
+      <li>ঠান্ডা-কাশি দূর করুন, মেমোরি শক্তিশালী করুন—প্রাকৃতিকভাবে!</li>
+      <li>এক প্যাকেজে ডাবল সুবিধা: ইমিউনিটি ও মস্তিষ্কের কার্যক্ষমতা!</li>
+      <li>পরিবারের জন্য আদর্শ: রোগ প্রতিরোধ + মনোযোগ বৃদ্ধি!</li>
+    </ul>
+  </div>
 
-      .original-price {
-        font-size: 1.2em;
-        color: #6c757d;
-        text-decoration: line-through;
-        margin-bottom: 5px;
-      }
+  <section class="product-section">
+    <!-- Top heading -->
+    <div class="product-top">
+      <h2>Combo Package: Echinacea + Ginkgo Biloba</h2>
+    </div>
 
-      .discounted-price {
-        font-size: 2.2em;
-        color: #dc3545; /* Red for sale price */
-        font-weight: bold;
-        margin-bottom: 5px;
-      }
+    <!-- Product images -->
+    <div class="product-image">
+      <img src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/naturecure-online/images/products/79602e329120490aa60c/1758169814046_WhatsApp-Image-2025-09-18-at-10.webp" alt="Echinacea Image">
+      <img src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/naturecure-online/images/products/ac68846b69ba4114af0c/1745586483657_echinex-2.webp" alt="Ginkgo Biloba Image">
+    </div>
 
-      .price-per-month {
-        font-size: 1.1em;
-        color: #555;
-        font-weight: 500;
-      }
+    <!-- Shortcut product details with extended benefits -->
+    <div class="product-details">
+      <ul>
+        <li><strong>ইচিনেসিয়া (Echinacea):</strong> ইমিউনিটি বুস্টার, অ্যান্টি-ইনফ্লেমেটরি।</li>
+        <li><strong>জিঙ্কো বিলোবা (Ginkgo Biloba):</strong> মেমোরি উন্নয়ন, রক্ত সঞ্চালন বৃদ্ধি।</li>
+        <li>উভয় ওষুধই অ্যান্টি-অক্সিডেন্ট সমৃদ্ধ, যা শরীরের ফ্রি র‍্যাডিকেলসের বিরুদ্ধে লড়াই করে এবং কোষের ক্ষতি রোধ করে।</li>
+        <li>প্রদাহ কমায়: ইচিনেসিয়া ও জিঙ্কো বিলোবা প্রদাহ কমাতে সাহায্য করে, যা বিভিন্ন ইনফেকশন ও ক্রনিক রোগের ক্ষেত্রে উপকারী।</li>
+        <li>রোগ প্রতিরোধ ক্ষমতা বৃদ্ধি: ইমিউন সিস্টেমকে শক্তিশালী করতে সাহায্য করে।</li>
+        <li>রক্ত সঞ্চালন উন্নত করে: বিশেষ করে জিঙ্কো বিলোবা রক্ত সঞ্চালন বৃদ্ধি করে।</li>
+        <li>মানসিক স্বাস্থ্য উন্নত করে: মানসিক চাপ কমাতে ও মস্তিষ্কের কার্যক্ষমতা বৃদ্ধি করতে সাহায্য করে।</li>
+      </ul>
+    </div>
 
-      .cta-button-large {
-        display: block; /* Make it full width of its container */
-        width: 100%;
-        text-align: center;
-        padding: 20px 35px;
-        font-size: 1.5em;
-        margin-bottom: 15px;
-        background-color: #007bff; /* Blue for Add to Cart */
-        box-shadow: 0 6px 25px rgba(0, 123, 255, 0.4);
-      }
-
-      .cta-button-large:hover {
-        background-color: #0056b3;
-        box-shadow: 0 9px 30px rgba(0, 123, 255, 0.6);
-      }
-
-      .assurance {
-        font-size: 0.9em;
-        color: #6c757d;
-        margin-top: 10px;
-      }
-
-      /* Why Choose Us Section */
-      .why-choose-us-section {
-        padding: 80px 20px;
-        text-align: center;
-        background-color: #f8f9fa; /* Light gray */
-      }
-
-      .reasons-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 40px;
-        max-width: 1000px;
-        margin: 0 auto;
-      }
-
-      .reason-item {
-        background-color: #fff;
-        padding: 30px;
-        border-radius: 8px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-
-      .reason-item:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-      }
-
-      .reason-item img {
-        width: 70px;
-        height: 70px;
-        margin-bottom: 20px;
-      }
-
-      .reason-item h3 {
-        font-size: 1.6em;
-        margin-bottom: 15px;
-        color: #1a202c;
-      }
-
-      .reason-item p {
-        font-size: 1em;
-        color: #555;
-      }
-
-      /* Testimonials Section */
-      .testimonials-section {
-        padding: 80px 20px;
-        background-color: #fff; /* White background for focus */
-        text-align: center;
-      }
-
-      .testimonial-slider {
-        display: flex;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        padding-bottom: 20px;
-        max-width: 1000px; /* Limit slider width */
-        margin: 0 auto;
-        gap: 30px; /* Space between items */
-      }
-
-      .testimonial-item {
-        flex: 0 0 90%; /* Each item takes 90% of the slider width */
-        max-width: 550px; /* Max width for readability */
-        background-color: #f8f9fa; /* Light background for testimonials */
-        padding: 40px;
-        border-radius: 8px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        scroll-snap-align: start;
-        text-align: left; /* Align text left within the testimonial */
-      }
-
-      .testimonial-item blockquote {
-        font-size: 1.3em;
-        font-style: italic;
-        color: #333;
-        margin-bottom: 20px;
-      }
-    </style>
-  </head>
-  <body>
-    <header class="hero-section">
-      <div class="hero-content">
-        <h1 class="product-title">[Product Name]</h1>
-        <p class="product-tagline">
-          [Catchy tagline that highlights the main benefit]
-        </p>
-        <a href="#buy-now" class="cta-button">Shop Now</a>
-      </div>
-    </header>
-
-    <section class="product-details-section">
-      <div class="product-image-container">
-        <img
-          src="product-main-image.jpg"
-          alt="[Product Name] Main Image"
-          class="product-main-image"
-        />
-        <!-- Add more images for gallery if needed -->
-      </div>
-      <div class="product-info">
-        <h2 class="section-title">Introducing [Product Name]</h2>
-        <p class="product-description">
-          A detailed description of your product. Highlight its unique selling
-          points, what problem it solves, and why it's a must-have. Use
-          compelling language to appeal to your target audience.
-        </p>
-        <ul class="product-features">
-          <li><strong>Benefit 1:</strong> [Describe a key benefit]</li>
-          <li><strong>Benefit 2:</strong> [Describe another key benefit]</li>
-          <li><strong>Benefit 3:</strong> [Describe a unique feature]</li>
-        </ul>
-        <div class="pricing-area">
-          <p class="original-price"><s>$[Original Price]</s></p>
-          <p class="discounted-price">$[Discounted Price]</p>
-          <p class="price-per-month">Or $[Monthly Payment] / month</p>
-        </div>
-        <a href="#buy-now" class="cta-button-large">Add to Cart</a>
-        <p class="assurance">Free shipping | 30-day money-back guarantee</p>
-      </div>
-    </section>
-
-    <section class="why-choose-us-section">
-      <h2 class="section-title">Why [Product Name] is Perfect for You</h2>
-      <div class="reasons-grid">
-        <div class="reason-item">
-          <img src="icon-quality.png" alt="Quality Icon" />
-          <!-- Replace with your icon -->
-          <h3>Superior Quality</h3>
-          <p>Crafted with the finest materials for lasting durability.</p>
-        </div>
-        <div class="reason-item">
-          <img src="icon-innovation.png" alt="Innovation Icon" />
-          <!-- Replace with your icon -->
-          <h3>Innovative Design</h3>
-          <p>Experience cutting-edge technology and thoughtful design.</p>
-        </div>
-        <div class="reason-item">
-          <img src="icon-value.png" alt="Value Icon" />
-          <!-- Replace with your icon -->
-          <h3>Exceptional Value</h3>
-          <p>Get premium features without breaking the bank.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="testimonials-section">
-      <h2 class="section-title">Hear from Our Happy Customers</h2>
-      <div class="testimonial-slider">
-        <div class="testimonial-item">
-          <blockquote>
-            "I was blown away by the quality and performance of [Product Name].
-            It's truly changed how I [relevant activity]."
-          </blockquote>
-          <cite>- [Customer Name], [Location/Profession]</cite>
-        </div>
-        <div class="testimonial-item">
-          <blockquote>
-            "The best purchase I've made this year! Easy to use, looks
-            fantastic, and delivers results."
-          </blockquote>
-          <cite>- [Another Customer Name], [Location/Profession]</cite>
-        </div>
-        <!-- Add more testimonials as needed -->
-      </div>
-    </section>
-
-    <section id="buy-now" class="call-to-action-section">
-      <div class="cta-content">
-        <h2>Ready to Experience [Product Name]?</h2>
-        <p>
-          Join thousands of satisfied customers. Click below to get yours today!
-        </p>
-        <a href="#" class="cta-button-final">Buy [Product Name] Now</a>
-        <p class="assurance-final">Secure Checkout | Fast Delivery</p>
-      </div>
-    </section>
-
-    <footer>
-      <p>&copy; 2023 [Your Brand Name]. All rights reserved.</p>
-      <!-- Add links to Privacy Policy, Terms of Service if applicable -->
-    </footer>
-  </body>
+    <!-- WhatsApp Order Button -->
+    <a href="https://wa.me/8801234567890?text=আমি%20চাই%20Combo%20Herbal%20Package"
+       class="order-btn" target="_blank">
+       ওডার করুন
+    </a>
+  </section>
+</body>
 </html>

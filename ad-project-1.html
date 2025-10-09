@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+     
+      body {
+        margin: 0;
+      }
+      .adb-row {
+        display: flex;
+        justify-content: flex-start;
+        align-items: stretch;
+        flex-wrap: nowrap;
+        padding: 10px;
+      }
+      .adb-cell {
+        min-height: 75px;
+        flex-grow: 1;
+        flex-basis: 100%;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+      .t-list-1 ol li {
+        list-style-type: none;
+        border-bottom: 2px dashed blue;
+        list-style-position: inside;
+      }
+      .t-list-1 ol {
+        list-style-image: url("sqpurple.gif");
+      }
+      .t-list-1 ol li::before {
+        content: "";
+        display: inline-block;
+        height: 1em;
+        width: 1em;
+        background-image: url("https://builder.storex.com.bd/images/builder/chia-seed/right-arrow-lntxcfng-lnxeo10o.webp");
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin: 0 0.5em -0.25em -1em;
+      }
+      .h1-title-1 {
+        font-family: "Hind Siliguri", sans-serif;
+        font-size: 70px;
+        line-height: 90px;
+        padding: 50px 20px;
+        background-color: #01963e;
+        color: #ffffff;
+        border-radius: 25px;
+        text-align: center;
+        font-weight: 600;
+        margin: 20px 20px;
+      }
+      .all-span-1 {
+        color: #ffff00;
+      }
+      .h2-title-1 {
+        font-family: "Hind Siliguri", sans-serif;
+        font-size: 50px;
+        font-weight: 600;
+        line-height: 90px;
+        padding: 20px 20px;
+        background-color: #d3fae3;
+        color: #000000;
+        border-radius: 25px;
+        text-align: center;
+        margin: 20px 20px;
+      }
+      .all-span-2 {
+        color: #0052ff;
+      }
+      img {
+        align-items: center;
+        margin: 0px;
+        border-radius: 0px;
+        border: none;
+        justify-content: center;
+        text-align: center;
+        display: flex;
+        box-sizing: border-box;
+        padding: 0px;
+      }
+      #iptv {
+        padding: 20px 20px 20px 20px;
+        font-family: "Hind Siliguri", sans-serif;
+        font-size: 50px;
+        text-align: center;
+        line-height: 60px;
+        font-weight: 600;
+        background-color: #01963e;
+        border-radius: 25px 25px 25px 25px;
+        color: #ffffff;
+      }
+      #ifomp {
+        padding: 20px 20px 20px 20px;
+        font-family: "Hind Siliguri", sans-serif;
+        font-size: 50px;
+        text-align: center;
+        line-height: 60px;
+        font-weight: 600;
+        background-color: #01963e;
+        border-radius: 25px 25px 25px 25px;
+        color: #ffffff;
+      }
+      #iqmqx {
+        padding: 20px 20px 20px 20px;
+        font-family: "Hind Siliguri", sans-serif;
+        font-size: 50px;
+        text-align: center;
+        line-height: 60px;
+        font-weight: 600;
+        background-color: #01963e;
+        border-radius: 25px 25px 25px 25px;
+        color: #ffffff;
+      }
+      #id6ni {
+        display: flex;
+        justify-content: center;
+      }
+      #i8v04 {
+        color: black;
+        border-radius: 25px 25px 25px 25px;
+        border: 3px solid #f4c700;
+        width: 500px;
+      }
+      #ibtm6 {
+        display: flex;
+        justify-content: center;
+      }
+      #iguvh {
+        color: black;
+        border: 3px solid #f4c702;
+        border-radius: 25px 25px 25px 25px;
+        padding: 0 0 0px 0;
+        margin: 0px 0 0 0;
+        width: 500px;
+      }
+      #ige4b {
+        color: #ffff00;
+      }
+      #i9rw1 {
+        padding: 0px 10px 0px 10px;
+      }
+      #im03t {
+        padding: 0px 10px 0px 10px;
+        font-size: 30px;
+        font-family: "Hind Siliguri", sans-serif;
+      }
+      #iybkn {
+        color: black;
+        width: 35px;
+      }
+      #iz2e4 {
+        display: flex;
+        align-items: center;
+      }
+      #ibl52 {
+        color: black;
+        width: 35px;
+      }
+      #i73uo {
+        padding: 0px 10px 0px 10px;
+        font-size: 30px;
+        font-family: "Hind Siliguri", sans-serif;
+      }
+      #ixtsm {
+        display: flex;
+        align-items: center;
+      }
+      #ina4s {
+        padding: 0px 10px 0px 10px;
+      }
+      #ich05 {
+        color: black;
+        width: 35px;
+      }
+      #ibdif {
+        padding: 0px 10px 0px 10px;
+        font-size: 30px;
+        font-family: "Hind Siliguri", sans-serif;
+      }
+      #i5bhc {
+        display: flex;
+        align-items: center;
+      }
+      #i7zwr {
+        padding: 0px 10px 0px 10px;
+      }
+      #itbli {
+        color: black;
+        width: 35px;
+      }
+      #i04d9 {
+        padding: 0px 10px 0px 10px;
+        font-size: 30px;
+        font-family: "Hind Siliguri", sans-serif;
+      }
+      #iyrte {
+        display: flex;
+        align-items: center;
+      }
+      #iiqns {
+        padding: 0px 10px 0px 10px;
+      }
+      #ickbg {
+        color: black;
+        width: 35px;
+      }
+      #iw4ae {
+        padding: 0px 10px 0px 10px;
+        font-size: 30px;
+        font-family: "Hind Siliguri", sans-serif;
+      }
+      #i48pg {
+        display: flex;
+        align-items: center;
+      }
+      #isz93 {
+        padding: 0px 10px 0px 10px;
+      }
+      #ir7uj {
+        color: black;
+        width: 35px;
+      }
+      #idd4w {
+        padding: 0px 10px 0px 10px;
+        font-size: 30px;
+        font-family: "Hind Siliguri", sans-serif;
+      }
+      #iotag {
+        display: flex;
+        align-items: center;
+      }
+      #iviff {
+        padding: 0px 10px 0px 10px;
+      }
+      #ipe8j {
+        color: black;
+        border-radius: 25px 25px 25px 25px;
+        border: 3px solid #f4c700;
+      }
+      #i0r38 {
+        display: flex;
+        justify-content: center;
+      }
+      #ivduc {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .order-btn {
+        background-color: #0052ff;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px 20px;
+        text-decoration: none;
+        border-radius: 15px;
+        font-weight: bold;
+        font-size: 18px;
+        cursor: pointer;
+        transition: all ease 300ms;
+        width: 250px;
+      }
+      .order-btn img {
+        max-width: 20px;
+        margin-right: 10px;
+      }
+      .order-btn:hover {
+        animation-name: hover-animation-pulse;
+        animation-duration: 0.3s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        background-color: #4794ff;
+      }
+      #iggcx {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #idqcq {
+        padding: 10px;
+        font-family: "Hind Siliguri", sans-serif;
+        font-size: 20px;
+        text-align: center;
+        font-weight: 700;
+      }
+      @keyframes hover-animation-pulse {
+        100% {
+          transform: scale(1.1);
+        }
+      }
+      @media (max-width: 768px) {
+        .adb-row {
+          flex-wrap: wrap;
+        }
+      }
+      @media (max-width: 480px) {
+        .t-list-1 ol li::before {
+          content: "";
+          display: inline-block;
+          height: 1.5em;
+          width: 1.5em;
+          background-image: url("https://builder.storex.com.bd/images/builder/chia-seed/right-arrow-lntxcfng-lnxeo10o.webp");
+          background-size: contain;
+          background-repeat: no-repeat;
+          margin: 0 0 -0.5em 0;
+        }
+        .h1-title-1 {
+          font-size: 50px;
+          font-weight: 600;
+          line-height: 60px;
+          padding: 20px 20px;
+        }
+        .h2-title-1 {
+          font-size: 35px;
+          font-weight: 500;
+          line-height: 50px;
+          padding: 20px 20px;
+        }
+        img {
+          padding: 0 0;
+          margin: 0 0;
+        }
+        #iptv {
+          font-size: 30px;
+          line-height: 40px;
+          padding: 10px 10px 10px 10px;
+        }
+        #ifomp {
+          font-size: 30px;
+          line-height: 40px;
+          padding: 20px 10px 20px 10px;
+        }
+        #iqmqx {
+          font-size: 35px;
+          line-height: 50px;
+          padding: 20px 10px 20px 10px;
+        }
+        #iguvh {
+          margin: 0px 0px 0px 0px;
+          padding: 0px 0px 0px 0px;
+          border: 3px solid #f4c702;
+          border-radius: 25px 25px 25px 25px;
+          width: 300px;
+        }
+        #i8v04 {
+          border-radius: 25px 25px 25px 25px;
+          border: 3px solid #f4c702;
+          padding: 0px 0 0 0;
+          margin: 0px 0 0 0;
+          width: 300px;
+        }
+        #iaipz {
+          margin: 0px 0 0 0;
+        }
+        #im03t {
+          font-size: 20px;
+        }
+        #i73uo {
+          font-size: 20px;
+        }
+        #ibdif {
+          font-size: 20px;
+        }
+        #i04d9 {
+          font-size: 20px;
+        }
+        #iw4ae {
+          font-size: 20px;
+        }
+        #idd4w {
+          font-size: 20px;
+        }
+        #ir7uj {
+          width: 25px;
+        }
+        #ickbg {
+          width: 25px;
+        }
+        #itbli {
+          width: 25px;
+        }
+        #ich05 {
+          width: 25px;
+        }
+        #ibl52 {
+          width: 25px;
+        }
+        #iybkn {
+          width: 25px;
+        }
+        #ipe8j {
+          border-radius: 25px 25px 25px 25px;
+          border: 3px solid #f4c702;
+          padding: 0px 0 0 0;
+          margin: 0px 0 0 0;
+          width: 300px;
+        }
+        #iz2e4 {
+          min-height: 50px;
+        }
+        #ixtsm {
+          min-height: 50px;
+        }
+        #idqcq {
+          font-size: 18px;
+          line-height: 25px;
+        }
+      }
+    </style>
+  </head>
+  <body id="izzn">
+    <div id="isbe" class="adb-row">
+      <div class="adb-cell">
+        <div id="ik05">
+          <div id="i1ebj">
+            <h1 class="h1-title-1">
+              <span class="all-span-1">গ্যাস্ট্রিক</span>,
+              <span class="all-span-1">টয়লেট</span> ক্লিয়ার হচ্ছে না, কিংবা
+              <span class="all-span-1">কষা পায়খানা</span> থেকে স্থায়ীভাবে
+              মুক্তি নিন
+            </h1>
+          </div>
+          <div id="ijd3w-2">
+            <h2 class="h2-title-1">
+              এখনই দ্রুত
+              <span class="all-span-2">পাইলস, IBS, ফিস্টুলা, আলসার</span> হওয়ার
+              আগেই ব্যবস্থা নিন।
+            </h2>
+          </div>
+          <div id="i7tt8" class="adb-row">
+            <div id="ibtm6" class="adb-cell">
+              <img
+                id="iguvh"
+                src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/natureplusbd-admin/images/builder/6833e928206cd10f9326d8f1/1750321788463_toxin-out-200gm-3pcs-3.jpg"
+              />
+            </div>
+          </div>
+          <div id="ihb59" class="adb-row">
+            <div id="ivduc" class="adb-cell">
+              <div id="ikpgi">
+                <a href="#checkout-now" class="order-btn"
+                  ><img
+                    src="https://builder.storex.com.bd/images/builder/allergy/finger-of-a-hand-pointing-to-right-direction-lqm9tkxe.webp"
+                    alt="ordernow"
+                  />অর্ডার করতে চাই</a
+                >
+              </div>
+            </div>
+          </div>
+          <div id="i7si" class="adb-row">
+            <div id="ir9v" class="adb-cell">
+              <div id="iptv">কেন আপনি টক্সিন আউট খাবেন?</div>
+            </div>
+          </div>
+          <div id="i9rw1" class="adb-row">
+            <div id="iz2e4" class="adb-cell">
+              <img
+                id="iybkn"
+                src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/natureplusbd-admin/images/builder/6833e928206cd10f9326d8f1/1748492403555_checklist.png"
+              />
+              <div id="im03t">আপনার গ্যাস্ট্রিকে সমস্যা দূর হবে।</div>
+            </div>
+          </div>
+          <div id="ina4s" class="adb-row">
+            <div id="ixtsm" class="adb-cell">
+              <img
+                src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/natureplusbd-admin/images/builder/6833e928206cd10f9326d8f1/1748492403555_checklist.png"
+                id="ibl52"
+              />
+              <div id="i73uo">কোষ্ঠকাঠিন্য সমস্যা দূর হবে।</div>
+            </div>
+          </div>
+          <div id="i7zwr" class="adb-row">
+            <div id="i5bhc" class="adb-cell">
+              <img
+                src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/natureplusbd-admin/images/builder/6833e928206cd10f9326d8f1/1748492403555_checklist.png"
+                id="ich05"
+              />
+              <div id="ibdif">
+                যাদের টয়লেট ক্লিয়ার হচ্ছে না, তাদের জন্য চমৎকার কাজ করবে।
+              </div>
+            </div>
+          </div>
+          <div id="iiqns" class="adb-row">
+            <div id="iyrte" class="adb-cell">
+              <img
+                src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/natureplusbd-admin/images/builder/6833e928206cd10f9326d8f1/1748492403555_checklist.png"
+                id="itbli"
+              />
+              <div id="i04d9">
+                এটি ২ থেকে ৩মাস সেবন করলে আপনাকে গ্যাস্ট্রিকের সমস্যার জন্য আর
+                অন্য কোন ঔষধ ব্যবহার করতে হবে না।
+              </div>
+            </div>
+          </div>
+          <div id="isz93" class="adb-row">
+            <div id="i48pg" class="adb-cell">
+              <img
+                src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/natureplusbd-admin/images/builder/6833e928206cd10f9326d8f1/1748492403555_checklist.png"
+                id="ickbg"
+              />
+              <div id="iw4ae">
+                টক্সিন আউট সেবনে পেটের গ্যাস, পেটে বুকে পিঠে ব্যথা, টক ঢেকুর,
+                বমি ভাব, ক্ষুধামন্দা, বদহজম, কোষ্ঠকাঠিন্য, দুর্বলতা দূর হবে।
+              </div>
+            </div>
+          </div>
+          <div id="iviff" class="adb-row">
+            <div id="iotag" class="adb-cell">
+              <img
+                src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/natureplusbd-admin/images/builder/6833e928206cd10f9326d8f1/1748492403555_checklist.png"
+                id="ir7uj"
+              />
+              <div id="idd4w">
+                এটি সেবনে কোন রকম পার্শ্বপ্রতিক্রিয়া নেই। আপনি নিশ্চিন্ত মনে
+                খেতে পারবেন।
+              </div>
+            </div>
+          </div>
+          <div id="iot7j" class="adb-row">
+            <div id="ivc5h" class="adb-cell">
+              <div id="ifomp">BCSIR ল্যাবটেস্ট রিপোর্ট</div>
+            </div>
+          </div>
+          <div id="id6ni" class="adb-cell">
+            <img
+              id="i8v04"
+              src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/natureplusbd-admin/images/builder/6833e928206cd10f9326d8f1/1748699907729_toxin-out-lab-report.jpg"
+            />
+          </div>
+          <div id="iyebh" class="adb-row">
+            <div id="iggcx" class="adb-cell">
+              <div id="i3u1c">
+                <a href="#checkout-now" class="order-btn"
+                  ><img
+                    src="https://builder.storex.com.bd/images/builder/allergy/finger-of-a-hand-pointing-to-right-direction-lqm9tkxe.webp"
+                    alt="ordernow"
+                  />অর্ডার করতে চাই</a
+                >
+              </div>
+            </div>
+          </div>
+          <div id="ip0xi" class="adb-row">
+            <div id="iw7et" class="adb-cell">
+              <div id="iqmqx">
+                টয়লেট ক্লিয়ার করে প্রশান্তি পেতে টক্সিন আউটের সাথে অর্ডার করুন
+                <span id="ige4b">"ফাইবার সিড"</span>
+              </div>
+              <div id="iaipz" class="adb-row"></div>
+            </div>
+          </div>
+          <div id="i0r38" class="adb-cell">
+            <img
+              src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/natureplusbd-admin/images/builder/67fdd9969b3bb8263b3999ea/1744690532246_fiber-seed.jpg"
+              id="ipe8j"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="irvgw" class="adb-row">
+      <div class="adb-cell">
+        <div id="idqcq">
+          টক্সিন আউট 200 গ্রাম = 1050 টাকা <br />ফাইবার সিড 250 গ্রাম = 550 টাকা
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

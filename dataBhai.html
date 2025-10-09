@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Animated Background 2</title>
     <style>
-      body {
+      /* body {
         background: rgb(0, 0, 0);
         margin: 0;
         position: relative;
-      }
+      } */
 
       .bubbles {
         position: fixed;
@@ -19,6 +19,7 @@
       }
 
       .bubble {
+        background-color: hsla(183, 80%, 72%, 0.3);
         position: absolute;
         bottom: -75%;
         display: block;
@@ -34,7 +35,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: hsla(183, 94%, 76%, 0.3);
+        background: hsla(183, 100%, 89%, 0.3);
         border-radius: inherit;
         animation: var(--bubble-sway-type) var(--bubble-sway-duration)
           var(--bubble-sway-delay) ease-in-out alternate infinite;
@@ -617,6 +618,289 @@
       .content {
         font-size: 30px;
       }
+      :root {
+        --green-1: #4ade80;
+        --green-2: #86efac;
+        --bg: #ffffff;
+        --card-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+      }
+
+      body {
+        margin: 0;
+        font-family: "Noto Sans Bengali", sans-serif;
+        background: var(--bg);
+        text-align: center;
+        color: #000;
+      }
+
+      /* Header */
+      header {
+        background: #22c55e;
+        color: #fff;
+        padding: 70px 18px 40px;
+        border-radius: 25px;
+      }
+      header h1 {
+        margin: 0;
+        font-size: 1.8rem;
+        line-height: 1.3;
+      }
+      header p {
+        font-size: 1rem;
+        opacity: 0.95;
+        margin-top: 8px;
+      }
+
+      /* Hero */
+      .hero {
+        position: relative;
+        height: 340px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 25px;
+      }
+      .hero img {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 50%;
+        opacity: 0;
+        animation: fade 9s infinite;
+      }
+      .hero img:nth-child(1) {
+        animation-delay: 0s;
+      }
+      .hero img:nth-child(2) {
+        animation-delay: 3s;
+      }
+      .hero img:nth-child(3) {
+        animation-delay: 6s;
+      }
+
+      @keyframes fade {
+        0% {
+          opacity: 0;
+        }
+        10% {
+          opacity: 1;
+        }
+        33% {
+          opacity: 1;
+        }
+        43% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+
+      /* Hooks */
+      .hooks {
+        background: #ffffff;
+        padding: 34px 16px;
+        text-align: center;
+        color: #000;
+      }
+      .hooks h2 {
+        color: #000;
+        margin: 0 0 18px;
+        font-size: 1.4rem;
+      }
+
+      .hook-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 14px;
+      }
+      .hook-box {
+        background: #fff;
+        border: 2px solid var(--green-2);
+        border-radius: 12px;
+        padding: 14px 18px;
+        min-width: 180px;
+        max-width: 300px;
+        font-weight: 600;
+        color: #000;
+        box-shadow: var(--card-shadow);
+        transition: transform 0.25s ease, background 0.25s;
+        text-align: center;
+      }
+      .hook-box:hover {
+        transform: translateY(-6px);
+        background: #f0fff4;
+      }
+
+      /* Product */
+      .product-section {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 20px;
+        padding: 34px 16px;
+        background: #f3fff7;
+        color: #000;
+      }
+      .product {
+        background: #fff;
+        border-radius: 12px;
+        padding: 18px;
+        text-align: center;
+        box-shadow: var(--card-shadow);
+        transition: transform 0.25s ease;
+      }
+      .product:hover {
+        transform: translateY(-6px);
+      }
+      .product img {
+        width: 100%;
+        height: 170px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: 12px;
+      }
+      .product h2 {
+        color: #000;
+        margin: 8px 0;
+        font-size: 1.15rem;
+      }
+      .price {
+        font-weight: bold;
+        color: #000;
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+      }
+      .product p {
+        margin: 0 0 12px;
+        color: #000;
+      }
+
+      /* ✅ Order Button এখন লাল */
+      .order-btn {
+        background: linear-gradient(135deg, #ef4444, #dc2626); /* red shades */
+        color: #fff;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 10px;
+        font-weight: 700;
+        cursor: pointer;
+        box-shadow: 0 6px 18px rgba(239, 68, 68, 0.25);
+        animation: pulse 1.8s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.06);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      /* Benefits */
+      .benefits {
+        max-width: 880px;
+        margin: 28px auto;
+        background: #fff;
+        padding: 22px;
+        border-radius: 12px;
+        box-shadow: var(--card-shadow);
+        text-align: center;
+        color: #000;
+      }
+      .benefits h3 {
+        color: #000;
+        margin-bottom: 12px;
+      }
+      .benefits ul {
+        margin: 0 auto;
+        padding: 0;
+        list-style: none;
+        text-align: left;
+        display: inline-block;
+      }
+      .benefits li {
+        padding: 8px 6px;
+        font-size: 0.98rem;
+        color: #000;
+      }
+
+      /* Testimonials */
+      .social-trust {
+        max-width: 1000px;
+        margin: 22px auto;
+        padding: 18px 16px;
+        color: #000;
+      }
+      .testimonials {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 14px;
+      }
+      .testi {
+        background: #fff;
+        border-radius: 10px;
+        padding: 12px 14px;
+        box-shadow: var(--card-shadow);
+        font-size: 0.95rem;
+        color: #000;
+      }
+      .testi .who {
+        font-weight: 700;
+        color: #000;
+      }
+
+      /* Contact Buttons */
+      .contact-buttons {
+        text-align: center;
+        padding: 20px 50px;
+        background: linear-gradient(90deg, #bbf7d0, #86efac);
+        border-radius: 50px;
+        margin: 40px 200px;
+      }
+      .contact-buttons a {
+        display: inline-block;
+        margin: 8px;
+        padding: 12px 22px;
+        border-radius: 50px;
+        color: #fff;
+        font-weight: 800;
+        text-decoration: none;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+      }
+      .call-btn {
+        background: #f87171;
+      }
+      .whatsapp-btn {
+        background: #22c55e;
+      }
+
+      footer {
+        background: #e8fff1;
+        padding: 12px;
+        border-radius: 25px 25px 0 0;
+        color: #000;
+      }
+
+      @media (max-width: 600px) {
+        .hero img {
+          width: 220px;
+          height: 220px;
+        }
+        header h1 {
+          font-size: 1.4rem;
+        }
+        .contact-buttons {
+          margin: 30px 20px;
+          padding: 20px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -673,111 +957,116 @@
       <div class="bubble"></div>
     </div>
     <div class="content">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia culpa
-      voluptatum ratione eveniet! Molestias voluptatum dicta minima. Voluptates
-      iure consequuntur ipsam sapiente repudiandae explicabo quibusdam at
-      impedit totam, amet, adipisci molestias maxime esse porro ullam nisi unde
-      quis dignissimos! Eos accusantium, repellendus vitae eaque reprehenderit
-      veritatis vero magnam temporibus debitis deleniti hic unde, rerum, atque
-      consequatur aliquid dolores error omnis voluptas libero vel amet ad
-      voluptates quia ipsum. Cumque dolor ipsum nesciunt, eius pariatur nisi
-      temporibus veniam autem iste vel perspiciatis velit dolorum assumenda!
-      Illum, id! Totam rem unde delectus rerum illo itaque, officiis tenetur
-      odio expedita saepe recusandae error. Minima odit perferendis commodi unde
-      voluptate cumque dolores nemo eaque? Adipisci, maxime eaque consequatur
-      minus similique nesciunt expedita quod iste saepe harum eius alias ipsam
-      perspiciatis ad odio ipsum nulla iusto nisi corrupti ut eligendi incidunt
-      cupiditate! Laudantium atque labore at repellendus porro velit aliquam
-      maxime, ipsum, delectus hic harum natus, nulla praesentium perspiciatis.
-      Magnam, eius? Eius ab illo cum alias unde vitae? Iusto illo alias dolor
-      nobis? Similique ducimus unde hic eos fugiat tempore corporis non quod ad
-      ullam. Culpa, qui iusto. Amet accusantium earum laboriosam unde assumenda
-      rerum similique ipsam sit magni dolores illum, ad cupiditate facere sint
-      libero inventore reprehenderit repudiandae ullam iusto nisi magnam. Velit
-      incidunt natus sunt quos odit labore voluptatum minus. Repellat nam saepe
-      neque voluptatibus natus itaque inventore, obcaecati quam numquam eveniet
-      quaerat, veritatis optio officia laborum minima consectetur voluptatum
-      incidunt ea voluptatem quisquam. Odit ad ratione, quasi ab reprehenderit
-      assumenda. Et iusto voluptatum nihil pariatur repellat, laudantium quam
-      ipsam aliquam facere error quisquam ducimus dolorem hic asperiores
-      repudiandae, unde natus sunt fuga nemo officia modi inventore ea quos?
-      Quibusdam laboriosam dolorum ad, nesciunt aspernatur et deserunt iste
-      vero. Voluptatum aut, architecto soluta porro, earum inventore, autem
-      eligendi et possimus iure ad repellendus exercitationem enim odit
-      recusandae ipsum accusantium ea! Earum architecto distinctio nesciunt
-      neque ipsa modi perferendis laboriosam, aliquam temporibus provident illo
-      sunt voluptates, rerum a veniam in ab? Soluta magnam adipisci minus nemo,
-      atque cupiditate deleniti in nam, deserunt, dignissimos maiores?
-      Perspiciatis illo nemo quod modi similique odio unde soluta, fuga atque
-      enim tenetur? Magni cupiditate vitae deleniti animi ullam facere ipsam
-      odio quaerat voluptatem maiores! Id voluptatem adipisci hic at, harum
-      placeat, explicabo similique eius reiciendis non quibusdam, rem suscipit
-      aut earum officiis inventore. Aperiam molestias ab provident iure
-      dignissimos harum minima voluptatum quo totam vero natus ex veritatis
-      architecto delectus tempore, suscipit ducimus praesentium facilis
-      distinctio, porro officia reprehenderit consectetur nostrum? Adipisci qui
-      molestiae illo, quae eum eveniet distinctio iste doloribus magnam
-      accusamus eligendi debitis recusandae nihil quidem aliquid facilis beatae
-      sunt corrupti voluptates. Adipisci et rem fugiat itaque praesentium hic,
-      suscipit cupiditate reiciendis dolorem explicabo ea quod cumque ducimus
-      quia ullam? Eligendi autem nulla aut laudantium nam maiores iste! Alias
-      dicta provident, nam quis illo debitis est eligendi, voluptatem vero
-      dolores explicabo. Odio aperiam ducimus consequatur, neque cupiditate
-      maxime voluptatum quisquam modi adipisci optio exercitationem obcaecati at
-      repudiandae eum. Voluptate neque quasi magnam ipsam, numquam mollitia
-      porro eos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
-      illo provident omnis sit, facere obcaecati quidem amet, itaque ut eos
-      dolorem atque! Amet unde consectetur fuga quam vero pariatur voluptate
-      debitis laborum mollitia, et aperiam deserunt id dolorum, ex odio aut
-      dicta! Illum quaerat fuga molestias sequi doloremque quam porro minima nam
-      saepe ratione laboriosam nulla quasi perspiciatis officia, velit
-      exercitationem rerum fugit quia vero ad! Nihil facilis eum neque dolor
-      iusto possimus earum aliquam corrupti rerum animi vitae mollitia a
-      cupiditate eos, sit veniam officiis explicabo debitis nobis quod hic.
-      Veniam molestias consectetur, nihil vitae tempora quaerat, laboriosam
-      dolores nulla optio earum libero. Atque dolor assumenda molestiae quo
-      velit, possimus necessitatibus ut excepturi animi est neque error eum
-      totam. Odio, sunt. Saepe est dolores qui cum fugiat quod obcaecati enim
-      consectetur rem, soluta ad impedit magni corrupti illo veritatis quae
-      sapiente nostrum eum a repellat sit? Recusandae, sapiente! Cupiditate
-      reprehenderit aut corporis. Reprehenderit enim officiis inventore
-      quisquam. Nihil, sed eius. Velit blanditiis, consequatur similique culpa
-      accusantium reprehenderit illum excepturi commodi laudantium dignissimos
-      placeat. Quam aperiam ab officia et! Omnis dolor rerum nisi delectus.
-      Perspiciatis vel quis facilis eligendi alias tempore, repellendus enim
-      perferendis autem sapiente id odio nihil dolorum non eaque voluptatibus
-      accusamus consectetur corporis voluptatem! Porro reiciendis debitis
-      expedita dignissimos sapiente culpa, a cumque aut, voluptatibus maxime
-      amet excepturi, cum necessitatibus distinctio tempora nam! Repellendus
-      dolore illum quaerat fugiat voluptatem laboriosam sequi asperiores sint,
-      error totam voluptas quae corporis assumenda corrupti excepturi.
-      Voluptatum fugit consectetur nesciunt iure eveniet perferendis quidem!
-      Voluptatum at modi atque praesentium harum. Sit maxime est similique nam,
-      impedit natus pariatur aliquam ducimus modi aperiam ad accusamus
-      distinctio. Maiores voluptas earum omnis qui commodi est quod impedit
-      aliquam labore sunt maxime adipisci odio saepe, vel dolores mollitia
-      similique ad in itaque sapiente aliquid enim obcaecati voluptatibus.
-      Laudantium eius aliquam quisquam praesentium libero officiis error itaque
-      odit, placeat alias, atque voluptatem dolores et voluptate nobis aperiam
-      dolor modi porro! Nam veritatis iste est molestias quasi in consequatur
-      nemo, quisquam recusandae sapiente quas, perspiciatis rem unde. Quo
-      dolores tenetur eius nostrum deleniti omnis esse quas. Sequi provident
-      sint ducimus iste beatae maxime, debitis libero asperiores deserunt harum
-      error non, fugiat repellat eum explicabo quo laudantium officia, voluptate
-      illo unde. Quo dignissimos fuga vero eveniet consequuntur mollitia
-      repudiandae fugit tenetur voluptatum, delectus hic omnis, necessitatibus
-      culpa, maxime sed vitae dicta excepturi accusantium incidunt esse dolor!
-      Qui repudiandae eum eius ad optio deserunt odit assumenda corrupti dolor
-      aspernatur recusandae quos, ea voluptates id nihil, necessitatibus
-      similique vel harum quidem officia quaerat nobis possimus velit facilis?
-      Est corrupti, ex delectus accusantium corporis rem inventore dolorum,
-      voluptas dolor voluptatem vero tempora architecto quam nihil doloribus
-      mollitia a itaque iste, velit quasi possimus! Modi atque incidunt
-      perspiciatis non, aut illo quisquam sed odio unde quo similique repellat
-      distinctio? Error delectus esse quod nisi doloremque, maxime velit eius
-      nostrum aut, ex dolorum nemo nesciunt itaque deleniti architecto quia quam
-      cum animi? Recusandae est nesciunt repellendus dolorem dolor a ipsam
-      veniam pariatur reprehenderit iure.
+      <header>
+        <h1>
+          ভেতর থেকে পরিষ্কার পেট, শক্তিশালী ইমিউনিটি, আর সারাদিনের প্রাণশক্তি 💪
+        </h1>
+        <p>
+          Echinex + G-Pro Combo — প্রাকৃতিকভাবে প্রতিদিনের সুস্থতা ও মানসিক
+          সতেজতার জন্য।
+        </p>
+      </header>
+
+      <section class="hero">
+        <img
+          src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/natureplusbd-admin/images/products/69c7ad1f62524631b238/1757224478321_photo-2025-09-07-11-45-56.webp"
+        />
+        <img
+          src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/natureplusbd-admin/images/products/1623078863d443c5a5de/1744866247135_echinex-2.webp"
+        />
+        <img src="gpro-2.jpg" />
+      </section>
+
+      <section class="hooks">
+        <h2>✨ বিশেষ সুবিধাসমূহ</h2>
+        <div class="hook-grid">
+          <div class="hook-box">🌿 পাকস্থলীর যত্নে প্রাকৃতিক প্রোবায়োটিক!</div>
+          <div class="hook-box">💪 ইমিউনিটি এখন প্রকৃতির হাতে!</div>
+          <div class="hook-box">🌸 কেমিক্যাল ছাড়াই প্রাকৃতিক সুরক্ষা!</div>
+          <div class="hook-box">🧘‍♀️ একসাথে শক্তিশালী ইমিউনিটি ও হজমের আরাম!</div>
+        </div>
+      </section>
+
+      <section class="product-section">
+        <div class="product">
+          <img
+            src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/natureplusbd-admin/images/products/1623078863d443c5a5de/1744866247135_echinex-2.webp"
+            alt="Echinex"
+          />
+          <h2>ইচিনেক্স (Echinacea)</h2>
+          <div class="price">৳ 1080</div>
+          <p>
+            রোগ প্রতিরোধ ক্ষমতা বাড়ায়, ঠান্ডা-কাশি কমায় ও অ্যান্টি-অক্সিডেন্ট
+            সমৃদ্ধ।
+          </p>
+          <button class="order-btn">🛒 অর্ডার করুন</button>
+        </div>
+
+        <div class="product">
+          <img
+            src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/natureplusbd-admin/images/products/69c7ad1f62524631b238/1757224478321_photo-2025-09-07-11-45-56.webp"
+            alt="G-Pro"
+          />
+          <h2>জি-প্রো</h2>
+          <div class="price">৳ 750</div>
+          <p>রক্ত সঞ্চালন উন্নত করে, মনোযোগ ও স্মৃতিশক্তি বাড়ায়।</p>
+          <button class="order-btn">🛒 অর্ডার করুন</button>
+        </div>
+
+        <div class="product">
+          <img src="gpro-2.jpg" alt="Combo" />
+          <h2>কম্বো প্যাক (Echinex + G-Pro)</h2>
+          <div class="price">৳ 1750</div>
+          <p>
+            একসাথে ইমিউনিটি ও মেমোরি বুস্ট করে — পরিবারের সবার জন্য উপযুক্ত।
+          </p>
+          <button class="order-btn">🛒 অর্ডার করুন</button>
+        </div>
+      </section>
+
+      <section class="benefits">
+        <h3>🌱 উপকারিতা</h3>
+        <ul>
+          <li>
+            🧬 অ্যান্টি-অক্সিডেন্ট বৈশিষ্ট্য — কোষগুলোকে ফ্রি র‍্যাডিকেল থেকে
+            রক্ষা করে।
+          </li>
+          <li>🔥 প্রদাহ কমায় — ইনফেকশন ও ক্রনিক সমস্যা হ্রাসে সহায়ক।</li>
+          <li>💪 রোগ প্রতিরোধ ক্ষমতা বৃদ্ধি করে — শরীরকে শক্তিশালী করে।</li>
+          <li>❤️ রক্ত সঞ্চালন উন্নত করে — শক্তি ও অক্সিজেন সরবরাহ বাড়ায়।</li>
+          <li>
+            🧘‍♀️ মানসিক স্বাস্থ্য ও স্মৃতি উন্নত করে — মনকে শান্ত ও সতেজ রাখে।
+          </li>
+        </ul>
+      </section>
+
+      <section class="social-trust">
+        <div class="testimonials">
+          <div class="testi">
+            <p>“আমি নিয়মিত ব্যবহার করছি — এখন ঠান্ডা-কাশি অনেক কম আসে।”</p>
+            <div class="who">— রফিক, ৪২</div>
+          </div>
+          <div class="testi">
+            <p>“পেটের কষ্ট কমেছে, হজম ভালো হচ্ছে। সকালে সতেজ লাগে।”</p>
+            <div class="who">— সিরাজা আক্তার, ৩৯</div>
+          </div>
+          <div class="testi">
+            <p>“মনে হয় স্মরণশক্তি ভালো হচ্ছে, কাজের ফোকাস বাড়েছে।”</p>
+            <div class="who">— মন্টাজ, ৫১</div>
+          </div>
+        </div>
+      </section>
+
+      <div class="contact-buttons">
+        <a class="call-btn" href="tel:018XXXXXXXX">📞 এখনই কল করুন</a>
+        <a class="whatsapp-btn" href="https://wa.me/88018XXXXXXXX"
+          >💬 WhatsApp অর্ডার</a
+        >
+      </div>
+
+      <footer>
+        © ২০২৫ Echinex + G-Pro | প্রাকৃতিক সুস্থতার বিশ্বস্ত সঙ্গী
+      </footer>
     </div>
   </body>
 </html>
