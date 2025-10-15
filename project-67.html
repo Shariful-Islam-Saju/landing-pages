@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap");
+
+      :root {
+        --background: #a97bff;
+      }
+      body {
+        margin: 0;
+        font-family: "Hind Siliguri", sans-serif;
+      }
+      .adb-row {
+        display: flex;
+        justify-content: flex-start;
+        align-items: stretch;
+        flex-wrap: nowrap;
+        padding: 10px;
+      }
+      .adb-cell {
+        min-height: 75px;
+        flex-grow: 1;
+        flex-basis: 100%;
+      }
+      #i9pe {
+        padding: 50px 20px 50px 20px;
+        font-family: "Hind Siliguri", sans-serif;
+        font-size: 70px;
+        text-align: center;
+        font-weight: 600;
+        background-color: var(--background);
+        border-radius: 25px 25px 25px 25px;
+        color: white;
+        line-height: 80px;
+      }
+      #iwgj {
+        padding: 20px 20px 20px 20px;
+        font-family: "Hind Siliguri", sans-serif;
+        font-size: 50px;
+        text-align: center;
+        font-weight: 600;
+        background-color: #d3fae3;
+        border-radius: 25px 25px 25px 25px;
+        color: #000000;
+        line-height: 60px;
+      }
+      #ioaks {
+        padding: 10px;
+        font-family: "Hind Siliguri", sans-serif;
+        font-size: 45px;
+        text-align: center;
+      }
+      #in76r {
+        padding: 10px;
+        font-family: "Hind Siliguri", sans-serif;
+        font-size: 25px;
+        text-align: center;
+      }
+      #iyqc6 {
+        padding: 20px 20px 20px 20px;
+        font-family: "Hind Siliguri", sans-serif;
+        font-size: 50px;
+        text-align: center;
+        font-weight: 600;
+        background-color: var(--background);
+        border-radius: 25px 25px 25px 25px;
+        color: white;
+        line-height: 60px;
+      }
+      #irtjj {
+        padding: 10px;
+        font-family: "Hind Siliguri", sans-serif;
+        font-size: 35px;
+        text-align: center;
+        line-height: 45px;
+      }
+      #ii8u9 {
+        padding: 10px;
+        font-family: "Hind Siliguri", sans-serif;
+        font-size: 25px;
+        text-align: center;
+        line-height: 40px;
+      }
+      #irgw4 {
+        padding: 20px 20px 20px 20px;
+        font-family: "Hind Siliguri", sans-serif;
+        font-size: 45px;
+        text-align: center;
+        font-weight: 600;
+        background-color: var(--background);
+        border-radius: 25px 25px 25px 25px;
+        color: white;
+        line-height: 60px;
+      }
+      #ij0pg {
+        color: black;
+        border: 3px solid #f3c600;
+        border-radius: 25px 25px 25px 25px;
+      }
+      #i2qpx {
+        display: flex;
+        justify-content: center;
+      }
+      #ibsnq {
+        color: black;
+        border: 3px solid #f3c600;
+        border-radius: 25px 25px 25px 25px;
+      }
+      #i657b {
+        display: flex;
+        justify-content: center;
+      }
+      #iez4x {
+        display: flex;
+        justify-content: center;
+      }
+      #ie3ck {
+        color: black;
+        border: 3px solid #f3c600;
+        border-radius: 25px 25px 25px 25px;
+      }
+      #i4qki {
+        display: flex;
+        justify-content: center;
+      }
+      .order-btn {
+        background-color: #0052ff;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px 20px;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+        font-size: 18px;
+        cursor: pointer;
+        transition: all ease 300ms;
+        width: 250px;
+      }
+      .order-btn img {
+        max-width: 20px;
+        margin-right: 10px;
+      }
+      .order-btn:hover {
+        animation-name: hover-animation-pulse;
+        animation-duration: 0.3s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        background-color: #4794ff;
+      }
+      #ix50g {
+        display: flex;
+        justify-content: center;
+      }
+      #i0t5l {
+        display: flex;
+        justify-content: center;
+      }
+      @keyframes hover-animation-pulse {
+        100% {
+          transform: scale(1.1);
+        }
+      }
+      @media (max-width: 768px) {
+        .adb-row {
+          flex-wrap: wrap;
+        }
+      }
+      @media (max-width: 480px) {
+        #i9pe {
+          font-size: 50px;
+          line-height: 60px;
+          padding: 20px 10px 20px 10px;
+        }
+        #iwgj {
+          padding: 20px 10px 20px 10px;
+          font-size: 35px;
+          line-height: 40px;
+          font-weight: 500;
+        }
+        #ioaks {
+          font-size: 25px;
+          line-height: 30px;
+        }
+        #in76r {
+          font-size: 20px;
+          line-height: 25px;
+        }
+        #iyqc6 {
+          font-size: 35px;
+          line-height: 40px;
+          padding: 20px 10px 20px 10px;
+        }
+        #irtjj {
+          font-size: 25px;
+          line-height: 30px;
+        }
+        #ii8u9 {
+          font-size: 20px;
+          line-height: 30px;
+        }
+        #irgw4 {
+          font-size: 35px;
+          line-height: 40px;
+          padding: 20px 10px 20px 10px;
+        }
+        #ie3ck {
+          width: 300px;
+        }
+        #ij0pg {
+          width: 300px;
+        }
+        #ibsnq {
+          width: 300px;
+        }
+      }
+    </style>
+  </head>
+  <body id="ilro">
+    <div id="ijod" class="adb-row">
+      <div class="adb-cell">
+        <div id="i9pe">
+          16 রঙের রোজ ডায়মন্ড টেবিল টাচ/রিমোট ল্যাম্প (রিচার্জেবল)
+        </div>
+      </div>
+    </div>
+    <div id="i9r6" class="adb-row">
+      <div class="adb-cell">
+        <div id="iwgj">
+          আপনার প্রিয়জন এবং বন্ধুদের জন্য এটি হতে পারে দারুন একটি উপহার।
+        </div>
+      </div>
+    </div>
+    <div id="il286" class="adb-row">
+      <div id="i2qpx" class="adb-cell">
+        <img
+          id="ij0pg"
+          src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/gadgetbd-store/images/builder/67ff6c992e274b5f99414193/1744793411145_6.jpg"
+        />
+      </div>
+    </div>
+    <div id="ihqas" class="adb-row">
+      <div class="adb-cell">
+        <div id="i4qki">
+          <a href="#checkout-now" class="order-btn"
+            ><img
+              src="https://builder.storex.com.bd/images/builder/allergy/finger-of-a-hand-pointing-to-right-direction-lqm9tkxe.webp"
+              alt="ordernow"
+            />অর্ডার করতে চাই</a
+          >
+        </div>
+      </div>
+    </div>
+    <div id="intl" class="adb-row">
+      <div class="adb-cell">
+        <div id="ioaks">
+          এখনই অর্ডার করলে পাচ্ছেন 270 টাকা নগদ ছাড়!
+          <br />
+        </div>
+      </div>
+    </div>
+    <div id="ihhj1" class="adb-row">
+      <div class="adb-cell">
+        <div id="in76r">
+          প্রোডাক্টির সাথে পাচ্ছেন রিমোট, ব্যাটারি এবং ক্যাবল "একদম ফ্রি"
+          <br />
+        </div>
+      </div>
+    </div>
+    <div id="isw1v" class="adb-row">
+      <div id="i657b" class="adb-cell">
+        <img
+          id="ibsnq"
+          src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/gadgetbd-store/images/builder/67ff6c992e274b5f99414193/1744793487856_rgb-battery-remote-cable-optimized.jpg"
+        />
+      </div>
+    </div>
+    <div id="i86d9" class="adb-row">
+      <div class="adb-cell">
+        <div id="ix50g">
+          <a href="#checkout-now" class="order-btn"
+            ><img
+              src="https://builder.storex.com.bd/images/builder/allergy/finger-of-a-hand-pointing-to-right-direction-lqm9tkxe.webp"
+              alt="ordernow"
+            />অর্ডার করতে চাই</a
+          >
+        </div>
+      </div>
+    </div>
+    <div id="io0gf" class="adb-row">
+      <div class="adb-cell">
+        <div id="iyqc6">রঙিন আলোর রহস্য</div>
+      </div>
+    </div>
+    <div id="i3vfe" class="adb-row">
+      <div class="adb-cell">
+        <div id="irtjj">
+          একটি ঘরের সৌন্দর্য বৃদ্ধি করার জন্য দরকার হয় আলোর, Rose Diamond Table
+          Lamp এর মাধ্যমে আপনার ঘর, ড্রয়িং রুম,পড়ার টেবিল, ড্রেসিং টেবিল কে রঙিন
+          আলোড়ন করতে পারবেন এই Rose Diamond Table Lamp এর মাধ্যমে। এই ডাইমন্ড
+          টেবল ল্যাম্প আপনার কমন রুমে রোমান্টিক ও সজ্জা আলোড়ন তৈরি করতে সাহায্য
+          করতে পারে, এবং আপনার ড্রয়িং রুমকে আরো আদর্শ আলোক সৌন্দর্য তৈরি করতে
+          সাহায্য করতে পারে।
+        </div>
+      </div>
+    </div>
+    <div id="ik43i" class="adb-row">
+      <div id="iez4x" class="adb-cell">
+        <img
+          id="ie3ck"
+          src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/gadgetbd-store/images/builder/67ff6c992e274b5f99414193/1744793562393_15.jpg"
+        />
+      </div>
+    </div>
+    <div id="i9rr6" class="adb-row">
+      <div class="adb-cell">
+        <div id="ii8u9">
+          ১) লাল আগুনের মতো উজ্জ্বলতা, রাতের আঁধারে জ্বলন্ত দৃশ্য, আপনার মনে
+          জাগাবে অজানা রহস্যের আহ্বান। <br />২) প্রকৃতির স্পর্শে মন ভরাতে,
+          সবুজের আভা আপনাকে দেবে প্রশান্তির অনুভূতি। <br />৩) রাতের আকাশের রহস্য
+          অনুভব করতে, নীল আলো আপনাকে নিয়ে যাবে এক রহস্যময় জগতে। <br />৪)
+          শান্তির সমুদ্রে ডুব দিতে, অ্যাকোয়া আলো আপনার মনকে করবে প্রফুল্ল।
+          <br />৫) রাজকীয় ভাবনার আভা, ভায়োলেট আলো আপনার রাতকে করবে
+          আভিজাত্যপূর্ণ। <br />৬) উৎসবের আনন্দে মন ভরাতে, কমলা আলো আপনার রাতকে
+          করবে আলোকিত। <br />৭) অথবা চুপচাপ বই পড়ার আবহাওয়ার জন্য, এটি আপনাকে
+          দেবে সাদা চাঁদের মতো নরম আলো। <br />৮) সোনালি আলোয় ঘুমের দেশে পা
+          রাখুন, স্বপ্নের রাজ্যে মনকে হারিয়ে দিন।
+        </div>
+      </div>
+    </div>
+    <div id="iuf2m" class="adb-row">
+      <div class="adb-cell">
+        <div id="i0t5l">
+          <a href="#checkout-now" class="order-btn"
+            ><img
+              src="https://builder.storex.com.bd/images/builder/allergy/finger-of-a-hand-pointing-to-right-direction-lqm9tkxe.webp"
+              alt="ordernow"
+            />অর্ডার করতে চাই</a
+          >
+        </div>
+      </div>
+    </div>
+    <div id="iux9i" class="adb-row">
+      <div class="adb-cell">
+        <div id="irgw4">
+          স্পর্শ করুন বা রিমোট কন্ট্রোল ব্যবহার করুন – আপনার মনের মতো পরিবেশ
+          তৈরি করুন।
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
