@@ -1,0 +1,2144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>project-70</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap");
+
+      :root {
+        --img-width: 150px;
+        --card-bg: #ffffff;
+        --border-color: #e2e8f0;
+        --text-primary: #1e293b;
+        --text-secondary: #475569;
+        --text-muted: #94a3b8;
+        --yellow: #facc15;
+        --background: #6e1a6f;
+        box-sizing: border-box;
+        font-family: "Hind Siliguri", sans-serif;
+      }
+
+      body {
+        margin: 0;
+        overflow-x: hidden;
+        min-height: 100vh;
+        font-family: "Hind Siliguri", sans-serif;
+      }
+
+      /* Animation section */
+      .image-container-slider {
+        position: relative;
+        width: 100%;
+        height: calc(var(--img-width) + 40px);
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        margin: 25px 0;
+      }
+
+      .animated-image-1,
+      .animated-image-2 {
+        position: absolute;
+        width: var(--img-width);
+        top: 15px;
+        object-fit: cover;
+        aspect-ratio: 1 / 1;
+
+        /* box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.438); */
+      }
+
+      .divider-1 {
+        width: 0px;
+        height: 100%;
+        border: 2px solid var(--background);
+        z-index: 5;
+      }
+      .left-side {
+        flex: 1;
+        z-index: 2;
+        overflow-x: hidden;
+        position: relative;
+      }
+
+      .right-side {
+        flex: 1;
+        z-index: 2;
+        overflow-x: hidden;
+        position: relative;
+      }
+
+      .animated-image-1 {
+        animation: slideInAndOut-1 4s ease-in-out infinite alternate;
+        z-index: 3;
+      }
+
+      .animated-image-2 {
+        animation: slideInAndOut-2 4s ease-in-out infinite alternate;
+      }
+
+      @keyframes slideInAndOut-1 {
+        0%,
+        20% {
+          left: 0;
+        }
+        50% {
+        }
+        80%,
+        100% {
+          left: calc(200% - var(--img-width));
+        }
+      }
+
+      @keyframes slideInAndOut-2 {
+        0%,
+        20% {
+          left: -100%;
+        }
+        50% {
+        }
+        80%,
+        100% {
+          left: calc(100% - var(--img-width));
+        }
+      }
+
+      /* Normal Body */
+
+      .root-1 {
+        display: flex;
+        justify-content: center;
+        font-weight: bold;
+      }
+      .wrapper-div {
+        width: 100%;
+        max-width: 1250px;
+        padding: 10px;
+        position: relative;
+      }
+
+      .hero-section {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .colorful-text {
+        color: green;
+      }
+
+      .common-class {
+        border-radius: 20px;
+        padding: 15px 10px;
+        margin: 15px 0;
+        text-align: center;
+        backdrop-filter: blur(15px); /* Correct syntax */
+        background-color: rgba(128, 128, 128, 0.301);
+        -webkit-backdrop-filter: blur(5px); /* For Safari support */
+        box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.445);
+      }
+      .title-1 {
+        font-size: 30px;
+        text-align: center;
+        transform: rotateX(20deg);
+        background: var(--background);
+        color: white;
+        text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.541);
+      }
+      .title-2 {
+        font-size: 22px;
+      }
+
+      .title-3 {
+        font-size: 22px;
+        margin-top: 25px;
+      }
+      .image-container {
+        margin: 25px 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+
+      .image-stack {
+        position: relative;
+        width: 100%;
+        max-width: 450px;
+        aspect-ratio: 1 / 1;
+        box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.466);
+      }
+
+      .image-stack img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        top: 0;
+        left: 0;
+      }
+
+      .top-img {
+        animation: disappear 10s 5s linear infinite;
+        z-index: 2;
+      }
+
+      .bottom-img {
+        animation: disappear 10s linear infinite;
+        z-index: 2;
+      }
+
+      @keyframes disappear {
+        0% {
+          clip-path: inset(0% 0% 0% 0%);
+        }
+        30% {
+          clip-path: inset(100% 0% 0% 0%);
+        }
+        31% {
+          clip-path: inset(0% 0% 0% 0%);
+        }
+        60% {
+          z-index: 1;
+        }
+        100% {
+          clip-path: inset(0% 0% 0% 0%);
+        }
+      }
+
+      /* Button Design section start */
+      .order-container {
+        display: flex;
+        justify-content: center;
+        margin: 20px 0;
+      }
+      .submit-btn {
+        background: var(--background);
+        font-family: "Hind Siliguri", sans-serif;
+        position: relative;
+        overflow: hidden;
+        padding: 16px 48px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #fff;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        transform-style: preserve-3d;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 4px 6px rgba(0, 0, 0, 0.3),
+          inset 0 -4px 10px rgba(0, 0, 0, 0.35),
+          inset 0 4px 4px rgba(255, 255, 255, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        z-index: 0;
+
+        /* 🎯 Apply the floating animation */
+        animation: floatTilt 4s ease-in-out infinite;
+      }
+      @keyframes floatTilt {
+        0% {
+          transform: translateY(0) rotateX(0deg) scale(1);
+        }
+
+        25% {
+          transform: translateY(-10px) rotateX(6deg) scale(1.03); /* Bounce up */
+        }
+
+        50% {
+          transform: translateY(0) rotateX(0deg) scale(1);
+        }
+        75% {
+          transform: translateY(-10px) rotateX(6deg) scale(1.03); /* Bounce up */
+        }
+
+        100% {
+          transform: translateY(0) rotateX(0deg) scale(1);
+        }
+      }
+
+      .submit-btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 60%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 0.4) 50%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        transform: skewX(-20deg);
+        animation: shimmer 2.5s infinite;
+        z-index: 1;
+      }
+
+      .submit-btn span {
+        position: relative;
+        z-index: 2;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+      }
+
+      @keyframes shimmer {
+        0% {
+          left: -100%;
+        }
+        100% {
+          left: 120%;
+        }
+      }
+      /* Button Design section end */
+
+      /* Health section */
+      .health-benefits {
+        list-style: none;
+        padding: 10px;
+        margin: 0;
+      }
+
+      .health-benefits-li {
+        display: flex;
+        align-items: center;
+        margin: 15px 0;
+        font-size: 22px;
+      }
+      .health-benefits-li img {
+        width: 30px;
+        margin-right: 20px;
+      }
+      @keyframes hover-animation-pulse {
+        100% {
+          transform: scale(1.1);
+        }
+      }
+
+      /*  Price value start  */
+
+      .price-value {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .price-desc {
+        padding: 15px;
+        border-radius: 8px;
+        text-align: center;
+        border: 1px solid green;
+      }
+      .price-desc img {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 8px;
+      }
+      .price-text {
+        margin-top: 10px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #fff;
+        background: #ff6600;
+        display: inline-block;
+        padding: 6px 12px;
+        border-radius: 5px;
+        text-decoration: none;
+      }
+      /*  Price value end  */
+
+      @media (min-width: 900px) {
+        :root {
+          --img-width: 400px;
+        }
+
+        .price-value {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      /* review section  start here  */
+
+      .reviews-section {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        padding: 3rem 0;
+      }
+
+      /* gradient fades */
+      .fade-left,
+      .fade-right {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 1.5rem;
+        pointer-events: none;
+        z-index: 10;
+      }
+      .fade-left {
+        left: 0;
+        background: linear-gradient(
+          to right,
+          rgba(241, 245, 249, 0.95) 30%,
+          /* white covers only 30% */ transparent 100%
+        );
+      }
+
+      .fade-right {
+        right: 0;
+        background: linear-gradient(
+          to left,
+          rgba(241, 245, 249, 0.95) 30%,
+          /* white covers only 30% */ transparent 100%
+        );
+      }
+
+      /* scroll container */
+      .scroll-container {
+        display: flex;
+        width: max-content;
+        gap: 2rem;
+        animation: scroll 200s linear infinite;
+      }
+
+      @keyframes scroll {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
+      .reviews-wrapper {
+        display: flex;
+        gap: 2rem;
+      }
+
+      .review-card {
+        flex: 0 0 auto;
+        background: #ffffff; /* clean white background */
+        border-radius: 1rem;
+        border: 1px solid #e2e8f0; /* subtle border for card definition */
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12),
+          0 4px 6px rgba(0, 0, 0, 0.08); /* stronger layered shadow */
+        min-width: 230px;
+        max-width: 260px;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+      }
+      .review-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      .review-content {
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-between;
+      }
+
+      .stars {
+        display: flex;
+        gap: 0.25rem;
+        margin-bottom: 0.75rem;
+      }
+      .star {
+        width: 18px;
+        height: 18px;
+        fill: var(--yellow);
+      }
+      .star.gray {
+        fill: #d1d5db;
+      }
+
+      .review-title {
+        font-size: 1.125rem;
+        font-weight: 600;
+        margin: 0;
+        color: var(--text-primary);
+      }
+      .review-desc {
+        margin-top: 0.5rem;
+        font-size: 0.875rem;
+        color: var(--text-secondary);
+        line-height: 1.5;
+      }
+
+      .review-footer {
+        margin-top: 1rem;
+        padding-top: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .avatar {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: var(--background);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        font-size: 1rem;
+        flex-shrink: 0;
+      }
+
+      .reviewer-info {
+        display: flex;
+        flex-direction: column;
+      }
+      .reviewer-name {
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        margin: 0;
+      }
+      .reviewer-phone {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        margin: 0;
+      }
+
+      @media (min-width: 768px) {
+        .review-card {
+          min-width: 260px;
+          max-width: 320px;
+        }
+        .avatar {
+          width: 50px;
+          height: 50px;
+          font-size: 1.05rem;
+        }
+      }
+
+      /* review section end here  */
+    </style>
+  </head>
+  <body>
+    <div class="root-1">
+      <div class="wrapper-div">
+        <div class="hero-section">
+          <div>
+            <h1 class="common-class title-1">
+              💔 প্রতিদিন আপনি যত দেরি করছেন, প্যানিক ডিজঅর্ডার ততটাই আপনার
+              মস্তিষ্ককে মেরে ফেলছে! <br />
+            </h1>
+
+            <div class="image-container-slider">
+              <div class="left-side">
+                <img
+                  src="232.jpg"
+                  alt="জিনকোবা এবং জি-র‍্যালেক্স"
+                  class="animated-image-1"
+                />
+              </div>
+              <div class="divider-1"></div>
+              <div class="right-side">
+                <img
+                  src="232.jpg"
+                  alt="Herbal Combo Pack for Panic Disorder"
+                  class="animated-image-2"
+                />
+              </div>
+            </div>
+
+            <div class="order-container">
+              <a href="#checkout-now" class="order-btn">
+                <button class="submit-btn">
+                  <span> আজই অর্ডার করুন </span>
+                </button>
+              </a>
+            </div>
+
+            <h2 class="common-class title-2">
+              ⚠️ যেটাকে অনেকেই পাত্তা দেয় না — কিন্তু চিকিৎসা না করলে এটি হতে
+              পারে
+              <span class="colorful-text">মরণঘাতী মানসিক বিকার</span>।
+            </h2>
+
+            <h2 class="common-class title-2">
+              💊 এখনই সময়, আপনার মস্তিষ্ককে শান্ত করার জন্য আমাদের তৈরি করা
+              <span class="colorful-text">জিনকোবা + জি-র‍্যালেক্স</span> — একটি
+              সায়েন্টিফিকভাবে তৈরি হারবাল ওষুধ, যা প্যানিক ডিজঅর্ডারের মূল কারণ
+              অর্থাৎ
+              <span class="colorful-text">
+                "নিউরোট্রান্সমিটার ইমব্যালেন্স" </span
+              >–কে ঠিক করে।
+            </h2>
+
+            <p class="common-class title-2">
+              🌈 মাত্র ১৫ দিনের ব্যবহারে পার্থক্য টের পাবেন — “আমি এখনই মারা
+              যাচ্ছি” এই ভয়টা চিরতরে দূর হবে।
+            </p>
+
+            <div class="image-container">
+              <div class="image-stack">
+                <img
+                  src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/naturecure-online/images/builder/6875ed64b66dbadcbe86f63a/1752574139556_bwd2.jpg"
+                  alt="Herbal Combo Product"
+                  class="top-img"
+                />
+                <img
+                  src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/naturecure-online/images/builder/6875ed64b66dbadcbe86f63a/1752574128843_bwd.jpg"
+                  alt="Herbal Medicine Bottle"
+                  class="bottom-img"
+                />
+              </div>
+            </div>
+
+            <div class="order-container">
+              <a href="#checkout-now" class="order-btn">
+                <button class="submit-btn">
+                  <span> অর্ডার কনফার্ম করুন </span>
+                </button>
+              </a>
+            </div>
+
+            <p class="common-class title-2">
+              🚨 সাবধান! প্রতিদিন আপনি যত দেরি করছেন, আপনার মস্তিষ্কের উপর
+              স্ট্রেস হরমোন (Cortisol) ততটা ক্ষতি করছে — যার ফলে আপনি আরও বেশি
+              প্যানিক অ্যাটাকে আক্রান্ত হচ্ছেন!<br />
+              👉 এখনই পদক্ষেপ নিন — নইলে আগামীকাল আরও কঠিন হতে পারে।
+            </p>
+
+            <h2 class="common-class title-2">💔 আপনি কি এর মধ্যে আছেন?</h2>
+
+            <ul class="health-benefits">
+              <li class="health-benefits-li">
+                🛌 রাতে ঘুম থেকে উঠে বুক ধড়ফড় করে?
+              </li>
+              <li class="health-benefits-li">😨 মনে হয় কিছু একটা ভয়ানক হবে?</li>
+              <li class="health-benefits-li">
+                🫁 হঠাৎ শ্বাস নিতে কষ্ট হয়, শরীর অবশ হয়ে যায়?
+              </li>
+              <li class="health-benefits-li">
+                😰 চারপাশের সবাই বুঝতে পারে না আপনি কী যন্ত্রণা সহ্য করছেন?
+              </li>
+            </ul>
+
+            <div class="image-container">
+              <div class="image-stack">
+                <img
+                  src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/naturecure-online/images/builder/6875ed64b66dbadcbe86f63a/1752574139556_bwd2.jpg"
+                  alt="Herbal Combo Product"
+                  class="top-img"
+                />
+                <img
+                  src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/naturecure-online/images/builder/6875ed64b66dbadcbe86f63a/1752574128843_bwd.jpg"
+                  alt="Herbal Medicine Bottle"
+                  class="bottom-img"
+                />
+              </div>
+            </div>
+
+            <div class="order-container">
+              <a href="#checkout-now" class="order-btn">
+                <button class="submit-btn">
+                  <span> অর্ডার কনফার্ম করুন </span>
+                </button>
+              </a>
+            </div>
+
+            <p class="common-class title-2">
+              👁️‍🗨️ এই রোগ চোখে দেখা যায় না, কিন্তু ভিতর থেকে ধ্বংস করে দেয় মানুষকে
+              — মন, শরীর, এমনকি সম্পর্কও।
+            </p>
+
+            <h2 class="common-class title-2">
+              😨 চিকিৎসা না নিলে কী হতে পারে:
+            </h2>
+
+            <ul class="health-benefits">
+              <li class="health-benefits-li">
+                ❤️‍🔥 ঘন ঘন প্যানিক অ্যাটাক = হার্টের উপর চাপ
+              </li>
+              <li class="health-benefits-li">
+                🩸 রক্তচাপ ও স্ট্রেস হরমোন বেড়ে গিয়ে শরীর ভেঙে পড়ে
+              </li>
+              <li class="health-benefits-li">
+                😔 স্থায়ী ডিপ্রেশন ও মানসিক অস্থিরতা
+              </li>
+              <li class="health-benefits-li">🪦 আত্মহত্যার প্রবণতাও তৈরি হয়</li>
+            </ul>
+
+            <div class="order-container">
+              <a href="#checkout-now" class="order-btn">
+                <button class="submit-btn">
+                  <span> অর্ডার কনফার্ম করুন </span>
+                </button>
+              </a>
+            </div>
+
+            <h3 class="common-class title-2">
+              💬 আমাদের সন্তুষ্ট গ্রাহকদের অভিজ্ঞতা
+            </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="reviews-section">
+      <div class="fade-left"></div>
+      <div class="fade-right"></div>
+
+      <div class="scroll-container">
+        <div class="reviews-wrapper">
+          <!-- Review 1 -->
+          <div class="review-card">
+            <div class="review-content">
+              <div>
+                <div class="stars">
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                </div>
+                <h3 class="review-title">ভয়ের মধ্যে শান্তি ফিরে পেয়েছি</h3>
+                <p class="review-desc">
+                  আমি রাতে ঘুমোতে পারতাম না, মনে হতো কিছু একটা হবে। জিনকোবা এবং
+                  জি-র‍্যালেক্স খাওয়া শুরু করার দুই সপ্তাহ পর থেকেই মনটা অনেক
+                  শান্ত হয়ে যায়। এখন আর সেই বুক ধড়ফড় হয় না।
+                </p>
+              </div>
+              <div class="review-footer">
+                <div class="avatar">র</div>
+                <div class="reviewer-info">
+                  <p class="reviewer-name">রওশন আরা বেগম</p>
+                  <p class="reviewer-phone">০১৭*******৩১</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-content">
+              <div>
+                <div class="stars">
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                </div>
+                <h3 class="review-title">প্যানিক অ্যাটাক থেকে মুক্তি</h3>
+                <p class="review-desc">
+                  আমি ৩৮ বছর বয়সী অফিস কর্মী। হঠাৎ হঠাৎ শ্বাস নিতে পারতাম না,
+                  বুক ধড়ফড় করত। এখন নিয়মিত এই ওষুধ খেয়ে সেই সমস্যাগুলো পুরোপুরি
+                  চলে গেছে। খুব শান্তিতে কাজ করতে পারছি।
+                </p>
+              </div>
+              <div class="review-footer">
+                <div class="avatar">স</div>
+                <div class="reviewer-info">
+                  <p class="reviewer-name">সাদেকুল ইসলাম</p>
+                  <p class="reviewer-phone">০১৮*******৫৭</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="review-card">
+            <div class="review-content">
+              <div>
+                <div class="stars">
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                </div>
+                <h3 class="review-title">স্ত্রীর প্যানিক সমস্যা অনেক কমেছে</h3>
+                <p class="review-desc">
+                  আমার স্ত্রী গত এক বছর ধরে প্যানিক অ্যাটাকে ভুগছিলেন। আমি এই
+                  ওষুধটা অর্ডার করি, ২০ দিনের ব্যবহারে ওর ঘুম, আচরণ – সবই অনেক
+                  উন্নত হয়েছে। আমি সত্যিই কৃতজ্ঞ।
+                </p>
+              </div>
+              <div class="review-footer">
+                <div class="avatar">আ</div>
+                <div class="reviewer-info">
+                  <p class="reviewer-name">আব্দুল মালেক</p>
+                  <p class="reviewer-phone">০১৯*******২২</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 4 -->
+          <div class="review-card">
+            <div class="review-content">
+              <div>
+                <div class="stars">
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                </div>
+                <h3 class="review-title">আবার জীবনটাকে উপভোগ করতে পারছি</h3>
+                <p class="review-desc">
+                  প্যানিক ডিজঅর্ডার আমাকে ভীষণ মানসিকভাবে ভেঙে দিয়েছিল। জিনকোবা
+                  এবং জি-র‍্যালেক্স আমাকে নতুন করে বাঁচার সাহস দিয়েছে। এখন
+                  স্বাভাবিক জীবন যাপন করছি।
+                </p>
+              </div>
+              <div class="review-footer">
+                <div class="avatar">ম</div>
+                <div class="reviewer-info">
+                  <p class="reviewer-name">মোছাঃ শিউলি আক্তার (৪৫)</p>
+                  <p class="reviewer-phone">০১৬*******৯৪</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 5 -->
+          <div class="review-card">
+            <div class="review-content">
+              <div>
+                <div class="stars">
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                </div>
+                <h3 class="review-title">দীর্ঘদিনের ভয় কেটে গেছে</h3>
+                <p class="review-desc">
+                  আমি ৬০ বছর বয়সী অবসরপ্রাপ্ত শিক্ষক। ছোটখাটো শব্দেও ভয় পেতাম,
+                  ঘুম হতো না। এই ওষুধটি খেয়ে ধীরে ধীরে ভয় কেটে গেছে, এখন মনটা
+                  অনেক শান্ত থাকে।
+                </p>
+              </div>
+              <div class="review-footer">
+                <div class="avatar">হ</div>
+                <div class="reviewer-info">
+                  <p class="reviewer-name">হাবিবুর রহমান</p>
+                  <p class="reviewer-phone">০১৫*******১১</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="review-content">
+              <div>
+                <div class="stars">
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                </div>
+                <h3 class="review-title">ভয়ের মধ্যে শান্তি ফিরে পেয়েছি</h3>
+                <p class="review-desc">
+                  আমি রাতে ঘুমোতে পারতাম না, মনে হতো কিছু একটা হবে। জিনকোবা এবং
+                  জি-র‍্যালেক্স খাওয়া শুরু করার দুই সপ্তাহ পর থেকেই মনটা অনেক
+                  শান্ত হয়ে যায়। এখন আর সেই বুক ধড়ফড় হয় না।
+                </p>
+              </div>
+              <div class="review-footer">
+                <div class="avatar">র</div>
+                <div class="reviewer-info">
+                  <p class="reviewer-name">রওশন আরা বেগম</p>
+                  <p class="reviewer-phone">০১৭*******৩১</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-content">
+              <div>
+                <div class="stars">
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                </div>
+                <h3 class="review-title">প্যানিক অ্যাটাক থেকে মুক্তি</h3>
+                <p class="review-desc">
+                  আমি ৩৮ বছর বয়সী অফিস কর্মী। হঠাৎ হঠাৎ শ্বাস নিতে পারতাম না,
+                  বুক ধড়ফড় করত। এখন নিয়মিত এই ওষুধ খেয়ে সেই সমস্যাগুলো পুরোপুরি
+                  চলে গেছে। খুব শান্তিতে কাজ করতে পারছি।
+                </p>
+              </div>
+              <div class="review-footer">
+                <div class="avatar">স</div>
+                <div class="reviewer-info">
+                  <p class="reviewer-name">সাদেকুল ইসলাম</p>
+                  <p class="reviewer-phone">০১৮*******৫৭</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="review-card">
+            <div class="review-content">
+              <div>
+                <div class="stars">
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                </div>
+                <h3 class="review-title">স্ত্রীর প্যানিক সমস্যা অনেক কমেছে</h3>
+                <p class="review-desc">
+                  আমার স্ত্রী গত এক বছর ধরে প্যানিক অ্যাটাকে ভুগছিলেন। আমি এই
+                  ওষুধটা অর্ডার করি, ২০ দিনের ব্যবহারে ওর ঘুম, আচরণ – সবই অনেক
+                  উন্নত হয়েছে। আমি সত্যিই কৃতজ্ঞ।
+                </p>
+              </div>
+              <div class="review-footer">
+                <div class="avatar">আ</div>
+                <div class="reviewer-info">
+                  <p class="reviewer-name">আব্দুল মালেক</p>
+                  <p class="reviewer-phone">০১৯*******২২</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 4 -->
+          <div class="review-card">
+            <div class="review-content">
+              <div>
+                <div class="stars">
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                </div>
+                <h3 class="review-title">আবার জীবনটাকে উপভোগ করতে পারছি</h3>
+                <p class="review-desc">
+                  প্যানিক ডিজঅর্ডার আমাকে ভীষণ মানসিকভাবে ভেঙে দিয়েছিল। জিনকোবা
+                  এবং জি-র‍্যালেক্স আমাকে নতুন করে বাঁচার সাহস দিয়েছে। এখন
+                  স্বাভাবিক জীবন যাপন করছি।
+                </p>
+              </div>
+              <div class="review-footer">
+                <div class="avatar">ম</div>
+                <div class="reviewer-info">
+                  <p class="reviewer-name">মোছাঃ শিউলি আক্তার (৪৫)</p>
+                  <p class="reviewer-phone">০১৬*******৯৪</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 5 -->
+          <div class="review-card">
+            <div class="review-content">
+              <div>
+                <div class="stars">
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                </div>
+                <h3 class="review-title">দীর্ঘদিনের ভয় কেটে গেছে</h3>
+                <p class="review-desc">
+                  আমি ৬০ বছর বয়সী অবসরপ্রাপ্ত শিক্ষক। ছোটখাটো শব্দেও ভয় পেতাম,
+                  ঘুম হতো না। এই ওষুধটি খেয়ে ধীরে ধীরে ভয় কেটে গেছে, এখন মনটা
+                  অনেক শান্ত থাকে।
+                </p>
+              </div>
+              <div class="review-footer">
+                <div class="avatar">হ</div>
+                <div class="reviewer-info">
+                  <p class="reviewer-name">হাবিবুর রহমান</p>
+                  <p class="reviewer-phone">০১৫*******১১</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="review-content">
+              <div>
+                <div class="stars">
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                </div>
+                <h3 class="review-title">ভয়ের মধ্যে শান্তি ফিরে পেয়েছি</h3>
+                <p class="review-desc">
+                  আমি রাতে ঘুমোতে পারতাম না, মনে হতো কিছু একটা হবে। জিনকোবা এবং
+                  জি-র‍্যালেক্স খাওয়া শুরু করার দুই সপ্তাহ পর থেকেই মনটা অনেক
+                  শান্ত হয়ে যায়। এখন আর সেই বুক ধড়ফড় হয় না।
+                </p>
+              </div>
+              <div class="review-footer">
+                <div class="avatar">র</div>
+                <div class="reviewer-info">
+                  <p class="reviewer-name">রওশন আরা বেগম</p>
+                  <p class="reviewer-phone">০১৭*******৩১</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-content">
+              <div>
+                <div class="stars">
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                </div>
+                <h3 class="review-title">প্যানিক অ্যাটাক থেকে মুক্তি</h3>
+                <p class="review-desc">
+                  আমি ৩৮ বছর বয়সী অফিস কর্মী। হঠাৎ হঠাৎ শ্বাস নিতে পারতাম না,
+                  বুক ধড়ফড় করত। এখন নিয়মিত এই ওষুধ খেয়ে সেই সমস্যাগুলো পুরোপুরি
+                  চলে গেছে। খুব শান্তিতে কাজ করতে পারছি।
+                </p>
+              </div>
+              <div class="review-footer">
+                <div class="avatar">স</div>
+                <div class="reviewer-info">
+                  <p class="reviewer-name">সাদেকুল ইসলাম</p>
+                  <p class="reviewer-phone">০১৮*******৫৭</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="review-card">
+            <div class="review-content">
+              <div>
+                <div class="stars">
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                </div>
+                <h3 class="review-title">স্ত্রীর প্যানিক সমস্যা অনেক কমেছে</h3>
+                <p class="review-desc">
+                  আমার স্ত্রী গত এক বছর ধরে প্যানিক অ্যাটাকে ভুগছিলেন। আমি এই
+                  ওষুধটা অর্ডার করি, ২০ দিনের ব্যবহারে ওর ঘুম, আচরণ – সবই অনেক
+                  উন্নত হয়েছে। আমি সত্যিই কৃতজ্ঞ।
+                </p>
+              </div>
+              <div class="review-footer">
+                <div class="avatar">আ</div>
+                <div class="reviewer-info">
+                  <p class="reviewer-name">আব্দুল মালেক</p>
+                  <p class="reviewer-phone">০১৯*******২২</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 4 -->
+          <div class="review-card">
+            <div class="review-content">
+              <div>
+                <div class="stars">
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                </div>
+                <h3 class="review-title">আবার জীবনটাকে উপভোগ করতে পারছি</h3>
+                <p class="review-desc">
+                  প্যানিক ডিজঅর্ডার আমাকে ভীষণ মানসিকভাবে ভেঙে দিয়েছিল। জিনকোবা
+                  এবং জি-র‍্যালেক্স আমাকে নতুন করে বাঁচার সাহস দিয়েছে। এখন
+                  স্বাভাবিক জীবন যাপন করছি।
+                </p>
+              </div>
+              <div class="review-footer">
+                <div class="avatar">ম</div>
+                <div class="reviewer-info">
+                  <p class="reviewer-name">মোছাঃ শিউলি আক্তার (৪৫)</p>
+                  <p class="reviewer-phone">০১৬*******৯৪</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 5 -->
+          <div class="review-card">
+            <div class="review-content">
+              <div>
+                <div class="stars">
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                </div>
+                <h3 class="review-title">দীর্ঘদিনের ভয় কেটে গেছে</h3>
+                <p class="review-desc">
+                  আমি ৬০ বছর বয়সী অবসরপ্রাপ্ত শিক্ষক। ছোটখাটো শব্দেও ভয় পেতাম,
+                  ঘুম হতো না। এই ওষুধটি খেয়ে ধীরে ধীরে ভয় কেটে গেছে, এখন মনটা
+                  অনেক শান্ত থাকে।
+                </p>
+              </div>
+              <div class="review-footer">
+                <div class="avatar">হ</div>
+                <div class="reviewer-info">
+                  <p class="reviewer-name">হাবিবুর রহমান</p>
+                  <p class="reviewer-phone">০১৫*******১১</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="review-content">
+              <div>
+                <div class="stars">
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                </div>
+                <h3 class="review-title">ভয়ের মধ্যে শান্তি ফিরে পেয়েছি</h3>
+                <p class="review-desc">
+                  আমি রাতে ঘুমোতে পারতাম না, মনে হতো কিছু একটা হবে। জিনকোবা এবং
+                  জি-র‍্যালেক্স খাওয়া শুরু করার দুই সপ্তাহ পর থেকেই মনটা অনেক
+                  শান্ত হয়ে যায়। এখন আর সেই বুক ধড়ফড় হয় না।
+                </p>
+              </div>
+              <div class="review-footer">
+                <div class="avatar">র</div>
+                <div class="reviewer-info">
+                  <p class="reviewer-name">রওশন আরা বেগম</p>
+                  <p class="reviewer-phone">০১৭*******৩১</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-content">
+              <div>
+                <div class="stars">
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                </div>
+                <h3 class="review-title">প্যানিক অ্যাটাক থেকে মুক্তি</h3>
+                <p class="review-desc">
+                  আমি ৩৮ বছর বয়সী অফিস কর্মী। হঠাৎ হঠাৎ শ্বাস নিতে পারতাম না,
+                  বুক ধড়ফড় করত। এখন নিয়মিত এই ওষুধ খেয়ে সেই সমস্যাগুলো পুরোপুরি
+                  চলে গেছে। খুব শান্তিতে কাজ করতে পারছি।
+                </p>
+              </div>
+              <div class="review-footer">
+                <div class="avatar">স</div>
+                <div class="reviewer-info">
+                  <p class="reviewer-name">সাদেকুল ইসলাম</p>
+                  <p class="reviewer-phone">০১৮*******৫৭</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="review-card">
+            <div class="review-content">
+              <div>
+                <div class="stars">
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                </div>
+                <h3 class="review-title">স্ত্রীর প্যানিক সমস্যা অনেক কমেছে</h3>
+                <p class="review-desc">
+                  আমার স্ত্রী গত এক বছর ধরে প্যানিক অ্যাটাকে ভুগছিলেন। আমি এই
+                  ওষুধটা অর্ডার করি, ২০ দিনের ব্যবহারে ওর ঘুম, আচরণ – সবই অনেক
+                  উন্নত হয়েছে। আমি সত্যিই কৃতজ্ঞ।
+                </p>
+              </div>
+              <div class="review-footer">
+                <div class="avatar">আ</div>
+                <div class="reviewer-info">
+                  <p class="reviewer-name">আব্দুল মালেক</p>
+                  <p class="reviewer-phone">০১৯*******২২</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 4 -->
+          <div class="review-card">
+            <div class="review-content">
+              <div>
+                <div class="stars">
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                </div>
+                <h3 class="review-title">আবার জীবনটাকে উপভোগ করতে পারছি</h3>
+                <p class="review-desc">
+                  প্যানিক ডিজঅর্ডার আমাকে ভীষণ মানসিকভাবে ভেঙে দিয়েছিল। জিনকোবা
+                  এবং জি-র‍্যালেক্স আমাকে নতুন করে বাঁচার সাহস দিয়েছে। এখন
+                  স্বাভাবিক জীবন যাপন করছি।
+                </p>
+              </div>
+              <div class="review-footer">
+                <div class="avatar">ম</div>
+                <div class="reviewer-info">
+                  <p class="reviewer-name">মোছাঃ শিউলি আক্তার (৪৫)</p>
+                  <p class="reviewer-phone">০১৬*******৯৪</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 5 -->
+          <div class="review-card">
+            <div class="review-content">
+              <div>
+                <div class="stars">
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                </div>
+                <h3 class="review-title">দীর্ঘদিনের ভয় কেটে গেছে</h3>
+                <p class="review-desc">
+                  আমি ৬০ বছর বয়সী অবসরপ্রাপ্ত শিক্ষক। ছোটখাটো শব্দেও ভয় পেতাম,
+                  ঘুম হতো না। এই ওষুধটি খেয়ে ধীরে ধীরে ভয় কেটে গেছে, এখন মনটা
+                  অনেক শান্ত থাকে।
+                </p>
+              </div>
+              <div class="review-footer">
+                <div class="avatar">হ</div>
+                <div class="reviewer-info">
+                  <p class="reviewer-name">হাবিবুর রহমান</p>
+                  <p class="reviewer-phone">০১৫*******১১</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="review-content">
+              <div>
+                <div class="stars">
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                </div>
+                <h3 class="review-title">ভয়ের মধ্যে শান্তি ফিরে পেয়েছি</h3>
+                <p class="review-desc">
+                  আমি রাতে ঘুমোতে পারতাম না, মনে হতো কিছু একটা হবে। জিনকোবা এবং
+                  জি-র‍্যালেক্স খাওয়া শুরু করার দুই সপ্তাহ পর থেকেই মনটা অনেক
+                  শান্ত হয়ে যায়। এখন আর সেই বুক ধড়ফড় হয় না।
+                </p>
+              </div>
+              <div class="review-footer">
+                <div class="avatar">র</div>
+                <div class="reviewer-info">
+                  <p class="reviewer-name">রওশন আরা বেগম</p>
+                  <p class="reviewer-phone">০১৭*******৩১</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-content">
+              <div>
+                <div class="stars">
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                </div>
+                <h3 class="review-title">প্যানিক অ্যাটাক থেকে মুক্তি</h3>
+                <p class="review-desc">
+                  আমি ৩৮ বছর বয়সী অফিস কর্মী। হঠাৎ হঠাৎ শ্বাস নিতে পারতাম না,
+                  বুক ধড়ফড় করত। এখন নিয়মিত এই ওষুধ খেয়ে সেই সমস্যাগুলো পুরোপুরি
+                  চলে গেছে। খুব শান্তিতে কাজ করতে পারছি।
+                </p>
+              </div>
+              <div class="review-footer">
+                <div class="avatar">স</div>
+                <div class="reviewer-info">
+                  <p class="reviewer-name">সাদেকুল ইসলাম</p>
+                  <p class="reviewer-phone">০১৮*******৫৭</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="review-card">
+            <div class="review-content">
+              <div>
+                <div class="stars">
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                </div>
+                <h3 class="review-title">স্ত্রীর প্যানিক সমস্যা অনেক কমেছে</h3>
+                <p class="review-desc">
+                  আমার স্ত্রী গত এক বছর ধরে প্যানিক অ্যাটাকে ভুগছিলেন। আমি এই
+                  ওষুধটা অর্ডার করি, ২০ দিনের ব্যবহারে ওর ঘুম, আচরণ – সবই অনেক
+                  উন্নত হয়েছে। আমি সত্যিই কৃতজ্ঞ।
+                </p>
+              </div>
+              <div class="review-footer">
+                <div class="avatar">আ</div>
+                <div class="reviewer-info">
+                  <p class="reviewer-name">আব্দুল মালেক</p>
+                  <p class="reviewer-phone">০১৯*******২২</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 4 -->
+          <div class="review-card">
+            <div class="review-content">
+              <div>
+                <div class="stars">
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                </div>
+                <h3 class="review-title">আবার জীবনটাকে উপভোগ করতে পারছি</h3>
+                <p class="review-desc">
+                  প্যানিক ডিজঅর্ডার আমাকে ভীষণ মানসিকভাবে ভেঙে দিয়েছিল। জিনকোবা
+                  এবং জি-র‍্যালেক্স আমাকে নতুন করে বাঁচার সাহস দিয়েছে। এখন
+                  স্বাভাবিক জীবন যাপন করছি।
+                </p>
+              </div>
+              <div class="review-footer">
+                <div class="avatar">ম</div>
+                <div class="reviewer-info">
+                  <p class="reviewer-name">মোছাঃ শিউলি আক্তার (৪৫)</p>
+                  <p class="reviewer-phone">০১৬*******৯৪</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 5 -->
+          <div class="review-card">
+            <div class="review-content">
+              <div>
+                <div class="stars">
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                </div>
+                <h3 class="review-title">দীর্ঘদিনের ভয় কেটে গেছে</h3>
+                <p class="review-desc">
+                  আমি ৬০ বছর বয়সী অবসরপ্রাপ্ত শিক্ষক। ছোটখাটো শব্দেও ভয় পেতাম,
+                  ঘুম হতো না। এই ওষুধটি খেয়ে ধীরে ধীরে ভয় কেটে গেছে, এখন মনটা
+                  অনেক শান্ত থাকে।
+                </p>
+              </div>
+              <div class="review-footer">
+                <div class="avatar">হ</div>
+                <div class="reviewer-info">
+                  <p class="reviewer-name">হাবিবুর রহমান</p>
+                  <p class="reviewer-phone">০১৫*******১১</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="review-content">
+              <div>
+                <div class="stars">
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                </div>
+                <h3 class="review-title">ভয়ের মধ্যে শান্তি ফিরে পেয়েছি</h3>
+                <p class="review-desc">
+                  আমি রাতে ঘুমোতে পারতাম না, মনে হতো কিছু একটা হবে। জিনকোবা এবং
+                  জি-র‍্যালেক্স খাওয়া শুরু করার দুই সপ্তাহ পর থেকেই মনটা অনেক
+                  শান্ত হয়ে যায়। এখন আর সেই বুক ধড়ফড় হয় না।
+                </p>
+              </div>
+              <div class="review-footer">
+                <div class="avatar">র</div>
+                <div class="reviewer-info">
+                  <p class="reviewer-name">রওশন আরা বেগম</p>
+                  <p class="reviewer-phone">০১৭*******৩১</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-content">
+              <div>
+                <div class="stars">
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                </div>
+                <h3 class="review-title">প্যানিক অ্যাটাক থেকে মুক্তি</h3>
+                <p class="review-desc">
+                  আমি ৩৮ বছর বয়সী অফিস কর্মী। হঠাৎ হঠাৎ শ্বাস নিতে পারতাম না,
+                  বুক ধড়ফড় করত। এখন নিয়মিত এই ওষুধ খেয়ে সেই সমস্যাগুলো পুরোপুরি
+                  চলে গেছে। খুব শান্তিতে কাজ করতে পারছি।
+                </p>
+              </div>
+              <div class="review-footer">
+                <div class="avatar">স</div>
+                <div class="reviewer-info">
+                  <p class="reviewer-name">সাদেকুল ইসলাম</p>
+                  <p class="reviewer-phone">০১৮*******৫৭</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="review-card">
+            <div class="review-content">
+              <div>
+                <div class="stars">
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                </div>
+                <h3 class="review-title">স্ত্রীর প্যানিক সমস্যা অনেক কমেছে</h3>
+                <p class="review-desc">
+                  আমার স্ত্রী গত এক বছর ধরে প্যানিক অ্যাটাকে ভুগছিলেন। আমি এই
+                  ওষুধটা অর্ডার করি, ২০ দিনের ব্যবহারে ওর ঘুম, আচরণ – সবই অনেক
+                  উন্নত হয়েছে। আমি সত্যিই কৃতজ্ঞ।
+                </p>
+              </div>
+              <div class="review-footer">
+                <div class="avatar">আ</div>
+                <div class="reviewer-info">
+                  <p class="reviewer-name">আব্দুল মালেক</p>
+                  <p class="reviewer-phone">০১৯*******২২</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 4 -->
+          <div class="review-card">
+            <div class="review-content">
+              <div>
+                <div class="stars">
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                </div>
+                <h3 class="review-title">আবার জীবনটাকে উপভোগ করতে পারছি</h3>
+                <p class="review-desc">
+                  প্যানিক ডিজঅর্ডার আমাকে ভীষণ মানসিকভাবে ভেঙে দিয়েছিল। জিনকোবা
+                  এবং জি-র‍্যালেক্স আমাকে নতুন করে বাঁচার সাহস দিয়েছে। এখন
+                  স্বাভাবিক জীবন যাপন করছি।
+                </p>
+              </div>
+              <div class="review-footer">
+                <div class="avatar">ম</div>
+                <div class="reviewer-info">
+                  <p class="reviewer-name">মোছাঃ শিউলি আক্তার (৪৫)</p>
+                  <p class="reviewer-phone">০১৬*******৯৪</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 5 -->
+          <div class="review-card">
+            <div class="review-content">
+              <div>
+                <div class="stars">
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                  <svg class="star">
+                    <polygon
+                      points="9.9,1.1 12.3,6.9 18.6,7.3 13.8,11.4 15.3,17.6 9.9,14.2 4.5,17.6 6,11.4 1.2,7.3 7.5,6.9"
+                    />
+                  </svg>
+                </div>
+                <h3 class="review-title">দীর্ঘদিনের ভয় কেটে গেছে</h3>
+                <p class="review-desc">
+                  আমি ৬০ বছর বয়সী অবসরপ্রাপ্ত শিক্ষক। ছোটখাটো শব্দেও ভয় পেতাম,
+                  ঘুম হতো না। এই ওষুধটি খেয়ে ধীরে ধীরে ভয় কেটে গেছে, এখন মনটা
+                  অনেক শান্ত থাকে।
+                </p>
+              </div>
+              <div class="review-footer">
+                <div class="avatar">হ</div>
+                <div class="reviewer-info">
+                  <p class="reviewer-name">হাবিবুর রহমান</p>
+                  <p class="reviewer-phone">০১৫*******১১</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="root-1">
+      <div class="wrapper-div">
+        <div class="price-value">
+          <div class="price-desc">
+            <img
+              src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/naturecure-online/images/products/ac68846b69ba4114af0c/1745586483657_echinex-2.webp"
+              alt="Diamum Capsules"
+            />
+            <a href="#checkout-now" class="price-text">৳ 1080</a>
+          </div>
+          <div class="price-desc">
+            <img
+              src="https://stx-v3-static-assets.obs.as-south-208.rcloud.reddotdigitalit.com/naturecure-online/images/products/812b17e6c94b4629ba8e/1750927334546_pnil-500.webp"
+              alt="Combo Pack"
+            />
+            <a href="#checkout-now" class="price-text">৳ 900</a>
+          </div>
+        </div>
+        <h2 class="common-class title-3">
+          আর দেরি না করে আজই সংগ্রহ করুন আমাদের
+          <span class="colorful-text"> সীমিত সময়ের প্রাকৃতিক সমাধান </span>।
+          "আজই কিনুন" বাটনে ক্লিক করে অর্ডার সম্পন্ন করুন এবং
+          <span class="colorful-text">নিজের স্বাস্থ্য সুরক্ষিত করুন</span> ।
+          স্টক সীমিত, তাই দ্রুত ব্যবস্থা নিন!
+        </h2>
+      </div>
+    </div>
+  </body>
+</html>
