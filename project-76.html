@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap");
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Hind Siliguri", sans-serif;
+        font-weight: bold;
+      }
+      .container-1 {
+        margin: 10px;
+        overflow-x: hidden;
+        padding: 10px;
+      }
+      .h1-title-1 {
+        background-color: #00721d;
+        padding: 40px 20px;
+        color: white;
+        font-size: 70px;
+        text-align: center;
+        border-radius: 20px;
+        font-weight: bolder;
+        margin-top: 5px;
+        margin-bottom: 20px;
+      }
+      .colored {
+        background-color: #d3fae3;
+        border-radius: 20px;
+        padding: 20px;
+      }
+      .title-h2-1 {
+        font-size: 50px;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .list {
+        display: flex;
+        justify-content: center;
+      }
+      .list div p,
+      .benefits-section-3 div:nth-child(2) p {
+        margin: 10px 0;
+        margin-left: 40px;
+        font-size: 25px;
+        font-weight: 600;
+      }
+      .image-container {
+        margin: 25px 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+      .image-stack {
+        position: relative;
+        width: 100%;
+        max-width: 450px;
+        aspect-ratio: 1 / 1;
+        box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.466);
+      }
+      .image-stack img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        top: 0;
+        left: 0;
+      }
+      .top-img {
+        animation: disappear 10s 5s linear infinite;
+        z-index: 2;
+      }
+      .bottom-img {
+        animation: disappear 10s linear infinite;
+        z-index: 2;
+      }
+      .h3-title-1 {
+        font-size: 45px;
+        text-align: center;
+        margin: 0px 0;
+      }
+      .section-3-p-1 {
+        font-size: 40px;
+        font-weight: 500;
+        text-align: center;
+      }
+      .benefits-section-3 {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .benefits-section-3-p-1 {
+        font-size: 40px;
+        text-align: center;
+      }
+      .order-container {
+        display: flex;
+        justify-content: center;
+        margin: 20px 0;
+      }
+
+      .submit-btn {
+        position: relative;
+        overflow: hidden;
+        padding: 16px 48px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #fff;
+        border: none;
+        border-radius: 12px;
+        background: linear-gradient(145deg, #006600, #00aa00);
+        cursor: pointer;
+        transform: rotateX(12deg) rotateY(0deg); /* Leaning back slightly */
+        transform-style: preserve-3d;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 4px 6px rgba(0, 0, 0, 0.3),
+          inset 0 -4px 10px rgba(0, 0, 0, 0.35),
+          inset 0 4px 4px rgba(255, 255, 255, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        z-index: 0;
+      }
+
+      .submit-btn:hover {
+        transform: translateY(-10px) rotateX(8deg) scale(1.03);
+      }
+
+      .submit-btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 60%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 0.4) 50%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        transform: skewX(-20deg);
+        animation: shimmer 2.5s infinite;
+        z-index: 1;
+      }
+
+      .submit-btn span {
+        position: relative;
+        z-index: 2;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+      }
+
+      @keyframes shimmer {
+        0% {
+          left: -100%;
+        }
+        100% {
+          left: 120%;
+        }
+      }
+
+      .price-value {
+        display: grid;
+        margin-top: 15px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 20px;
+      }
+      .price-desc {
+        padding: 15px;
+        border-radius: 8px;
+        text-align: center;
+        border: 1px solid green;
+      }
+      .price-desc img {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 8px;
+      }
+      .price-text {
+        margin-top: 10px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #fff;
+        background: #ff6600;
+        display: inline-block;
+        padding: 6px 12px;
+        border-radius: 5px;
+        text-decoration: none;
+      }
+      .benefits-section-3.colored {
+        margin: 0px 0px 15px 0px;
+      }
+      #i6dta {
+        padding-bottom: 25px;
+      }
+      #igdrh {
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px;
+      }
+      #iqv1o {
+        width: 35px;
+        margin-right: 15px;
+      }
+      #i6z8h {
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px;
+      }
+      #i04o6 {
+        width: 35px;
+        margin-right: 15px;
+      }
+      #i2aop {
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px;
+      }
+      #i8oay {
+        width: 35px;
+        margin-right: 15px;
+      }
+      #ix9ok {
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px;
+      }
+      #ixe43 {
+        width: 35px;
+        margin-right: 15px;
+      }
+      #iskcf {
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px;
+      }
+      #ixwj1 {
+        width: 35px;
+        margin-right: 15px;
+      }
+      #i55u2 {
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px;
+      }
+      #i3neu {
+        width: 35px;
+        margin-right: 15px;
+      }
+      #iyqf4 {
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px;
+      }
+      #ijetg {
+        width: 35px;
+        margin-right: 15px;
+      }
+      @keyframes disappear {
+        0% {
+          clip-path: inset(0% 0% 0% 0%);
+        }
+        30% {
+          clip-path: inset(100% 0% 0% 0%);
+        }
+        31% {
+          clip-path: inset(0% 0% 0% 0%);
+        }
+        60% {
+          z-index: 1;
+        }
+        100% {
+          clip-path: inset(0% 0% 0% 0%);
+        }
+      }
+      @keyframes shimmer {
+        0% {
+          left: -100%;
+        }
+        100% {
+          left: 120%;
+        }
+      }
+      @media (max-width: 1024px) {
+        .h1-title-1 {
+          font-size: 50px;
+          padding: 30px 15px;
+        }
+        .title-h2-1 {
+          font-size: 40px;
+        }
+        .section-3-p-1 {
+          font-size: 30px;
+        }
+        .benefits-section-3-p-1 {
+          font-size: 30px;
+        }
+        .h3-title-1 {
+          font-size: 35px;
+        }
+        .list div p,
+        .benefits-section-3 div:nth-child(2) p {
+          font-size: 20px;
+          margin-left: 20px;
+        }
+        .price-value {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 768px) {
+        .h1-title-1 {
+          font-size: 40px;
+          padding: 25px 10px;
+        }
+        .title-h2-1 {
+          font-size: 32px;
+        }
+        .section-3-p-1 {
+          font-size: 24px;
+        }
+        .benefits-section-3-p-1 {
+          font-size: 24px;
+        }
+        .h3-title-1 {
+          font-size: 28px;
+        }
+        .list {
+          flex-direction: column;
+          align-items: center;
+        }
+        .list div p,
+        .benefits-section-3 div:nth-child(2) p {
+          font-size: 18px;
+          margin-left: 10px;
+        }
+        .price-value {
+          display: grid;
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (max-width: 480px) {
+        .h1-title-1 {
+          font-size: 45px;
+          line-height: 55px;
+          padding: 20px 10px;
+        }
+        .title-h2-1 {
+          font-size: 24px;
+        }
+        .section-3-p-1 {
+          font-size: 20px;
+        }
+        .benefits-section-3-p-1 {
+          font-size: 20px;
+        }
+        .h3-title-1 {
+          font-size: 22px;
+        }
+        .list div p,
+        .benefits-section-3 div:nth-child(2) p {
+          font-size: 16px;
+          margin-left: 5px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="iede">
+      <div id="ihz1">
+        <div class="container-1">
+          <h1 class="h1-title-1">হার্ট বাঁচাবেন নাকি সংসার বাঁচাবেন?</h1>
+          <div class="image-container">
+            <div class="image-stack">
+              <img src="" alt="Top Image" class="top-img" />
+              <img src="" alt="Top Image" class="bottom-img" />
+            </div>
+          </div>
+          <div class="order-container">
+            <a href="#checkout-now" class="order-btn"
+              ><button class="submit-btn">
+                <span> অর্ডার করতে চাই </span>
+              </button></a
+            >
+          </div>
+          <div class="colored">
+            <h2 class="title-h2-1">
+              হার্টে ব্লক ধরা পড়েছে? খুব টেনশন হচ্ছে? হার্টে রিং পড়াতে চাচ্ছেন
+              না? তাহলে আপনার জন্য নিয়ে এসেছি হার্ট কেয়ার কম্বো।
+            </h2>
+          </div>
+
+          <div class="section-3">
+            <p id="i6dta" class="benefits-section-3-p-1 h1-title-1">
+              এই কম্বো তে যেসব উপকার পাবেনঃ
+            </p>
+            <div class="benefits-section-3">
+              <div>
+                <div>
+                  <p id="igdrh">
+                    <img
+                      src="https://cdn-icons-png.flaticon.com/128/10629/10629607.png"
+                      alt=""
+                      id="iqv1o"
+                    />
+                    পেনক্রিয়াসের ইনসুলিন প্রডাকশন বাড়বে
+                  </p>
+                  <p id="i6z8h">
+                    <img
+                      src="https://cdn-icons-png.flaticon.com/128/10629/10629607.png"
+                      alt=""
+                      id="i04o6"
+                    />
+                    টেস্টস্টেরন হরমোন এর ঘাটতি পূরন হবে
+                  </p>
+                  <p id="i2aop">
+                    <img
+                      src="https://cdn-icons-png.flaticon.com/128/10629/10629607.png"
+                      alt=""
+                      id="i8oay"
+                    />
+                    ডায়বেটিস সম্পুর্ন নিয়ন্ত্রনে থাকবে
+                  </p>
+                  <p id="ix9ok">
+                    <img
+                      src="https://cdn-icons-png.flaticon.com/128/10629/10629607.png"
+                      alt=""
+                      id="ixe43"
+                    />
+                    শারিরীক শক্তি অনেকগুন বেড়ে যাবে
+                  </p>
+                  <p id="iskcf">
+                    <img
+                      src="https://cdn-icons-png.flaticon.com/128/10629/10629607.png"
+                      alt=""
+                      id="ixwj1"
+                    />
+                    ইন্সট্যান্ট পাওয়ার পাবেন।
+                  </p>
+                  <p id="i55u2">
+                    <img
+                      src="https://cdn-icons-png.flaticon.com/128/10629/10629607.png"
+                      alt=""
+                      id="i3neu"
+                    />
+                    পার্শ্বপ্রতিক্রিয়া নেই।
+                  </p>
+                  <p id="iyqf4">
+                    <img
+                      src="https://cdn-icons-png.flaticon.com/128/10629/10629607.png"
+                      alt=""
+                      id="ijetg"
+                    />
+                    কাজ করবে একশো একশো ইনশা'আল্লাহ
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
